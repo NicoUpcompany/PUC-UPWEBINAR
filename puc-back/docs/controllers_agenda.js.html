@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>controllers/agenda.js - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-AgendaController.html">AgendaController</a><ul class='methods'><li data-type='method'><a href="module-AgendaController.html#~getUsersByAgenda">getUsersByAgenda</a></li></ul></li><li><a href="module-AgendaModel.html">AgendaModel</a></li><li><a href="module-AgendaRoutes.html">AgendaRoutes</a></li><li><a href="module-AgendaStandController.html">AgendaStandController</a><ul class='methods'><li data-type='method'><a href="module-AgendaStandController.html#~changeAgendaStatus">changeAgendaStatus</a></li><li data-type='method'><a href="module-AgendaStandController.html#~getAgendaAll">getAgendaAll</a></li><li data-type='method'><a href="module-AgendaStandController.html#~getAgendaAvailableByDay">getAgendaAvailableByDay</a></li><li data-type='method'><a href="module-AgendaStandController.html#~getAgendaByOwner">getAgendaByOwner</a></li><li data-type='method'><a href="module-AgendaStandController.html#~scheduling">scheduling</a></li><li data-type='method'><a href="module-AgendaStandController.html#~xlsxToJson">xlsxToJson</a></li></ul></li><li><a href="module-AgendaStandModel.html">AgendaStandModel</a></li><li><a href="module-AgendaStandRoutes.html">AgendaStandRoutes</a></li><li><a href="module-AuthController.html">AuthController</a><ul class='methods'><li data-type='method'><a href="module-AuthController.html#~refreshAccessToken">refreshAccessToken</a></li><li data-type='method'><a href="module-AuthController.html#~willExpireToken">willExpireToken</a></li></ul></li><li><a href="module-AuthRoutes.html">AuthRoutes</a></li><li><a href="module-CORS.html">CORS</a></li><li><a href="module-EventController.html">EventController</a><ul class='methods'><li data-type='method'><a href="module-EventController.html#~getEvent">getEvent</a></li><li data-type='method'><a href="module-EventController.html#~newEvent">newEvent</a></li></ul></li><li><a href="module-EventModel.html">EventModel</a></li><li><a href="module-EventRoutes.html">EventRoutes</a></li><li><a href="module-JWT.html">JWT</a><ul class='methods'><li data-type='method'><a href="module-JWT.html#.createAccessToken">createAccessToken</a></li><li data-type='method'><a href="module-JWT.html#.createRefreshToken">createRefreshToken</a></li><li data-type='method'><a href="module-JWT.html#.decodedToken">decodedToken</a></li></ul></li><li><a href="module-Middleware.html">Middleware</a><ul class='methods'><li data-type='method'><a href="module-Middleware.html#.ensureAuth">ensureAuth</a></li></ul></li><li><a href="module-QuestionController.html">QuestionController</a><ul class='methods'><li data-type='method'><a href="module-QuestionController.html#~deleteQuestion">deleteQuestion</a></li><li data-type='method'><a href="module-QuestionController.html#~getQuestions">getQuestions</a></li><li data-type='method'><a href="module-QuestionController.html#~getUserQuestion">getUserQuestion</a></li><li data-type='method'><a href="module-QuestionController.html#~makeQuestion">makeQuestion</a></li></ul></li><li><a href="module-QuestionModel.html">QuestionModel</a></li><li><a href="module-QuestionRoutes.html">QuestionRoutes</a></li><li><a href="module-RealTimeController.html">RealTimeController</a><ul class='methods'><li data-type='method'><a href="module-RealTimeController.html#~getRealTimeData">getRealTimeData</a></li><li data-type='method'><a href="module-RealTimeController.html#~newRealTimeData">newRealTimeData</a></li></ul></li><li><a href="module-RealTimeModel.html">RealTimeModel</a></li><li><a href="module-RealTimeRoutes.html">RealTimeRoutes</a></li><li><a href="module-Servidor.html">Servidor</a></li><li><a href="module-Socket.html">Socket</a></li><li><a href="module-TestController.html">TestController</a><ul class='methods'><li data-type='method'><a href="module-TestController.html#~getTests">getTests</a></li><li data-type='method'><a href="module-TestController.html#~saveTest">saveTest</a></li></ul></li><li><a href="module-TestModel.html">TestModel</a></li><li><a href="module-TestRoutes.html">TestRoutes</a></li><li><a href="module-TestStatusController.html">TestStatusController</a><ul class='methods'><li data-type='method'><a href="module-TestStatusController.html#~changeStatus">changeStatus</a></li><li data-type='method'><a href="module-TestStatusController.html#~getTestStatus">getTestStatus</a></li></ul></li><li><a href="module-TestStatusModel.html">TestStatusModel</a></li><li><a href="module-TestStatusRoutes.html">TestStatusRoutes</a></li><li><a href="module-TimeController.html">TimeController</a><ul class='methods'><li data-type='method'><a href="module-TimeController.html#~getTime">getTime</a></li></ul></li><li><a href="module-TimeRoutes.html">TimeRoutes</a></li><li><a href="module-UserController.html">UserController</a><ul class='methods'><li data-type='method'><a href="module-UserController.html#~changeRole">changeRole</a></li><li data-type='method'><a href="module-UserController.html#~deleteUser">deleteUser</a></li><li data-type='method'><a href="module-UserController.html#~getUsers">getUsers</a></li><li data-type='method'><a href="module-UserController.html#~searchById">searchById</a></li><li data-type='method'><a href="module-UserController.html#~signIn">signIn</a></li><li data-type='method'><a href="module-UserController.html#~signInAdmin">signInAdmin</a></li><li data-type='method'><a href="module-UserController.html#~signUp">signUp</a></li><li data-type='method'><a href="module-UserController.html#~updateStreamTime">updateStreamTime</a></li><li data-type='method'><a href="module-UserController.html#~updateUser">updateUser</a></li><li data-type='method'><a href="module-UserController.html#~updateWaitingRoomTime">updateWaitingRoomTime</a></li></ul></li><li><a href="module-UserModel.html">UserModel</a></li><li><a href="module-UserRoutes.html">UserRoutes</a></li><li><a href="module-VoteController.html">VoteController</a><ul class='methods'><li data-type='method'><a href="module-VoteController.html#~getClientVotes">getClientVotes</a></li><li data-type='method'><a href="module-VoteController.html#~getVotes">getVotes</a></li><li data-type='method'><a href="module-VoteController.html#~saveVote">saveVote</a></li></ul></li><li><a href="module-VoteModel.html">VoteModel</a></li><li><a href="module-VoteRoutes.html">VoteRoutes</a></li><li><a href="module-XlsxController.html">XlsxController</a><ul class='methods'><li data-type='method'><a href="module-XlsxController.html#~xlsxToJson">xlsxToJson</a></li></ul></li><li><a href="module-XlsxRoutes.html">XlsxRoutes</a></li></ul><h3>Events</h3><ul><li><a href="module-CORS.html#~event:module:configuration">configuration</a></li><li><a href="module-CORS.html#~event:module:routes">routes</a></li><li><a href="module-Servidor.html#~event:module:listen">listen</a></li><li><a href="module-Servidor.html#~event:module:mongoose">mongoose</a></li><li><a href="module-Socket.html#~event:module:connection">connection</a></li><li><a href="module-Socket.html#~event:module:disconnect">disconnect</a></li><li><a href="module-Socket.html#~event:module:GET_PEAK">GET_PEAK</a></li><li><a href="module-Socket.html#~event:module:GET_USERS">GET_USERS</a></li><li><a href="module-Socket.html#~event:module:NEW_USER">NEW_USER</a></li><li><a href="module-Socket.html#~event:module:UPDATE_ROUTE">UPDATE_ROUTE</a></li></ul><h3>Global</h3><ul><li><a href="global.html#agendaArray">agendaArray</a></li><li><a href="global.html#agendaStatus">agendaStatus</a></li><li><a href="global.html#API_VERSION">API_VERSION</a></li><li><a href="global.html#IP_SERVER">IP_SERVER</a></li><li><a href="global.html#PORT_DB">PORT_DB</a></li><li><a href="global.html#users">users</a></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">controllers/agenda.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>require("dotenv").config();
+const nodemailer = require("nodemailer");
+const request = require("request");
+const moment = require("moment");
+require("moment/locale/es");
+const XLSX = require("xlsx");
+const path = require("path");
+const mongoose = require("mongoose");
+
+const Agenda = require("../models/agenda");
+const User = require("../models/user");
+
+const upEmail = process.env.EMAIL;
+const upPassword = process.env.PASSWORD_EMAIL;
+
+/**
+ * @module AgendaStandController
+ */
+
+/** 
+ * Objeto de credenciales del mailing
+ * @typedef {Object} transporter
+ * @property {string} service Dominio del correo
+ * @property {Object} auth Usuario y contraseña mailing
+ * @property {Object} tls rejectUnauthorized - No falle en certificados inválidos
+*/
+const transporter = nodemailer.createTransport({
+	service: "Gmail",
+	auth: {
+		user: upEmail,
+		pass: upPassword,
+	},
+	tls: {
+		rejectUnauthorized: false,
+	},
+});
+
+/**
+ * Realiza un agendamiento de un stand, solicitando un ``id`` de agenda, ``user`` (id) de usuario y una ``description`` descripción
+ * @param {Object} req 
+ * @param {Object} res 
+ * @returns {boolean} estado ``ok`` true/false
+ */
+function scheduling(req, res) {
+	const { id } = req.params;
+	const { user, description } = req.body;
+
+	Agenda.findById({ _id: id }, (err, agendaStored) => {
+		if (err) {
+			res.status(500).send({ ok: false, message: "Error del servidor" });
+		} else {
+			if (!agendaStored) {
+				res.status(404).send({ ok: false, message: "Agenda no encontrada" });
+			} else {
+				if (agendaStored.user !== null) {
+					res.status(403).send({ ok: false, message: "Este horario ya ha sido agendado" });
+				} else {
+					agendaStored.user = user;
+					agendaStored.description = description;
+					Agenda.findByIdAndUpdate({ _id: agendaStored.id }, agendaStored, (err, agendaUpdate) => {
+						if (err) {
+							res.status(500).send({ ok: false, message: "Error del servidor" });
+						} else {
+							if (!agendaUpdate) {
+								res.status(404).send({ ok: false, message: "No se ha encontrado la agenda" });
+							} else {
+								User.findById({ _id: user }, (err, userStored) => {
+									if (err) {
+										res.status(500).send({ ok: false, message: "Error del servidor" });
+									} else {
+										if (!userStored) {
+											res.status(404).send({ ok: false, message: "Usuario no encontrado" });
+										} else {
+											const data = {
+												properties: {
+													lang: "es",
+													enable_chat: true,
+													enable_screenshare: true,
+												},
+											};
+											const options = {
+												method: "POST",
+												rejectUnauthorized: false,
+												url: "https://api.daily.co/v1/rooms",
+												headers: {
+													"Content-Type": "application/json",
+													Authorization: "Bearer 89f4f3900e44f726a1d5afc01609bda3aabbc8028942e9f29dd8f22bdbd06fe3",
+												},
+												body: data,
+												json: true,
+											};
+
+											request(options, function (error, response, body) {
+												if (error) {
+													res.status(500).send({ ok: false, message: error });
+												} else {
+													agendaStored.link = body.url;
+													Agenda.findByIdAndUpdate({ _id: agendaStored.id }, agendaStored, (err, agendaUpdate) => {
+														if (err) {
+															res.status(500).send({ ok: false, message: "Error del servidor" });
+														} else {
+															if (!agendaUpdate) {
+																res.status(404).send({ ok: false, message: "No se ha encontrado la agenda" });
+															} else {
+																User.findById({ _id: agendaStored.owner }, (err, ownerStored) => {
+																	if (err) {
+																		res.status(500).send({ ok: false, message: "Error del servidor" });
+																	} else {
+																		if (!ownerStored) {
+																			res.status(404).send({ ok: false, message: "Usuario no encontrado" });
+																		} else {
+																			const mailOptions = {
+																				from: `Gov Days &lt;${upEmail}>`,
+																				to: `${userStored.email}`,
+																				subject: "Reunión agendada",
+																				text: `Reunión a las ${agendaStored.hour} del día ${agendaStored.day} agendada (link: ${body.url})`,
+																				html: `
+                                                                                &lt;html>
+                                                                                    &lt;head>
+                                                                                        &lt;link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700;900&amp;display=swap" rel="stylesheet" />
+                                                                                        &lt;title>govdays&lt;/title>
+                                                                                    &lt;/head>
+                                                                                    &lt;body style="background: #f6f6f6">
+                                                                                        &lt;div style="background: #fff; color: #fff; width: 600px; max-width: 600px; margin: 0 auto; padding: 0; font-family: Barlow, sans-serif">
+                                                                                            &lt;table
+                                                                                                cellspacing="0"
+                                                                                                cellpadding="0"
+                                                                                                border="0"
+                                                                                                width="100%"
+                                                                                                style="margin-top: 10px; margin-bottom: 0; background-image: url(https://govdays.upwebinar.cl/api/v1/mailing-image/background.png)"
+                                                                                            >
+                                                                                                &lt;tr>
+                                                                                                    &lt;th align="center" width="100%">
+                                                                                                        &lt;img
+                                                                                                            src="https://govdays.upwebinar.cl/api/v1/mailing-image/logo.png"
+                                                                                                            width="100%"
+                                                                                                            style="max-width: 200px; margin: 50px auto"
+                                                                                                        />
+                                                                                                    &lt;/th>
+                                                                                                &lt;/tr>
+                                                                                            &lt;/table>
+
+                                                                                            &lt;table cellspacing="0" cellpadding="0" border="0" width="100%" style="margin-top: 20px; margin-bottom: 0">
+                                                                                                &lt;tr>
+                                                                                                    &lt;th align="center">
+                                                                                                        &lt;img src="https://upwebinar.cl/mailing/cognitiva/check.png" />
+                                                                                                    &lt;/th>
+                                                                                                &lt;/tr>
+                                                                                            &lt;/table>
+
+                                                                                            &lt;table cellspacing="0" cellpadding="0" border="0" width="100%" style="margin-top: 0; background: #fff">
+                                                                                                &lt;tr>
+                                                                                                    &lt;td align="center" width="100%" style="color: #1c1c1c; padding: 20px 0; text-transform: uppercase">
+                                                                                                        &lt;h3 style="color: #1c1c1c; font-size: 28px; margin-bottom: 20px; font-weight: 700">Reunión Confirmada&lt;/h3>
+                                                                                                        &lt;p style="margin: 0; padding: 0; font-size: 18px; color: #1c1c1c; text-align: center; font-weight: 500">
+                                                                                                            &lt;strong>DIA ${agendaStored.day} AGOSTO 2021 - A LAS ${agendaStored.hour} HRS&lt;/strong>
+                                                                                                        &lt;/p>
+                                                                                                    &lt;/td>
+                                                                                                &lt;/tr>
+                                                                                            &lt;/table>
+                                                                                            &lt;table cellspacing="0" cellpadding="0" border="0" width="100%" style="margin-top: 0; background: #fff">
+                                                                                                &lt;tr>
+                                                                                                    &lt;td align="center" width="100%" style="color: #1c1c1c; padding: 20px 0 50px">
+                                                                                                        &lt;h3 style="color: #1c1c1c; font-size: 28px; margin-bottom: 20px; font-weight: 700">Descripción&lt;/h3>
+                                                                                                        &lt;p style="margin: 0; padding: 0 20px; font-size: 18px; color: #1c1c1c; text-align: center">${agendaStored.description}&lt;/p>
+                                                                                                    &lt;/td>
+                                                                                                &lt;/tr>
+                                                                                            &lt;/table>
+                                                                                            &lt;table cellspacing="0" cellpadding="0" border="0" width="100%" style="margin-top: 0; background: #fff">
+                                                                                                &lt;tr>
+                                                                                                    &lt;td align="center" width="100%" style="color: #1c1c1c; padding: 0 50px">
+                                                                                                        &lt;table cellspacing="0" cellpadding="0" border="0" width="100%" style="margin-top: 0; background: #fff">
+                                                                                                            &lt;tr>
+                                                                                                                &lt;td
+                                                                                                                    align="left"
+                                                                                                                    width="100%"
+                                                                                                                    style="color: #9244e4; padding: 30px; border: 1px solid #e6e9ee; font-size: 14px; background: #e3e3e3"
+                                                                                                                >
+                                                                                                                    &lt;p>Link de ingreso:&lt;/p>
+                                                                                                                    &lt;p style="border: 1px solid #e6e9ee; padding: 10px 20px; text-align: left; border-radius: 3px; background: #fff">
+                                                                                                                        &lt;a href="${body.url}" style="text-decoration: none; color: #1c1c1c">${body.url}&lt;/a>
+                                                                                                                    &lt;/p>
+                                                                                                                &lt;/td>
+                                                                                                            &lt;/tr>
+                                                                                                        &lt;/table>
+                                                                                                    &lt;/td>
+                                                                                                &lt;/tr>
+                                                                                            &lt;/table>
+
+                                                                                            &lt;table
+                                                                                                cellspacing="0"
+                                                                                                cellpadding="0"
+                                                                                                border="0"
+                                                                                                width="100%"
+                                                                                                style="margin: 20px 0 0px; padding: 0; background-image: url(https://govdays.upwebinar.cl/api/v1/mailing-image/background.png)"
+                                                                                            >
+                                                                                                &lt;tr>
+                                                                                                    &lt;td align="center" width="100%" style="color: #fff">
+                                                                                                        &lt;img
+                                                                                                            src="https://govdays.upwebinar.cl/api/v1/mailing-image/footer.png"
+                                                                                                            width="100%"
+                                                                                                            style="max-width: 200px; margin: 50px 0"
+                                                                                                        />
+                                                                                                    &lt;/td>
+                                                                                                &lt;/tr>
+                                                                                            &lt;/table>
+                                                                                        &lt;/div>
+                                                                                    &lt;/body>
+                                                                                &lt;/html>
+                                                                                `,
+																			};
+																			transporter.sendMail(mailOptions, function (error, info) {
+																				if (error) {
+																					res.status(500).send({
+																						ok: false,
+																						message: "Error del servidor",
+																					});
+																				} else {
+																					const mailOptions2 = {
+																						from: `Gov Days &lt;${upEmail}>`,
+																						to: `${ownerStored.email}`,
+																						subject: "Te han agendado una reunión",
+																						text: `Reunión a las ${agendaStored.hour} del día ${agendaStored.day} agendada (link: ${body.url})`,
+																						html: `
+                                                                                        &lt;html>
+                                                                                            &lt;head>
+                                                                                                &lt;link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700;900&amp;display=swap" rel="stylesheet" />
+                                                                                                &lt;title>govdays&lt;/title>
+                                                                                            &lt;/head>
+                                                                                            &lt;body style="background: #f6f6f6; font-family: 'Source Sans Pro', sans-serif">
+                                                                                                &lt;div style="background: #fff; color: #fff; width: 600px; max-width: 600px; margin: 0 auto; padding: 0; font-family: Barlow, sans-serif">
+                                                                                                    &lt;table
+                                                                                                        cellspacing="0"
+                                                                                                        cellpadding="0"
+                                                                                                        border="0"
+                                                                                                        width="100%"
+                                                                                                        style="margin-top: 10px; margin-bottom: 0; background-image: url(https://govdays.upwebinar.cl/api/v1/mailing-image/background.png)"
+                                                                                                    >
+                                                                                                        &lt;tr>
+                                                                                                            &lt;th align="center" width="100%">
+                                                                                                                &lt;img
+                                                                                                                    src="https://govdays.upwebinar.cl/api/v1/mailing-image/logo.png"
+                                                                                                                    width="100%"
+                                                                                                                    style="max-width: 200px; margin: 50px auto"
+                                                                                                                />
+                                                                                                            &lt;/th>
+                                                                                                        &lt;/tr>
+                                                                                                    &lt;/table>
+
+                                                                                                    &lt;table cellspacing="0" cellpadding="0" border="0" width="100%" style="margin-top: 20px; margin-bottom: 0">
+                                                                                                        &lt;tr>
+                                                                                                            &lt;th align="center">
+                                                                                                                &lt;img src="https://upwebinar.cl/mailing/cognitiva/check.png" />
+                                                                                                            &lt;/th>
+                                                                                                        &lt;/tr>
+                                                                                                    &lt;/table>
+                                                                                                    &lt;table cellspacing="0" cellpadding="0" border="0" width="100%" style="margin-top: 0; background: #fff">
+                                                                                                        &lt;tr>
+                                                                                                            &lt;td align="center" width="100%" style="color: #1c1c1c; padding: 20px 0; text-transform: uppercase">
+                                                                                                                &lt;h3 style="color: #1c1c1c; font-size: 28px; margin-bottom: 20px; font-weight: 700">Te han agendado una reunión&lt;/h3>
+                                                                                                                &lt;p style="margin: 0; padding: 0; font-size: 18px; color: #1c1c1c; text-align: center; font-weight: 500; text-transform: none">
+                                                                                                                    &lt;strong>Revisa tu perfil en la plataforma&lt;/strong>
+                                                                                                                &lt;/p>
+                                                                                                                &lt;p style="margin: 0; padding: 0; font-size: 18px; color: #1c1c1c; text-align: center; font-weight: 500">
+                                                                                                                    &lt;strong>DIA ${agendaStored.day} AGOSTO 2021 - A LAS ${agendaStored.hour} HRS&lt;/strong>
+                                                                                                                &lt;/p>
+                                                                                                            &lt;/td>
+                                                                                                        &lt;/tr>
+                                                                                                    &lt;/table>
+                                                                                                    &lt;table cellspacing="0" cellpadding="0" border="0" width="100%" style="margin-top: 0; background: #fff">
+                                                                                                        &lt;tr>
+                                                                                                            &lt;td align="center" width="100%" style="color: #1c1c1c; padding: 20px 0 50px">
+                                                                                                                &lt;h3 style="color: #1c1c1c; font-size: 28px; margin-bottom: 20px; font-weight: 700">Descripción&lt;/h3>
+                                                                                                                &lt;p style="margin: 0; padding: 0 20px; font-size: 18px; color: #1c1c1c; text-align: center">${agendaStored.description}&lt;/p>
+                                                                                                            &lt;/td>
+                                                                                                        &lt;/tr>
+                                                                                                    &lt;/table>
+
+                                                                                                    &lt;table cellspacing="0" cellpadding="0" border="0" width="100%" style="margin-top: 0; background: #fff">
+                                                                                                        &lt;tr>
+                                                                                                            &lt;td align="center" width="100%" style="color: #1c1c1c; padding: 0 50px">
+                                                                                                                &lt;table cellspacing="0" cellpadding="0" border="0" width="100%" style="margin-top: 0; background: #fff">
+                                                                                                                    &lt;tr>
+                                                                                                                        &lt;td
+                                                                                                                            align="left"
+                                                                                                                            width="100%"
+                                                                                                                            style="color: #9244e4; padding: 30px; border: 1px solid #e6e9ee; font-size: 14px; background: #e3e3e3"
+                                                                                                                        >
+                                                                                                                            &lt;p>Link de ingreso:&lt;/p>
+                                                                                                                            &lt;p style="border: 1px solid #e6e9ee; padding: 10px 20px; text-align: left; border-radius: 3px; background: #fff">
+                                                                                                                                &lt;a href="${body.url}" style="text-decoration: none; color: #1c1c1c">${body.url}&lt;/a>
+                                                                                                                            &lt;/p>
+                                                                                                                        &lt;/td>
+                                                                                                                    &lt;/tr>
+                                                                                                                &lt;/table>
+                                                                                                            &lt;/td>
+                                                                                                        &lt;/tr>
+                                                                                                    &lt;/table>
+
+                                                                                                    &lt;table
+                                                                                                        cellspacing="0"
+                                                                                                        cellpadding="0"
+                                                                                                        border="0"
+                                                                                                        width="100%"
+                                                                                                        style="margin: 20px 0 0px; padding: 0; background-image: url(https://govdays.upwebinar.cl/api/v1/mailing-image/background.png)"
+                                                                                                    >
+                                                                                                        &lt;tr>
+                                                                                                            &lt;td align="center" width="100%" style="color: #fff">
+                                                                                                                &lt;img
+                                                                                                                    src="https://govdays.upwebinar.cl/api/v1/mailing-image/footer.png"
+                                                                                                                    width="100%"
+                                                                                                                    style="max-width: 200px; margin: 50px 0"
+                                                                                                                />
+                                                                                                            &lt;/td>
+                                                                                                        &lt;/tr>
+                                                                                                    &lt;/table>
+                                                                                                &lt;/div>
+                                                                                            &lt;/body>
+                                                                                        &lt;/html>
+                                                                                        `,
+																					};
+																					transporter.sendMail(mailOptions2, function (error, info) {
+																						if (error) {
+																							res.status(500).send({
+																								ok: false,
+																								message: "Error del servidor",
+																							});
+																						} else {
+																							res.status(200).send({
+																								ok: true,
+																								link: body.url,
+																								message:
+																									"Reunión agendada correctamente, te hemos enviado un correo con la confirmación y el link de reunión",
+																							});
+																						}
+																					});
+																				}
+																			});
+																		}
+																	}
+																});
+															}
+														}
+													});
+												}
+											});
+										}
+									}
+								});
+							}
+						}
+					});
+				}
+			}
+		}
+	});
+}
+
+/**
+ * Retorna las agendas filtradas por ``userId`` y ``day`` disponibles para agendar en la vista del usuario
+ * @param {Object} req 
+ * @param {Object} res 
+ * @returns {boolean} estado ``ok`` true/false
+ */
+function getAgendaAvailableByDay(req, res) {
+	const { userId, day } = req.body;
+
+	Agenda.find(
+		{ $and: [{ active: { $ne: false } }, { owner: mongoose.Types.ObjectId(userId) }, { day: day.toString() }, { user: null }] },
+		(err, agendaStored) => {
+			if (err) {
+				res.status(500).send({ ok: false, message: "Error del servidor" });
+			} else {
+				if (!agendaStored) {
+					res.status(404).send({ ok: false, message: "Agenda no encontrada" });
+				} else {
+					const agendaArray = [];
+					agendaStored.forEach((element) => {
+						const now = moment().valueOf();
+						const eventTime = moment().valueOf();
+						if (eventTime > now) {
+							agendaArray.push(element);
+						}
+					});
+					res.status(200).send({ ok: true, agenda: agendaArray });
+				}
+			}
+		}
+	);
+}
+
+/**
+ * Retorna las agendas filtradas por ``userId`` y ``day`` disponibles para la vista del ejecutivo del stand (/perfil)
+ * @param {Object} req 
+ * @param {Object} res 
+ * @returns {boolean} estado ``ok`` true/false
+ */
+function getAgendaByOwner(req, res) {
+	const { userId, day } = req.body;
+
+	Agenda.find({ $and: [{ owner: mongoose.Types.ObjectId(userId) }, { day: day.toString() }] })
+		.populate("user", "email")
+		.exec((err, agendaStored) => {
+			if (err) {
+				res.status(500).send({ ok: false, message: "Error del servidor" });
+			} else {
+				if (!agendaStored) {
+					res.status(404).send({ ok: false, message: "Agenda no encontrada" });
+				} else {
+					res.status(200).send({ ok: true, agenda: agendaStored });
+				}
+			}
+		});
+}
+
+/**
+ * Retorna todas las agendas sin filtrar
+ * @param {Object} req 
+ * @param {Object} res 
+ * @returns {boolean} estado ``ok`` true/false
+ */
+function getAgendaAll(req, res) {
+	Agenda.find({}, (err, agendaStored) => {
+		if (err) {
+			res.status(500).send({ ok: false, message: "Error del servidor" });
+		} else {
+			if (!agendaStored) {
+				res.status(404).send({ ok: false, message: "Agenda no encontrada" });
+			} else {
+				res.status(200).send({ ok: true, agenda: agendaStored });
+			}
+		}
+	});
+}
+
+/**
+ * Guarda todos los agendamientos guardados en un xlsx en /uploads
+ * @param {Object} req 
+ * @param {Object} res 
+ * @returns {boolean} estado ``ok`` true/false
+ */
+function xlsxToJson(req, res) {
+	const pathXLSX = path.resolve(__dirname, "../uploads/Agendas.xlsx");
+	const workbook = XLSX.readFile(pathXLSX);
+	const sheet_name_list = workbook.SheetNames;
+	sheet_name_list.forEach(async function (y) {
+		const worksheet = workbook.Sheets[y];
+		const headers = {};
+		const data = [];
+		for (z in worksheet) {
+			if (z[0] === "!") continue;
+			let tt = 0;
+			for (let i = 0; i &lt; z.length; i++) {
+				if (!isNaN(z[i])) {
+					tt = i;
+					break;
+				}
+			}
+			const col = z.substring(0, tt);
+			const row = parseInt(z.substring(tt));
+			const value = worksheet[z].v;
+			if (row == 1 &amp;&amp; value) {
+				headers[col] = value;
+				continue;
+			}
+			if (!data[row]) data[row] = {};
+			data[row][headers[col]] = value;
+		}
+		data.shift();
+		data.shift();
+
+		for (let i = 0; i &lt; data.length; i++) {
+			const agenda = new Agenda();
+			agenda.hour = data[i].Hour;
+			agenda.day = data[i].Day;
+			agenda.owner = data[i].owner;
+			agenda.time = data[i].time;
+
+			await agenda.save((err, agendaStored) => {
+				console.log(agendaStored);
+				console.log(i);
+			});
+		}
+	});
+	res.status(200).send({ message: `Import xlsx exitoso` });
+}
+
+/**
+ * Cambia el estado ``active`` true/false según corresponda (envía un correo al usuario si estaba agendada y el ejecutivo la cambia a estado false)
+ * @param {Object} req 
+ * @param {Object} res 
+ * @returns {boolean} estado ``ok`` true/false
+ */
+function changeAgendaStatus(req, res) {
+	const { id } = req.params;
+
+	let userId = null;
+
+	Agenda.findById({ _id: id }, (err, agendaStored) => {
+		if (err) {
+			res.status(500).send({ ok: false, message: "Error del servidor" });
+		} else {
+			if (!agendaStored) {
+				res.status(404).send({ ok: false, message: "Agenda no encontrada" });
+			} else {
+				if (agendaStored.user === null) {
+					if (agendaStored.active) {
+						agendaStored.active = false;
+						Agenda.findByIdAndUpdate({ _id: agendaStored.id }, agendaStored, (err, agendaUpdate) => {
+							if (err) {
+								res.status(500).send({ ok: false, message: "Error del servidor" });
+							} else {
+								if (!agendaUpdate) {
+									res.status(404).send({ ok: false, message: "No se ha encontrado la agenda" });
+								} else {
+									res.status(200).send({
+										ok: true,
+										message: `El horario ${agendaStored.hour} del día ${agendaStored.day} se ha marcado como no disponible`,
+									});
+								}
+							}
+						});
+					} else {
+						agendaStored.active = true;
+						Agenda.findByIdAndUpdate({ _id: agendaStored.id }, agendaStored, (err, agendaUpdate) => {
+							if (err) {
+								res.status(500).send({ ok: false, message: "Error del servidor" });
+							} else {
+								if (!agendaUpdate) {
+									res.status(404).send({ ok: false, message: "No se ha encontrado la agenda" });
+								} else {
+									res.status(200).send({
+										ok: true,
+										message: `El horario ${agendaStored.hour} del día ${agendaStored.day} se ha marcado como disponible`,
+									});
+								}
+							}
+						});
+					}
+				} else {
+					userId = agendaStored.user;
+					agendaStored.user = null;
+					agendaStored.link = "";
+					agendaStored.description = "";
+					Agenda.findByIdAndUpdate({ _id: agendaStored.id }, agendaStored, (err, agendaUpdate) => {
+						if (err) {
+							res.status(500).send({ ok: false, message: "Error del servidor" });
+						} else {
+							if (!agendaUpdate) {
+								res.status(404).send({ ok: false, message: "No se ha encontrado la agenda" });
+							} else {
+								User.findById({ _id: userId }, (err, userStored) => {
+									if (err) {
+										res.status(500).send({ ok: false, message: "Error del servidor" });
+									} else {
+										if (!userStored) {
+											res.status(404).send({ ok: false, message: "Usuario no encontrado" });
+										} else {
+											User.findById({ _id: agendaStored.owner }, (err, ownerStored) => {
+												if (err) {
+													res.status(500).send({ ok: false, message: "Error del servidor" });
+												} else {
+													if (!ownerStored) {
+														res.status(404).send({ ok: false, message: "Usuario no encontrado" });
+													} else {
+														const mailOptions = {
+															from: `Gov Days &lt;${upEmail}>`,
+															to: `${userStored.email}, ${ownerStored.email}`,
+															subject: "Reunión cancelada",
+															text: `La reunión a las ${agendaStored.hour} del día ${agendaStored.day} fue cancelada`,
+															html: `
+                                                            &lt;html>
+                                                                &lt;head>
+                                                                    &lt;link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700;900&amp;display=swap" rel="stylesheet" />
+                                                                    &lt;title>govdays&lt;/title>
+                                                                &lt;/head>
+                                                                &lt;body style="background: #f6f6f6">
+                                                                    &lt;div style="background: #fff; color: #fff; width: 600px; max-width: 600px; margin: 0 auto; padding: 0; font-family: Barlow, sans-serif">
+                                                                        &lt;table
+                                                                            cellspacing="0"
+                                                                            cellpadding="0"
+                                                                            border="0"
+                                                                            width="100%"
+                                                                            style="margin-top: 10px; margin-bottom: 0; background-image: url(https://govdays.upwebinar.cl/api/v1/mailing-image/background.png)"
+                                                                        >
+                                                                            &lt;tr>
+                                                                                &lt;th align="center" width="100%">
+                                                                                    &lt;img
+                                                                                        src="https://govdays.upwebinar.cl/api/v1/mailing-image/logo.png"
+                                                                                        width="100%"
+                                                                                        style="max-width: 200px; margin: 50px auto"
+                                                                                    />
+                                                                                &lt;/th>
+                                                                            &lt;/tr>
+                                                                        &lt;/table>
+
+                                                                        &lt;table cellspacing="0" cellpadding="0" border="0" width="100%" style="margin-top: 20px; margin-bottom: 0">
+                                                                            &lt;tr>
+                                                                                &lt;th align="center">
+                                                                                    &lt;img src="https://upwebinar.cl/mailing/cognitiva/error.png" />
+                                                                                &lt;/th>
+                                                                            &lt;/tr>
+                                                                        &lt;/table>
+                                                                        &lt;table cellspacing="0" cellpadding="0" border="0" width="100%" style="margin-top: 0; background: #fff">
+                                                                            &lt;tr>
+                                                                                &lt;td align="center" width="100%" style="color: #1c1c1c; padding: 20px 0 50px; text-transform: uppercase">
+                                                                                    &lt;h3 style="color: #1c1c1c; font-size: 28px; margin-bottom: 20px; font-weight: 700">Reunión Rechazada&lt;/h3>
+                                                                                    &lt;p style="margin: 0; padding: 10px 0; font-size: 18px; color: #1c1c1c; text-align: center; font-weight: 500">
+                                                                                        &lt;strong>DIA ${agendaStored.day} AGOSTO 2021 - A LAS ${agendaStored.hour} HRS&lt;/strong>
+                                                                                    &lt;/p>
+                                                                                    &lt;p style="margin: 0; padding: 0; font-size: 18px; color: #1c1c1c; text-align: center; font-weight: 500">
+                                                                                        &lt;strong>Vuelve agendar una reunión en la plataforma&lt;/strong>
+                                                                                    &lt;/p>
+                                                                                &lt;/td>
+                                                                            &lt;/tr>
+                                                                        &lt;/table>
+
+                                                                        &lt;table
+                                                                            cellspacing="0"
+                                                                            cellpadding="0"
+                                                                            border="0"
+                                                                            width="100%"
+                                                                            style="margin: 20px 0 0px; padding: 0; background-image: url(https://govdays.upwebinar.cl/api/v1/mailing-image/background.png)"
+                                                                        >
+                                                                            &lt;tr>
+                                                                                &lt;td align="center" width="100%" style="color: #fff">
+                                                                                    &lt;img
+                                                                                        src="https://govdays.upwebinar.cl/api/v1/mailing-image/footer.png"
+                                                                                        width="100%"
+                                                                                        style="max-width: 200px; margin: 50px 0"
+                                                                                    />
+                                                                                &lt;/td>
+                                                                            &lt;/tr>
+                                                                        &lt;/table>
+                                                                    &lt;/div>
+                                                                &lt;/body>
+                                                            &lt;/html>
+                                                            `,
+														};
+														transporter.sendMail(mailOptions, function (error, info) {
+															if (error) {
+																res.status(500).send({ ok: false, message: "Error del servidor" });
+															} else {
+																res.status(200).send({
+																	ok: true,
+																	message: "Reunión cancelada correctamente",
+																});
+															}
+														});
+													}
+												}
+											});
+										}
+									}
+								});
+							}
+						}
+					});
+				}
+			}
+		}
+	});
+}
+
+module.exports = {
+	scheduling,
+	getAgendaAvailableByDay,
+	getAgendaByOwner,
+	getAgendaAll,
+	xlsxToJson,
+	changeAgendaStatus,
+};
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.7</a> on Fri Aug 20 2021 20:14:14 GMT-0400 (GMT-04:00) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+
+
+</body>
+</html>

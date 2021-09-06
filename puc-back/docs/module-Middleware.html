@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>Middleware - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-AgendaController.html">AgendaController</a><ul class='methods'><li data-type='method'><a href="module-AgendaController.html#~getUsersByAgenda">getUsersByAgenda</a></li></ul></li><li><a href="module-AgendaModel.html">AgendaModel</a></li><li><a href="module-AgendaRoutes.html">AgendaRoutes</a></li><li><a href="module-AgendaStandController.html">AgendaStandController</a><ul class='methods'><li data-type='method'><a href="module-AgendaStandController.html#~changeAgendaStatus">changeAgendaStatus</a></li><li data-type='method'><a href="module-AgendaStandController.html#~getAgendaAll">getAgendaAll</a></li><li data-type='method'><a href="module-AgendaStandController.html#~getAgendaAvailableByDay">getAgendaAvailableByDay</a></li><li data-type='method'><a href="module-AgendaStandController.html#~getAgendaByOwner">getAgendaByOwner</a></li><li data-type='method'><a href="module-AgendaStandController.html#~scheduling">scheduling</a></li><li data-type='method'><a href="module-AgendaStandController.html#~xlsxToJson">xlsxToJson</a></li></ul></li><li><a href="module-AgendaStandModel.html">AgendaStandModel</a></li><li><a href="module-AgendaStandRoutes.html">AgendaStandRoutes</a></li><li><a href="module-AuthController.html">AuthController</a><ul class='methods'><li data-type='method'><a href="module-AuthController.html#~refreshAccessToken">refreshAccessToken</a></li><li data-type='method'><a href="module-AuthController.html#~willExpireToken">willExpireToken</a></li></ul></li><li><a href="module-AuthRoutes.html">AuthRoutes</a></li><li><a href="module-CORS.html">CORS</a></li><li><a href="module-EventController.html">EventController</a><ul class='methods'><li data-type='method'><a href="module-EventController.html#~getEvent">getEvent</a></li><li data-type='method'><a href="module-EventController.html#~newEvent">newEvent</a></li></ul></li><li><a href="module-EventModel.html">EventModel</a></li><li><a href="module-EventRoutes.html">EventRoutes</a></li><li><a href="module-JWT.html">JWT</a><ul class='methods'><li data-type='method'><a href="module-JWT.html#.createAccessToken">createAccessToken</a></li><li data-type='method'><a href="module-JWT.html#.createRefreshToken">createRefreshToken</a></li><li data-type='method'><a href="module-JWT.html#.decodedToken">decodedToken</a></li></ul></li><li><a href="module-Middleware.html">Middleware</a><ul class='methods'><li data-type='method'><a href="module-Middleware.html#.ensureAuth">ensureAuth</a></li></ul></li><li><a href="module-QuestionController.html">QuestionController</a><ul class='methods'><li data-type='method'><a href="module-QuestionController.html#~deleteQuestion">deleteQuestion</a></li><li data-type='method'><a href="module-QuestionController.html#~getQuestions">getQuestions</a></li><li data-type='method'><a href="module-QuestionController.html#~getUserQuestion">getUserQuestion</a></li><li data-type='method'><a href="module-QuestionController.html#~makeQuestion">makeQuestion</a></li></ul></li><li><a href="module-QuestionModel.html">QuestionModel</a></li><li><a href="module-QuestionRoutes.html">QuestionRoutes</a></li><li><a href="module-RealTimeController.html">RealTimeController</a><ul class='methods'><li data-type='method'><a href="module-RealTimeController.html#~getRealTimeData">getRealTimeData</a></li><li data-type='method'><a href="module-RealTimeController.html#~newRealTimeData">newRealTimeData</a></li></ul></li><li><a href="module-RealTimeModel.html">RealTimeModel</a></li><li><a href="module-RealTimeRoutes.html">RealTimeRoutes</a></li><li><a href="module-Servidor.html">Servidor</a></li><li><a href="module-Socket.html">Socket</a></li><li><a href="module-TestController.html">TestController</a><ul class='methods'><li data-type='method'><a href="module-TestController.html#~getTests">getTests</a></li><li data-type='method'><a href="module-TestController.html#~saveTest">saveTest</a></li></ul></li><li><a href="module-TestModel.html">TestModel</a></li><li><a href="module-TestRoutes.html">TestRoutes</a></li><li><a href="module-TestStatusController.html">TestStatusController</a><ul class='methods'><li data-type='method'><a href="module-TestStatusController.html#~changeStatus">changeStatus</a></li><li data-type='method'><a href="module-TestStatusController.html#~getTestStatus">getTestStatus</a></li></ul></li><li><a href="module-TestStatusModel.html">TestStatusModel</a></li><li><a href="module-TestStatusRoutes.html">TestStatusRoutes</a></li><li><a href="module-TimeController.html">TimeController</a><ul class='methods'><li data-type='method'><a href="module-TimeController.html#~getTime">getTime</a></li></ul></li><li><a href="module-TimeRoutes.html">TimeRoutes</a></li><li><a href="module-UserController.html">UserController</a><ul class='methods'><li data-type='method'><a href="module-UserController.html#~changeRole">changeRole</a></li><li data-type='method'><a href="module-UserController.html#~deleteUser">deleteUser</a></li><li data-type='method'><a href="module-UserController.html#~getUsers">getUsers</a></li><li data-type='method'><a href="module-UserController.html#~searchById">searchById</a></li><li data-type='method'><a href="module-UserController.html#~signIn">signIn</a></li><li data-type='method'><a href="module-UserController.html#~signInAdmin">signInAdmin</a></li><li data-type='method'><a href="module-UserController.html#~signUp">signUp</a></li><li data-type='method'><a href="module-UserController.html#~updateStreamTime">updateStreamTime</a></li><li data-type='method'><a href="module-UserController.html#~updateUser">updateUser</a></li><li data-type='method'><a href="module-UserController.html#~updateWaitingRoomTime">updateWaitingRoomTime</a></li></ul></li><li><a href="module-UserModel.html">UserModel</a></li><li><a href="module-UserRoutes.html">UserRoutes</a></li><li><a href="module-VoteController.html">VoteController</a><ul class='methods'><li data-type='method'><a href="module-VoteController.html#~getClientVotes">getClientVotes</a></li><li data-type='method'><a href="module-VoteController.html#~getVotes">getVotes</a></li><li data-type='method'><a href="module-VoteController.html#~saveVote">saveVote</a></li></ul></li><li><a href="module-VoteModel.html">VoteModel</a></li><li><a href="module-VoteRoutes.html">VoteRoutes</a></li><li><a href="module-XlsxController.html">XlsxController</a><ul class='methods'><li data-type='method'><a href="module-XlsxController.html#~xlsxToJson">xlsxToJson</a></li></ul></li><li><a href="module-XlsxRoutes.html">XlsxRoutes</a></li></ul><h3>Events</h3><ul><li><a href="module-CORS.html#~event:module:configuration">configuration</a></li><li><a href="module-CORS.html#~event:module:routes">routes</a></li><li><a href="module-Servidor.html#~event:module:listen">listen</a></li><li><a href="module-Servidor.html#~event:module:mongoose">mongoose</a></li><li><a href="module-Socket.html#~event:module:connection">connection</a></li><li><a href="module-Socket.html#~event:module:disconnect">disconnect</a></li><li><a href="module-Socket.html#~event:module:GET_PEAK">GET_PEAK</a></li><li><a href="module-Socket.html#~event:module:GET_USERS">GET_USERS</a></li><li><a href="module-Socket.html#~event:module:NEW_USER">NEW_USER</a></li><li><a href="module-Socket.html#~event:module:UPDATE_ROUTE">UPDATE_ROUTE</a></li></ul><h3>Global</h3><ul><li><a href="global.html#agendaArray">agendaArray</a></li><li><a href="global.html#agendaStatus">agendaStatus</a></li><li><a href="global.html#API_VERSION">API_VERSION</a></li><li><a href="global.html#IP_SERVER">IP_SERVER</a></li><li><a href="global.html#PORT_DB">PORT_DB</a></li><li><a href="global.html#users">users</a></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">Middleware</h1>
+    
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        
+    
+</header>
+
+<article>
+    
+        <div class="container-overview">
+        
+            
+
+            
+        
+        </div>
+    
+
+    
+
+    
+
+    
+    
+    
+
+     
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    <h4 class="name" id=".ensureAuth"><span class="type-signature">(static) </span>ensureAuth<span class="signature">(req, res)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="middleware_authenticated.js.html">middleware/authenticated.js</a>, <a href="middleware_authenticated.js.html#line16">line 16</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>Middleware para protejer rutas que necesitan un token como cabecera</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>req</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>res</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>estado <code>ok</code> true/false</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.7</a> on Fri Aug 20 2021 20:14:14 GMT-0400 (GMT-04:00) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+
+
+</body>
+</html>

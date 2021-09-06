@@ -1,0 +1,277 @@
+@import "../../../../scss/index.scss";
+
+.fondo {
+	position: relative;
+	display: block;
+
+	.contenedorRegistro {
+		position: relative;
+		display: block;
+		background-image: url("../../../../assets/images/background-login.png");
+		background-repeat: no-repeat;
+		background-size: cover;
+		min-height: 100vh;
+		height: auto;
+		overflow: hidden;
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		flex-direction: column;
+
+		.header {
+			position: relative;
+			width: 100%;
+			height: 100px;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 0 50px;
+
+			img {
+				width: 100%;
+				max-width: 200px;
+			}
+
+			.description {
+				margin-top: 150px;
+				position: relative;
+				display: block;
+				text-align: right;
+
+				.pre-title {
+					margin: 0;
+					color: #fff;
+					text-transform: uppercase;
+					font-weight: bold;
+				}
+
+				.title {
+					margin: 0;
+					color: #000;
+					text-transform: capitalize;
+					font-weight: bold;
+				}
+
+				hr {
+					position: relative;
+					margin-right: 0;
+					width: 100px;
+					border: 0;
+					border-top: 1px solid #2a7de1;
+				}
+
+				.date {
+					margin: 0;
+					color: #000;
+					text-transform: lowercase;
+
+					span {
+						font-weight: bold;
+					}
+				}
+			}
+		}
+
+		.row-sign-in {
+			position: relative;
+			display: block;
+			max-width: 460px;
+
+			.form {
+				float: left;
+				width: 100%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				flex-direction: column;
+
+				.login {
+					color: $font-title;
+					margin: 0px !important;
+					font-size: $defaultFontSize;
+					font-family: $font-regular;
+					float: left;
+					width: 100%;
+					text-align: center;
+					letter-spacing: 1px;
+					margin-bottom: 20px !important;
+				}
+
+				.cronometro {
+					width: 100%;
+					height: 80px;
+					display: flex;
+					justify-content: space-around;
+					align-items: center;
+					margin: 0px 0px 40px;
+					background: url("../../../../assets/images/chrono.png");
+					background-repeat: no-repeat;
+					background-size: cover;
+
+					div {
+						display: flex;
+						flex-direction: column;
+						justify-content: center;
+						align-items: center;
+
+						h1 {
+							color: #f79b49 !important;
+							margin: 0px;
+							font-size: 30px;
+							font-weight: bold;
+						}
+
+						span {
+							color: #f79b49 !important;
+							margin: 0px;
+							font-size: 14px;
+							font-weight: 600;
+						}
+					}
+				}
+
+				.card {
+					background: $background-light;
+					padding: 20px;
+					width: 100%;
+					min-width: 460px;
+					border: 1px solid $border-grey-light;
+					border-radius: 20px;
+				}
+			}
+		}
+	}
+
+	.footer {
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		background-color: #54565a;
+
+		img {
+			width: 100%;
+			max-width: 250px;
+			padding: 18px 50px;
+		}
+
+		.description {
+			position: relative;
+			width: 100%;
+			display: flex;
+			justify-content: flex-end;
+			align-items: center;
+			right: 0;
+			padding: 0 50px;
+
+			h1 {
+				display: inline-block;
+				color: #fff;
+				font-size: 17px;
+				margin-right: 20px;
+
+				span {
+					color: #ffda00;
+					font-size: 23px;
+					font-style: italic;
+				}
+			}
+
+			.icons {
+				position: relative;
+				display: inline-block;
+				color: #fff;
+				font-size: 20px;
+				margin: 0;
+
+				.anticon {
+					cursor: pointer;
+					padding: 0 8px;
+					color: #fff;
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (min-width: 320px) and (max-width: 790px) {
+	.fondo {
+		.contenedorRegistro {
+			padding: 0px 0px 50px !important;
+
+			.header {
+				display: table;
+				width: 100%;
+				
+				img {
+					display: block;
+					margin: 20px auto;
+				}
+	
+				.description {
+					margin-top: 0;
+					text-align: center;
+	
+					.pre-title {
+						margin: 0;
+						color: #fff;
+						text-transform: uppercase;
+						font-weight: bold;
+					}
+	
+					.title {
+						margin: 0;
+						color: #000;
+						text-transform: capitalize;
+						font-weight: bold;
+					}
+				}
+			}
+
+			.row-sign-in {
+				.form {
+					.cronometro {
+						height: 75px;
+					}
+
+					.card {
+						min-width: 100%;
+					}
+				}
+			}
+
+			.row {
+				padding: 0px 20px;
+			}
+		}
+
+		.footer {
+			position: relative;
+			display: table;
+	
+			img {
+				display: block;
+				margin: 0 auto; 
+			}
+	
+			.description {
+				display: block;
+				margin: 0 auto;
+	
+				h1 {
+					display: block;
+					text-align: center;
+				}
+	
+				.icons {
+					display: block;
+					margin: 0 auto 20px;
+					text-align: center;
+				}
+			}
+		}
+	}
+}

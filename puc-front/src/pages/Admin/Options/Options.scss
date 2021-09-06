@@ -1,0 +1,21 @@
+.options-admin {
+    position: relative;
+    display: block;
+
+    .title {
+        text-align: center;
+        font-size: 24px;
+        font-weight: 600;
+    }
+}
+
+.btn-votos{
+    display: flex;
+
+    .btn{
+        margin-right: 10px;
+    }
+    .btn:nth-last-child(1){
+        margin-right: 0;
+    }
+}
