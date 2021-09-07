@@ -2,7 +2,7 @@
 import React from "react";
 import FreeBreakfastIcon from "@material-ui/icons/FreeBreakfast";
 
-import flecha from "../../../assets/img/flecha.png";
+import { RowSpeaker } from "./RowSpeaker";
 
 const Dia2 = ({ setSaveData, abrirCerrar, state }) => {
 	return (
@@ -15,529 +15,212 @@ const Dia2 = ({ setSaveData, abrirCerrar, state }) => {
 					<p>Plenario</p>
 				</div>
 			</div>
-			<div className="row2 grey" id="row11" style={{ transitionDuration: "1s" }}>
-				<div className="fondoRow grey">
-					<div className="tiempo">
-						<p>
-							08:30 <span>-</span> 09:00 hrs
-						</p>
-					</div>
 
-					<div className="plenario">
-						<p className="texto2">
-							<img src={flecha} alt="" id="flecha11" onClick={() => abrirCerrar("imagen11", "flecha11")} />
-							{state ? null : (
-								<a onClick={() => setSaveData(3)} className="conFondo">
-									ENTRAR AL SALÓN{" "}
-								</a>
-							)}
-						</p>
-						<p className="texto1">
-							<strong>Alergia en el lactante</strong>
-						</p>
-					</div>
-				</div>
-				<div className="imagenes" id="imagen11">
-					<div className="espacio"></div>
-					<div className="imagen">
-						<div className="mita1">
-							<div className="icon speaker"></div>
-							<div className="nombrecolaborador">
-								<span>Moderador</span>
-								<br />
-								<span>
-									<strong>Dr. Fernando Iñiguez</strong>
-								</span>
-								<br />
-								<span className="ultimo">Cargo</span>
-								<br />
-								<span className="ultimo">
-									{" "}
-									<strong>Empresa</strong>{" "}
-								</span>
-							</div>
-						</div>
-						<div className="mita1">
-							<div className="icon speaker"></div>
-							<div className="nombrecolaborador">
-								<span>Speaker</span>
-								<br />
-								<span>
-									<strong>Dr. A. Bortzutzki</strong>
-								</span>
-								<br />
-								<span className="ultimo">Cargo</span>
-								<br />
-								<span className="ultimo">
-									{" "}
-									<strong>Empresa</strong>{" "}
-								</span>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div className="row2" id="row12" style={{ transitionDuration: "1s" }}>
-				<div className="fondoRow">
-					<div className="tiempo">
-						<p>
-							09:00 <span>-</span> 09:30 hrs
-						</p>
-					</div>
+			<RowSpeaker
+				setSaveData={setSaveData}
+				abrirCerrar={abrirCerrar}
+				state={state}
+				id={11}
+				grey="grey"
+				inicio="08:20"
+				fin="08:30"
+				tematica="Presentación del módulo, introduce a los speaker."
+				moderador="Dr. Fernando Iñiguez"
+				speaker=""
+			/>	
+			<RowSpeaker
+				setSaveData={setSaveData}
+				abrirCerrar={abrirCerrar}
+				state={state}
+				id={12}
+				grey=""
+				inicio="08:30"
+				fin="09:00"
+				tematica="Manifestaciones clínicas de atopia en el lactante que debemos conocer"
+				moderador="Dr. Fernando Iñiguez"
+				speaker="Dr. Arturo Bortzutzki"
+			/>				
+ 			<RowSpeaker
+				setSaveData={setSaveData}
+				abrirCerrar={abrirCerrar}
+				state={state}
+				id={13}
+				grey="grey"
+				inicio="09:00"
+				fin="09:30"
+				tematica="Cambio de paradigma del manejo de bronquiolitis, estamos a tiempo?"
+				moderador="Dr. Fernando Iñiguez"
+				speaker="Dr. J. Castro Rodriguez"
+			/>	
 
-					<div className="plenario">
-						<p className="texto2">
-							<img src={flecha} alt="" id="flecha12" onClick={() => abrirCerrar("imagen12", "flecha12")} />
-							{state ? null : (
-								<a onClick={() => setSaveData(3)} className="conFondo">
-									ENTRAR AL SALÓN{" "}
-								</a>
-							)}
-						</p>
-						<p className="texto1">
-							<strong>Sibilancias como manifestación de alergia lactante</strong>
-						</p>
-					</div>
-				</div>
-				<div className="imagenes" id="imagen12">
-					<div className="espacio"></div>
-					<div className="imagen">
-						<div className="mita1">
-							<div className="icon speaker"></div>
-							<div className="nombrecolaborador">
-								<span>Moderador</span>
-								<br />
-								<span>
-									<strong>Dr. Fernando Iñiguez</strong>
-								</span>
-								<br />
-								<span className="ultimo">Cargo</span>
-								<br />
-								<span className="ultimo">
-									{" "}
-									<strong>Empresa</strong>{" "}
-								</span>
-							</div>
-						</div>
-						<div className="mita1">
-							<div className="icon speaker"></div>
-							<div className="nombrecolaborador">
-								<span>Speaker</span>
-								<br />
-								<span>
-									<strong>Dr. Jose Antonio Castro</strong>
-								</span>
-								<br />
-								<span className="ultimo">Cargo</span>
-								<br />
-								<span className="ultimo">
-									{" "}
-									<strong>Empresa</strong>{" "}
-								</span>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div className="row2 grey" id="row13" style={{ transitionDuration: "1s" }}>
-				<div className="fondoRow grey">
-					<div className="tiempo">
-						<p>
-							09:30 <span>-</span> 10:00 hrs
-						</p>
-					</div>
+			<RowSpeaker
+				setSaveData={setSaveData}
+				abrirCerrar={abrirCerrar}
+				state={state}
+				id={14}
+				grey=""
+				inicio="09:30"
+				fin="10:00"
+				tematica="Casos clínicos: aplicación y discusión."
+				moderador="Dr. Fernando Iñiguez"
+				speaker=""
+			/>		
 
-					<div className="plenario">
-						<p className="texto2">
-							<img src={flecha} alt="" id="flecha13" onClick={() => abrirCerrar("imagen13", "flecha13")} />
-							{state ? null : (
-								<a onClick={() => setSaveData(3)} className="conFondo">
-									ENTRAR AL SALÓN{" "}
-								</a>
-							)}
-						</p>
-						<p className="texto1">
-							<strong>Casos clínicos: APLICACIÓN y DISCUSIÓNr</strong>
-						</p>
-					</div>
-				</div>
-				<div className="imagenes" id="imagen13">
-					<div className="espacio"></div>
-					<div className="imagen">
-						<div className="mita1">
-							<div className="icon speaker"></div>
-							<div className="nombrecolaborador">
-								<span>Moderador</span>
-								<br />
-								<span>
-									<strong>Dr. Fernando Iñiguez</strong>
-								</span>
-								<br />
-								<span className="ultimo">Cargo</span>
-								<br />
-								<span className="ultimo">
-									{" "}
-									<strong>Empresa</strong>{" "}
-								</span>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
 			<div className="break">
 				<div className="tiempo">
 					<FreeBreakfastIcon className="caffe" /> <span>Coffee Break</span>
 				</div>
 				<div className="duracion">
-					<p>10:00 - 11:00 hrs</p>
+					<p>10:00 - 10:50 hrs</p>
 				</div>
-			</div>
-			<div className="row2" id="row14" style={{ transitionDuration: "1s" }}>
-				<div className="fondoRow">
-					<div className="tiempo">
-						<p>
-							11:00 <span>-</span> 11:30 hrs
-						</p>
-					</div>
+			</div>		
 
-					<div className="plenario">
-						<p className="texto2">
-							<img src={flecha} alt="" id="flecha14" onClick={() => abrirCerrar("imagen14", "flecha14")} />
-							{state ? null : (
-								<a onClick={() => setSaveData(3)} className="conFondo">
-									ENTRAR AL SALÓN{" "}
-								</a>
-							)}
-						</p>
-						<p className="texto1">
-							<strong>Nueva estrategia tratamiento de ASMA en ESCOLARES</strong>
-						</p>
-					</div>
-				</div>
-				<div className="imagenes" id="imagen14">
-					<div className="espacio"></div>
-					<div className="imagen">
-						<div className="mita1">
-							<div className="icon speaker"></div>
-							<div className="nombrecolaborador">
-								<span>Moderador</span>
-								<br />
-								<span>
-									<strong>Dr. Carlos Flores</strong>
-								</span>
-								<br />
-								<span className="ultimo">Cargo</span>
-								<br />
-								<span className="ultimo">
-									{" "}
-									<strong>Empresa</strong>{" "}
-								</span>
-							</div>
-						</div>
-						<div className="mita1">
-							<div className="icon speaker"></div>
-							<div className="nombrecolaborador">
-								<span>Speaker</span>
-								<br />
-								<span>
-									<strong>Nombre</strong>
-								</span>
-								<br />
-								<span className="ultimo">Cargo</span>
-								<br />
-								<span className="ultimo">
-									{" "}
-									<strong>Empresa</strong>{" "}
-								</span>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div className="row2 grey" id="row15" style={{ transitionDuration: "1s" }}>
-				<div className="fondoRow grey">
-					<div className="tiempo">
-						<p>
-							11:30 <span>-</span> 12:00 hrs
-						</p>
-					</div>
+			<RowSpeaker
+				setSaveData={setSaveData}
+				abrirCerrar={abrirCerrar}
+				state={state}
+				id={15}
+				grey="grey"
+				inicio="10:50"
+				fin="11:00"
+				tematica="Presentación del módulo, introduce a los speaker."
+				moderador="Dr. Jury Hernández"
+				speaker=""
+			/>	
+			<RowSpeaker
+				setSaveData={setSaveData}
+				abrirCerrar={abrirCerrar}
+				state={state}
+				id={16}
+				grey=""
+				inicio="11:00"
+				fin="11:30"
+				tematica="Como la adherencia impacta un mejor control del asma"
+				moderador="Dr. Jury Hernández"
+				speaker="Dr. L. Holmgren"
+			/>		
+			
+			<RowSpeaker
+				setSaveData={setSaveData}
+				abrirCerrar={abrirCerrar}
+				state={state}
+				id={17}
+				grey="grey"
+				inicio="11:30"
+				fin="12:00"
+				tematica="Desafíos en el tratamiento del asma grave"
+				moderador="Dr. Jury Hernández"
+				speaker="Dr. JA Erik Forno (USA)"
+			/>	
 
-					<div className="plenario">
-						<p className="texto2">
-							<img src={flecha} alt="" id="flecha15" onClick={() => abrirCerrar("imagen15", "flecha15")} />
-							{state ? null : (
-								<a onClick={() => setSaveData(3)} className="conFondo">
-									ENTRAR AL SALÓN{" "}
-								</a>
-							)}
-						</p>
-						<p className="texto1">
-							<strong>Nueva estrategia tratamiento de ASMA EN prescolares</strong>
-						</p>
-					</div>
-				</div>
-				<div className="imagenes" id="imagen15">
-					<div className="espacio"></div>
-					<div className="imagen">
-						<div className="mita1">
-							<div className="icon speaker"></div>
-							<div className="nombrecolaborador">
-								<span>Moderador</span>
-								<br />
-								<span>
-									<strong>Dr. Carlos Flores</strong>
-								</span>
-								<br />
-								<span className="ultimo">Cargo</span>
-								<br />
-								<span className="ultimo">
-									{" "}
-									<strong>Empresa</strong>{" "}
-								</span>
-							</div>
-						</div>
-						<div className="mita1">
-							<div className="icon speaker"></div>
-							<div className="nombrecolaborador">
-								<span>Speaker</span>
-								<br />
-								<span>
-									<strong>Dr. Linus Holmgren</strong>
-								</span>
-								<br />
-								<span className="ultimo">Cargo</span>
-								<br />
-								<span className="ultimo">
-									{" "}
-									<strong>Empresa</strong>{" "}
-								</span>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div className="row2" id="row16" style={{ transitionDuration: "1s" }}>
-				<div className="fondoRow">
-					<div className="tiempo">
-						<p>
-							12:00 <span>-</span> 12:30 hrs
-						</p>
-					</div>
+			<RowSpeaker
+				setSaveData={setSaveData}
+				abrirCerrar={abrirCerrar}
+				state={state}
+				id={18}
+				grey=""
+				inicio="12:00"
+				fin="12:30"
+				tematica="Casos clínicos: aplicación y discusión."
+				moderador="Dr. Jury Hernández"
+				speaker=""
+			/>
 
-					<div className="plenario">
-						<p className="texto2">
-							<img src={flecha} alt="" id="flecha16" onClick={() => abrirCerrar("imagen16", "flecha16")} />
-							{state ? null : (
-								<a onClick={() => setSaveData(3)} className="conFondo">
-									ENTRAR AL SALÓN{" "}
-								</a>
-							)}
-						</p>
-						<p className="texto1">
-							<strong>Casos clínicos: APLICACIÓN y DISCUSIÓN</strong>
-						</p>
-					</div>
-				</div>
-				<div className="imagenes" id="imagen16">
-					<div className="espacio"></div>
-					<div className="imagen">
-						<div className="mita1">
-							<div className="icon speaker"></div>
-							<div className="nombrecolaborador">
-								<span>Moderador</span>
-								<br />
-								<span>
-									<strong>Dr. Carlos Flores</strong>
-								</span>
-								<br />
-								<span className="ultimo">Cargo</span>
-								<br />
-								<span className="ultimo">
-									{" "}
-									<strong>Empresa</strong>{" "}
-								</span>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+			<RowSpeaker
+				setSaveData={setSaveData}
+				abrirCerrar={abrirCerrar}
+				state={state}
+				id={19}
+				grey="grey"
+				inicio="13:00"
+				fin="14:00"
+				tematica="SIMPOSIO AZ"
+				moderador="Dr. Jury Hernández"
+				speaker=""
+			/>		
+
 			<div className="break">
 				<div className="tiempo">
 					<FreeBreakfastIcon className="caffe" /> <span>Coffee Break</span>
 				</div>
 				<div className="duracion">
-					<p>12:30 - 15:00 hrs</p>
+					<p>14:00 - 15:50 hrs</p>
 				</div>
-			</div>
-			<div className="row2 grey" id="row17" style={{ transitionDuration: "1s" }}>
-				<div className="fondoRow grey">
-					<div className="tiempo">
-						<p>
-							15:00 <span>-</span> 15:30 hrs
-						</p>
-					</div>
+			</div>		
 
-					<div className="plenario">
-						<p className="texto2">
-							<img src={flecha} alt="" id="flecha17" onClick={() => abrirCerrar("imagen17", "flecha17")} />
-							{state ? null : (
-								<a onClick={() => setSaveData(3)} className="conFondo">
-									ENTRAR AL SALÓN{" "}
-								</a>
-							)}
-						</p>
-						<p className="texto1">
-							<strong>Infección por COVID prevención y tratamiento</strong>
-						</p>
-					</div>
-				</div>
-				<div className="imagenes" id="imagen17">
-					<div className="espacio"></div>
-					<div className="imagen">
-						<div className="mita1">
-							<div className="icon speaker"></div>
-							<div className="nombrecolaborador">
-								<span>Moderador</span>
-								<br />
-								<span>
-									<strong>Dr. Luis E. Vega</strong>
-								</span>
-								<br />
-								<span className="ultimo">Cargo</span>
-								<br />
-								<span className="ultimo">
-									{" "}
-									<strong>Empresa</strong>{" "}
-								</span>
-							</div>
-						</div>
-						<div className="mita1">
-							<div className="icon speaker"></div>
-							<div className="nombrecolaborador">
-								<span>Moderador</span>
-								<br />
-								<span>
-									<strong>Dra. Ida Concha</strong>
-								</span>
-								<br />
-								<span className="ultimo">Cargo</span>
-								<br />
-								<span className="ultimo">
-									{" "}
-									<strong>Empresa</strong>{" "}
-								</span>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div className="row2" id="row18" style={{ transitionDuration: "1s" }}>
-				<div className="fondoRow">
-					<div className="tiempo">
-						<p>
-							15:30 <span>-</span> 16:00 hrs
-						</p>
-					</div>
+			<RowSpeaker
+				setSaveData={setSaveData}
+				abrirCerrar={abrirCerrar}
+				state={state}
+				id={20}
+				grey=""
+				inicio="15:50"
+				fin="16:00"
+				tematica="Presentación del módulo, introduce a los speaker."
+				moderador="Dr. Carlos Flores."
+				speaker=""
+			/>	
 
-					<div className="plenario">
-						<p className="texto2">
-							<img src={flecha} alt="" id="flecha18" onClick={() => abrirCerrar("imagen18", "flecha18")} />
-							{state ? null : (
-								<a onClick={() => setSaveData(3)} className="conFondo">
-									ENTRAR AL SALÓN{" "}
-								</a>
-							)}
-						</p>
-						<p className="texto1">
-							<strong>Infección por VRS prevención y tratamiento</strong>
-						</p>
-					</div>
-				</div>
-				<div className="imagenes" id="imagen18">
-					<div className="espacio"></div>
-					<div className="imagen">
-						<div className="mita1">
-							<div className="icon speaker"></div>
-							<div className="nombrecolaborador">
-								<span>Moderador</span>
-								<br />
-								<span>
-									<strong>Dr. Luis E. Vega</strong>
-								</span>
-								<br />
-								<span className="ultimo">Cargo</span>
-								<br />
-								<span className="ultimo">
-									{" "}
-									<strong>Empresa</strong>{" "}
-								</span>
-							</div>
-						</div>
-						<div className="mita1">
-							<div className="icon speaker"></div>
-							<div className="nombrecolaborador">
-								<span>Speaker</span>
-								<br />
-								<span>
-									<strong>Nombre</strong>
-								</span>
-								<br />
-								<span className="ultimo">Cargo</span>
-								<br />
-								<span className="ultimo">
-									{" "}
-									<strong>Empresa</strong>{" "}
-								</span>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div className="row2 grey" id="row19" style={{ transitionDuration: "1s" }}>
-				<div className="fondoRow grey">
-					<div className="tiempo">
-						<p>
-							16:00 <span>-</span> 16:30 hrs
-						</p>
-					</div>
+			<RowSpeaker
+				setSaveData={setSaveData}
+				abrirCerrar={abrirCerrar}
+				state={state}
+				id={21}
+				grey=""
+				inicio="16:00"
+				fin="16:30"
+				tematica="Enfermedades Respiratorias crónicas en tiempos de Covid 19"
+				moderador="Dr. Carlos Flores"
+				speaker="Dr. Luis E. Vega"
+			/>	
 
-					<div className="plenario">
-						<p className="texto2">
-							<img src={flecha} alt="" id="flecha19" onClick={() => abrirCerrar("imagen19", "flecha19")} />
-							{state ? null : (
-								<a onClick={() => setSaveData(3)} className="conFondo">
-									ENTRAR AL SALÓN{" "}
-								</a>
-							)}
-						</p>
-						<p className="texto1">
-							<strong>Casos clínicos: APLICACIÓN y DISCUSIÓN</strong>
-						</p>
-					</div>
+			<RowSpeaker
+				setSaveData={setSaveData}
+				abrirCerrar={abrirCerrar}
+				state={state}
+				id={22}
+				grey="grey"
+				inicio="16:30"
+				fin="17:00"
+				tematica="Aspectos radiológicos de la infección por Covid 19"
+				moderador="Dr. Carlos Flores"
+				speaker="Dr. Carlos Ugas-Charcape (PER)"
+			/>	
+
+			<RowSpeaker
+				setSaveData={setSaveData}
+				abrirCerrar={abrirCerrar}
+				state={state}
+				id={23}
+				grey=""
+				inicio="17:00"
+				fin="17:30"
+				tematica="Casos clínicos: aplicación y discusión"
+				moderador="Dr. Carlos Flores"
+				speaker=""
+			/>	
+
+			<div className="break">
+				<div className="tiempo">
+					<FreeBreakfastIcon className="caffe" /> <span>Coffee Break</span>
 				</div>
-				<div className="imagenes" id="imagen19">
-					<div className="espacio"></div>
-					<div className="imagen">
-						<div className="mita1">
-							<div className="icon speaker"></div>
-							<div className="nombrecolaborador">
-								<span>Moderador</span>
-								<br />
-								<span>
-									<strong>Dr. Luis E. Vega</strong>
-								</span>
-								<br />
-								<span className="ultimo">Cargo</span>
-								<br />
-								<span className="ultimo">
-									{" "}
-									<strong>Empresa</strong>{" "}
-								</span>
-							</div>
-						</div>
-					</div>
+				<div className="duracion">
+					<p>17:30 - 18:30 hrs</p>
 				</div>
-			</div>
+			</div>	
+
+			<RowSpeaker
+				setSaveData={setSaveData}
+				abrirCerrar={abrirCerrar}
+				state={state}
+				id={24}
+				grey="grey"
+				inicio="18:30"
+				fin="19:30"
+				tematica="Casos clínicos: aplicación y discusión"
+				moderador="Dr. Carlos Flores"
+				speaker=""
+			/>							
 		</>
 	);
 };
