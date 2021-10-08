@@ -19,12 +19,8 @@ function saveTest(req, res) {
 	const test = new Test();
 	const time = moment().format();
 	test.question1 = question1;
-	test.question2 = question2;
 	test.user = userID;
 	test.time = time;
-
-	console.log(question1, question2, userID);
-
 	test.save((err, testStored) => {
 		if (err) {
 			res.status(500).send({ ok: false, message: "Error del servidor" });
@@ -64,6 +60,22 @@ function saveTest(req, res) {
 	});
 }
 
+function updateTest(req,res) {
+	const {voteId, votes} = req.body
+
+	Test.findByIdAndUpdate({_id: voteId}, votes, (err, testStores) =>{
+		if(err){
+			res.status(500).send({ok: false, message: "Error del servidor"});
+		}else{
+			if(!testStores){
+				res.status(404).send({ ok: false, message: "Error al guardar la votación" });
+			}else{
+				res.status(200).send({ok: true, votes: testStores, message:'Voto Guardado'});
+			}
+		}
+	})
+}
+
 /**
  * Retorna todas las evaluaciones realizadas
  * @param {Object} req 
@@ -90,4 +102,5 @@ function getTests(req, res) {
 module.exports = {
 	saveTest,
 	getTests,
+	updateTest
 };

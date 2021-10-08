@@ -68,6 +68,10 @@
 		display: block;
 		padding: 0 50px;
 
+		img {
+			width: 100%;
+		}
+
 		.video {
 			width: 550px;
 			height: 300px;
@@ -166,13 +170,34 @@
 				background-color: #075e54;
 			}
 		}
-
+		
 		.meeting {
 			background-color: #f5088b;
 			color: #fff;
-
+			
 			&:hover {
 				background-color: #d10776;
+			}
+		}
+		
+		.info {
+			background-color: #F06F38;
+			color: #fff;
+			margin-top: 15px;
+			width: calc(100% - 20px);
+
+			&:hover{
+				background-color: #f16a6a;
+			}
+		}
+		.info-2 {
+			background-color: #F06F38;
+			color: #fff;
+			margin-top: 15px;
+			width: calc(50% - 20px);
+
+			&:hover{
+				background-color: #f16a6a;
 			}
 		}
 	}
@@ -187,6 +212,7 @@
 		height: 60px;
 		padding: 0 50px;
 		background-color: #a5cd0b;
+		font-size: 12px;
 
 		a {
 			

@@ -46,6 +46,27 @@ export function getVoteApi(token) {
 			return err.message;
 		});
 }
+export function getVotes(token,idUser) {
+	const url = `${basePath}/${apiVersion}/vote/${idUser}`;
+	const params = {
+		method: "GET",
+		headers: {
+			"Content-Type": "application/json",
+			Authorization: token,
+		},
+	};
+
+	return fetch(url, params)
+		.then((resp) => {
+			return resp.json();
+		})
+		.then((result) => {
+			return result;
+		})
+		.catch((err) => {
+			return err.message;
+		});
+}
 
 export function postVoteApi(token, data) {
 	const url = `${basePath}/${apiVersion}/vote`;

@@ -4,6 +4,18 @@ import FreeBreakfastIcon from "@material-ui/icons/FreeBreakfast";
 
 import flecha from "../../../assets/img/flecha.png";
 import { Speaker } from "./Speaker";
+import bertrand from '../../../assets/img/speakers/Dr.-Bertrand.jpg'
+import fernandoMartinez from '../../../assets/img/speakers/Dr.FernandoMArtinez.jpg'
+import lauraGoicochea from '../../../assets/img/speakers/LauraGochicoa.png'
+import mariaEster from '../../../assets/img/speakers/M.EsterPizarro.jpeg'
+import hectorGui from '../../../assets/img/speakers/Dr.HectorGutierrezUSA.png'
+import yuryHernandez from '../../../assets/img/speakers/Dr.YuriHernandez.png'
+import juanAndres from '../../../assets/img/speakers/Dr.Navarro.jpeg'
+import davidGozal from '../../../assets/img/speakers/davidgozal2020.jpg'
+import fernandoIniguez from '../../../assets/img/speakers/Dr.Iniguez.jpg'
+import illse from '../../../assets/img/speakers/Dra.Ilse.jpg'
+import luisVega from '../../../assets/img/speakers/Dr.LuisVega.jpeg'
+
 
 const Dia1 = ({ setSaveData, abrirCerrar, state }) => {
 	return (
@@ -61,6 +73,8 @@ const Dia1 = ({ setSaveData, abrirCerrar, state }) => {
 						<Speaker
 							nombre="Dr. Pablo Bertrand"
 							moderador={true}
+							speaker={bertrand}
+							cargo= 'Profesor Asociado de la Pontificia Universidad Católica de Chile,  Jefe Unidad Enfermedades Respiratorias Pediátricas, Director del X Curso Internacional de Enfermedades Respiratorias Pediátricas.'
 						/>
 						{/* <div className="mita1">
 							<div className="icon speaker"></div>
@@ -110,9 +124,13 @@ const Dia1 = ({ setSaveData, abrirCerrar, state }) => {
 						<Speaker
 							nombre="Dr. Pablo Bertrand"
 							moderador={true}
+							speaker={bertrand}
+							cargo="Profesor Asociado de la Pontificia Universidad Católica de Chile,  Jefe Unidad Enfermedades Respiratorias Pediátricas, Director del X Curso Internacional de Enfermedades Respiratorias Pediátricas."
 						/>
 						<Speaker
 							nombre="Dr. Fernando Martínez (USA)"
+							speaker={fernandoMartinez}
+							cargo='Regents Professor de Pediatría, la máxima distinción académica que concede la Universidad de Arizona. Es Director del Asthma and Airway Disease Research Center.'
 						/>
 						
 					</div>
@@ -145,11 +163,16 @@ const Dia1 = ({ setSaveData, abrirCerrar, state }) => {
 					<div className="imagen">
 						<Speaker
 							nombre="Dr. Pablo Bertrand "
-							moderador={true}						
+							moderador={true}	
+							speaker={bertrand}	
+							cargo='Profesor Asociado de la Pontificia Universidad Católica de Chile,  Jefe Unidad Enfermedades Respiratorias Pediátricas, Director del X Curso Internacional de Enfermedades Respiratorias Pediátricas.'
+											
 						/>
 						<Speaker
 							nombre="Dra. Laura Gochicoa (Mex)"
-							moderador={false}						
+							moderador={false}			
+							speaker={lauraGoicochea}	
+							cargo='Especialista en Neumología Pediátrica del Instituto Mexicano del Seguro Social y Universidad Nacional Autónoma de México, Maestría y Doctorado en Ciencias Médicas, UNAM'		
 						/>
 					</div>
 				</div>
@@ -181,7 +204,9 @@ const Dia1 = ({ setSaveData, abrirCerrar, state }) => {
 					<div className="imagen">
 						<Speaker
 								nombre="Dr. Pablo Bertrand "
-								moderador={true}						
+								moderador={true}	
+								speaker={bertrand}		
+								cargo='Profesor Asociado de la Pontificia Universidad Católica de Chile,  Jefe Unidad Enfermedades Respiratorias Pediátricas, Director del X Curso Internacional de Enfermedades Respiratorias Pediátricas.'			
 							/>
 					</div>
 				</div>
@@ -212,7 +237,7 @@ const Dia1 = ({ setSaveData, abrirCerrar, state }) => {
 							)}
 						</p>
 						<p className="texto1">
-							<strong>Presentación del módulo, introduce a los speaker.</strong>
+							<strong>Presentación del módulo y Expositores.</strong>
 						</p>
 					</div>
 				</div>
@@ -221,7 +246,9 @@ const Dia1 = ({ setSaveData, abrirCerrar, state }) => {
 					<div className="imagen">
 							<Speaker
 									nombre="Dra. María Ester Pizarro"
-									moderador={true}						
+									moderador={true}
+									speaker={mariaEster}	
+									cargo='Neumóloga Pediátrica de la PUC de Chile. Fellow Research Pediatric Respiratory Medicine en la Universidad de Toronto. Profesor clínico asistente en la división de Pediatría de la PUC Chile'					
 							/>
 					</div>
 				</div>
@@ -253,11 +280,15 @@ const Dia1 = ({ setSaveData, abrirCerrar, state }) => {
 					<div className="imagen">
 						<Speaker
 							nombre="Dra. María Ester Pizarro"
-							moderador={true}						
+							moderador={true}	
+							speaker={mariaEster}		
+							cargo='Neumóloga Pediátrica de la PUC de Chile. Fellow Research Pediatric Respiratory Medicine en la Universidad de Toronto. Profesor clínico asistente en la división de Pediatría de la PUC Chile'			
 						/>
 						<Speaker
 							nombre="Dr. Héctor Gutiérrez (USA)"
-							moderador={false}						
+							moderador={false}	
+							speaker={hectorGui}			
+							cargo='Médico, Subespecialidad en Broncopulmonar Infantil en la Universidad de Alabama Birmingham. Profesor Titular, Jefe de División y titular de la cátedra Raymond K. Lyrene, MD en Pediatric Pulmonary Medicine de la Universidad de Alabama Birmingham. '		
 						/>
 					</div>
 				</div>
@@ -289,16 +320,20 @@ const Dia1 = ({ setSaveData, abrirCerrar, state }) => {
 					<div className="imagen">
 					<Speaker
 							nombre="Dra. María Ester Pizarro"
-							moderador={true}						
+							moderador={true}
+							speaker={mariaEster}	
+							cargo='Neumóloga Pediátrica de la PUC de Chile. Fellow Research Pediatric Respiratory Medicine en la Universidad de Toronto. Profesor clínico asistente en la división de Pediatría de la PUC Chile'					
 						/>
 						<Speaker
 							nombre="Dra. Ilse Contreras"
-							moderador={false}						
+							moderador={false}
+							speaker={illse}		
+							cargo='Pediatra Broncopulmonar en Clínica UC San Carlos de Apoquindo, Broncopulmonar Hospital Padre Hurtado'				
 						/>
 					</div>
 				</div>
 			</div>
-			<div className="row2 grey" id="row8" style={{ transitionDuration: "1s" }}>
+			<div className="row2 " id="row8" style={{ transitionDuration: "1s" }}>
 				<div className="fondoRow grey">
 					<div className="tiempo">
 						<p>
@@ -325,24 +360,19 @@ const Dia1 = ({ setSaveData, abrirCerrar, state }) => {
 					<div className="imagen">
 					<Speaker
 							nombre="Dra. María Ester Pizarro"
-							moderador={true}						
+							moderador={true}	
+							speaker={mariaEster}
+							cargo='Neumóloga Pediátrica de la PUC de Chile. Fellow Research Pediatric Respiratory Medicine en la Universidad de Toronto. Profesor clínico asistente en la división de Pediatría de la PUC Chile'					
 						/>
 					</div>
 				</div>
 			</div>
-			<div className="break">
-				<div className="tiempo">
-					<FreeBreakfastIcon className="caffe" /> <span>Coffee Break</span>
-				</div>
-				<div className="duracion">
-					<p>12:30 - 13:00 hrs</p>
-				</div>
-			</div>
-			<div className="row2" id="row9" style={{ transitionDuration: "1s" }}>
+			
+			<div className="row2 grey" id="row9" style={{ transitionDuration: "1s" }}>
 				<div className="fondoRow">
 					<div className="tiempo">
 						<p>
-							13:00 <span>-</span> 14:00 hrs
+							<span></span> 
 						</p>
 					</div>
 
@@ -356,7 +386,10 @@ const Dia1 = ({ setSaveData, abrirCerrar, state }) => {
 							)}
 						</p>
 						<p className="texto1">
-							<strong>SIMPOSIO GSK</strong>
+							<strong>Simposio GLAXO SMITH KLINE -GSK </strong>
+						</p>
+						<p className="texto1">
+							"Control del asma en niños, ¿estamos frente a un nuevo paradigma?"
 						</p>
 					</div>
 				</div>
@@ -365,16 +398,32 @@ const Dia1 = ({ setSaveData, abrirCerrar, state }) => {
 					<div className="imagen">
 						<Speaker
 							nombre="Dr. Pablo Bertrand"
-							moderador={true}						
+							moderador={true}	
+							speaker={bertrand}	
+							cargo='Profesor Asociado de la Pontificia Universidad Católica de Chile,  Jefe Unidad Enfermedades Respiratorias Pediátricas, Director del X Curso Internacional de Enfermedades Respiratorias Pediátricas.'				
+						/>
+						<Speaker
+							nombre="Dr. Luís Enrique Vega"
+							moderador={false}
+							speaker={luisVega}
+							cargo='Pediatra Broncopulmonar de Clínica Alemana de Santiago, Profesor Asociado de la Facultad de Medicina UDD, Gerente Médico Respiratorio GSK-LSP'						
 						/>
 					</div>
 				</div>
 			</div>
-			<div className="row2 grey" id="row10" style={{ transitionDuration: "1s" }}>
-				<div className="fondoRow grey">
+			<div className="break">
+				<div className="tiempo">
+					<FreeBreakfastIcon className="caffe" /> <span>Coffee Break</span>
+				</div>
+				<div className="duracion">
+					<p>15:00 - 15:50 hrs</p>
+				</div>
+			</div>
+			<div className="row2" id="row10" style={{ transitionDuration: "1s" }}>
+				<div className="fondoRow ">
 					<div className="tiempo">
 						<p>
-							14:00 <span>-</span> 15:00 hrs
+							15:50 <span>-</span> 16:00 hrs
 						</p>
 					</div>
 
@@ -388,37 +437,27 @@ const Dia1 = ({ setSaveData, abrirCerrar, state }) => {
 							)}
 						</p>
 						<p className="texto1">
-							<strong>REUNION EXPERTO </strong>
+							<strong>Presentación del módulo y Expositores </strong>
 						</p>
 					</div>
 				</div>
 				<div className="imagenes" id="imagen10">
 					<div className="espacio"></div>
 					<div className="imagen">
-					<Speaker
-							nombre="Dr. Jury Hernandez"
-							moderador={true}						
-						/>
 						<Speaker
-							nombre="Dr. Mario Calvo"
-							moderador={false}						
-						/>						 
+							nombre="Dr. Juan Andrés Navarro"
+							moderador={true}
+							speaker={juanAndres}
+							cargo='Médico,  Pediatra, Subespecialidad en Enfermedades Respiratorias del Niño en la PUC de Chile, Complejo Asistencial Padre Las Casas y Hospital Dr. Hernán Henríquez Aravena, Temuco, Docente UFRO'						
+						/>	
 					</div>
 				</div>
 			</div>
-			<div className="break">
-				<div className="tiempo">
-					<FreeBreakfastIcon className="caffe" /> <span>Coffee Break</span>
-				</div>
-				<div className="duracion">
-					<p>15:00 - 15:50 hrs</p>
-				</div>
-			</div>
-			<div className="row2" id="row11" style={{ transitionDuration: "1s" }}>
-				<div className="fondoRow">
+			<div className="row2 grey" id="row11" style={{ transitionDuration: "1s" }}>
+				<div className="fondoRow grey ">
 					<div className="tiempo">
 						<p>
-							15:50 <span>-</span> 16:00 hrs
+							16:00 <span>-</span> 16:30 hrs
 						</p>
 					</div>
 
@@ -432,17 +471,26 @@ const Dia1 = ({ setSaveData, abrirCerrar, state }) => {
 							)}
 						</p>
 						<p className="texto1">
-							<strong>Presentación del módulo, introduce a los speaker.</strong>
+							<strong>TRS en niños con síndromes específicos </strong>
 						</p>
 					</div>
 				</div>
 				<div className="imagenes" id="imagen11">
 					<div className="espacio"></div>
 					<div className="imagen">
-					<Speaker
+				
+						<Speaker
 							nombre="Dr. Juan Andrés Navarro"
-							moderador={true}						
-						/>							
+							moderador={true}
+							speaker={juanAndres}
+							cargo='Médico,  Pediatra, Subespecialidad en Enfermedades Respiratorias del Niño en la PUC de Chile, Complejo Asistencial Padre Las Casas y Hospital Dr. Hernán Henríquez Aravena, Temuco, Docente UFRO'						
+						/>	
+						<Speaker
+							nombre="Dra. Katalina Bertran"
+							moderador={false}	
+							cargo='Médico Cirujano Universidad del Desarrollo, . Especialidad en Enfermedades Respiratorias Pediátricas. Médico especialista en Clínica Alemana de Santiago'
+						/>	
+					 
 					</div>
 				</div>
 			</div>
@@ -450,7 +498,7 @@ const Dia1 = ({ setSaveData, abrirCerrar, state }) => {
 				<div className="fondoRow">
 					<div className="tiempo">
 						<p>
-							16:00 <span>-</span> 16:30 hrs
+							16:30 <span>-</span> 17:00 hrs
 						</p>
 					</div>
 
@@ -464,7 +512,7 @@ const Dia1 = ({ setSaveData, abrirCerrar, state }) => {
 							)}
 						</p>
 						<p className="texto1">
-							<strong>TRS en niños con síndromes específicos</strong>
+							<strong>TRS y obesidad, una sola epidemia</strong>
 						</p>
 					</div>
 				</div>
@@ -473,20 +521,24 @@ const Dia1 = ({ setSaveData, abrirCerrar, state }) => {
 					<div className="imagen">
 					<Speaker
 							nombre="Dr. Juan Andrés Navarro"
-							moderador={true}						
-						/>
-						<Speaker
-							nombre="Dra. Katalina Bertran"
-							moderador={false}						
-						/>									
+							moderador={true}
+							speaker={juanAndres}
+							cargo='Médico,  Pediatra, Subespecialidad en Enfermedades Respiratorias del Niño en la PUC de Chile, Complejo Asistencial Padre Las Casas y Hospital Dr. Hernán Henríquez Aravena, Temuco, Docente UFRO'						
+						/>	
+					<Speaker
+							nombre="Dr. David Gozal (USA)"
+							moderador={false}
+							speaker={davidGozal}	
+							cargo='Presidente investido de Marie M. y Harry L. Smith y del Departamento de Salud Infantil de la Universidad de Missouri, Médico en Jefe del Hospital de Salud Infantil de la Universidad de Missouri.'					
+						/>							
 					</div>
 				</div>
 			</div>		
-			<div className="row2" id="row13" style={{ transitionDuration: "1s" }}>
-				<div className="fondoRow">
+			<div className="row2 grey" id="row13" style={{ transitionDuration: "1s" }}>
+				<div className="fondoRow grey">
 					<div className="tiempo">
 						<p>
-							16:30 <span>-</span> 17:00 hrs
+							17:00 <span>-</span> 17:30 hrs
 						</p>
 					</div>
 
@@ -500,7 +552,7 @@ const Dia1 = ({ setSaveData, abrirCerrar, state }) => {
 							)}
 						</p>
 						<p className="texto1">
-							<strong>TRS y obesidad, una sola epidemia</strong>
+							<strong>Casos clínicos: aplicación y discución </strong>
 						</p>
 					</div>
 				</div>
@@ -509,96 +561,18 @@ const Dia1 = ({ setSaveData, abrirCerrar, state }) => {
 					<div className="imagen">
 					<Speaker
 							nombre="Dr. Juan Andrés Navarro"
-							moderador={true}						
-						/>
-						<Speaker
-							nombre="Dr. David Gozal (USA)"
-							moderador={false}						
+							moderador={true}
+							speaker={juanAndres}
+							cargo='Médico,  Pediatra, Subespecialidad en Enfermedades Respiratorias del Niño en la PUC de Chile, Complejo Asistencial Padre Las Casas y Hospital Dr. Hernán Henríquez Aravena, Temuco, Docente UFRO'						
 						/>									
 					</div>
 				</div>
 			</div>				
-			<div className="row2" id="row14" style={{ transitionDuration: "1s" }}>
-				<div className="fondoRow">
-					<div className="tiempo">
-						<p>
-							16:30 <span>-</span> 17:00 hrs
-						</p>
-					</div>
-
-					<div className="plenario">
-						<p className="texto2">
-							<img src={flecha} alt="" id="flecha14" onClick={() => abrirCerrar("imagen14", "flecha14")} />
-							{state ? null : (
-								<a onClick={() => setSaveData(3)} className="conFondo">
-									ENTRAR AL SALÓN{" "}
-								</a>
-							)}
-						</p>
-						<p className="texto1">
-							<strong>TRS en niños con síndromes específicos</strong>
-						</p>
-					</div>
-				</div>
-				<div className="imagenes" id="imagen14">
-					<div className="espacio"></div>
-					<div className="imagen">
-					<Speaker
-							nombre="Dr. Juan Andrés Navarro"
-							moderador={true}						
-						/>
-						<Speaker
-							nombre="Dra. Katalina Bertran"
-							moderador={false}						
-						/>									
-					</div>
-				</div>
-			</div>		
-			<div className="row2" id="row15" style={{ transitionDuration: "1s" }}>
-				<div className="fondoRow">
-					<div className="tiempo">
-						<p>
-							17:00 <span>-</span> 17:30 hrs
-						</p>
-					</div>
-
-					<div className="plenario">
-						<p className="texto2">
-							<img src={flecha} alt="" id="flecha15" onClick={() => abrirCerrar("imagen15", "flecha15")} />
-							{state ? null : (
-								<a onClick={() => setSaveData(3)} className="conFondo">
-									ENTRAR AL SALÓN{" "}
-								</a>
-							)}
-						</p>
-						<p className="texto1">
-							<strong>Casos clínicos: aplicación y discusión.</strong>
-						</p>
-					</div>
-				</div>
-				<div className="imagenes" id="imagen15">
-					<div className="espacio"></div>
-					<div className="imagen">
-					<Speaker
-							nombre="Dr. Juan Andrés Navarro"
-							moderador={true}						
-						/>								
-					</div>
-				</div>
-			</div>
-			<div className="break">
-				<div className="tiempo">
-					<FreeBreakfastIcon className="caffe" /> <span>Coffee Break</span>
-				</div>
-				<div className="duracion">
-					<p>17:30 - 18:30 hrs</p>
-				</div>
-			</div>
 			<div className="row2" id="row16" style={{ transitionDuration: "1s" }}>
 				<div className="fondoRow">
 					<div className="tiempo">
 						<p>
-							18:30 <span>-</span> 19:30 hrs
+							 <span></span> 
 						</p>
 					</div>
 
@@ -612,7 +586,10 @@ const Dia1 = ({ setSaveData, abrirCerrar, state }) => {
 							)}
 						</p>
 						<p className="texto1">
-							<strong>SIMPOSIO BIOMARIN</strong>
+							<strong>Simposio Lab. BIOMARíN</strong>
+						</p>
+						<p className="texto1">
+							"MPS: Rol del Neumólogo Pedíatrico en el Diagnóstico Precoz y Seguimiento"
 						</p>
 					</div>
 				</div>
@@ -620,9 +597,16 @@ const Dia1 = ({ setSaveData, abrirCerrar, state }) => {
 					<div className="espacio"></div>
 					<div className="imagen">
 					<Speaker
-							nombre="Dr. Fernado Iñiguez"
-							moderador={true}						
-						/>								
+							nombre="Jury Hernández"
+							moderador={true}	
+							speaker={yuryHernandez}
+							cargo='Médico Broncopulmonar Infantil, subespecialista en el Complejo Asistencial Dr. Víctor Ríos Ruiz, Los Ángeles y Jefe del centro de responsabilidad infantil. Past President de la Sociedad Chilena de Neumología pediátrica ( SOCHINEP)
+							'					
+						/>
+					<Speaker
+						nombre='Dra. Tatiana Muñoz'
+						moderador={false}								
+					/>								
 					</div>
 				</div>
 			</div>

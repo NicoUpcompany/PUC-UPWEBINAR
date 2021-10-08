@@ -26,9 +26,29 @@ import logo from "../../../assets/images/logo.png";
 
 // stands images
 import standFondo from "../../../assets/images/stand.png";
+import standSanofi from '../../../assets/images/stands/sanofi/logoStand.jpg'
+import standBiomerux from '../../../assets/images/stands/biomerieux/logoStand.jpg'
+import standTeva from '../../../assets/images/stands/teva/logoStand.png'
+import standBiomarin from '../../../assets/images/stands/biomarin/standBiomarin.png'
+import standBiotoscana from '../../../assets/images/stands/biotoscana/standBiotoscana.png'
+import standPasteur from '../../../assets/images/stands/pasteur/standPasteur.jpg'
+import standSaval from '../../../assets/images/stands/saval/standSaval.jpg'
+import standCelnova from '../../../assets/images/stands/celNova/standCelnova.jpg'
+import standEuro from '../../../assets/images/stands/europharma/standEuro.jpg'
 
 // Stands components
 import PucComponent from "../../../components/Basic/Stand/puc";
+import SavalComponent from "../../../components/Basic/Stand/saval";
+import CelNovaComponent from "../../../components/Basic/Stand/CelNova";
+import AstrazenecaComponent from '../../../components/Basic/Stand/Astrazeneca';
+import BiomarinComponent from '../../../components/Basic/Stand/Biomarin';
+import BiomerieuxComponent from '../../../components/Basic/Stand/Biomerieux';
+import BiotoscanaComponent from '../../../components/Basic/Stand/Biotoscana';
+import Europharma from "../../../components/Basic/Stand/Europharma";
+import Gsk from "../../../components/Basic/Stand/Gsk";
+import Pasteur from "../../../components/Basic/Stand/Pasteur";
+import Teva from "../../../components/Basic/Stand/Teva";
+
 
 import audio from "../../../assets/audio/audio.mp3";
 
@@ -38,6 +58,7 @@ import { CometChatUnified } from "../../../components/CometChat";
 import Socket from "../../../utils/socket";
 
 import "./WaitingRoom.scss";
+import Sanofi from "../../../components/Basic/Stand/Sanofi";
 
 const CUSTOMER_MESSAGE_LISTENER_KEY = "client-listener";
 const { SubMenu } = Menu;
@@ -58,7 +79,17 @@ const WaitingRoom = () => {
 	const [changeStreaming, setChangeStreaming] = useState(false);
 
 	// Drawers
-	const [pucDrawer, setPucDrawer] = useState(false);
+	const [savalDrawer, setSavalDrawer] = useState(false);
+	const [celNova, setCelNova] = useState(false);
+	const [astrazeneca, setAstrazeneca] = useState(false);
+	const [biomarin, setBiomarin] = useState(false);
+	const [biomerieux, setBiomerieux] = useState(false);
+	const [biotoscana, setBiotoscana] = useState(false);
+	const [europharma, setEuropharma] = useState(false);
+	const [gsk, setGsk] = useState(false);
+	const [pasteur, setPasteur] = useState(false);
+	const [sanofi, setSanofi] = useState(false);
+	const [teva, setTeva] = useState(false);
 
 	useEffect(() => {
 		let interval;
@@ -450,41 +481,70 @@ const WaitingRoom = () => {
 						) : null}
 						<div className="contenedor" id="stands">
 							<div className="stands">
-								<div className="col-3" onClick={() => setPucDrawer(true)}>
+								{/* Aztracenaca */}
+								<div className="col-3" onClick={() => setAstrazeneca(true)}>
 									<img
 										src={standFondo}
 										alt="stand l"
 									/>
 								</div>
-								<div className="col-3" onClick={() => setPucDrawer(true)}>
+								<div className="col-3" onClick={() => setBiomarin(true)}>
+									<img
+										src={standBiomarin}
+										alt="stand l"
+									/>
+								</div>
+								<div className="col-3" onClick={() => setBiomerieux(true)}>
+									<img
+										src={standBiomerux}
+										alt="stand l"
+									/>
+								</div>
+								<div className="col-3" onClick={() => window.open('https://www.grupobiotoscana.com/es/paises/chile/', '_blank')}>
+									<img
+										src={standBiotoscana}
+										alt="stand l"
+									/>
+								</div>
+								<div className="col-3" onClick={() => setCelNova(true)}>
+									<img
+										src={standCelnova}
+										alt="stand l"
+									/>
+								</div>
+								<div className="col-3" onClick={() => setEuropharma(true)}>
+									<img
+										src={standEuro}
+										alt="stand l"
+									/>
+								</div>
+								{/* <div className="col-3" onClick={() => setGsk(true)}>
 									<img
 										src={standFondo}
 										alt="stand l"
 									/>
-								</div>
-								<div className="col-3" onClick={() => setPucDrawer(true)}>
+								</div> */}
+								<div className="col-3" onClick={() => setPasteur(true)}>
 									<img
-										src={standFondo}
+										src={standPasteur}
 										alt="stand l"
 									/>
 								</div>
-							</div>
-							<div className="stands">
-								<div className="col-3" onClick={() => setPucDrawer(true)}>
+								<div className="col-3" onClick={() => setSanofi(true)}>
 									<img
-										src={standFondo}
+										src={standSanofi}
 										alt="stand l"
 									/>
 								</div>
-								<div className="col-3" onClick={() => setPucDrawer(true)}>
+								<div className="col-3" onClick={() => setSavalDrawer(true)}>
 									<img
-										src={standFondo}
+										src={standSaval}
 										alt="stand l"
 									/>
 								</div>
-								<div className="col-3" onClick={() => setPucDrawer(true)}>
+								<div className="col-2" onClick={() => setTeva(true)}>
 									<img
-										src={standFondo}
+										src={standTeva}
 										alt="stand l"
 									/>
 								</div>
@@ -522,8 +582,49 @@ const WaitingRoom = () => {
 				</>
 			)}
 			{/* Drawers */}
-			<Drawer className="drawer-component" placement="right" closable={false} onClose={() => setPucDrawer(false)} visible={pucDrawer}>
-				<PucComponent visible={pucDrawer} setVisible={setPucDrawer} token={token} standName="Puc" />
+			{/* Astraceneca */}
+			<Drawer className="drawer-component" placement="right" closable={false} onClose={() => setAstrazeneca(false)} visible={astrazeneca}>
+				<AstrazenecaComponent visible={astrazeneca} setVisible={setAstrazeneca} token={token} standName="Aztraceneca" />
+			</Drawer> 
+			{/* Biomarin */}
+			<Drawer className="drawer-component" placement="right" closable={false} onClose={() => setBiomarin(false)} visible={biomarin}>
+				<BiomarinComponent visible={biomarin} setVisible={setBiomarin} token={token} standName="Biomarín" />
+			</Drawer>		
+			{/* Biomerieux */}
+			<Drawer className="drawer-component" placement="right" closable={false} onClose={() => setBiomerieux(false)} visible={biomerieux}>
+				<BiomerieuxComponent visible={biomerieux} setVisible={setBiomerieux} token={token} standName="Biomarín" />
+			</Drawer>
+			{/* Biotoscana */}
+			<Drawer className="drawer-component" placement="right" closable={false} onClose={() => setBiotoscana(false)} visible={biotoscana}>
+				<BiotoscanaComponent visible={biotoscana} setVisible={setBiotoscana} token={token} standName="Biotoscana" />
+			</Drawer>
+			{/* CelNova */}
+			<Drawer className="drawer-component" placement="right" closable={false} onClose={() => setCelNova(false)} visible={celNova}>
+				<CelNovaComponent visible={celNova} setVisible={setCelNova} token={token} standName="CelNova" />
+			</Drawer>
+			{/* Europharma */}
+			<Drawer className="drawer-component" placement="right" closable={false} onClose={() => setEuropharma(false)} visible={europharma}>
+				<Europharma visible={europharma} setVisible={setEuropharma} token={token} standName="Europharma" />
+			</Drawer>
+			{/* >Gsk */}
+			<Drawer className="drawer-component" placement="right" closable={false} onClose={() => setGsk(false)} visible={gsk}>
+				<Gsk visible={gsk} setVisible={setGsk} token={token} standName="Gsk" />
+			</Drawer>
+			{/* >Pasteur */}
+			<Drawer className="drawer-component" placement="right" closable={false} onClose={() => setPasteur(false)} visible={pasteur}>
+				<Pasteur visible={pasteur} setVisible={setPasteur} token={token} standName="Pasteur" />
+			</Drawer>
+			{/* >Sanofi */}
+			<Drawer className="drawer-component" placement="right" closable={false} onClose={() => setSanofi(false)} visible={sanofi}>
+				<Sanofi visible={sanofi} setVisible={setSanofi} token={token} standName="Sanofi" />
+			</Drawer>
+			{/* Saval */}
+			<Drawer className="drawer-component" placement="right" closable={false} onClose={() => setSavalDrawer(false)} visible={savalDrawer}>
+				<SavalComponent visible={savalDrawer} setVisible={setSavalDrawer} token={token} standName="Saval" />
+			</Drawer>
+			{/* Teva */}
+			<Drawer className="drawer-component" placement="right" closable={false} onClose={() => setTeva(false)} visible={teva}>
+				<Teva visible={teva} setVisible={setTeva} token={token} standName="Teva" />
 			</Drawer>
 		</Spin>
 	);

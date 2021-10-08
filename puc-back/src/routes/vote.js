@@ -29,6 +29,6 @@ api.get("/vote-client", [md_auth.ensureAuth], VoteController.getClientVotes);
  * @name getVotes
  * @path {GET} /vote
  */
-api.get("/vote", [md_auth.ensureAuth], VoteController.getVotes);
+api.get("/vote/:idUser", [md_auth.ensureAuth], VoteController.getVotes);
 
 module.exports = api;

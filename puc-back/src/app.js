@@ -18,6 +18,7 @@ const testRoutes = require("./routes/test");
 const testStatusRoutes = require("./routes/testStatus");
 const importXlsxRoutes = require("./routes/importXlsx");
 const testVote = require("./routes/testVote");
+const fileRoutes = require('./routes/file');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -61,5 +62,6 @@ app.use(`/api/${API_VERSION}`, testRoutes);
 app.use(`/api/${API_VERSION}`, testStatusRoutes);
 app.use(`/api/${API_VERSION}`, importXlsxRoutes);
 app.use(`/api/${API_VERSION}`, testVote);
+app.use(`/api/${API_VERSION}`, fileRoutes);
 
 module.exports = app;

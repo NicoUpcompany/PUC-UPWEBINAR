@@ -17,6 +17,13 @@ const api = express.Router();
  */
 api.post("/test-vote", [md_auth.ensureAuth], TestController.saveTest);
 /**
+ * Actualiza una evaluación
+ *
+ * @name saveTest
+ * @path {POST} /test
+ */
+api.put("/test-vote", [md_auth.ensureAuth], TestController.updateTest);
+/**
  * Obtiene todas las evaluaciones
  *
  * @name getTests

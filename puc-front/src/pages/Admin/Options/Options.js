@@ -52,8 +52,70 @@ export default function Events() {
 	const [votesData, setvotesData] = useState([]);
 	const [testData, setTestData] = useState([]);
 	const [testStatus, setTestStatus] = useState(false);
-	const [voto1Status, setVoto1Status] = useState(false);
-	const [voto2Status, setVoto2Status] = useState(false);
+
+	//Manejar el estado de las votaciones en un puro arreglo 
+	const [votesStatus, setVotesStatus] = useState({
+		vote1: false,
+		vote2: false,
+		vote3: false,
+		vote4: false,
+		vote5: false,
+		vote6: false,
+		vote7: false,
+		vote8: false,
+		vote9: false,
+		vote10: false,
+		vote11: false,
+		vote12: false,
+		vote13: false,
+		vote14: false,
+		vote15: false,
+		vote16: false,
+		vote17: false,
+		vote18: false,
+		vote19: false,
+		vote20: false,
+		vote21: false,
+		vote22: false,
+		vote23: false,
+		vote24: false,
+		vote25: false,
+		vote26: false,
+		vote27: false,
+		vote28: false,
+		vote29: false,
+		vote30: false
+	})
+	// const [voto1Status, setVoto1Status] = useState(false);
+	// const [voto2Status, setVoto2Status] = useState(false);
+	// const [voto3Status, setVoto3Status] = useState(false);
+	// const [voto4Status, setVoto4Status] = useState(false);
+	// const [voto5Status, setVoto5Status] = useState(false);
+	// const [voto6Status, setVoto6Status] = useState(false);
+	// const [voto7Status, setVoto7Status] = useState(false);
+	// const [voto8Status, setVoto8Status] = useState(false);
+	// const [voto9Status, setVoto9Status] = useState(false);
+	// const [voto10Status, setVoto10Status] = useState(false);
+	// const [voto11Status, setVoto11Status] = useState(false);
+	// const [voto12Status, setVoto12Status] = useState(false);
+	// const [voto13Status, setVoto13Status] = useState(false);
+	// const [voto14Status, setVoto14Status] = useState(false);
+	// const [voto15Status, setVoto15Status] = useState(false);
+	// const [voto16Status, setVoto16Status] = useState(false);
+	// const [voto17Status, setVoto17Status] = useState(false);
+	// const [voto18Status, setVoto18Status] = useState(false);
+	// const [voto19Status, setVoto19Status] = useState(false);
+	// const [voto20Status, setVoto20Status] = useState(false);
+	// const [voto21Status, setVoto21Status] = useState(false);
+	// const [voto22Status, setVoto22Status] = useState(false);
+	// const [voto23Status, setVoto23Status] = useState(false);
+	// const [voto24Status, setVoto24Status] = useState(false);
+	// const [voto25Status, setVoto25Status] = useState(false);
+	// const [voto26Status, setVoto26Status] = useState(false);
+	// const [voto27Status, setVoto27Status] = useState(false);
+	// const [voto28Status, setVoto28Status] = useState(false);
+	// const [voto29Status, setVoto29Status] = useState(false);
+
 
 	useEffect(() => {
 		try {
@@ -94,9 +156,7 @@ export default function Events() {
 					message: resp.message,
 				});
 			} else {
-				console.log(resp.tests);
 				resp.tests.forEach((item) => {
-					console.log(item);
 					const element = {
 						...item,
 						email: item.user.email,
@@ -143,13 +203,82 @@ export default function Events() {
 			} else {
                 try {
                     const arr = resp.testStatus;
-					setTestStatus(arr[arr.length - 1].active);
-					setVoto1Status(arr[arr.length - 1].vote1);
-					setVoto2Status(arr[arr.length - 1].vote2);
+					// console.log('estatus '+arr[arr.length -1].vote1);
+					// console.log('estatus '+arr[arr.length -1].vote2);
+					setVotesStatus({
+						...votesStatus,
+						vote1: arr[arr.length -1].vote1,
+						vote2: arr[arr.length -1].vote2,
+						vote4: arr[arr.length -1].vote4,
+						vote5: arr[arr.length -1].vote5,
+						vote6: arr[arr.length -1].vote6,
+						vote7: arr[arr.length -1].vote7,
+						vote8: arr[arr.length -1].vote8,
+						vote9: arr[arr.length -1].vote9,
+						vote10: arr[arr.length -1].vote10,
+						vote11: arr[arr.length -1].vote11,
+						vote12: arr[arr.length -1].vote12,
+						vote13: arr[arr.length -1].vote13,
+						vote14: arr[arr.length -1].vote14,
+						vote15: arr[arr.length -1].vote15,
+						vote16: arr[arr.length -1].vote16,
+						vote17: arr[arr.length -1].vote17,
+						vote18: arr[arr.length -1].vote18,
+						vote19: arr[arr.length -1].vote19,
+						vote20: arr[arr.length -1].vote20,
+						vote21: arr[arr.length -1].vote21,
+						vote22: arr[arr.length -1].vote22,
+						vote23: arr[arr.length -1].vote23,
+						vote24: arr[arr.length -1].vote24,
+						vote25: arr[arr.length -1].vote25,
+						vote26: arr[arr.length -1].vote26,
+						vote27: arr[arr.length -1].vote27,
+						vote28: arr[arr.length -1].vote28,
+						vote29: arr[arr.length -1].vote29,
+						vote30: arr[arr.length -1].vote30,
+						
+					})
+					// setTestStatus(arr[arr.length - 1].active);
+					// setVoto1Status(arr[arr.length - 1].vote1);
+					// setVoto2Status(arr[arr.length - 1].vote2);
+					// setVoto3Status(arr[arr.length - 1].vote3);
                 } catch (error) {
-					setTestStatus(false);
-					setVoto1Status(false);
-					setVoto2Status(false);
+					setVotesStatus({
+						vote1: false,
+						vote2: false,
+						vote3: false,
+						vote4: false,
+						vote5: false,
+						vote6: false,
+						vote7: false,
+						vote8: false,
+						vote9: false,
+						vote10: false,
+						vote11: false,
+						vote12: false,
+						vote13: false,
+						vote14: false,
+						vote15: false,
+						vote16: false,
+						vote17: false,
+						vote18: false,
+						vote19: false,
+						vote20: false,
+						vote21: false,
+						vote22: false,
+						vote23: false,
+						vote24: false,
+						vote25: false,
+						vote26: false,
+						vote27: false,
+						vote28: false,
+						vote29: false,
+						vote30: false
+					});
+					// setTestStatus(false);
+					// setVoto1Status(false);
+					// setVoto2Status(false);
+					// setVoto3Status(false);
                 }
 			}
 			setLoading(false);
@@ -443,33 +572,81 @@ export default function Events() {
 	];
 
 	const handleOk = async (estado) => {
+
 		setLoading(true);
-		let data = {};
-		switch (estado) {
-			case "voto1":
-				data = {
-					vote1: !voto1Status,
-					vote2: voto2Status,
-					active: testStatus
-				}
-				break;
-			case "voto2":
-				data = {
-					vote1: voto1Status,
-					vote2: !voto2Status,
-					active: testStatus
-				}
-				break;
-			case "cuestionario":
-				data = {
-					vote1: voto1Status,
-					vote2: voto2Status,
-					active:!testStatus
-				};
-				break;
-			default:
-				break;
+		console.log(votesStatus);
+		let data = votesStatus;
+		const numData = (Object.keys(data).length);
+		for (let index = 1; index <= numData; index++) {
+			data[`vote${index}`]=false
 		}
+		data = {
+			...data,
+			[estado]:true
+		}
+
+		// switch (estado) {
+		// 	case "voto1":
+		// 		data = {
+		// 			vote1: !voto1Status,
+		// 			vote2: false,
+		// 			vote3: false,
+		// 			vote4: false,
+		// 			vote5: false,
+		// 			vote6: false,
+		// 			vote7: false,
+		// 			vote8: false,
+		// 			vote9: false, 
+		// 			vote10: false,
+		// 			vote11: false, 
+		// 			vote12: false,
+		// 			vote13: false,
+		// 			vote14: false,
+		// 			vote15: false, 
+		// 			vote16: false, 
+		// 			vote17: false,
+		// 			vote18: false,
+		// 			vote19: false,
+		// 			vote20: false,
+		// 			vote21: false, 
+		// 			vote22: false,
+		// 			vote23: false,
+		// 			vote24: false,
+		// 			vote25: false, 
+		// 			vote26: false, 
+		// 			vote27: false,
+		// 			vote28: false,
+		// 			vote29: false,
+		// 			active: testStatus
+		// 		}
+		// 		break;
+		// 	case "voto2":
+		// 		data = {
+		// 			vote1: false,
+		// 			vote2: !voto2Status,
+		// 			vote3: false,
+		// 			active: testStatus
+		// 		}
+		// 		break;
+		// 	case "voto3":
+		// 		data = {
+		// 			vote1: false,
+		// 			vote2: false,
+		// 			vote3: !voto3Status,
+		// 			active: testStatus
+		// 		}
+		// 		break;
+		// 	case "cuestionario":
+		// 		data = {
+		// 			vote1: voto1Status,
+		// 			vote2: voto2Status,
+		// 			vote3: voto3Status,
+		// 			active:!testStatus
+		// 		};
+		// 		break;
+		// 	default:
+		// 		break;
+		// }
 
 		const resp = await postTestStatusApi(token, data);
 		if (resp.ok) {
@@ -477,10 +654,11 @@ export default function Events() {
 			notification["success"]({
 				message: resp.message,
 			});
-			setLoading(false);
-			setTestStatus(data.active);
-			setVoto1Status(data.vote1);
-			setVoto2Status(data.vote2);
+			setVotesStatus(data);
+			// setLoading(false);
+			// setTestStatus(data.active);
+			// setVoto1Status(data.vote1);
+			// setVoto2Status(data.vote2);
 		} else {
 			notification["error"]({
 				message: resp.message,
@@ -504,37 +682,479 @@ export default function Events() {
 					</ExportSheet>
 				</div>
 				<hr />
+				<h3 className='title-module'>Modulo 1</h3>
 				{/* Votación 1 */}
 				<div className="btn-votos"> 
 					<Popconfirm
 						title={
-							voto1Status ? "Esta opción deshabilitará la evaluación a los usuarios" : "Esta opción habilitará la evaluación a los usuarios"
+							votesStatus.vote1 ? "Esta opción deshabilitará la evaluación a los usuarios" : "Esta opción habilitará la evaluación a los usuarios"
 						}
-						onConfirm={()=>handleOk("voto1")}
+						onConfirm={()=>handleOk("vote1")}
 						onCancel={handleCancel}
 						okText="Si"
 						cancelText="No"
 					>
 							<Button type="primary" className="btn" block icon={<AuditOutlined />}>
-								{voto1Status ? "Desactivar votación 1" : "Activar votación 1"}
+								{votesStatus.vote1 ? "Desactivar pregunta 1" : "Activar pregunta 1"}
 							</Button>
 					</Popconfirm>
 					{/* Votación 2 */}
 					<Popconfirm
 						title={
-							voto2Status ? "Esta opción deshabilitará la evaluación a los usuarios" : "Esta opción habilitará la evaluación a los usuarios"
+							votesStatus.vote2 ? "Esta opción deshabilitará la evaluación a los usuarios" : "Esta opción habilitará la evaluación a los usuarios"
 						}
-						onConfirm={()=>handleOk("voto2")}
+						onConfirm={()=>handleOk("vote2")}
 						onCancel={handleCancel}
 						okText="Si"
 						cancelText="No"
 						>
 						<Button type="primary" className="btn" block icon={<AuditOutlined />}>
-							{voto2Status ? "Desactivar votación 2" : "Activar votación 2"}
+							{votesStatus.vote2 ? "Desactivar pregunta 2" : "Activar pregunta 2"}
+						</Button>
+			 
+					</Popconfirm>
+
+					{/* Pregunta 3 */}
+					<Popconfirm
+						title={
+							votesStatus.vote3 ? "Esta opción deshabilitará la evaluación a los usuarios" : "Esta opción habilitará la evaluación a los usuarios"
+						}
+						onConfirm={()=>handleOk("vote3")}
+						onCancel={handleCancel}
+						okText="Si"
+						cancelText="No"
+					>
+							<Button type="primary" className="btn" block icon={<AuditOutlined />}>
+								{votesStatus.vote3 ? "Desactivar pregunta 3" : "Activar pregunta 3"}
+							</Button>
+					</Popconfirm>
+					{/* pregunta 4*/}
+					<Popconfirm
+						title={
+							votesStatus.vote4 ? "Esta opción deshabilitará la evaluación a los usuarios" : "Esta opción habilitará la evaluación a los usuarios"
+						}
+						onConfirm={()=>handleOk("vote4")}
+						onCancel={handleCancel}
+						okText="Si"
+						cancelText="No"
+						>
+						<Button type="primary" className="btn" block icon={<AuditOutlined />}>
+							{votesStatus.vote4 ? "Desactivar pregunta 4" : "Activar pregunta 4"}
 						</Button>
 			 
 					</Popconfirm>
 				</div>
+				<hr/>
+				<h3 className='title-module'>Modulo 2</h3>
+				<div className="btn-votos"> 
+					{/* pregunta 1 */}
+					<Popconfirm
+						title={
+							votesStatus.vote5 ? "Esta opción deshabilitará la evaluación a los usuarios" : "Esta opción habilitará la evaluación a los usuarios"
+						}
+						onConfirm={()=>handleOk("vote5")}
+						onCancel={handleCancel}
+						okText="Si"
+						cancelText="No"
+						>
+						<Button type="primary" className="btn" block icon={<AuditOutlined />}>
+							{votesStatus.vote5 ? "Desactivar pregunta 1" : "Activar pregunta 1"}
+						</Button>
+			 
+					</Popconfirm>
+					{/* Pregunta 2 */}
+					<Popconfirm
+						title={
+							votesStatus.vote6 ? "Esta opción deshabilitará la evaluación a los usuarios" : "Esta opción habilitará la evaluación a los usuarios"
+						}
+						onConfirm={()=>handleOk("vote6")}
+						onCancel={handleCancel}
+						okText="Si"
+						cancelText="No"
+					>
+							<Button type="primary" className="btn" block icon={<AuditOutlined />}>
+								{votesStatus.vote6 ? "Desactivar pregunta 2" : "Activar pregunta 2"}
+							</Button>
+					</Popconfirm>
+					{/* pregunta 3*/}
+					<Popconfirm
+						title={
+							votesStatus.vote7 ? "Esta opción deshabilitará la evaluación a los usuarios" : "Esta opción habilitará la evaluación a los usuarios"
+						}
+						onConfirm={()=>handleOk("vote7")}
+						onCancel={handleCancel}
+						okText="Si"
+						cancelText="No"
+						>
+						<Button type="primary" className="btn" block icon={<AuditOutlined />}>
+							{votesStatus.vote7 ? "Desactivar pregunta 3" : "Activar pregunta 3"}
+						</Button>
+			 
+					</Popconfirm>
+				</div>
+				<h3 className='title-module'>Modulo 3</h3>
+				<div className="btn-votos"> 				
+					{/* pregunta 1 */}
+					<Popconfirm
+						title={
+							votesStatus.vote8 ? "Esta opción deshabilitará la evaluación a los usuarios" : "Esta opción habilitará la evaluación a los usuarios"
+						}
+						onConfirm={()=>handleOk("vote8")}
+						onCancel={handleCancel}
+						okText="Si"
+						cancelText="No"
+						>
+						<Button type="primary" className="btn" block icon={<AuditOutlined />}>
+							{votesStatus.vote8 ? "Desactivar pregunta 1" : "Activar pregunta 1"}
+						</Button>
+			 
+					</Popconfirm>
+
+					<Popconfirm
+						title={
+							votesStatus.vote9 ? "Esta opción deshabilitará la evaluación a los usuarios" : "Esta opción habilitará la evaluación a los usuarios"
+						}
+						onConfirm={()=>handleOk("vote9")}
+						onCancel={handleCancel}
+						okText="Si"
+						cancelText="No"
+					>
+							<Button type="primary" className="btn" block icon={<AuditOutlined />}>
+								{votesStatus.vote9 ? "Desactivar pregunta 2" : "Activar pregunta 2"}
+							</Button>
+					</Popconfirm>
+					{/* pregunta 3 */}
+					<Popconfirm
+						title={
+							votesStatus.vote10 ? "Esta opción deshabilitará la evaluación a los usuarios" : "Esta opción habilitará la evaluación a los usuarios"
+						}
+						onConfirm={()=>handleOk("vote10")}
+						onCancel={handleCancel}
+						okText="Si"
+						cancelText="No"
+						>
+						<Button type="primary" className="btn" block icon={<AuditOutlined />}>
+							{votesStatus.vote10 ? "Desactivar pregunta 3" : "Activar pregunta 3"}
+						</Button>
+			 
+					</Popconfirm>
+					{/* pregunta 4 */}
+					<Popconfirm
+						title={
+							votesStatus.vote11 ? "Esta opción deshabilitará la evaluación a los usuarios" : "Esta opción habilitará la evaluación a los usuarios"
+						}
+						onConfirm={()=>handleOk("vote11")}
+						onCancel={handleCancel}
+						okText="Si"
+						cancelText="No"
+						>
+						<Button type="primary" className="btn" block icon={<AuditOutlined />}>
+							{votesStatus.vote11 ? "Desactivar pregunta 4" : "Activar pregunta 4"}
+						</Button>
+			 
+					</Popconfirm>
+				</div>
+				<hr/>
+				<h3 className='title-module'>Modulo 4</h3>
+				<div className="btn-votos"> 
+				{/* Pregunta 1 */}
+					<Popconfirm
+						title={
+							votesStatus.vote12 ? "Esta opción deshabilitará la evaluación a los usuarios" : "Esta opción habilitará la evaluación a los usuarios"
+						}
+						onConfirm={()=>handleOk("vote12")}
+						onCancel={handleCancel}
+						okText="Si"
+						cancelText="No"
+					>
+							<Button type="primary" className="btn" block icon={<AuditOutlined />}>
+								{votesStatus.vote12 ? "Desactivar pregunta 1" : "Activar pregunta 1"}
+							</Button>
+					</Popconfirm>
+					{/* pregunta 2 */}
+					<Popconfirm
+						title={
+							votesStatus.vote13 ? "Esta opción deshabilitará la evaluación a los usuarios" : "Esta opción habilitará la evaluación a los usuarios"
+						}
+						onConfirm={()=>handleOk("vote13")}
+						onCancel={handleCancel}
+						okText="Si"
+						cancelText="No"
+						>
+						<Button type="primary" className="btn" block icon={<AuditOutlined />}>
+							{votesStatus.vote13 ? "Desactivar pregunta 2" : "Activar pregunta 2"}
+						</Button>
+			 
+					</Popconfirm>
+					{/* pregunta 3 */}
+					<Popconfirm
+						title={
+							votesStatus.vote14 ? "Esta opción deshabilitará la evaluación a los usuarios" : "Esta opción habilitará la evaluación a los usuarios"
+						}
+						onConfirm={()=>handleOk("vote14")}
+						onCancel={handleCancel}
+						okText="Si"
+						cancelText="No"
+						>
+						<Button type="primary" className="btn" block icon={<AuditOutlined />}>
+							{votesStatus.vote14 ? "Desactivar pregunta 3" : "Activar pregunta 3"}
+						</Button>
+			 
+					</Popconfirm>
+				</div>
+				<hr/>
+				<h3 className='title-module'>Modulo 5</h3>
+				<div className="btn-votos"> 
+					{/* Pregunta 1 */}
+					<Popconfirm
+						title={
+							votesStatus.vote15 ? "Esta opción deshabilitará la evaluación a los usuarios" : "Esta opción habilitará la evaluación a los usuarios"
+						}
+						onConfirm={()=>handleOk("vote15")}
+						onCancel={handleCancel}
+						okText="Si"
+						cancelText="No"
+					>
+							<Button type="primary" className="btn" block icon={<AuditOutlined />}>
+								{votesStatus.vote15 ? "Desactivar pregunta 1" : "Activar pregunta 1"}
+							</Button>
+					</Popconfirm>
+					{/* pregunta 2 */}
+					<Popconfirm
+						title={
+							votesStatus.vote16 ? "Esta opción deshabilitará la evaluación a los usuarios" : "Esta opción habilitará la evaluación a los usuarios"
+						}
+						onConfirm={()=>handleOk("vote16")}
+						onCancel={handleCancel}
+						okText="Si"
+						cancelText="No"
+						>
+						<Button type="primary" className="btn" block icon={<AuditOutlined />}>
+							{votesStatus.vote16 ? "Desactivar pregunta 2" : "Activar pregunta 2"}
+						</Button>
+			 
+					</Popconfirm>
+				</div>
+				<hr/>
+				<h3 className='title-module'>Modulo 6</h3>
+				<div className="btn-votos"> 
+					{/* Pregunta 1 */}
+					<Popconfirm
+						title={
+							votesStatus.vote17 ? "Esta opción deshabilitará la evaluación a los usuarios" : "Esta opción habilitará la evaluación a los usuarios"
+						}
+						onConfirm={()=>handleOk("vote17")}
+						onCancel={handleCancel}
+						okText="Si"
+						cancelText="No"
+					>
+							<Button type="primary" className="btn" block icon={<AuditOutlined />}>
+								{votesStatus.vote17 ? "Desactivar pregunta 1" : "Activar pregunta 1"}
+							</Button>
+					</Popconfirm>
+					{/* pregunta 2 */}
+					<Popconfirm
+						title={
+							votesStatus.vote18 ? "Esta opción deshabilitará la evaluación a los usuarios" : "Esta opción habilitará la evaluación a los usuarios"
+						}
+						onConfirm={()=>handleOk("vote18")}
+						onCancel={handleCancel}
+						okText="Si"
+						cancelText="No"
+						>
+						<Button type="primary" className="btn" block icon={<AuditOutlined />}>
+							{votesStatus.vote18 ? "Desactivar pregunta 2" : "Activar pregunta 2"}
+						</Button>
+			 
+					</Popconfirm>
+					{/* pregunta 3 */}
+					<Popconfirm
+						title={
+							votesStatus.vote19 ? "Esta opción deshabilitará la evaluación a los usuarios" : "Esta opción habilitará la evaluación a los usuarios"
+						}
+						onConfirm={()=>handleOk("vote19")}
+						onCancel={handleCancel}
+						okText="Si"
+						cancelText="No"
+						>
+						<Button type="primary" className="btn" block icon={<AuditOutlined />}>
+							{votesStatus.vote19 ? "Desactivar pregunta 3" : "Activar pregunta 3"}
+						</Button>
+			 
+					</Popconfirm>
+				</div>
+				<hr/>
+				<h3 className='title-module'>Modulo 7</h3>
+				<div className="btn-votos"> 
+					{/* Pregunta 1 */}
+					<Popconfirm
+						title={
+							votesStatus.vote20 ? "Esta opción deshabilitará la evaluación a los usuarios" : "Esta opción habilitará la evaluación a los usuarios"
+						}
+						onConfirm={()=>handleOk("vote20")}
+						onCancel={handleCancel}
+						okText="Si"
+						cancelText="No"
+					>
+							<Button type="primary" className="btn" block icon={<AuditOutlined />}>
+								{votesStatus.vote20 ? "Desactivar pregunta 1" : "Activar pregunta 1"}
+							</Button>
+					</Popconfirm>
+					{/* pregunta 2 */}
+					<Popconfirm
+						title={
+							votesStatus.vote21 ? "Esta opción deshabilitará la evaluación a los usuarios" : "Esta opción habilitará la evaluación a los usuarios"
+						}
+						onConfirm={()=>handleOk("vote21")}
+						onCancel={handleCancel}
+						okText="Si"
+						cancelText="No"
+						>
+						<Button type="primary" className="btn" block icon={<AuditOutlined />}>
+							{votesStatus.vote21 ? "Desactivar pregunta 2" : "Activar pregunta 2"}
+						</Button>
+			 
+					</Popconfirm>
+					{/* pregunta 3 */}
+					<Popconfirm
+						title={
+							votesStatus.vote22 ? "Esta opción deshabilitará la evaluación a los usuarios" : "Esta opción habilitará la evaluación a los usuarios"
+						}
+						onConfirm={()=>handleOk("vote22")}
+						onCancel={handleCancel}
+						okText="Si"
+						cancelText="No"
+						>
+						<Button type="primary" className="btn" block icon={<AuditOutlined />}>
+							{votesStatus.vote22 ? "Desactivar pregunta 3" : "Activar pregunta 3"}
+						</Button>
+			 
+					</Popconfirm>
+					{/* Pregunta 5 */}
+					<Popconfirm
+						title={
+							votesStatus.vote23 ? "Esta opción deshabilitará la evaluación a los usuarios" : "Esta opción habilitará la evaluación a los usuarios"
+						}
+						onConfirm={()=>handleOk("vote23")}
+						onCancel={handleCancel}
+						okText="Si"
+						cancelText="No"
+					>
+							<Button type="primary" className="btn" block icon={<AuditOutlined />}>
+								{votesStatus.vote23 ? "Desactivar pregunta 5" : "Activar pregunta 5"}
+							</Button>
+					</Popconfirm>
+					{/* pregunta 5 */}
+					<Popconfirm
+						title={
+							votesStatus.vote24 ? "Esta opción deshabilitará la evaluación a los usuarios" : "Esta opción habilitará la evaluación a los usuarios"
+						}
+						onConfirm={()=>handleOk("vote24")}
+						onCancel={handleCancel}
+						okText="Si"
+						cancelText="No"
+						>
+						<Button type="primary" className="btn" block icon={<AuditOutlined />}>
+							{votesStatus.vote24 ? "Desactivar pregunta 5" : "Activar pregunta 5"}
+						</Button>
+			 
+					</Popconfirm>
+					{/* pregunta 6 */}
+					<Popconfirm
+						title={
+							votesStatus.vote25 ? "Esta opción deshabilitará la evaluación a los usuarios" : "Esta opción habilitará la evaluación a los usuarios"
+						}
+						onConfirm={()=>handleOk("vote25")}
+						onCancel={handleCancel}
+						okText="Si"
+						cancelText="No"
+						>
+						<Button type="primary" className="btn" block icon={<AuditOutlined />}>
+							{votesStatus.vote25 ? "Desactivar pregunta 6" : "Activar pregunta 6"}
+						</Button>
+			 
+					</Popconfirm>
+					{/* pregunta 7 */}
+					<Popconfirm
+						title={
+							votesStatus.vote26 ? "Esta opción deshabilitará la evaluación a los usuarios" : "Esta opción habilitará la evaluación a los usuarios"
+						}
+						onConfirm={()=>handleOk("vote26")}
+						onCancel={handleCancel}
+						okText="Si"
+						cancelText="No"
+						>
+						<Button type="primary" className="btn" block icon={<AuditOutlined />}>
+							{votesStatus.vote26 ? "Desactivar pregunta 7" : "Activar pregunta 7"}
+						</Button>
+			 
+					</Popconfirm>
+				</div>
+				<hr/>
+				<h3 className='title-module'>Modulo 8</h3>
+				<div className="btn-votos"> 
+					{/* Pregunta 1 */}
+					<Popconfirm
+						title={
+							votesStatus.vote27 ? "Esta opción deshabilitará la evaluación a los usuarios" : "Esta opción habilitará la evaluación a los usuarios"
+						}
+						onConfirm={()=>handleOk("vote27")}
+						onCancel={handleCancel}
+						okText="Si"
+						cancelText="No"
+					>
+							<Button type="primary" className="btn" block icon={<AuditOutlined />}>
+								{votesStatus.vote27 ? "Desactivar pregunta 1" : "Activar pregunta 1"}
+							</Button>
+					</Popconfirm>
+					{/* pregunta 2 */}
+					<Popconfirm
+						title={
+							votesStatus.vote28 ? "Esta opción deshabilitará la evaluación a los usuarios" : "Esta opción habilitará la evaluación a los usuarios"
+						}
+						onConfirm={()=>handleOk("vote28")}
+						onCancel={handleCancel}
+						okText="Si"
+						cancelText="No"
+						>
+						<Button type="primary" className="btn" block icon={<AuditOutlined />}>
+							{votesStatus.vote28 ? "Desactivar pregunta 2" : "Activar pregunta 2"}
+						</Button>
+			 
+					</Popconfirm>
+					{/* pregunta 3 */}
+					<Popconfirm
+						title={
+							votesStatus.vote29 ? "Esta opción deshabilitará la evaluación a los usuarios" : "Esta opción habilitará la evaluación a los usuarios"
+						}
+						onConfirm={()=>handleOk("vote29")}
+						onCancel={handleCancel}
+						okText="Si"
+						cancelText="No"
+						>
+						<Button type="primary" className="btn" block icon={<AuditOutlined />}>
+							{votesStatus.vote29 ? "Desactivar pregunta 3" : "Activar pregunta 3"}
+						</Button>
+			 
+					</Popconfirm>
+					{/* pregunta 4 */}
+					<Popconfirm
+						title={
+							votesStatus.vote30 ? "Esta opción deshabilitará la evaluación a los usuarios" : "Esta opción habilitará la evaluación a los usuarios"
+						}
+						onConfirm={()=>handleOk("vote30")}
+						onCancel={handleCancel}
+						okText="Si"
+						cancelText="No"
+						>
+						<Button type="primary" className="btn" block icon={<AuditOutlined />}>
+							{votesStatus.vote30 ? "Desactivar pregunta 4" : "Activar pregunta 4"}
+						</Button>
+			 
+					</Popconfirm>
+				</div>
+				<hr/>
+
 				{/* Cuestionario */}
 				<Popconfirm
 					title={

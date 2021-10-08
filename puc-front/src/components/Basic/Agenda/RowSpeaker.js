@@ -2,13 +2,13 @@ import React from 'react'
 import { Speaker } from './Speaker'
 import flecha from "../../../assets/img/flecha.png";
 
-export const RowSpeaker = ({id, grey, inicio, fin, tematica, nombre, moderador, speaker,cargo, empresa, setSaveData, abrirCerrar, state }) => {
+export const RowSpeaker = ({id, grey, inicio, fin, tematica, nombre, moderador, speaker,cargo1, cargo2, empresa, setSaveData, abrirCerrar, state, imgSpeaker1, imgSpeaker2, tematica2 }) => {
     return (
         <div className={`row2 ${grey}`} id={`row${id}`}  style={{ transitionDuration: "1s" }}>
 				<div className="fondoRow">
 					<div className="tiempo">
 						<p>
-							{inicio} <span>-</span> {fin} hrs
+							{inicio} <span>{inicio && "-"}</span> {fin} {fin && "hrs"} 
 						</p>
 					</div>
 
@@ -24,6 +24,13 @@ export const RowSpeaker = ({id, grey, inicio, fin, tematica, nombre, moderador, 
 						<p className="texto1">
 							<strong>{tematica}</strong>
 						</p>
+						<p className="texto1">
+							{
+								tematica2 &&
+								<strong>{`"${tematica2}"`}</strong>
+							}
+
+						</p>
 					</div>
 				</div>
 				<div className="imagenes" id={`imagen${id}`}>
@@ -32,15 +39,17 @@ export const RowSpeaker = ({id, grey, inicio, fin, tematica, nombre, moderador, 
 						<Speaker
                             nombre={moderador}
 							moderador={moderador}
-                            cargo={cargo}
+                            cargo={cargo1}
                             empresa={empresa}
+							speaker={imgSpeaker1}
 						/>
                         {
                             speaker &&
                             <Speaker
                                 nombre={speaker}
-                                cargo={cargo}
+                                cargo={cargo2}
                                 empresa={empresa}
+								speaker={imgSpeaker2}
                             />
                         }
 						
