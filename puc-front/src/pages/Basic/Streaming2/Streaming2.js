@@ -692,7 +692,7 @@ const Streaming2 = () => {
 									width="560"
 									height="315"
 									className="transmission2"
-									src="https://player.vimeo.com/video/496943592"
+									src="https://vimeo.com/event/1371950/embed"
 									frameBorder="0"
 									allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 									allowFullScreen
@@ -706,155 +706,6 @@ const Streaming2 = () => {
 						</div>
 						<div className="content">
 							<div className="votes">
-								{/* Pregunta 1 */}
-								{
-									// (activeVote1) ?
-									// 	<>
-									// 		<Votes
-									// 			ask='¿Qué estudio podría ser de utilidad para confirmar sospecha de ASMA del prescolar?'
-									// 			alt1='Realizar Espirometría, Oscilometría y FENO.'
-									// 			alt2=' Realizar Test del sudor, IG totales, AC neumococo'
-									// 			alt3='Realizar una tomografía axial computada de tórax'
-									// 			alt4='Realizar estudio de video deglución y/o phmetría.'
-									// 			user={user}
-									// 			setUser={setUser}
-									// 			voto1={true}
-									// 			token={token}
-									// 			setToken={setToken}
-									// 			num='question1'
-									// 		/>
-									// 		<Results
-									// 			alt1='Realizar Espirometría, Oscilometría y FENO.'
-									// 			alt2=' Realizar Test del sudor, IG totales, AC neumococo'
-									// 			alt3='Realizar una tomografía axial computada de tórax'
-									// 			alt4='Realizar estudio de video deglución y/o phmetría.'
-									// 			opt1={option1}
-									// 			opt2={option2}
-									// 			opt3={option3}
-									// 			opt4={option4}
-									// 		/>
-									// 	</> : null
-								}
-
-								{/* Pregunta 2 */}
-
-								{
-									(activeVote2) 
-										// <>
-										// 	<Votes
-										// 		ask='¿Cómo interpreta esta Oscilometría?'
-										// 		alt1='Respuesta en resistencias (R5Hz, R20Hz) y reactancia (X5hZ y área de R)  con broncodilatador sugiere ENFERMEDAD RESTRICTIVA.'
-										// 		alt2='Respuesta en Fres y reactancia (X5hZ) sugiere OBSTRUCCIÓN VÍA AÉREA SUPERIOR.'
-										// 		alt3='Respuesta en resistencias (R5Hz, R20Hz) y reactancia (X5hZ y área)  con broncodilatador sugiere ENFERMEDAD OBSTRUCTIVA.'
-										// 		alt4='Respuesta en resistencia (R20Hz) y Fres sugiere OBSTRUCCIÓN DE VÍA AÉREA PEQUEÑA.'
-										// 		user={user}
-										// 		setUser={setUser}
-										// 		token={token}
-										// 		setToken={setToken}
-										// 		num='question2'
-
-										// 	/>
-										// 	<Results
-										// 		alt1='Respuesta en resistencias (R5Hz, R20Hz) y reactancia (X5hZ y área de R)  con broncodilatador sugiere ENFERMEDAD RESTRICTIVA.'
-										// 		alt2='Respuesta en Fres y reactancia (X5hZ) sugiere OBSTRUCCIÓN VÍA AÉREA SUPERIOR.'
-										// 		alt3='Respuesta en resistencias (R5Hz, R20Hz) y reactancia (X5hZ y área)  con broncodilatador sugiere ENFERMEDAD OBSTRUCTIVA.'
-										// 		alt4='Respuesta en resistencia (R20Hz) y Fres sugiere OBSTRUCCIÓN DE VÍA AÉREA PEQUEÑA.'
-										// 		opt1={option5}
-										// 		opt2={option6}
-										// 		opt3={option7}
-										// 		opt4={option8}
-										// 	/>
-										// </> : null
-								}
-								{/* Pregunta 3 */}
-
-								{
-									(activeVote3) 
-										// <>
-										// 	<Votes
-										// 		ask='¿Cuál sería el tratamiento de elección en este paciente?'
-										// 		alt1='Tratamiento de rescate con salbutamol y prednisona en los episodios de sibilancias.'
-										// 		alt2='Tratamiento de rescate con Fluticasona y salbutamol en los episodios de sibilancias.'
-										// 		alt3='Tratamiento de mantención con Fluticasona.'
-										// 		alt4='Tratamiento de mantención con inhibidor de leucotrienos.'
-										// 		user={user}
-										// 		setUser={setUser}
-										// 		token={token}
-										// 		setToken={setToken}
-										// 		num='question3'
-
-										// 	/>
-										// 	<Results
-										// 		alt1='Tratamiento de rescate con salbutamol y prednisona en los episodios de sibilancias.'
-										// 		alt2='Tratamiento de rescate con Fluticasona y salbutamol en los episodios de sibilancias.'
-										// 		alt3='Tratamiento de mantención con Fluticasona.'
-										// 		alt4='Tratamiento de mantención con inhibidor de leucotrienos.'
-										// 		opt1={option5}
-										// 		opt2={option6}
-										// 		opt3={option7}
-										// 		opt4={option8}
-										// 	/>
-										// </> : null
-								}
-								{/* Pregunta 4 */}
-								{
-									(activeVote4) 
-										// <>
-										// 	<Votes
-										// 		ask='Qué opción considera ante una mala adherencia al tratamiento de mantención en este prescolar'
-										// 		alt1='Tratamiento de rescate con salbutamol y prednisona en los episodios de sibilancias'
-										// 		alt2='Tratamiento de rescate con salbutamol y Fluticasona en los episodios de sibilancias'
-										// 		alt3='Tratamiento de rescate con inhibidor de leucotrienos.'
-										// 		alt4='Tratamiento de rescate con azitromicina y salbutamol.'
-										// 		user={user}
-										// 		setUser={setUser}
-										// 		token={token}
-										// 		setToken={setToken}
-										// 		num='question4'
-
-										// 	/>
-										// 	<Results
-										// 		alt1='Tratamiento de rescate con salbutamol y prednisona en los episodios de sibilancias'
-										// 		alt2='Tratamiento de rescate con salbutamol y Fluticasona en los episodios de sibilancias'
-										// 		alt3='Tratamiento de rescate con inhibidor de leucotrienos.'
-										// 		alt4='Tratamiento de rescate con azitromicina y salbutamol.'
-										// 		opt1={option5}
-										// 		opt2={option6}
-										// 		opt3={option7}
-										// 		opt4={option8}
-										// 	/>
-										// </> : null
-								}
-								{/* Pregunta 5 */}
-								{
-									(activeVote5) 
-										// <>
-										// 	<Votes
-										// 		ask='En relación al tratamiento de base del paciente presentado, señale la correcta'
-										// 		alt1='Es indispensable el manejo en centro multidisciplinario.'
-										// 		alt2='Tiene indicación absoluta de uso de moduladores del CFTR.'
-										// 		alt3='Es indispensable la kinesioterapia respiratoria'
-										// 		alt4='D. Considerar derivación a centro de trasplante a la brevedad'
-										// 		user={user}
-										// 		setUser={setUser}
-										// 		token={token}
-										// 		setToken={setToken}
-										// 		num='question5'
-
-										// 	/>
-										// 	<Results
-										// 		alt1='Es indispensable el manejo en centro multidisciplinario.'
-										// 		alt2='Tiene indicación absoluta de uso de moduladores del CFTR.'
-										// 		alt3='Es indispensable la kinesioterapia respiratoria'
-										// 		alt4='D. Considerar derivación a centro de trasplante a la brevedad'
-										// 		opt1={option5}
-										// 		opt2={option6}
-										// 		opt3={option7}
-										// 		opt4={option8}
-										// 	/>
-										// </> : null
-								}
-
 								{
 									dataVotes.map(vot =>{
 										let show = false
@@ -1121,7 +972,7 @@ const Streaming2 = () => {
 						<input type="text" placeholder="Escribe aquí..." name="question" id="question" value={questionInput} onChange={onChange} />
 						<button onClick={sendQuestion}>Enviar</button>
 					</div>
-					{!activeTest ? <h1 className="title-test">Una vez finalizado el streaming podrás realizar la evaluación</h1> : null}
+					{/* {!activeTest ? <h1 className="title-test">Una vez finalizado el streaming podrás realizar la evaluación</h1> : null}
 					<div className="test-container">
 						{!activeTest ? <div className="block-card" /> : null}
 						{testStatus ? <div className="block-card" /> : null}
@@ -1221,7 +1072,7 @@ const Streaming2 = () => {
 								{pages === 6 ? <button onClick={sendTest}>Enviar</button> : null}
 							</div>
 						</div>
-					</div>
+					</div> */}
 				</div>
 			</div>
 			<Footer setSaveData={setSaveData} />

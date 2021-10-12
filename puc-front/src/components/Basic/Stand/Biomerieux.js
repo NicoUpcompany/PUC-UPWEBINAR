@@ -228,20 +228,20 @@ const Biomerieux = (props) => {
 				La resistencia a los antimicrobianos y el diagnostico rápido son claves en el manejo de las enfermedades infecciosas, bioMerieux cuenta con soluciones  que pueden ayudar a determinar el tratamiento adecuado y reducir la propagación de infecciones.
 				</p>
 			</div>
-			{visible ? (
+			{/* {visible ? (
 				<div className="video-container">
 					<iframe
 						title="video"
 						width="640"
 						height="360"
 						className="video"
-						// src="https://player.vimeo.com/video/604772138?h=a3e831172c&autoplay=1&loop=1&autopause=0"
+						src="https://player.vimeo.com/video/604772138?h=a3e831172c&autoplay=1&loop=1&autopause=0"
 						frameBorder="0"
 						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 						allowFullScreen
 					></iframe>
 				</div>
-			) : null}
+			) : null} */}
 			<div className="carousel-container">
 				<Carousel dotPosition="bottom" autoplay {...settings}>
 					<div className="image">
@@ -257,12 +257,12 @@ const Biomerieux = (props) => {
 				</Carousel>
 			</div>
 			<div className="buttons-container">
-				<button className="wsp" onClick={() => openWsp("56958245295")}>
+				{/* <button className="wsp" onClick={() => openWsp("56958245295")}>
 					WhatsApp
 				</button>
 				<button className="meeting" onClick={() => setOpen(true)}>
 					Agendar reunión
-				</button>
+				</button> */}
 			</div>
 			<div className="footer-container">
 				<a href=" https://lounge.biomerieuxconnection.com/" target="_blank" rel="noreferrer">

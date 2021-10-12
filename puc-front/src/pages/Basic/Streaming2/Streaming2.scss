@@ -65,7 +65,7 @@
         justify-content: space-between;
         width: 100%;
         //Aquí saco el margin
-        margin-bottom: 200px;
+        margin-bottom: 50px;
 
         .col-1 {
             position: relative;
@@ -148,7 +148,7 @@
                 display: block;
                 border-radius: 20px;
                 //Aquí movi
-                height: calc(120vh - 100px);
+                height: calc(100vh - 100px);
                 background-color: #fff;
 
                 .block-card {
@@ -165,7 +165,9 @@
                 .votes {
                     position: relative;
                     display: block;
-                    padding: 80px 20px;
+                    padding: 30px 20px;
+                    overflow-y: scroll;
+                    height: calc(100vh - 150px);
 
                     .ant-radio-group {
                         width: 100%;
@@ -495,6 +497,11 @@
             .col-2 {
                 display: table;
                 width: 100%;
+                padding-top: 100px;
+                
+                .content{
+                   
+                }
             }
         }
 

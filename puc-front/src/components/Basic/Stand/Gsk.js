@@ -24,13 +24,13 @@ import CancelIcon from "@material-ui/icons/Cancel";
 
 // assets
 import close from "../../../assets/img/close.png";
-import header from "../../../assets/images/stands/celNova/header.jpg";
+import header from "../../../assets/images/stands/gsk/header.png";
 // import logoInterno from "../../../assets/images/stands/puc/logo-interno.png";
-import carrusel1 from "../../../assets/images/stands/saval/carrusel1.jpg";
-import carrusel2 from "../../../assets/images/stands/saval/carrusel2.jpg";
-import carrusel3 from "../../../assets/images/stands/saval/carrusel3.jpg";
-import carrusel4 from "../../../assets/images/stands/saval/carrusel4.jpg";
-import carrusel5 from "../../../assets/images/stands/saval/carrusel5.jpg";
+import carrusel1 from "../../../assets/images/stands/gsk/carrusel1.png";
+import carrusel2 from "../../../assets/images/stands/gsk/carrusel2.png";
+import carrusel3 from "../../../assets/images/stands/gsk/carrusel3.png";
+import carrusel4 from "../../../assets/images/stands/gsk/carrusel4.png";
+import carrusel5 from "../../../assets/images/stands/gsk/carrusel5.png";
 
 // apis
 import { agendaGet, Agendar } from "../../../api/agenda";
@@ -40,8 +40,8 @@ import "./Stand.scss";
 
 
 let settings = {
-	slidesToShow: 2,
-	slidesToScroll: 2,
+	slidesToShow: 1,
+	slidesToScroll: 1,
 };
 
 const Transition = React.forwardRef(function Transition(props, ref) {
@@ -225,8 +225,8 @@ const Gsk = (props) => {
 			</div>
 			<div className="description-container">
 				<h1 className="title">Gsk</h1>
-				<p className="description">
-                Celnova Pharma es una compañía farmacéutica regional enfocada en áreas terapéuticas complejas con 30 drogas en el mercado. Tenemos con presencia en oncología, sistema nervioso central, diabetes, cuidados críticos y enfermedades poco frecuentes. Actualmente contamos con operaciones a través de subsidiarias propias en Argentina, Chile, Perú y Colombia y con presencia remota a través de equipo médico en Uruguay, Ecuador y Bolivia.
+				<p className="description" style={{textAlign:'center'}}>
+                Más de 50 años cambiando la vida de los niños con asma 1
 				</p>
 			</div>
 			{visible ? (
@@ -236,23 +236,23 @@ const Gsk = (props) => {
 						width="640"
 						height="360"
 						className="video"
-						src="https://player.vimeo.com/video/604772138?h=a3e831172c&autoplay=1&loop=1&autopause=0"
+						src="https://player.vimeo.com/video/630348811?h=4b2f69d1e4&autoplay=1&loop=1&autopause=0"
 						frameBorder="0"
 						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 						allowFullScreen
 					></iframe>
 				</div>
 			) : null}
-			{/* <div className="carousel-container">
+			<div className="carousel-container">
 				<Carousel dotPosition="bottom" autoplay {...settings}>
 					<div className="image">
-						<LazyLoadImage alt="Carousel 1" src={carrusel1} width="100%" effect="blur" onClick={() => window.open("https://biomedica.saval.cl/", "_blank")}/>
+						<LazyLoadImage alt="Carousel 1" src={carrusel1} width="100%" effect="blur" onClick={() => window.open("https://assets.gskstatic.com/pharma/contenido-lsp/ips/CL_IP_Brexotide_LF.pdf", "_blank")}/>
 					</div>
 					<div className="image">
-						<LazyLoadImage alt="Carousel 2" src={carrusel2} width="100%" effect="blur" onClick={() => window.open("https://www.bienestarsaval.cl/programa-descuentos", "_blank")}/>
+						<LazyLoadImage alt="Carousel 2" src={carrusel2} width="100%" effect="blur" onClick={() => window.open("https://gskpro.com/content/dam/global/hcpportal/es_CL/PDFs/Homepage/products/Avamys/CL_IP_Avamys.pdf", "_blank")}/>
 					</div>
 					<div className="image">
-						<LazyLoadImage alt="Carousel 3" src={carrusel3} width="100%" effect="blur" onClick={() => window.open("https://emc-saval.cl/", "_blank")}/>
+						<LazyLoadImage alt="Carousel 3" src={carrusel3} width="100%" effect="blur" onClick={() => window.open("https://gskpro.com/content/dam/global/hcpportal/es_CL/PDFs/Homepage/products/flixotide/CL_IP_Flixotide.pdf", "_blank")}/>
 					</div>
 					<div className="image">
 						<LazyLoadImage alt="Carousel 4" src={carrusel4} width="100%" effect="blur" onClick={() => window.open("https://forms.office.com/pages/responsepage.aspx?id=mlIfnAUrlkC0F_pzI4WgUgDPPNSUD3VAmpvGAXyAns5UNldTSElJUjBTUjRMN1BRUlZTMzEyMEo0VC4u", "_blank")}/>
@@ -261,22 +261,26 @@ const Gsk = (props) => {
 						<LazyLoadImage alt="Carousel 5" src={carrusel5} width="100%" effect="blur" onClick={() => window.open("https://forms.office.com/pages/responsepage.aspx?id=mlIfnAUrlkC0F_pzI4WgUgDPPNSUD3VAmpvGAXyAns5UMEcxR0JJOTVDNjVGQk9QTzBXMFhUTzBOWi4u", "_blank")}/>
 					</div>
 				</Carousel>
-			</div> */}
+			</div>
 			<div className="buttons-container">
-				<button className="wsp" onClick={() => openWsp("56932383615")}>
-					WhatsApp
+				<button className="wsp" onClick={() =>window.open('https://gskpro.com/es-cl/?', '_blank')}>
+					Gsk Pro
 				</button>
-				<button className="meeting" onClick={() => setOpen(true)}>
-					Agendar reunión
+				<button className="meeting" onClick={() => window.open('https://gskpro.com/es-cl/productos/', '_blank')}>
+					Productos GSK
+				</button>
+
+				<button className="info" onClick={() => window.open('https://gskpro.com/es-cl/contact-us/req-a-rep', '_blank')}>
+					Solicite visita médica
 				</button>
 			</div>
-			<div className="footer-container">
+			{/* <div className="footer-container">
 				<a href="https://educacionprofesional.ing.uc.cl/" target="_blank" rel="noreferrer">
 					educacionprofesional.ing.uc.cl
 				</a>
 				<a href="mailtotsantander@celnova.com">tsantander@celnova.com </a>
 				<a href="tel:++56932383615">+56 9 3238 3615</a>
-			</div>
+			</div> */}
 			<Dialog
 				open={open}
 				TransitionComponent={Transition}

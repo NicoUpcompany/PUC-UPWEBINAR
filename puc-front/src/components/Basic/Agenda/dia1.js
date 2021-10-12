@@ -5,15 +5,15 @@ import FreeBreakfastIcon from "@material-ui/icons/FreeBreakfast";
 import flecha from "../../../assets/img/flecha.png";
 import { Speaker } from "./Speaker";
 import bertrand from '../../../assets/img/speakers/Dr.-Bertrand.jpg'
-import fernandoMartinez from '../../../assets/img/speakers/Dr.FernandoMArtinez.jpg'
+import fernandoMartinez from '../../../assets/img/speakers/Dr.FdoMartinez.jpg'
 import lauraGoicochea from '../../../assets/img/speakers/LauraGochicoa.png'
 import mariaEster from '../../../assets/img/speakers/M.EsterPizarro.jpeg'
-import hectorGui from '../../../assets/img/speakers/Dr.HectorGutierrezUSA.png'
-import yuryHernandez from '../../../assets/img/speakers/Dr.YuriHernandez.png'
-import juanAndres from '../../../assets/img/speakers/Dr.Navarro.jpeg'
-import davidGozal from '../../../assets/img/speakers/davidgozal2020.jpg'
+import hectorGui from '../../../assets/img/speakers/Dr.HectorGutierrez.jpg'
+import yuryHernandez from '../../../assets/img/speakers/Dr.Yuri.jpg'
+import juanAndres from '../../../assets/img/speakers/Dr.Navarro.jpg'
+import davidGozal from '../../../assets/img/speakers/DavidGozal.jpg'
 import fernandoIniguez from '../../../assets/img/speakers/Dr.Iniguez.jpg'
-import illse from '../../../assets/img/speakers/Dra.Ilse.jpg'
+import illse from '../../../assets/img/speakers/Dra.Lise.jpg'
 import luisVega from '../../../assets/img/speakers/Dr.LuisVega.jpeg'
 import katalina from '../../../assets/img/speakers/katalinaBertran.png'
 

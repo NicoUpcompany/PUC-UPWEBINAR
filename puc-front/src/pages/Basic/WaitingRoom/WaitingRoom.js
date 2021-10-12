@@ -26,11 +26,12 @@ import logo from "../../../assets/images/logo.png";
 
 // stands images
 import standFondo from "../../../assets/images/stand.png";
+import standAztra from '../../../assets/images/stands/astrazeneca/standAztra.jpg'
 import standSanofi from '../../../assets/images/stands/sanofi/logoStand.jpg'
 import standBiomerux from '../../../assets/images/stands/biomerieux/logoStand.jpg'
-import standTeva from '../../../assets/images/stands/teva/logoStand.png'
-import standBiomarin from '../../../assets/images/stands/biomarin/standBiomarin.png'
-import standBiotoscana from '../../../assets/images/stands/biotoscana/standBiotoscana.png'
+import standTeva from '../../../assets/images/stands/teva/logoStand.jpg'
+import standBiomarin from '../../../assets/images/stands/biomarin/standBiomarin.jpg'
+import standBiotoscana from '../../../assets/images/stands/biotoscana/standBiotoscana.jpg'
 import standPasteur from '../../../assets/images/stands/pasteur/standPasteur.jpg'
 import standSaval from '../../../assets/images/stands/saval/standSaval.jpg'
 import standCelnova from '../../../assets/images/stands/celNova/standCelnova.jpg'
@@ -189,7 +190,7 @@ const WaitingRoom = () => {
 		const month = moment().month();
 		if (day === 16 && month === 9) {
 			if (saveData === 3 || saveData === 4) {
-				history.push("/streaming2");
+				history.push("/streaming");
 			}
 		} else {
 			if (saveData === 3 || saveData === 4) {
@@ -383,12 +384,12 @@ const WaitingRoom = () => {
 									<a href="#stands">Stands</a>
 									{!state && !changeStreaming ? (
 										<Link to="/streaming" className="perfil">
-											Streaming
+											Entrar a sala
 										</Link>
 									) : null}
 									{!state && changeStreaming ? (
-										<Link to="/streaming2" className="perfil">
-											Streaming
+										<Link to="/streaming" className="perfil">
+											Entrar a sala
 										</Link>
 									) : null}
 								</div>
@@ -426,8 +427,8 @@ const WaitingRoom = () => {
 											) : null}
 											{!state && changeStreaming ? (
 												<Menu.Item key="setting:5">
-													<Link className="opcion" to="/streaming2">
-														Streaming
+													<Link className="opcion" to="/streaming">
+														Entrar a sala
 													</Link>
 												</Menu.Item>
 											) : null}
@@ -444,7 +445,7 @@ const WaitingRoom = () => {
 									{!state ? (
 										<div className="centrado">
 											<div className="btn">
-												<button onClick={() => setSaveData(4)}>Streaming</button>
+												<button onClick={() => setSaveData(4)}>Entrar a sala</button>
 											</div>
 										</div>
 									) : null}
@@ -485,11 +486,11 @@ const WaitingRoom = () => {
 								{/* Aztracenaca */}
 								<div className="col-2" onClick={() => setAstrazeneca(true)}>
 									<img
-										src={standFondo}
+										src={standAztra}
 										alt="stand l"
 									/>
 								</div>
-								<div className="col-2" onClick={() => window.open('https://www.gsk.com/en-gb/home/', '_blank')}>
+								<div className="col-2" onClick={() => setGsk(true)}>
 									<img
 										src={standGsk}
 										alt="stand l"
@@ -502,22 +503,24 @@ const WaitingRoom = () => {
 											alt="stand l"
 										/>
 									</div>
+
+									<div className='stand-l'>
+										<div  className='biomarin' onClick={() => setBiomarin(true)}>
+											<img
+												src={standBiomarin}
+												alt="stand l"
+											/>
+										</div>
+										<div  className='biome' onClick={() => setBiomerieux(true)}>
+											<img
+												src={standBiomerux}
+												alt="stand l"
+											/>
+										</div>
+									</div>
+
 								</div>
 
-								<div className='center' style={{marginBottom:'50px'}}>
-									<div className="col-3" onClick={() => setBiomarin(true)}>
-										<img
-											src={standBiomarin}
-											alt="stand l"
-										/>
-									</div>
-									<div className="col-3"   onClick={() => setBiomerieux(true)}>
-										<img
-											src={standBiomerux}
-											alt="stand l"
-										/>
-									</div>
-								</div>
 
 								<div className="col-m" onClick={() => window.open('https://www.grupobiotoscana.com/es/paises/chile/', '_blank')}>
 									<img

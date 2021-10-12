@@ -201,7 +201,7 @@ const CelNova = (props) => {
 		const url =
 			"https://api.whatsapp.com/send/?phone=" +
 			numero +
-			"&text=Hola,%20vi%20el%20stand%20en%20el%20evento%20Gov%20Days.%20Me%20gustaría%20saber%20más%20sobre%20ustedes&app_absent=0&lang=es";
+			"&text=Hola,%20vi%20el%20stand%20en%20el%20evento.%20Me%20gustaría%20saber%20más%20sobre%20ustedes&app_absent=0&lang=es";
 		window.open(url, "_blank");
 		const data = {
 			conectionType: window.conectionType,
@@ -267,7 +267,7 @@ const CelNova = (props) => {
 				</Carousel>
 			</div>
 			<div className="buttons-container">
-				<button className="wsp" onClick={() => openWsp("56932383615")}>
+				{/* <button className="wsp" onClick={() => openWsp("56932383615")}>
 					WhatsApp
 				</button>
 				<button className="meeting" onClick={() => setOpen(true)}>
@@ -275,12 +275,12 @@ const CelNova = (props) => {
 				</button>
 				<button className="info" onClick={() => openFile("Medicina UC - Representante de Celnova Pharma.docx")}>
 					Descargar información
-				</button>
+				</button> */}
 			</div>
 			<div className="footer-container">
-				<a href="https://educacionprofesional.ing.uc.cl/" target="_blank" rel="noreferrer">
+				{/* <a href="https://educacionprofesional.ing.uc.cl/" target="_blank" rel="noreferrer">
 					educacionprofesional.ing.uc.cl
-				</a>
+				</a> */}
 				<a href="mailtotsantander@celnova.com">tsantander@celnova.com </a>
 				<a href="tel:++56932383615">+56 9 3238 3615</a>
 			</div>

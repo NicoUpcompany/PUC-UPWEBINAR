@@ -125,7 +125,7 @@ const routes = [
 			},
 			{
 				path: "/streaming",
-				component: Streaming,
+				component: Streaming2,
 				exact: true,
 			},
 			{

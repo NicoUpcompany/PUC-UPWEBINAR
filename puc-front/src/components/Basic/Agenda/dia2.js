@@ -1,12 +1,13 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 import FreeBreakfastIcon from "@material-ui/icons/FreeBreakfast";
-import yuryHernandez from '../../../assets/img/speakers/Dr.YuriHernandez.png'
+import yuryHernandez from '../../../assets/img/speakers/Dr.Yuri.jpg'
 import fernandoIniguez from '../../../assets/img/speakers/Dr.Iniguez.jpg'
 import arturoBortu from '../../../assets/img/speakers/Dr.ArturoBortzutzkiCHILE.png'
 import erikForno from '../../../assets/img/speakers/ErickForno2020.jpeg'
 import luisVega from '../../../assets/img/speakers/Dr.LuisVega.jpeg'
 import carlosFlores from '../../../assets/img/speakers/Dr.Flores.jpg'
+import carolina from '../../../assets/img/speakers/Dr.Carolina.jpeg'
 import carlosPeru from  '../../../assets/img/speakers/Dr.CarlosPeru.jfif'
 
 import { RowSpeaker } from "./RowSpeaker";
@@ -262,6 +263,7 @@ const Dia2 = ({ setSaveData, abrirCerrar, state }) => {
 				moderador="Dr. Carlos Flores"
 				speaker="Dra. Carolina Rivacoba"
 				imgSpeaker1={carlosFlores}
+				imgSpeaker2={carolina}
 				cargo1='Pediatra Broncopulmonar con Mención en Cuidados Intensivos, Magister en Epidemiología, Jefe del Servicio de Pediatría y de la Unidad de Tratamiento Intermedio del Hospital de Ovalle'
 			/>							
 		</>

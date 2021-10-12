@@ -260,18 +260,18 @@ const Sanofi = (props) => {
 				</Carousel>
 			</div>
 			<div className="buttons-container">
-				<button className="wsp" onClick={() => openWsp("56932383615")}>
+				{/* <button className="wsp" onClick={() => openWsp("56932383615")}>
 					WhatsApp
 				</button>
 				<button className="meeting" onClick={() => setOpen(true)}>
 					Agendar reunión
-				</button>
+				</button> */}
 			</div>
 			<div className="footer-container">
 				<a href="https://www.sanofi.cl/" target="_blank" rel="noreferrer">
-					www.sanofi.cl
+					 Para más información visitar www.sanofi.cl
 				</a>
-				<a href="mailtotsantander@celnova.com">tsantander@celnova.com </a>
+				{/* <a href="mailtotsantander@celnova.com">tsantander@celnova.com </a> */}
 				{/* <a href="tel:++56932383615">+56 9 3238 3615</a> */}
 			</div>
 			<Dialog

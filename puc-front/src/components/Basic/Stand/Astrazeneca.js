@@ -197,7 +197,7 @@ const Astrazeneca = (props) => {
 		const url =
 			"https://api.whatsapp.com/send/?phone=" +
 			numero +
-			"&text=Hola,%20vi%20el%20stand%20en%20el%20evento%20Gov%20Days.%20Me%20gustaría%20saber%20más%20sobre%20ustedes&app_absent=0&lang=es";
+			"&text=Hola,%20vi%20el%20stand%20en%20el%20evento.%20Me%20gustaría%20saber%20más%20sobre%20ustedes&app_absent=0&lang=es";
 		window.open(url, "_blank");
 		const data = {
 			conectionType: window.conectionType,
@@ -222,8 +222,8 @@ const Astrazeneca = (props) => {
 			<div className="description-container">
 				<h1 className="title">Astrazeneca</h1>
 				<p className="description">
-                {/* Celnova Pharma es una compañía farmacéutica regional enfocada en áreas terapéuticas complejas con 30 drogas en el mercado. Tenemos con presencia en oncología, sistema nervioso central, diabetes, cuidados críticos y enfermedades poco frecuentes. Actualmente contamos con operaciones a través de subsidiarias propias en Argentina, Chile, Perú y Colombia y con presencia remota a través de equipo médico en Uruguay, Ecuador y Bolivia.
-			*/}
+               Porque AstraZeneca se compromete con la salud de todos los Chilenos, presentamos los beneficios de acceso en <strong>Medicamentos de las Líneas Respiratoria y Gastroenterología asociados al Programa Ahumada Contigo para los afiliados del Sistema Público de Salud</strong>
+			
 				</p>
 			</div>
 			{visible ? (
@@ -251,16 +251,16 @@ const Astrazeneca = (props) => {
 				<button className="wsp" onClick={() => openWsp("56947323869")}>
 					WhatsApp
 				</button>
-				<button className="meeting" onClick={() => setOpen(true)}>
-					Agendar reunión
-				</button>
+				<a href="mailto:chile-cotizaciones@astrazeneca.com" className="meeting">
+					Cotización
+				</a>
 			</div>
 			<div className="footer-container">
-				<a href="https://educacionprofesional.ing.uc.cl/" target="_blank" rel="noreferrer">
+				{/* <a href="https://educacionprofesional.ing.uc.cl/" target="_blank" rel="noreferrer">
 					educacionprofesional.ing.uc.cl
-				</a>
+				</a> */}
 				<a href="mailto:daniela.donoso@astrazeneca.com">daniela.donoso@astrazeneca.com </a>
-				<a href="tel:++56932383615">+56932383615</a>
+				<a href="tel:++56932383615">+56947323869</a>
 			</div>
 			<Dialog
 				open={open}

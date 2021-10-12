@@ -8,7 +8,7 @@ import luisVega from '../../../assets/img/speakers/Dr.LuisVega.jpeg'
 import idaConcha from '../../../assets/img/speakers/Dra.IdaConchaCHILEjpg.jpg'
 import Zamorano from '../../../assets/img/speakers/Dra.Zamorano.jpg'
 import ceciliaPerret from '../../../assets/img/speakers/Dra.CeciliaPerret.jpg'
-import juanAndres from '../../../assets/img/speakers/Dr.Navarro.jpeg'
+import juanAndres from '../../../assets/img/speakers/Dr.Navarro.jpg'
 
 
 

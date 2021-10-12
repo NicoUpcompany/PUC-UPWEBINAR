@@ -264,17 +264,17 @@ const Saval = (props) => {
 				</Carousel>
 			</div>
 			<div className="buttons-container">
-				<button className="wsp" onClick={() => openWsp("56933530870")}>
+				{/* <button className="wsp" onClick={() => openWsp("56933530870")}>
 					WhatsApp
 				</button>
 				<button className="meeting" onClick={() => setOpen(true)}>
 					Agendar reunión
-				</button>
+				</button> */}
 			</div>
 			<div className="footer-container">
-				<a href="https://educacionprofesional.ing.uc.cl/" target="_blank" rel="noreferrer">
+				{/* <a href="https://educacionprofesional.ing.uc.cl/" target="_blank" rel="noreferrer">
 					educacionprofesional.ing.uc.cl
-				</a>
+				</a> */}
 				<a href="mailto:manquehue@saval.cl">manquehue@saval.cl</a>
 				<a href="tel:+56933530870">+56222118600</a>
 			</div>

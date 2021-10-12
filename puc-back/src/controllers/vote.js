@@ -165,6 +165,7 @@ function getClientVotes(req, res) {
 				if (!voteStored) {
 					res.status(404).send({ ok: false, votes: [] });
 				} else {
+					
 					let option1Count = 0;
 					let option2Count = 0;
 					let option3Count = 0;

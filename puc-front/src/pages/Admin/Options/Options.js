@@ -23,8 +23,36 @@ import "./Options.scss";
 const votesHeaders = [
 	{ title: "ID", dataIndex: "_id" },
 	{ title: "Correo", dataIndex: "email" },
-	{ title: "Pregunta 1", dataIndex: "vote1" },
-	{ title: "Pregunta 2", dataIndex: "vote2" },
+	{ title: "Pregunta 1", dataIndex: "question1" },
+	{ title: "Pregunta 2", dataIndex: "question2" },
+	{ title: "Pregunta 3", dataIndex: "question3" },
+	{ title: "Pregunta 4", dataIndex: "question4" },
+	{ title: "Pregunta 5", dataIndex: "question5" },
+	{ title: "Pregunta 6", dataIndex: "question6" },
+	{ title: "Pregunta 7", dataIndex: "question7" },
+	{ title: "Pregunta 8", dataIndex: "question8" },
+	{ title: "Pregunta 9", dataIndex: "question9" },
+	{ title: "Pregunta 10", dataIndex: "question10" },
+	{ title: "Pregunta 11", dataIndex: "question11" },
+	{ title: "Pregunta 12", dataIndex: "question12" },
+	{ title: "Pregunta 13", dataIndex: "question13" },
+	{ title: "Pregunta 14", dataIndex: "question14" },
+	{ title: "Pregunta 15", dataIndex: "question15" },
+	{ title: "Pregunta 16", dataIndex: "question16" },
+	{ title: "Pregunta 17", dataIndex: "question17" },
+	{ title: "Pregunta 18", dataIndex: "question18" },
+	{ title: "Pregunta 19", dataIndex: "question19" },
+	{ title: "Pregunta 20", dataIndex: "question20" },
+	{ title: "Pregunta 21", dataIndex: "question21" },
+	{ title: "Pregunta 22", dataIndex: "question22" },
+	{ title: "Pregunta 23", dataIndex: "question23" },
+	{ title: "Pregunta 24", dataIndex: "question24" },
+	{ title: "Pregunta 25", dataIndex: "question25" },
+	{ title: "Pregunta 26", dataIndex: "question26" },
+	{ title: "Pregunta 27", dataIndex: "question27" },
+	{ title: "Pregunta 28", dataIndex: "question28" },
+	{ title: "Pregunta 29", dataIndex: "question29" },
+	{ title: "Pregunta 30", dataIndex: "question30" },
 	{ title: "Día y hora de registro", dataIndex: "time" },
 ];
 
@@ -166,6 +194,7 @@ export default function Events() {
 					arrayVotes.push(element);
 				});
 			}
+			console.log(arrayVotes);
 			setvotesData(arrayVotes);
 			setLoading(false);
 		});
