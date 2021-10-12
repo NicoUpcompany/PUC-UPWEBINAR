@@ -15,6 +15,7 @@ import davidGozal from '../../../assets/img/speakers/davidgozal2020.jpg'
 import fernandoIniguez from '../../../assets/img/speakers/Dr.Iniguez.jpg'
 import illse from '../../../assets/img/speakers/Dra.Ilse.jpg'
 import luisVega from '../../../assets/img/speakers/Dr.LuisVega.jpeg'
+import katalina from '../../../assets/img/speakers/katalinaBertran.png'
 
 
 const Dia1 = ({ setSaveData, abrirCerrar, state }) => {
@@ -488,6 +489,7 @@ const Dia1 = ({ setSaveData, abrirCerrar, state }) => {
 						<Speaker
 							nombre="Dra. Katalina Bertran"
 							moderador={false}	
+							speaker={katalina}
 							cargo='Médico Cirujano Universidad del Desarrollo, . Especialidad en Enfermedades Respiratorias Pediátricas. Médico especialista en Clínica Alemana de Santiago'
 						/>	
 					 

@@ -209,6 +209,7 @@ export default function Events() {
 						...votesStatus,
 						vote1: arr[arr.length -1].vote1,
 						vote2: arr[arr.length -1].vote2,
+						vote3: arr[arr.length -1].vote3,
 						vote4: arr[arr.length -1].vote4,
 						vote5: arr[arr.length -1].vote5,
 						vote6: arr[arr.length -1].vote6,

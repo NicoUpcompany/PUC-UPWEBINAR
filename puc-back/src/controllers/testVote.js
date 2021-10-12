@@ -15,10 +15,14 @@ require("moment/locale/es");
  * @returns {boolean} estado ``ok`` true/false
  */
 function saveTest(req, res) {
-	const { question1, question2, userID } = req.body;
+	const { question1, userID } = req.body;
 	const test = new Test();
 	const time = moment().format();
-	test.question1 = question1;
+	if(question1 === undefined){
+		test.question1 = 0;
+	}else{
+		test.question1 = question1;
+	}
 	test.user = userID;
 	test.time = time;
 	test.save((err, testStored) => {

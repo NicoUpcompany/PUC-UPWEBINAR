@@ -38,21 +38,31 @@ export const Votes = ({
 
 	const sendVotes = async() =>{
 
-		const resp = await getVotes(token, user.id);
-		//Votos de la base de datos 
-		let votes = resp.votes[0];
-		const votesId = resp.votes[0]._id;
-		//Actualizar pregunta
-		votes = {
-			...votes, 
-			[num]: vote
-		}
-
 		if(!vote) {
 			notification["error"]({
 				message: "Debes seleccionar una opción"
 			});
 		}else{
+
+			let resp = await getVotes(token, user.id);
+			if(resp.votes.length === 0){
+				const data = {
+					userID: user.id,
+					question1: 0
+				}
+				await postTestVoteApi(token, data);
+			}
+
+			resp = await getVotes(token, user.id);
+			//Votos de la base de datos 
+			let votes = resp.votes[0];
+			const votesId = resp.votes[0]._id;
+			//Actualizar pregunta
+			votes = {
+				...votes, 
+				[num]: vote
+			}
+	
 			const data = {
 				userID : user.id,
 				voteId: votesId,
@@ -78,7 +88,6 @@ export const Votes = ({
 				userID: user.id,
 				question1: vote
 			}
-			console.log(token);
 			const response = await postTestVoteApi(token, data);
 			if(response.ok){
 				const { accessToken, refreshToken, message } = response;
@@ -86,7 +95,6 @@ export const Votes = ({
 				localStorage.setItem(REFRESH_TOKEN, refreshToken);
 				setToken(accessToken);
 				setUser(jwtDecode(accessToken));
-				// setVoteStatus(true);
 				notification["success"]({
 					message: message,
 				});

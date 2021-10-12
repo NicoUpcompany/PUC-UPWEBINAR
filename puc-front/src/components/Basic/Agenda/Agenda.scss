@@ -117,7 +117,7 @@
 				.imagen {
 					float: right;
 					width: calc(100% - 20%);
-
+					
 					.icon {
 						float: left;
 						width: 80px;
@@ -135,6 +135,7 @@
 						padding-left: 75px;
 						.ultimo {
 							font-weight: 500;
+							font-size: 12px;
 						}
 						.res {
 							margin-left: 75px;

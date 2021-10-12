@@ -35,6 +35,7 @@ import standPasteur from '../../../assets/images/stands/pasteur/standPasteur.jpg
 import standSaval from '../../../assets/images/stands/saval/standSaval.jpg'
 import standCelnova from '../../../assets/images/stands/celNova/standCelnova.jpg'
 import standEuro from '../../../assets/images/stands/europharma/standEuro.jpg'
+import standGsk from '../../../assets/images/stands/gsk/standGsk.jpg'
 
 // Stands components
 import PucComponent from "../../../components/Basic/Stand/puc";
@@ -482,67 +483,74 @@ const WaitingRoom = () => {
 						<div className="contenedor" id="stands">
 							<div className="stands">
 								{/* Aztracenaca */}
-								<div className="col-3" onClick={() => setAstrazeneca(true)}>
+								<div className="col-2" onClick={() => setAstrazeneca(true)}>
 									<img
 										src={standFondo}
 										alt="stand l"
 									/>
 								</div>
-								<div className="col-3" onClick={() => setBiomarin(true)}>
+								<div className="col-2" onClick={() => window.open('https://www.gsk.com/en-gb/home/', '_blank')}>
 									<img
-										src={standBiomarin}
+										src={standGsk}
 										alt="stand l"
-									/>
+										/>
 								</div>
-								<div className="col-3" onClick={() => setBiomerieux(true)}>
-									<img
-										src={standBiomerux}
-										alt="stand l"
-									/>
+								<div className='center'>
+									<div className="col-2" onClick={() => setSanofi(true)}>
+										<img
+											src={standSanofi}
+											alt="stand l"
+										/>
+									</div>
 								</div>
-								<div className="col-3" onClick={() => window.open('https://www.grupobiotoscana.com/es/paises/chile/', '_blank')}>
+
+								<div className='center' style={{marginBottom:'50px'}}>
+									<div className="col-3" onClick={() => setBiomarin(true)}>
+										<img
+											src={standBiomarin}
+											alt="stand l"
+										/>
+									</div>
+									<div className="col-3"   onClick={() => setBiomerieux(true)}>
+										<img
+											src={standBiomerux}
+											alt="stand l"
+										/>
+									</div>
+								</div>
+
+								<div className="col-m" onClick={() => window.open('https://www.grupobiotoscana.com/es/paises/chile/', '_blank')}>
 									<img
 										src={standBiotoscana}
 										alt="stand l"
 									/>
 								</div>
-								<div className="col-3" onClick={() => setCelNova(true)}>
+								<div className="col-m" onClick={() => setCelNova(true)}>
 									<img
 										src={standCelnova}
 										alt="stand l"
 									/>
 								</div>
-								<div className="col-3" onClick={() => setEuropharma(true)}>
+								<div className="col-m" onClick={() => setEuropharma(true)}>
 									<img
 										src={standEuro}
 										alt="stand l"
 									/>
 								</div>
-								{/* <div className="col-3" onClick={() => setGsk(true)}>
-									<img
-										src={standFondo}
-										alt="stand l"
-									/>
-								</div> */}
-								<div className="col-3" onClick={() => setPasteur(true)}>
+								<div className="col-m" onClick={() => setPasteur(true)}>
 									<img
 										src={standPasteur}
 										alt="stand l"
 									/>
 								</div>
-								<div className="col-3" onClick={() => setSanofi(true)}>
-									<img
-										src={standSanofi}
-										alt="stand l"
-									/>
-								</div>
-								<div className="col-3" onClick={() => setSavalDrawer(true)}>
+								
+								<div className="col-m" onClick={() => setSavalDrawer(true)}>
 									<img
 										src={standSaval}
 										alt="stand l"
 									/>
 								</div>
-								<div className="col-2" onClick={() => setTeva(true)}>
+								<div className="col-m" onClick={() => setTeva(true)}>
 									<img
 										src={standTeva}
 										alt="stand l"

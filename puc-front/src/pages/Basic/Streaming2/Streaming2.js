@@ -210,7 +210,6 @@ const Streaming2 = () => {
 	const [question6, setQuestion6] = useState(0);
 
 	useEffect(() => {
-		console.log(dataVotes);
 		setLoading(true);
 		if (!isMobile) {
 			$(window).scroll(function () {
@@ -364,7 +363,6 @@ const Streaming2 = () => {
 	const getVotes = async (auxToken) => {
 		const response = await getVoteClientApi(auxToken);
 		if (response.ok) {
-			console.log(response);
 			setOption1(response.opt1q1);
 			setOption2(response.opt2q1);
 			setOption3(response.opt3q1);
@@ -1084,6 +1082,7 @@ const Streaming2 = () => {
 											(show) ? 
 											<>
 												<Votes
+													key={`vores-${vot.id}`}
 													ask={vot.ask}
 													alt1={vot.alt1}
 													alt2={vot.alt2}
@@ -1097,6 +1096,7 @@ const Streaming2 = () => {
 													voto1 ={vot.id === 1 && true} 
 												/>
 												<Results
+													key={`result-${vot.id}`}
 													alt1={vot.alt1}
 													alt2={vot.alt2}
 													alt3={vot.alt3}
