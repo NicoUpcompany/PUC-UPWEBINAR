@@ -9,6 +9,7 @@ import idaConcha from '../../../assets/img/speakers/Dra.IdaConchaCHILEjpg.jpg'
 import Zamorano from '../../../assets/img/speakers/Dra.Zamorano.jpg'
 import ceciliaPerret from '../../../assets/img/speakers/Dra.CeciliaPerret.jpg'
 import juanAndres from '../../../assets/img/speakers/Dr.Navarro.jpg'
+import valeria from '../../../assets/img/speakers/draValeriaPalma.jpg'
 
 
 
@@ -141,14 +142,22 @@ const Dia3 = ({ setSaveData, abrirCerrar, state }) => {
 				state={state}
 				id={24}
 				grey="grey"
-				inicio=""
-				fin=""
+				inicio="Hora sugerida"
+				fin="12:00"
 				tematica="Simnposio Lab. SANOFI"
 				tematica2="Asma grave en al adolesencia: Desafíos diagnósticos y terapéuticos en la era biológica. De la inmunilogía Básica a la práctica clínica A proposito de un caso: Guía para la toma de decisiones terapéuticas e implicancias prácticas"
 				moderador="Dr. Juan Andrés Navarro"
-				speaker="Dra. Valeria Palma y Dr. Mario Calvo"
+				speaker="Dra. Valeria Palma"
+				speaker2="Dr. Mario Calvo"
 				imgSpeaker1={juanAndres}
+				imgSpeaker2={valeria}
+				imgSpeaker3={''}
 				cargo1='Profesor Asociado de la Pontificia Universidad Católica de Chile,  Jefe Unidad Enfermedades Respiratorias Pediátricas, Director del X Curso Internacional de Enfermedades Respiratorias Pediátricas'
+				cargo2='Dra. Valeria Palma
+				Médico Cirujano Especialista en Inmunología Clínica
+				Miembro activo del staff médico de Inmunología y Alergias de la Clínica Alemana de Santiago
+				Coordinadora del Programa de Formación de Especialistas en Inmunología del Hospital Clínico de la Universidad de Chile'
+			
 			/>		
 
 			<RowSpeaker
@@ -158,11 +167,12 @@ const Dia3 = ({ setSaveData, abrirCerrar, state }) => {
 					id={31}
 					grey="grey"
 					inicio=""
-					fin=""
+					fin="13:00"
 					tematica="Cierre curso"
 					moderador="Dr. Pablo Bertrand"
 					speaker="Todo el comité"
 					imgSpeaker1={bertrand}
+
 				/>
 
 		</>

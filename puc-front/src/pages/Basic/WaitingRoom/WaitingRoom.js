@@ -253,6 +253,7 @@ const WaitingRoom = () => {
 			action = "Cerrar Chat";
 		} else {
 			action = "Abrir Chat";
+			$('.css-83nmom').trigger('click');
 		}
 		const data = {
 			conexionType: window.conectionType,

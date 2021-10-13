@@ -43,40 +43,9 @@ function changeStatus(req, res) {
 		vote27,
 		vote28,
 		vote29,
-		vote30
+		vote30,
+		vote31
 	} = req.body
-	console.log(vote1)
-	console.log(vote2)
-	console.log(vote3)
-	console.log(vote4)
-	console.log(vote5)
-	console.log(vote6)
-	console.log(vote7)
-	console.log(vote8)
-	console.log(vote9)
-	console.log(vote10)
-	console.log(vote11)
-	console.log(vote12)
-	console.log(vote13)
-	console.log(vote14)
-	console.log(vote15)
-	console.log(vote16)
-	console.log(vote17)
-	console.log(vote16)
-	console.log(vote17)
-	console.log(vote18)
-	console.log(vote19)
-	console.log(vote20)
-	console.log(vote21)
-	console.log(vote22)
-	console.log(vote23)
-	console.log(vote24)
-	console.log(vote25)
-	console.log(vote26)
-	console.log(vote27)
-	console.log(vote28)
-	console.log(vote29)
-	console.log('---------')
 	const testStatus = new TestStatus();
 	const time = moment().format();
 	testStatus.vote1 = vote1;
@@ -108,6 +77,7 @@ function changeStatus(req, res) {
 	testStatus.vote28 = vote28;
 	testStatus.vote29 = vote29;
 	testStatus.vote30 = vote30;
+	testStatus.vote31 = vote31;
 	if (active !== undefined) {
 		testStatus.active= active
 	}

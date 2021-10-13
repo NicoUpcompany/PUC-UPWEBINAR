@@ -11,6 +11,7 @@ export const Votes = ({
         alt2,
         alt3,
         alt4,
+		alt5,
         user,
 		setUser,
 		voto1,
@@ -78,34 +79,34 @@ export const Votes = ({
 		}
 	}
 
-    const sendVote1 = async () => {
-		if (!vote) {
-			notification["error"]({
-				message: "Debes seleccionar una opción",
-			});
-		} else{
-			const data = {
-				userID: user.id,
-				question1: vote
-			}
-			const response = await postTestVoteApi(token, data);
-			if(response.ok){
-				const { accessToken, refreshToken, message } = response;
-				localStorage.setItem(ACCESS_TOKEN, accessToken);
-				localStorage.setItem(REFRESH_TOKEN, refreshToken);
-				setToken(accessToken);
-				setUser(jwtDecode(accessToken));
-				notification["success"]({
-					message: message,
-				});
-				setStatusVote(false);
-			}else {
-				notification["error"]({
-					message: response.message,
-					});
-				}
-		}
-	};
+    // const sendVote1 = async () => {
+	// 	if (!vote) {
+	// 		notification["error"]({
+	// 			message: "Debes seleccionar una opción",
+	// 		});
+	// 	} else{
+	// 		const data = {
+	// 			userID: user.id,
+	// 			question1: vote
+	// 		}
+	// 		const response = await postTestVoteApi(token, data);
+	// 		if(response.ok){
+	// 			const { accessToken, refreshToken, message } = response;
+	// 			localStorage.setItem(ACCESS_TOKEN, accessToken);
+	// 			localStorage.setItem(REFRESH_TOKEN, refreshToken);
+	// 			setToken(accessToken);
+	// 			setUser(jwtDecode(accessToken));
+	// 			notification["success"]({
+	// 				message: message,
+	// 			});
+	// 			setStatusVote(false);
+	// 		}else {
+	// 			notification["error"]({
+	// 				message: response.message,
+	// 				});
+	// 			}
+	// 	}
+	// };
 
     return (
         <>
@@ -119,13 +120,17 @@ export const Votes = ({
 						<Radio value={2}>{alt2}</Radio>
 						<Radio value={3}>{alt3}</Radio>
 						<Radio value={4}>{alt4}</Radio>
+						{
+							alt5&&
+							<Radio value={5}>{alt5}</Radio>
+						}
 					</Space>
 				</Radio.Group>   
-				{
+				<button className="btn" onClick={sendVotes}>Votar</button>
+				{/* {
 					voto1
-					?<button className="btn" onClick={sendVote1}>Votar</button>          
-					:<button className="btn" onClick={sendVotes}>Votar</button>
-				}
+					?<button className="btn" onClick={sendVotes}>Votar</button>          
+				} */}
 			</>
 			:<h1>Voto realizado</h1>	
 		}

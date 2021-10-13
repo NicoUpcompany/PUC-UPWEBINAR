@@ -163,6 +163,14 @@ const Streaming2 = () => {
 	const [opt118, setOpt118] = useState(0);
 	const [opt119, setOpt119] = useState(0);
 	const [opt120, setOpt120] = useState(0);
+	const [opt121, setOpt121] = useState(0);
+	const [opt122, setOpt122] = useState(0);
+	const [opt123, setOpt123] = useState(0);
+	const [opt124, setOpt124] = useState(0);
+	const [opt125, setOpt125] = useState(0);
+	const [opt126, setOpt126] = useState(0);
+	const [opt127, setOpt127] = useState(0);
+	const [opt128, setOpt128] = useState(0);
 
 	const [votes, setVotes] = useState(0);
 	const [vote1, setVote1] = useState(0);
@@ -202,6 +210,7 @@ const Streaming2 = () => {
 	const [activeVote28, setActiveVote28] = useState(false);
 	const [activeVote29, setActiveVote29] = useState(false);
 	const [activeVote30, setActiveVote30] = useState(false);
+	const [activeVote31, setActiveVote31] = useState(false);
 	const [question1, setQuestion1] = useState(0);
 	const [question2, setQuestion2] = useState(0);
 	const [question3, setQuestion3] = useState(0);
@@ -321,6 +330,7 @@ const Streaming2 = () => {
 					setActiveVote28(arr[arr.length - 1].vote28);
 					setActiveVote29(arr[arr.length - 1].vote29);
 					setActiveVote30(arr[arr.length - 1].vote30);
+					setActiveVote31(arr[arr.length - 1].vote31);
 					
 				} catch (error) {
 					setActiveTest(false);
@@ -354,6 +364,7 @@ const Streaming2 = () => {
 					setActiveVote28(false);
 					setActiveVote29(false);
 					setActiveVote30(false);
+					setActiveVote31(false);
 				}
 			}
 			setLoading(false);
@@ -483,6 +494,15 @@ const Streaming2 = () => {
 			setOpt118(response.opt2q30);
 			setOpt119(response.opt3q30);
 			setOpt120(response.opt4q30);
+			setOpt121(response.opt1q31);
+			setOpt122(response.opt2q31);
+			setOpt123(response.opt3q31);
+			setOpt124(response.opt4q31);
+			setOpt125(response.opt5q20);
+			setOpt126(response.opt5q23);
+			setOpt127(response.opt5q25);
+			setOpt128(response.opt5q26);
+
 
 			setLoading(false);
 		} else {
@@ -713,6 +733,7 @@ const Streaming2 = () => {
 										let alt2 = 0;
 										let alt3 = 0;
 										let alt4 = 0;
+										let alt5 = 0;
 										
 										switch (vot.id) {
 											case 1:
@@ -721,6 +742,7 @@ const Streaming2 = () => {
 												alt2 = option2;
 												alt3 = option3;
 												alt4 = option4;
+												alt5 = 0;
 												break;
 											case 2: 
 												show = activeVote2
@@ -728,6 +750,7 @@ const Streaming2 = () => {
 												alt2 = option6;
 												alt3 = option7;
 												alt4 = option8;
+												alt5 = 0;
 												break;
 											case 3:
 												show = activeVote3
@@ -735,6 +758,7 @@ const Streaming2 = () => {
 												alt2 = opt10;
 												alt3 = opt11;
 												alt4 = opt12;
+												alt5 = 0;
 												break;
 											case 4: 
 												show = activeVote4
@@ -742,6 +766,7 @@ const Streaming2 = () => {
 												alt2 = opt14;
 												alt3 = opt15;
 												alt4 = opt16;
+												alt5 = 0;
 												break;
 											case 5:
 												show = activeVote5
@@ -749,6 +774,7 @@ const Streaming2 = () => {
 												alt2 = opt18;
 												alt3 = opt19;
 												alt4 = opt20;
+												alt5 = 0;
 												break;
 											case 6: 
 												show = activeVote6
@@ -756,6 +782,7 @@ const Streaming2 = () => {
 												alt2 = opt22;
 												alt3 = opt23;
 												alt4 = opt24;
+												alt5 = 0;
 												break;
 											case 7:
 												show = activeVote7
@@ -763,6 +790,7 @@ const Streaming2 = () => {
 												alt2 = opt26;
 												alt3 = opt27;
 												alt4 = opt28;
+												alt5 = 0;
 												break;
 											case 8: 
 												show = activeVote8
@@ -770,6 +798,7 @@ const Streaming2 = () => {
 												alt2 = opt30;
 												alt3 = opt31;
 												alt4 = opt32;
+												alt5 = 0;
 												break;
 											case 9: 
 												show = activeVote9
@@ -777,6 +806,7 @@ const Streaming2 = () => {
 												alt2 = opt34;
 												alt3 = opt35;
 												alt4 = opt36;
+												alt5 = 0;
 												break;
 											case 10: 
 												show = activeVote10
@@ -784,6 +814,7 @@ const Streaming2 = () => {
 												alt2 = opt38;
 												alt3 = opt39;
 												alt4 = opt40;
+												alt5 = 0;
 												break;
 											case 11: 
 												show = activeVote11
@@ -791,6 +822,7 @@ const Streaming2 = () => {
 												alt2 = opt42;
 												alt3 = opt43;
 												alt4 = opt44;
+												alt5 = 0;
 												break;
 											case 12: 
 												show = activeVote12
@@ -798,6 +830,7 @@ const Streaming2 = () => {
 												alt2 = opt46;
 												alt3 = opt47;
 												alt4 = opt48;
+												alt5 = 0;
 												break;
 											case 13: 
 												show = activeVote13
@@ -805,6 +838,7 @@ const Streaming2 = () => {
 												alt2 = opt50;
 												alt3 = opt51;
 												alt4 = opt52;
+												alt5 = 0;
 												break;
 											case 14: 
 												show = activeVote14
@@ -812,6 +846,7 @@ const Streaming2 = () => {
 												alt2 = opt54;
 												alt3 = opt55;
 												alt4 = opt56;
+												alt5 = 0;
 												break;
 											case 15: 
 												show = activeVote15
@@ -819,6 +854,7 @@ const Streaming2 = () => {
 												alt2 = opt58;
 												alt3 = opt59;
 												alt4 = opt60;
+												alt5 = 0;
 												break;
 											case 16: 
 												show = activeVote16
@@ -826,6 +862,7 @@ const Streaming2 = () => {
 												alt2 = opt62;
 												alt3 = opt63;
 												alt4 = opt64;
+												alt5 = 0;
 												break;
 											case 17: 
 												show = activeVote17
@@ -833,6 +870,7 @@ const Streaming2 = () => {
 												alt2 = opt66;
 												alt3 = opt67;
 												alt4 = opt68;
+												alt5 = 0;
 												break;
 											case 18: 
 												show = activeVote18
@@ -840,6 +878,7 @@ const Streaming2 = () => {
 												alt2 = opt70;
 												alt3 = opt71;
 												alt4 = opt72;
+												alt5 = 0;
 												break;
 											case 19: 
 												show = activeVote19
@@ -847,6 +886,7 @@ const Streaming2 = () => {
 												alt2 = opt74;
 												alt3 = opt75;
 												alt4 = opt76;
+												alt5 = 0;
 												break;
 											case 20: 
 												show = activeVote20
@@ -854,6 +894,7 @@ const Streaming2 = () => {
 												alt2 = opt78;
 												alt3 = opt79;
 												alt4 = opt80;
+												alt5 = opt125;
 												break;
 											case 21: 
 												show = activeVote21
@@ -861,6 +902,7 @@ const Streaming2 = () => {
 												alt2 = opt82;
 												alt3 = opt83;
 												alt4 = opt84;
+												alt5 = 0;
 												break;
 											case 22: 
 												show = activeVote22
@@ -868,6 +910,7 @@ const Streaming2 = () => {
 												alt2 = opt86;
 												alt3 = opt87;
 												alt4 = opt88;
+												alt5 = 0;
 												break;
 											case 23: 
 												show = activeVote23
@@ -875,6 +918,7 @@ const Streaming2 = () => {
 												alt2 = opt90;
 												alt3 = opt91;
 												alt4 = opt92;
+												alt5 = opt126;
 												break;
 											case 24: 
 												show = activeVote24
@@ -882,6 +926,7 @@ const Streaming2 = () => {
 												alt2 = opt94;
 												alt3 = opt95;
 												alt4 = opt96;
+												alt5 = 0;
 												break;
 											case 25: 
 												show = activeVote25
@@ -889,6 +934,7 @@ const Streaming2 = () => {
 												alt2 = opt98;
 												alt3 = opt99;
 												alt4 = opt100;
+												alt5 = opt127;
 												break;
 											case 26: 
 												show = activeVote26
@@ -896,6 +942,7 @@ const Streaming2 = () => {
 												alt2 = opt102;
 												alt3 = opt103;
 												alt4 = opt104;
+												alt5 = opt128;
 												break;
 											case 27: 
 												show = activeVote27
@@ -903,6 +950,7 @@ const Streaming2 = () => {
 												alt2 = opt106;
 												alt3 = opt107;
 												alt4 = opt108;
+												alt5 = 0;
 												break;
 											case 28: 
 												show = activeVote28
@@ -910,6 +958,7 @@ const Streaming2 = () => {
 												alt2 = opt110;
 												alt3 = opt111;
 												alt4 = opt112;
+												alt5 = 0;
 												break;
 											case 29: 
 												show = activeVote29
@@ -917,6 +966,7 @@ const Streaming2 = () => {
 												alt2 = opt114;
 												alt3 = opt115;
 												alt4 = opt116;
+												alt5 = 0;
 												break;
 											case 30: 
 												show = activeVote30
@@ -924,6 +974,15 @@ const Streaming2 = () => {
 												alt2 = opt118;
 												alt3 = opt119;
 												alt4 = opt120;
+												alt5 = 0;
+												break;
+											case 31: 
+												show = activeVote31
+												alt1 = opt121;
+												alt2 = opt122;
+												alt3 = opt123;
+												alt4 = opt124;
+												alt5 = 0;
 												break;
 											default:
 												show= false;
@@ -933,12 +992,13 @@ const Streaming2 = () => {
 											(show) ? 
 											<>
 												<Votes
-													key={`vores-${vot.id}`}
+													key={`votes-${vot.id}`}
 													ask={vot.ask}
 													alt1={vot.alt1}
 													alt2={vot.alt2}
 													alt3={vot.alt3}
 													alt4={vot.alt4}
+													alt5={vot.alt5}
 													user={user}
 													setUser={setUser}
 													token={token}
@@ -952,10 +1012,12 @@ const Streaming2 = () => {
 													alt2={vot.alt2}
 													alt3={vot.alt3}
 													alt4={vot.alt4}
+													alt5= {vot.alt5}
 													opt1={alt1}
 													opt2={alt2}
 													opt3={alt3}
 													opt4={alt4}
+													opt5={alt5}
 												/>
 											</> : null
 										)

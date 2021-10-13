@@ -134,8 +134,9 @@
 			}
 
 			&-bottom {
-				top: 180px !important;
-				margin: 0;
+				// top: 180px !important;
+				bottom: 0 !important;
+				margin: -10px;
 			}
 		}
 	}

@@ -16,6 +16,9 @@ exports.createAccessToken = function (user) {
 	const payload = {
 		id: user._id,
 		email: user.email,
+		name: user.name,
+		lastname: user.lastname,
+		enterprise: user.enterprise,
 		role: user.role,
 		vote: user.vote,
 		test: user.test,

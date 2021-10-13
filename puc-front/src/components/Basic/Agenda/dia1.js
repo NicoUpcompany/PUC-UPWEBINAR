@@ -16,6 +16,8 @@ import fernandoIniguez from '../../../assets/img/speakers/Dr.Iniguez.jpg'
 import illse from '../../../assets/img/speakers/Dra.Lise.jpg'
 import luisVega from '../../../assets/img/speakers/Dr.LuisVega.jpeg'
 import katalina from '../../../assets/img/speakers/katalinaBertran.png'
+import tatiana from '../../../assets/img/speakers/DraTatiana.jpeg'
+
 
 
 const Dia1 = ({ setSaveData, abrirCerrar, state }) => {
@@ -335,7 +337,7 @@ const Dia1 = ({ setSaveData, abrirCerrar, state }) => {
 				</div>
 			</div>
 			<div className="row2 " id="row8" style={{ transitionDuration: "1s" }}>
-				<div className="fondoRow grey">
+				<div className="fondoRow ">
 					<div className="tiempo">
 						<p>
 							12:00 <span>-</span> 12:30 hrs
@@ -373,7 +375,7 @@ const Dia1 = ({ setSaveData, abrirCerrar, state }) => {
 				<div className="fondoRow">
 					<div className="tiempo">
 						<p>
-							<span></span> 
+							<span>Hora sugerida</span> 12:30 hrs
 						</p>
 					</div>
 
@@ -574,7 +576,7 @@ const Dia1 = ({ setSaveData, abrirCerrar, state }) => {
 				<div className="fondoRow">
 					<div className="tiempo">
 						<p>
-							 <span></span> 
+							<span>Hora sugerida</span> 17:30 hrs
 						</p>
 					</div>
 
@@ -606,9 +608,13 @@ const Dia1 = ({ setSaveData, abrirCerrar, state }) => {
 							'					
 						/>
 					<Speaker
-						nombre='Dra. Tatiana Muñoz'
+						nombre='Dra. Tatiana Muñoz (Biomarín)'
 						moderador={false}								
-					/>								
+						speaker={tatiana}
+						cargo='Neuróloga Infantil
+						Especialista en Enfermedades Metabólicas ( University of Toronto)
+						Clinica Alemana De Santiago  -  Unidad de Desafíos Diagnósticos'						
+					/>									
 					</div>
 				</div>
 			</div>

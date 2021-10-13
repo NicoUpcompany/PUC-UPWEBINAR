@@ -40,6 +40,7 @@ const testVoteSchema = new Schema({
 	question28: {type: Number, default: 0},
 	question29: {type: Number, default: 0},
 	question30: {type: Number, default: 0},
+	question31: {type: Number, default: 0},
     user: { type: Schema.Types.ObjectId, ref: "User", default: null, unique: true },
 	time: { type: String, required: true },
 });

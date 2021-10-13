@@ -286,6 +286,14 @@ function getClientVotes(req, res) {
 					let cuenta118 = 0;
 					let cuenta119 = 0;
 					let cuenta120 = 0;
+					let cuenta121 = 0;
+					let cuenta122 = 0;
+					let cuenta123 = 0;
+					let cuenta124 = 0;
+					let cuenta125 = 0;
+					let cuenta126 = 0;
+					let cuenta127 = 0;
+					let cuenta128 = 0;
 					
 
 					voteStored.forEach((element) => {
@@ -553,6 +561,10 @@ function getClientVotes(req, res) {
 						if (element.question20 === 4) {
 							cuenta80 = cuenta80 + 1
 						}
+						if(element.question20 ===5){
+							cuenta125 = cuenta125 + 1
+						}
+						
 							
 						//Pregunta 21
 						if (element.question21 === 1) {
@@ -593,6 +605,9 @@ function getClientVotes(req, res) {
 						if (element.question23 === 4) {
 							cuenta92 = cuenta92 + 1
 						}
+						if(element.question23 === 5){
+							cuenta126 = cuenta126 + 1
+						}
 						//Pregunta 24
 						if (element.question24 === 1) {
 							cuenta93 = cuenta93 + 1;
@@ -617,8 +632,12 @@ function getClientVotes(req, res) {
 							cuenta99 = cuenta99 + 1;
 						}
 						if (element.question25 === 4) {
-							cuenta100 = cuenta1100 + 1
+							cuenta100 = cuenta100 + 1
 						}
+						if (element.question25 === 5) {
+							cuenta127 = cuenta127 + 1
+						}
+
 						//Pregunta 26
 						if (element.question26 === 1) {
 							cuenta101 = cuenta101 + 1;
@@ -631,6 +650,9 @@ function getClientVotes(req, res) {
 						}
 						if (element.question26 === 4) {
 							cuenta104 = cuenta104 + 1
+						}
+						if (element.question26 === 5) {
+							cuenta128 = cuenta128 + 1
 						}
 						//Pregunta 27
 						if (element.question27 === 1) {
@@ -684,6 +706,34 @@ function getClientVotes(req, res) {
 						if (element.question30 === 4) {
 							cuenta120 = cuenta120 + 1
 						}
+						//Pregunta 30
+						if (element.question30 === 1) {
+							cuenta117 = cuenta117 + 1;
+						}
+						if (element.question30 === 2) {
+							cuenta118 = cuenta118 + 1;
+						}
+						if (element.question30 === 3) {
+							cuenta119 = cuenta119 + 1;
+						}
+						if (element.question30 === 4) {
+							cuenta120 = cuenta120 + 1
+						}
+						//Pregunta 31
+						if (element.question31 === 1) {
+							cuenta121 = cuenta121 + 1;
+						}
+						if (element.question31 === 2) {
+							cuenta122 = cuenta122 + 1;
+						}
+						if (element.question31 === 3) {
+							cuenta123 = cuenta123 + 1;
+						}
+						if (element.question31 === 4) {
+							cuenta124 = cuenta124 + 1
+						}
+
+
 					
 
 
@@ -810,11 +860,18 @@ function getClientVotes(req, res) {
 					let perc118 = 0;
 					let perc119 = 0;
 					let perc120 = 0;
-			
-					
+					let perc121 = 0;
+					let perc122 = 0;
+					let perc123 = 0;
+					let perc124 = 0;
+					let perc125 = 0;
+					let perc126 = 0;
+					let perc127 = 0;
+					let perc128 = 0;
+		
 					//Totales	
 					let total = option1Count + option2Count + option3Count + option4Count;
-					let total2 = option5Count + option6Count + option6Count + option8Count;
+					let total2 = option5Count + option6Count + option7Count + option8Count;
 					let total3 = cuenta9 + cuenta10 + cuenta11 + cuenta12;
 					let total4 = cuenta13 + cuenta14 + cuenta15 + cuenta16;
 					let total5 = cuenta17 + cuenta18 + cuenta19 + cuenta20;
@@ -832,17 +889,18 @@ function getClientVotes(req, res) {
 					let total17 = cuenta65 + cuenta66 + cuenta67 + cuenta68;
 					let total18 = cuenta69 + cuenta70 + cuenta71 + cuenta72;
 					let total19 = cuenta73 + cuenta74 + cuenta75 + cuenta76;
-					let total20 = cuenta77 + cuenta78 + cuenta79 + cuenta80;
+					let total20 = cuenta77 + cuenta78 + cuenta79 + cuenta80 + cuenta125;
 					let total21 = cuenta81 + cuenta82 + cuenta83 + cuenta84;
 					let total22 = cuenta85 + cuenta86 + cuenta87 + cuenta88;
-					let total23 = cuenta89 + cuenta90 + cuenta91 + cuenta92;
+					let total23 = cuenta89 + cuenta90 + cuenta91 + cuenta92 + cuenta126;
 					let total24 = cuenta93 + cuenta94 + cuenta95 + cuenta96;
-					let total25 = cuenta97 + cuenta98 + cuenta99 + cuenta100;
-					let total26 = cuenta101 + cuenta102 + cuenta103 + cuenta104;
+					let total25 = cuenta97 + cuenta98 + cuenta99 + cuenta100 + cuenta127;
+					let total26 = cuenta101 + cuenta102 + cuenta103 + cuenta104 + cuenta128;
 					let total27 = cuenta105 + cuenta106 + cuenta107 + cuenta108;
 					let total28 = cuenta109 + cuenta110 + cuenta111 + cuenta112;
 					let total29 = cuenta113 + cuenta114 + cuenta115 + cuenta116;
 					let total30 = cuenta117 + cuenta118 + cuenta119 + cuenta120;
+					let total31 = cuenta121 + cuenta122 + cuenta123 + cuenta124;
 					
 
 					//Pregunta 1
@@ -1107,6 +1165,9 @@ function getClientVotes(req, res) {
 					if (cuenta80> 0) {
 						perc80= Math.round(((cuenta80* 100) / total20) * 10) / 10;
 					}
+					if(cuenta125 > 0){
+						perc125= Math.round(((cuenta125* 100) / total20) * 10) / 10;
+					}
 					//Pregunta 21
 					if (cuenta81 > 0) {
 						perc81 = Math.round(((cuenta81 * 100) / total21) * 10) / 10;
@@ -1147,6 +1208,10 @@ function getClientVotes(req, res) {
 					if (cuenta92> 0) {
 						perc92= Math.round(((cuenta92* 100) / total23) * 10) / 10;
 					}
+					if (cuenta126> 0) {
+						perc126= Math.round(((cuenta126* 100) / total23) * 10) / 10;
+					}
+					
 					//Pregunta 24
 					if (cuenta93 > 0) {
 						perc93 = Math.round(((cuenta93 * 100) / total24) * 10) / 10;
@@ -1173,6 +1238,9 @@ function getClientVotes(req, res) {
 					if (cuenta100> 0) {
 						perc100= Math.round(((cuenta100* 100) / total25) * 10) / 10;
 					}
+					if (cuenta127> 0) {
+						perc127= Math.round(((cuenta127* 100) / total25) * 10) / 10;
+					}
 					//Pregunta 26
 					if (cuenta101 > 0) {
 						perc101 = Math.round(((cuenta101 * 100) / total26) * 10) / 10;
@@ -1185,6 +1253,9 @@ function getClientVotes(req, res) {
 					}
 					if (cuenta104> 0) {
 						perc104= Math.round(((cuenta104* 100) / total26) * 10) / 10;
+					}
+					if (cuenta128> 0) {
+						perc128= Math.round(((cuenta128* 100) / total26) * 10) / 10;
 					}
 				
 					//Pregunta 27
@@ -1240,6 +1311,21 @@ function getClientVotes(req, res) {
 					if (cuenta120> 0) {
 						perc120= Math.round(((cuenta120* 100) / total30) * 10) / 10;
 					}
+					//Pregunta 31
+					if (cuenta121 > 0) {
+						perc121 = Math.round(((cuenta121 * 100) / total31) * 10) / 10;
+					}
+					if (cuenta122> 0) {
+						perc122= Math.round(((cuenta122* 100) / total31) * 10) / 10;
+					}
+					if (cuenta123> 0) {
+						perc123= Math.round(((cuenta123* 100) / total31) * 10) / 10;
+					}
+					if (cuenta124> 0) {
+						perc124= Math.round(((cuenta124* 100) / total31) * 10) / 10;
+					}
+
+					
 				
 					res.status(200).send({
 						ok: true, total,
@@ -1323,6 +1409,7 @@ function getClientVotes(req, res) {
 						opt2q20: perc78,
 						opt3q20: perc79,
 						opt4q20: perc80,
+						opt5q20: perc125,
 						opt1q21: perc81,
 						opt2q21: perc82,
 						opt3q21: perc83,
@@ -1335,6 +1422,7 @@ function getClientVotes(req, res) {
 						opt2q23: perc90,
 						opt3q23: perc91,
 						opt4q23: perc92,
+						opt5q23: perc126,
 						opt1q24: perc93,
 						opt2q24: perc94,
 						opt3q24: perc95,
@@ -1343,10 +1431,12 @@ function getClientVotes(req, res) {
 						opt2q25: perc98,
 						opt3q25: perc99,
 						opt4q25: perc100,
+						opt5q25: perc127,
 						opt1q26: perc101,
 						opt2q26: perc102,
 						opt3q26: perc103,
 						opt4q26: perc104,
+						opt5q26:perc128,
 						opt1q27: perc105,
 						opt2q27: perc106,
 						opt3q27: perc107,
@@ -1363,6 +1453,10 @@ function getClientVotes(req, res) {
 						opt2q30: perc118,
 						opt3q30: perc119,
 						opt4q30: perc120,
+						opt1q31: perc121,
+						opt2q31: perc122,
+						opt3q31: perc123,
+						opt4q31: perc124,
 		
 			
 						
@@ -1372,35 +1466,7 @@ function getClientVotes(req, res) {
 		});
 }
 
-// const changePercentage =(question) =>{
-// 	question.forEach((que) =>{
-// 		for (let index = 1; index <= 30; index++) {
-// 			let cuenta1 = 0;
-// 			let cuenta2 = 0;
-// 			let cuenta3 = 0;
-// 			let cuenta4 = 0;
-// 			if (que[`question${index}`]=== 1) {
-// 				cuenta1 = cuenta1 + 1;
-// 			}
-// 			if (que[`question${index}`]=== 2) {
-// 				cuenta2 = cuenta2 + 1;
-// 			}
-// 			if (que[`question${index}`]=== 3) {
-// 				cuenta3 = cuenta3 + 1;
-// 			}
-// 			if (que[`question${index}`] === 4) {
-// 				cuenta4 = cuenta4 + 1
-// 			}
-			
-// 			let total = cuenta1 + cuenta2 + cuenta3 + cuenta4;
-// 			let percentage1 = 0;
-// 			let percentage2 = 0;
-// 			let percentage3 = 0;
-// 			let percentage4 = 0;
-// 		}
-// 	})
-// 	return false;
-// }
+
 
 
 //Borrar!!

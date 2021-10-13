@@ -40,6 +40,7 @@ const testStatusSchema = new Schema({
 	vote28: {type: Boolean, default: false},
 	vote29: {type: Boolean, default: false},
 	vote30: {type: Boolean, default: false},
+	vote31: {type: Boolean, default: false},
 	time: { type: String, default: "0" },
 });
 

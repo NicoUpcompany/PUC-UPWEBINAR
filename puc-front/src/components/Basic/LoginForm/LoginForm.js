@@ -7,7 +7,7 @@ import { withStyles } from "@material-ui/core/styles";
 import PersonOutlineIcon from "@material-ui/icons/PersonOutline";
 import Button from "@material-ui/core/Button";
 import { isSafari, isMobileSafari } from "react-device-detect";
-
+import $ from 'jquery';
 import { signInApi } from "../../../api/user";
 import { ACCESS_TOKEN, REFRESH_TOKEN } from "../../../utils/constants";
 import { COMETCHAT_CONSTANTS } from "../../../consts";
@@ -52,6 +52,7 @@ const LoginForm = (props) => {
 		}
 	};
 
+
 	const signIn = async () => {
 		setLoading(true);
 		const result = await signInApi(inputs);
@@ -65,8 +66,88 @@ const LoginForm = (props) => {
 			localStorage.setItem(ACCESS_TOKEN, accessToken);
 			localStorage.setItem(REFRESH_TOKEN, refreshToken);
 			const decodedToken = jwtDecode(accessToken);
+			console.log(decodedToken);
+			const user = new CometChat.User(decodedToken.id);
+			const UID = decodedToken.id;
+			const apiKey = COMETCHAT_CONSTANTS.AUTH_KEY;
+			if (decodedToken.email.length > 0) {
+				user.setName(`${decodedToken.name} ${decodedToken.lastname} | ${decodedToken.enterprise}`);
+			}
 			localStorage.setItem("userID", decodedToken.id);
-			setSaveData(2);
+			if (!isSafari && !isMobileSafari) {
+				CometChat.createUser(user, COMETCHAT_CONSTANTS.AUTH_KEY).then(
+					(user) => {
+						CometChat.login(UID, apiKey).then(
+							(User) => {
+								setSaveData(2);
+							},
+							(error) => {
+								setLoading(false);
+								notification["error"]({
+									message: "Ha ocurrido un error",
+								});
+							}
+						);
+					},
+					(error) => {
+						if (error.details.uid[0] === "The uid has already been taken.") {
+							CometChat.updateUser(user, COMETCHAT_CONSTANTS.AUTH_KEY).then(
+								(user) => {
+									CometChat.login(UID, apiKey).then(
+										(User) => {
+											setSaveData(2);
+										},
+										(error) => {
+											setLoading(false);
+											notification["error"]({
+												message: "Ha ocurrido un error",
+											});
+										}
+									);
+								},
+								(error) => {
+									CometChat.login(UID, apiKey).then(
+										(User) => {
+											setSaveData(2);
+										},
+										(error) => {
+											setLoading(false);
+											notification["error"]({
+												message: "Ha ocurrido un error",
+											});
+										}
+									);
+								}
+							);
+						} else {
+							setLoading(false);
+							notification["error"]({
+								message: "Ocurrió un error",
+							});
+						}
+					}
+				);
+			} else {
+				setSaveData(2);
+			}
+		}
+	};
+
+	// const signIn = async () => {
+	// 	setLoading(true);
+	// 	const result = await signInApi(inputs);
+	// 	if (!result.ok) {
+	// 		notification["error"]({
+	// 			message: result.message,
+	// 		});
+	// 		setLoading(false);
+	// 	} else {
+	// 		const { accessToken, refreshToken } = result;
+	// 		localStorage.setItem(ACCESS_TOKEN, accessToken);
+	// 		localStorage.setItem(REFRESH_TOKEN, refreshToken);
+	// 		const decodedToken = jwtDecode(accessToken);
+	// 		localStorage.setItem("userID", decodedToken.id);
+	// 		setSaveData(2);
 			// const user = new CometChat.User(decodedToken.id);
 			// const UID = decodedToken.id;
 			// const apiKey = COMETCHAT_CONSTANTS.AUTH_KEY;
@@ -129,8 +210,8 @@ const LoginForm = (props) => {
 			// } else {
 			// 	setSaveData(2);
 			// }
-		}
-	};
+		// }
+	// };
 
 	return (
 		<form

@@ -167,7 +167,7 @@
                     display: block;
                     padding: 30px 20px;
                     overflow-y: scroll;
-                    height: calc(100vh - 150px);
+                    height: calc(100vh - 200px);
 
                     .ant-radio-group {
                         width: 100%;
@@ -196,7 +196,7 @@
                         }
 
                         span.ant-radio+* {
-                            color: #b5b5b5;
+                            color: #000000;
                         }
                     }
 

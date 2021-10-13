@@ -38,60 +38,51 @@ export const dataVotes = [
     {
         id: 5,
         num: 'question5',
-        ask: 'En relación al tratamiento de base del paciente presentado, señale la correcta',
-        alt1: 'Es indispensable el manejo en centro multidisciplinario',
-        alt2: 'B. Tiene indicación absoluta de uso de moduladores del CFTR.',
-        alt3: 'C. Es indispensable la kinesioterapia respiratoria.',
-        alt4: 'D. Considerar derivación a centro de trasplante a la brevedad.'
+        ask: 'Con respecto al tratamiento de base',
+        alt1: 'Resulta indispensable el manejo de la paciente en centro multidisciplinario',
+        alt2: 'Tiene indicación absoluta de uso de moduladores del CFTR como Trikafta®.',
+        alt3: 'Debe incorporar asistencia para kinesioterapia respiratoria con dispositivo Vest® (oscilación de alta frecuencia pared torácica).',
+        alt4: 'Debe considerar derivación a centro de trasplante a la brevedad posible.'
     },
     {
         id: 6,
         num: 'question6',
-        ask: 'En relación con el tratamiento de las exacerbaciones de este paciente',
-        alt1: 'Considerar tratamiento antibiótico y anti fúngico endovenoso en cada EXACERBACIÓN',
-        alt2: 'No debe considerar tratamiento para Aspergillus ante una EXACERBACIÓN',
-        alt3: 'Considerar tratamiento antibiótico endovenoso y nebulizado en cada EXACERBACIÓN',
-        alt4: 'D. Considera uso de PREDNISONA en cada EXACERBACION.'
+        ask: 'Con respecto al tratamiento de base',
+        alt1: 'Dado VEF1 debe recibir azitromicina trisemanal',
+        alt2: 'Requiere nebulizaciones con Dnasa a diario.',
+        alt3: 'Ejercicio físico y rehabilitación respiratoria son claves en su manejo',
+        alt4: 'Tienen indicación de antibiótico nebulizado en meses alternos para dar cobertura a St. Aureus y aspergillus.'
     },
     {
         id: 7,
         num: 'question7',
-        ask: 'En relación con la transición del cuidado al equipo adultos de un paciente con FQ',
-        alt1: 'El proceso de transición comienza a los 17 años.',
-        alt2: 'El proceso de transición debe realizarse en el mismo centro',
-        alt3: 'El proceso de transición se adelanta en pacientes con caída brusca de función pulmonar.',
-        alt4: 'El proceso de transición se posterga hasta edad en que padres y cuidadores están preparados.'
+        ask: 'Con respecto al tratamiento de exacerbaciones',
+        alt1: 'Debe recibir tratamiento antibiótico nebulizado en cada exacerbación',
+        alt2: 'El aspergillus no se considera patológico y no se debe tratar.',
+        alt3: 'Considera uso de corticoides sistémicos (prednisona) en cada episodio.',
+        alt4: 'Se debe indicar cobertura para Pseudomona Aeruginosa en cada exacerbación.'
     },
     {
         id: 8,
         num: 'question8',
-        ask: '¿Qué estudio podría ser de utilidad para confirmar sospecha de ASMA del prescolar?',
-        alt1: 'Realizar Espirometría, Oscilometría y FENO',
-        alt2: 'Realizar Test del sudor, IG totales, AC neumococo ',
-        alt3: 'Realizar una tomografía axial computada de tórax ',
-        alt4: 'Realizar estudio de video deglución y/o ph metría.'
-    },
-    {
-        id: 9,
-        num: 'question9',
         ask: '¿Qué estudio sería el mas indicado en este paciente?',
-        alt1: 'La aplicación de cuestionarios seria suficiente',
-        alt2: 'La poligrafía podría ayudar a detectar eventos obstructivos',
+        alt1: 'La aplicación de cuestionarios seria suficiente ',
+        alt2: 'La poligrafía podría ayudar a detectar eventos obstructivos ',
         alt3: 'La Polisomnografía no es posible realizar por edad',
         alt4: 'La Saturometría nocturna nos permitiría diferenciar apneas centrales y obstructivas'
     },
     {
-        id: 10,
-        num: 'question10',
-        ask: 'En relación a este trazado de poligrafía, señale la alternativa correcta.',
+        id: 9,
+        num: 'question9',
+        ask: 'En relación a este trazado de poligrafía, señale la alternativa correcta',
         alt1: 'Eventos obstructivos son debido a Obesidad',
         alt2: 'Eventos centrales son lo mas habitual en un niño con S.down',
         alt3: 'Los eventos centrales no son detectados por la poligrafía ',
         alt4: 'Los eventos que presenta ameritan CPAP nocturno'
     },
     {
-        id: 11,
-        num: 'question11',
+        id: 10,
+        num: 'question10',
         ask: 'En relación a la asociación de Síndrome de Apnea Obstructiva del Sueño (SAOS) y Obesidad, señale la correcta.',
         alt1: 'La obesidad produce SAOS',
         alt2: 'El SAOS produce Obesidad',
@@ -99,31 +90,40 @@ export const dataVotes = [
         alt4: 'Existe una relación bidireccional'
     },
     {
+        id: 11,
+        num: 'question11',
+        ask: 'En relación al tratamiento de este paciente ',
+        alt1: 'Manejo médico con corticoides nasales es de elección',
+        alt2: 'La adenoamigdalectomía sería suficiente ',
+        alt3: 'Se debe realizar un manejo multidisciplinario ',
+        alt4: 'Se debe considerar la cirugía bariátrica como parte del manejo'
+    },
+    {
         id: 12,
         num: 'question12',
+        ask: '¿Qué estudio podría ser mas útil para confirmar la sospecha de atopia en este lactante?',
+        alt1: 'Realizar Hemograma e IgE total.',
+        alt2: 'Realizar test cutáneo en el dorso',
+        alt3: 'Realizar IgE específicas en sangre para alergenos',
+        alt4: 'Medir eosinófilos en secreción nasal.'
+    },
+    {
+        id: 13,
+        num: 'question13',
+        ask: '¿Cual opción terapéutica de las siguientes le parece la más adecuada en este paciente?',
+        alt1: 'No le haría cambios a su terapia de mantención.',
+        alt2: 'b) Agregar beta2 de vida media larga.',
+        alt3: 'c) Agregar fluticasona nasal para tratar su RA.',
+        alt4: 'd) Indicar un purificador de aire en su habitación.'
+    },
+    {
+        id: 14,
+        num: 'question14',
         ask: '¿Qué podemos decir de bronquiolitis por Rinovirus?',
         alt1: 'Es una infección viral como cualquier otra.',
         alt2: 'Incrementa su riesgo de desarrollar asma bronquial.',
         alt3: 'Es muy leve comparado con la bronquiolitis VRS',
         alt4: 'Fue muy rara ya que RV causa siempre solo resfríos.'
-    },
-    {
-        id: 13,
-        num: 'question13',
-        ask: '¿Qué estudio podría ser mas útil para confirmar la sospecha de atopia en este lactante?',
-        alt1: 'Realizar Hemograma e IgE total.',
-        alt2: 'Realizar test cutáneo en el dorso',
-        alt3: 'Realizar IgE específicas en sangre para 36 alergenos',
-        alt4: 'Medir eosinófilos en secreción nasal.'
-    },
-    {
-        id: 14,
-        num: 'question14',
-        ask: '¿Cual terapia le parece la mas adecuada en este paciente?',
-        alt1: 'Mantener sólo salbutamol de rescate',
-        alt2: 'Iniciar inhibidor de leucotrienos de mantención.',
-        alt3: 'Iniciar corticoide inhalado de mantención.',
-        alt4: 'Iniciar antialérgico oral.'
     },
     {
         id: 15,
@@ -156,10 +156,10 @@ export const dataVotes = [
         id: 18,
         num: 'question18',
         ask: '¿QUE IMÁGENES IMPORTANTES ASOCIADAS A ÉSTA DESCOMPENSACION DESTACA EN ESTA RADIOGRAFIA?',
-        alt1: 'Atelectasia de Hemitórax Izquierdo. ',
+        alt1: 'Infiltrado intersticial.',
         alt2: 'Neumonía de Lóbulo Inferior Izquierdo.',
         alt3: 'Neumotórax Hemitórax Derecho.',
-        alt4: 'Derrame Pleural Bilateral.'
+        alt4: 'Bronquiectasias varicosas.'
     },
     {
         id: 19,
@@ -177,7 +177,8 @@ export const dataVotes = [
         alt1: 'Fibro + lavado broncoalveolar',
         alt2: 'TAC pulmonar con contraste',
         alt3: 'Estudio inmunológico completo',
-        alt4: 'Ecografía torácica'
+        alt4: 'Ecografía torácica',
+        alt5: 'TAC pulmonar + Ecografía'
     },
     {
         id: 21,
@@ -204,7 +205,8 @@ export const dataVotes = [
         alt1: 'Frente a fiebre prolongada (>10 días)',
         alt2: 'Frente al re-inicio de fiebre y deterioro clínico',
         alt3: 'Frente a hemoptisis y tos purulenta (supuración)',
-        alt4: 'Antes de una planificación quirúrgica'
+        alt4: 'Antes de una planificación quirúrgica',
+        alt5: 'Todas las anteriores'
     },
     {
         id: 24,
@@ -219,37 +221,39 @@ export const dataVotes = [
         id: 25,
         num: 'question25',
         ask: '¿Qué estudio podría ser de utilidad para confirmar la sospecha diagnóstica?',
-        alt1: 'a)Radiografía de tórax',
-        alt2: 'b)Panel viral IFD',
-        alt3: 'c)Panel viral molecular por PCR',
-        alt4: 'd)Hemograma, PCR, hemocultivo'
+        alt1: 'Radiografía de tórax',
+        alt2: 'Panel viral IFD',
+        alt3: 'Panel viral molecular por PCR',
+        alt4: 'Hemograma, PCR, hemocultivo',
+        alt5: 'Ningún examen es necesario'
     },
     {
         id: 26,
         num: 'question26',
         ask: '¿qué examen deberíamos solicitar luego de la evolución?',
-        alt1: 'a)Radiografía de tórax',
-        alt2: 'b)Panel viral IFD',
-        alt3: 'c)Panel viral molecular por PCR',
-        alt4: 'd)Hemograma, PCR, hemocultivo'
+        alt1: 'Radiografía de tórax',
+        alt2: 'Panel viral IFD',
+        alt3: 'Panel viral molecular por PCR',
+        alt4: 'Hemograma, PCR, hemocultivo',
+        alt5: 'Ningún examen es necesario'
     },
     {
         id: 27,
         num: 'question27',
         ask: '¿cuál de las siguientes es la más relevante en la progresión de una nueva pandemia por algún virus respiratorio?',
-        alt1: 'a) Virus de fácil transmisión por vía aérea',
-        alt2: 'b) Virus con una alta tasa de letalidad',
-        alt3: 'c) Virus adaptado al sistema inmune humano',
-        alt4: 'd) Virus nuevo contra el cuál no existe ninguna vacuna'
+        alt1: 'Virus de fácil transmisión por vía aérea',
+        alt2: 'Virus con una alta tasa de letalidad',
+        alt3: 'Virus adaptado al sistema inmune humano',
+        alt4: 'Virus nuevo contra el cuál no existe ninguna vacuna'
     },
     {
         id: 28,
         num: 'question28',
         ask: '¿Cuál de los siguientes será el más peligroso para la humanidad en el período 2022-2027?',
-        alt1: 'a) VIRUS FLU A',
-        alt2: 'b) VIRUS SARS -2',
-        alt3: 'c) Virus EBOLA',
-        alt4: 'd) Virus DENGUE'
+        alt1: 'VIRUS FLU A',
+        alt2: 'VIRUS SARS -2',
+        alt3: 'Virus EBOLA',
+        alt4: 'Virus DENGUE'
     },
     {
         id: 29,
@@ -264,9 +268,18 @@ export const dataVotes = [
         id: 30,
         num: 'question30',
         ask: 'En relación a las vacunas y su proyección en el mundo ¿cuál de las siguientes le parece más razonable?',
-        alt1: 'a) La vacuna VRS permitirá la aparición de otros virus respiratorios',
-        alt2: 'b) La vacuna para COVID deberá ser administrada cada 6 meses',
-        alt3: 'c) La vacuna para FLU debe considerar múltiples cepas (H1N1 hasta H5N5)',
-        alt4: 'd) El mayor número de vacunas en un individuo va a disminuir la respuesta inmunológica  '
+        alt1: 'La vacuna VRS permitirá la aparición de otros virus respiratorios',
+        alt2: 'La vacuna para COVID deberá ser administrada cada 6 meses',
+        alt3: 'La vacuna para FLU debe considerar múltiples cepas (H1N1 hasta H5N5)',
+        alt4: 'El mayor número de vacunas en un individuo va a disminuir la respuesta inmunológica  '
+    },
+    {
+        id: 31,
+        num: 'question31',
+        ask: 'Con respecto al tratamiento de exacerbaciones, la meta a lograr con el tratamiento es',
+        alt1: 'Volver al VEF1 previo a la exacerbación.',
+        alt2: 'Erradicar el microrganismo en los cultivos.',
+        alt3: 'Recuperar el peso previo a la exacerbación.',
+        alt4: 'Resolución radiográfica de las lesiones. '
     },
 ]

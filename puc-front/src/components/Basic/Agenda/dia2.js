@@ -9,6 +9,9 @@ import luisVega from '../../../assets/img/speakers/Dr.LuisVega.jpeg'
 import carlosFlores from '../../../assets/img/speakers/Dr.Flores.jpg'
 import carolina from '../../../assets/img/speakers/Dr.Carolina.jpeg'
 import carlosPeru from  '../../../assets/img/speakers/Dr.CarlosPeru.jfif'
+import juanAntonio from  '../../../assets/img/speakers/dr.JuanAntonio.jpg'
+import linus from  '../../../assets/img/speakers/Dr.Linus.jpg'
+import alvaroTejeiro from  '../../../assets/img/speakers/drAlvaro.jpg'
 
 import { RowSpeaker } from "./RowSpeaker";
 
@@ -66,7 +69,7 @@ const Dia2 = ({ setSaveData, abrirCerrar, state }) => {
 				moderador="Dr. Fernando Iñiguez"
 				speaker="Dr. J. Castro Rodriguez"
 				imgSpeaker1={fernandoIniguez}
-				imgSpeaker2={''}
+				imgSpeaker2={juanAntonio}
 				cargo1='Pediatra, especialista en enfermedades respiratorias infantiles de la PUC de Chile. Jefe del Servicio de Pediatría del Hospital Puerto Montt,  Docencia de Post Grado en Pediatría en la Universidad San Sebastián, Sede Patagonia.'
 				cargo2='Pediatra, Universidad Peruana Cayetano Heredia, Lima, Perú.
 				Broncopulmonar, Universidad de Chile y University of Arizona, Tucson, USA.
@@ -125,6 +128,7 @@ const Dia2 = ({ setSaveData, abrirCerrar, state }) => {
 				moderador="Dr. Jury Hernández"
 				speaker="Dr. L. Holmgren"
 				imgSpeaker1={yuryHernandez}
+				imgSpeaker2={linus	}
 				cargo1='Médico Broncopulmonar Infantil, subespecialista en el Complejo Asistencial Dr. Víctor Ríos Ruiz, Los Ángeles y Jefe del centro de responsabilidad infantil. Past President de la Sociedad Chilena de Neumología pediátrica ( SOCHINEP)'
 				cargo2='Medicina en la Universidad de Chile,  Pediatría en la Universidad Católica, Broncopulmonar del Jackson Memorial Hospital en Miami.'
 			/>		
@@ -166,13 +170,14 @@ const Dia2 = ({ setSaveData, abrirCerrar, state }) => {
 				state={state}
 				id={18}
 				grey="grey"
-				inicio=""
-				fin=""
+				inicio="Hora sugerida"
+				fin="12:30"
 				tematica="Simposio Lab. ASTRAZENECA"
 				tematica2="Asma en la Adolesencia"
 				moderador="Dr. Fernando Iñiguez"
 				speaker="Dr. Alvaro Teijeiro"
 				imgSpeaker1={fernandoIniguez}
+				imgSpeaker2={alvaroTejeiro}
 				cargo1="Pediatra, especialista en enfermedades respiratorias infantiles de la PUC de Chile. Jefe del Servicio de Pediatría del Hospital Puerto Montt,  Docencia de Post Grado en Pediatría en la Universidad San Sebastián, Sede Patagonia."
 			/>
 
@@ -256,8 +261,8 @@ const Dia2 = ({ setSaveData, abrirCerrar, state }) => {
 				state={state}
 				id={24}
 				grey="grey"
-				inicio=""
-				fin=""
+				inicio="Hora sugerida"
+				fin="17:30"
 				tematica="Simnposio Lab. BIOMERUX"
 				tematica2="Enfoque Sindrómico de IRA en niños"
 				moderador="Dr. Carlos Flores"

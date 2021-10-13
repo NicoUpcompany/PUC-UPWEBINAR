@@ -112,7 +112,8 @@ export default function Events() {
 		vote27: false,
 		vote28: false,
 		vote29: false,
-		vote30: false
+		vote30: false,
+		vote31: false
 	})
 	// const [voto1Status, setVoto1Status] = useState(false);
 	// const [voto2Status, setVoto2Status] = useState(false);
@@ -179,6 +180,7 @@ export default function Events() {
 	const getVotes = async (tokenAux) => {
 		await getVoteApi(tokenAux).then((resp) => {
 			const arrayVotes = [];
+			console.log(resp)
 			if (!resp.ok) {
 				notification["error"]({
 					message: resp.message,
@@ -187,7 +189,7 @@ export default function Events() {
 				resp.tests.forEach((item) => {
 					const element = {
 						...item,
-						email: item.user.email,
+						email: !item.user.email,
 						time: moment(item.time).format("LLL"),
 						key: item._id,
 					};
@@ -266,6 +268,7 @@ export default function Events() {
 						vote28: arr[arr.length -1].vote28,
 						vote29: arr[arr.length -1].vote29,
 						vote30: arr[arr.length -1].vote30,
+						vote31: arr[arr.length -1].vote31,
 						
 					})
 					// setTestStatus(arr[arr.length - 1].active);
@@ -303,7 +306,8 @@ export default function Events() {
 						vote27: false,
 						vote28: false,
 						vote29: false,
-						vote30: false
+						vote30: false,
+						vote31: false
 					});
 					// setTestStatus(false);
 					// setVoto1Status(false);
@@ -604,7 +608,6 @@ export default function Events() {
 	const handleOk = async (estado) => {
 
 		setLoading(true);
-		console.log(votesStatus);
 		let data = votesStatus;
 		const numData = (Object.keys(data).length);
 		for (let index = 1; index <= numData; index++) {
@@ -615,80 +618,12 @@ export default function Events() {
 			[estado]:true
 		}
 
-		// switch (estado) {
-		// 	case "voto1":
-		// 		data = {
-		// 			vote1: !voto1Status,
-		// 			vote2: false,
-		// 			vote3: false,
-		// 			vote4: false,
-		// 			vote5: false,
-		// 			vote6: false,
-		// 			vote7: false,
-		// 			vote8: false,
-		// 			vote9: false, 
-		// 			vote10: false,
-		// 			vote11: false, 
-		// 			vote12: false,
-		// 			vote13: false,
-		// 			vote14: false,
-		// 			vote15: false, 
-		// 			vote16: false, 
-		// 			vote17: false,
-		// 			vote18: false,
-		// 			vote19: false,
-		// 			vote20: false,
-		// 			vote21: false, 
-		// 			vote22: false,
-		// 			vote23: false,
-		// 			vote24: false,
-		// 			vote25: false, 
-		// 			vote26: false, 
-		// 			vote27: false,
-		// 			vote28: false,
-		// 			vote29: false,
-		// 			active: testStatus
-		// 		}
-		// 		break;
-		// 	case "voto2":
-		// 		data = {
-		// 			vote1: false,
-		// 			vote2: !voto2Status,
-		// 			vote3: false,
-		// 			active: testStatus
-		// 		}
-		// 		break;
-		// 	case "voto3":
-		// 		data = {
-		// 			vote1: false,
-		// 			vote2: false,
-		// 			vote3: !voto3Status,
-		// 			active: testStatus
-		// 		}
-		// 		break;
-		// 	case "cuestionario":
-		// 		data = {
-		// 			vote1: voto1Status,
-		// 			vote2: voto2Status,
-		// 			vote3: voto3Status,
-		// 			active:!testStatus
-		// 		};
-		// 		break;
-		// 	default:
-		// 		break;
-		// }
-
 		const resp = await postTestStatusApi(token, data);
 		if (resp.ok) {
-			console.log(resp.message);
 			notification["success"]({
-				message: resp.message,
+				message: `Active ${estado}`,
 			});
 			setVotesStatus(data);
-			// setLoading(false);
-			// setTestStatus(data.active);
-			// setVoto1Status(data.vote1);
-			// setVoto2Status(data.vote2);
 		} else {
 			notification["error"]({
 				message: resp.message,
@@ -818,6 +753,21 @@ export default function Events() {
 						>
 						<Button type="primary" className="btn" block icon={<AuditOutlined />}>
 							{votesStatus.vote7 ? "Desactivar pregunta 3" : "Activar pregunta 3"}
+						</Button>
+			 
+					</Popconfirm>
+					{/* pregunta 4 / tiene el estado 31*/}
+					<Popconfirm
+						title={
+							votesStatus.vote31 ? "Esta opción deshabilitará la evaluación a los usuarios" : "Esta opción habilitará la evaluación a los usuarios"
+						}
+						onConfirm={()=>handleOk("vote31")}
+						onCancel={handleCancel}
+						okText="Si"
+						cancelText="No"
+						>
+						<Button type="primary" className="btn" block icon={<AuditOutlined />}>
+							{votesStatus.vote31 ? "Desactivar pregunta 4" : "Activar pregunta 4"}
 						</Button>
 			 
 					</Popconfirm>
@@ -1071,7 +1021,7 @@ export default function Events() {
 						cancelText="No"
 					>
 							<Button type="primary" className="btn" block icon={<AuditOutlined />}>
-								{votesStatus.vote23 ? "Desactivar pregunta 5" : "Activar pregunta 5"}
+								{votesStatus.vote23 ? "Desactivar pregunta 4" : "Activar pregunta 4"}
 							</Button>
 					</Popconfirm>
 					{/* pregunta 5 */}
