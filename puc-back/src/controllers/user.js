@@ -182,10 +182,12 @@ function getUsers(req, res) {
  * @returns {boolean} estado ``ok`` true/false
  */
 function updateWaitingRoomTime(req, res) {
-	const { email } = req.body;
+	
+	const { email, idSocket } = req.body;
+
+	console.log(idSocket);
 
 	const waitingRoomTime = moment().format();
-
 	User.findOne({ email }, (err, userStored) => {
 		if (err) {
 			res.status(500).send({ ok: false, message: "Error del servidor" });
@@ -194,6 +196,7 @@ function updateWaitingRoomTime(req, res) {
 				res.status(404).send({ ok: false, message: "Usuario no encontrado" });
 			} else {
 				userStored.waitingRoomTime = waitingRoomTime;
+				userStored.idSocket = idSocket;
 				User.findByIdAndUpdate({ _id: userStored.id }, userStored, (err, userUpdate) => {
 					if (err) {
 						res.status(500).send({ ok: false, message: "Error del servidor" });
@@ -204,6 +207,7 @@ function updateWaitingRoomTime(req, res) {
 							res.status(200).send({
 								ok: true,
 								message: "Usuario actualizado",
+								user: userStored
 							});
 						}
 					}

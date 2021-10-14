@@ -52,7 +52,7 @@ api.put("/update-waiting-room-time", [md_auth.ensureAuth], UserController.update
  * @name updateStreamTime
  * @path {PUT} /update-stream-time
  */
-api.put("/update-stream-time", [md_auth.ensureAuth], UserController.updateStreamTime);
+api.put("/update-waiting-room-time", [md_auth.ensureAuth], UserController.updateStreamTime);
 /**
  * Cambia el rol del usuario
  *

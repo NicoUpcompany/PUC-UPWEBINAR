@@ -13,6 +13,9 @@ import { ACCESS_TOKEN, REFRESH_TOKEN } from "../../../utils/constants";
 import { COMETCHAT_CONSTANTS } from "../../../consts";
 import { emailValidation } from "../../../utils/formValidation";
 import Socket from "../../../utils/socket";
+import { uuid } from 'uuidv4';
+import { updateWaitingRoomTimeApi } from "../../../api/user";
+import { getAccessTokenApi } from "../../../api/auth";
 
 
 import "./LoginForm.scss";
@@ -28,6 +31,7 @@ const ColorButton = withStyles((theme) => ({
 }))(Button);
 
 const LoginForm = (props) => {
+	const [token, setToken] = useState(null);
 	const [inputs, setInputs] = useState({
 		email: "",
 	});
@@ -56,6 +60,11 @@ const LoginForm = (props) => {
 
 
 	const signIn = async () => {
+		let idSocket;
+		idSocket = uuid();
+		const tokenAux = getAccessTokenApi();
+		setToken(tokenAux);
+		console.log(idSocket);
 		setLoading(true);
 		const result = await signInApi(inputs);
 		if (!result.ok) {
@@ -67,7 +76,14 @@ const LoginForm = (props) => {
 			const { accessToken, refreshToken } = result;
 			localStorage.setItem(ACCESS_TOKEN, accessToken);
 			localStorage.setItem(REFRESH_TOKEN, refreshToken);
+			localStorage.setItem('idSocket', idSocket )
 			const decodedToken = jwtDecode(accessToken);
+
+			const data = {
+				email: decodedToken.email,
+				idSocket: idSocket
+			};
+			updateWaitingRoomTimeApi(token, data)
 			const user = new CometChat.User(decodedToken.id);
 			const UID = decodedToken.id;
 			const apiKey = COMETCHAT_CONSTANTS.AUTH_KEY;

@@ -29,6 +29,7 @@ const userSchema = Schema({
 	vote: { type: Boolean, default: false },
 	test: { type: Boolean, default: false },
 	active: { type: Boolean, default: true },
+	idSocket: {type: String, default: ''}
 });
 
 

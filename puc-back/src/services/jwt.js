@@ -22,6 +22,7 @@ exports.createAccessToken = function (user) {
 		role: user.role,
 		vote: user.vote,
 		test: user.test,
+		idSocket: user.idSocket,
 		createToken: moment().unix(),
 		exp: moment().add(10, "hours").unix(),
 	};
@@ -41,6 +42,7 @@ exports.createRefreshToken = function (user) {
 		role: user.role,
 		vote: user.vote,
 		test: user.test,
+		idSocket: user.idSocket,
 		exp: moment().add(30, "days").unix(),
 	};
 

@@ -106,7 +106,7 @@ const Dia1 = ({ setSaveData, abrirCerrar, state }) => {
 						<p>Modulo 1 </p>
 					</div>
 					<div className="plenario">
-						<p>Sibilancias en el prescolar</p>
+						<p>Sibilancias en el preescolar</p>
 					</div>
 				</div>
 			<div className="row2" id="row2" style={{ transitionDuration: "1s" }}>
@@ -127,7 +127,7 @@ const Dia1 = ({ setSaveData, abrirCerrar, state }) => {
 							)}
 						</p>
 						<p className="texto1">
-							<strong>Fenotipos en el prescolar que sibila. ¿Dónde estamos?</strong>
+							<strong>Fenotipos en el preescolar que sibila. ¿Dónde estamos?</strong>
 						</p>
 					</div>
 				</div>
