@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 import FreeBreakfastIcon from "@material-ui/icons/FreeBreakfast";
-
+import {Link} from 'react-router-dom'
 import flecha from "../../../assets/img/flecha.png";
 import { Speaker } from "./Speaker";
 import bertrand from '../../../assets/img/speakers/Dr.-Bertrand.jpg'
@@ -30,6 +30,10 @@ const Dia1 = ({ setSaveData, abrirCerrar, state }) => {
 				<div className="plenario">
 					<p>Plenario</p>
 				</div>
+				{/* <Link
+					className='btn2'
+					to='/jueves'
+				>VER DÍA AQUÍ</Link> */}
 			</div>
 			
 			<div className="row2 grey" id="row1" style={{ transitionDuration: "1s" }}>

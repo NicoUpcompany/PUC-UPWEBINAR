@@ -136,6 +136,7 @@ export default function Admin() {
         await getQuestionApi(token).then(resp => {
             if (resp.ok) {
                 const arrayQuestions = [];
+                console.log(resp);
                 resp.preguntas.forEach(item => {
                     const data = {
                         ...item,

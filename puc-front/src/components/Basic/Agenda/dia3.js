@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
-
+import {Link} from 'react-router-dom'
 import { RowSpeaker } from "./RowSpeaker";
 import FreeBreakfastIcon from "@material-ui/icons/FreeBreakfast";
 import bertrand from '../../../assets/img/speakers/Dr.-Bertrand.jpg'
@@ -24,6 +24,10 @@ const Dia3 = ({ setSaveData, abrirCerrar, state }) => {
 				<div className="plenario">
 					<p>Plenario</p>
 				</div>
+				{/* <Link
+					className='btn2'
+					to='/sabado'
+				>VER DÍA AQUÍ</Link> */}
 			</div>
 			<RowSpeaker
 				setSaveData={setSaveData}

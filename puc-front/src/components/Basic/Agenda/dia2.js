@@ -12,6 +12,7 @@ import carlosPeru from  '../../../assets/img/speakers/Dr.CarlosPeru.jfif'
 import juanAntonio from  '../../../assets/img/speakers/dr.JuanAntonio.jpg'
 import linus from  '../../../assets/img/speakers/Dr.Linus.jpg'
 import alvaroTejeiro from  '../../../assets/img/speakers/drAlvaro.jpg'
+import {Link} from 'react-router-dom'
 
 import { RowSpeaker } from "./RowSpeaker";
 
@@ -25,6 +26,10 @@ const Dia2 = ({ setSaveData, abrirCerrar, state }) => {
 				<div className="plenario">
 					<p>Plenario</p>
 				</div>
+				{/* <Link
+					className='btn2'
+					to='/viernes'
+				>VER DÍA AQUÍ</Link> */}
 			</div>
 
 			<RowSpeaker
