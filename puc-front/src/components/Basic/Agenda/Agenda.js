@@ -35,13 +35,13 @@ const Agenda = (props) => {
 			<div className="contenedorAgenda" id="agenda">
 				<div className="days">
 					<button id="14" className={dia === 14 ? "clase" : ""} onClick={() => setDia(14)}>
-						<span>14 de octubre</span>
+						<span> Jueves 14 de octubre</span>
 					</button>
 					<button id="15" className={dia === 15 ? "clase" : ""} onClick={() => setDia(15)}>
-						<span>15 de octubre</span>
+						<span> Viernes 15 de octubre</span>
 					</button>
 					<button id="16" className={dia === 16 ? "clase" : ""} onClick={() => setDia(16)}>
-						<span>16 de octubre</span>
+						<span> Sábado 16 de octubre</span>
 					</button>
 				</div>
 				{dia === 14 ? <Dia1 setSaveData={setSaveData} abrirCerrar={abrirCerrar} state={state} /> : null}

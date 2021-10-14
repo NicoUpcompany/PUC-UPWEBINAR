@@ -214,6 +214,8 @@ const Saval = (props) => {
 		eventApi(data);
 	};
 
+	
+
 	const antIcon = <LoadingOutlined spin />;
 
 	return (
@@ -256,25 +258,28 @@ const Saval = (props) => {
 						<LazyLoadImage alt="Carousel 3" src={carrusel3} width="100%" effect="blur" onClick={() => window.open("https://emc-saval.cl/", "_blank")}/>
 					</div>
 					<div className="image">
-						<LazyLoadImage alt="Carousel 4" src={carrusel4} width="100%" effect="blur" onClick={() => window.open("https://forms.office.com/pages/responsepage.aspx?id=mlIfnAUrlkC0F_pzI4WgUgDPPNSUD3VAmpvGAXyAns5UNldTSElJUjBTUjRMN1BRUlZTMzEyMEo0VC4u", "_blank")}/>
+						<LazyLoadImage alt="Carousel 4" src={carrusel5} width="100%" effect="blur" onClick={() => window.open("https://forms.office.com/pages/responsepage.aspx?id=mlIfnAUrlkC0F_pzI4WgUgDPPNSUD3VAmpvGAXyAns5UNldTSElJUjBTUjRMN1BRUlZTMzEyMEo0VC4u", "_blank")}/>
 					</div>
 					<div className="image">
-						<LazyLoadImage alt="Carousel 5" src={carrusel5} width="100%" effect="blur" onClick={() => window.open("https://forms.office.com/pages/responsepage.aspx?id=mlIfnAUrlkC0F_pzI4WgUgDPPNSUD3VAmpvGAXyAns5UMEcxR0JJOTVDNjVGQk9QTzBXMFhUTzBOWi4u", "_blank")}/>
+						<LazyLoadImage alt="Carousel 5" src={carrusel4} width="100%" effect="blur" onClick={() => window.open("https://forms.office.com/pages/responsepage.aspx?id=mlIfnAUrlkC0F_pzI4WgUgDPPNSUD3VAmpvGAXyAns5UMEcxR0JJOTVDNjVGQk9QTzBXMFhUTzBOWi4u", "_blank")}/>
 					</div>
 				</Carousel>
 			</div>
 			<div className="buttons-container">
-				{/* <button className="wsp" onClick={() => openWsp("56933530870")}>
-					WhatsApp
+				<button className="wsp" onClick={() => openWsp("56933530870")}>
+					WhatsApp Susan
 				</button>
-				<button className="meeting" onClick={() => setOpen(true)}>
+				<button className="wsp" onClick={() => openWsp("56933530870")}>
+					WhatsApp Dalia
+				</button>
+				{/* <button className="meeting" onClick={() => setOpen(true)}>
 					Agendar reunión
 				</button> */}
 			</div>
 			<div className="footer-container">
-				{/* <a href="https://educacionprofesional.ing.uc.cl/" target="_blank" rel="noreferrer">
-					educacionprofesional.ing.uc.cl
-				</a> */}
+				<a href="https://www.saval.cl/" target="_blank" rel="noreferrer">
+					www.saval.cl
+				</a>
 				<a href="mailto:manquehue@saval.cl">manquehue@saval.cl</a>
 				<a href="tel:+56933530870">+56222118600</a>
 			</div>

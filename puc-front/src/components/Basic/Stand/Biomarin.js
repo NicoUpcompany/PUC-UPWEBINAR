@@ -249,10 +249,10 @@ const Biomarin = (props) => {
 			<div className="carousel-container">
 				<Carousel dotPosition="bottom" autoplay {...settings}>
 					<div className="image">
-						<LazyLoadImage alt="Carousel 1" src={carrusel1} width="100%" effect="blur" onClick={() => window.open("https://mpsday.la/es/", "_blank")}/>
+						<LazyLoadImage alt="Carousel 1" src={carrusel2} width="100%" effect="blur" onClick={() => window.open("https://mpsday.la/es/", "_blank")}/>
 					</div>
 					<div className="image">
-						<LazyLoadImage alt="Carousel 2" src={carrusel2} width="100%" effect="blur" onClick={() => openFile("CheckList MPS - Signos y sintomas.pdf")}/>
+						<LazyLoadImage alt="Carousel 2" src={carrusel1} width="100%" effect="blur" onClick={() => openFile("CheckList MPS - Signos y sintomas.pdf")}/>
 					</div>
 				</Carousel>
 			</div>
@@ -269,10 +269,10 @@ const Biomarin = (props) => {
 				
 			</div>
 			<div className="footer-container">
-				<a href="https://www.bmrn.com/" target="_blank" rel="noreferrer">
+				<a href="http://www.bmrn.com/" target="_blank" rel="noreferrer">
 					www.bmrn.com
 				</a>
-				<a href="ignacio.gomez@bmrn.com">ignacio.gomez@bmrn.com</a>
+				<a href="mailto:ignacio.gomez@bmrn.com">ignacio.gomez@bmrn.com</a>
 				<a href="tel:++56932383615">+569 6848 5514</a>
 			</div>
 			<Dialog
@@ -301,7 +301,7 @@ const Biomarin = (props) => {
 											onClick={() => consultar(4)}
 											startIcon={<DateRangeIcon className="icon" />}
 										>
-											Día 4 de Agosto
+											Día 14 de Octubre
 										</Button>
 									</div>
 									<div>
@@ -312,7 +312,7 @@ const Biomarin = (props) => {
 											onClick={() => consultar(5)}
 											startIcon={<DateRangeIcon className="icon" />}
 										>
-											Día 5 de Agosto
+											Día 15 de Octubre
 										</Button>
 									</div>
 								</div>

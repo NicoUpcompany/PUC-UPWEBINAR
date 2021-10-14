@@ -31,6 +31,7 @@ import carrusel2 from "../../../assets/images/stands/gsk/carrusel2.png";
 import carrusel3 from "../../../assets/images/stands/gsk/carrusel3.png";
 import carrusel4 from "../../../assets/images/stands/gsk/carrusel4.png";
 import carrusel5 from "../../../assets/images/stands/gsk/carrusel5.png";
+import carrusel6 from "../../../assets/images/stands/gsk/carrusel6.png";
 
 // apis
 import { agendaGet, Agendar } from "../../../api/agenda";
@@ -252,19 +253,22 @@ const Gsk = (props) => {
 						<LazyLoadImage alt="Carousel 2" src={carrusel2} width="100%" effect="blur" onClick={() => window.open("https://gskpro.com/content/dam/global/hcpportal/es_CL/PDFs/Homepage/products/Avamys/CL_IP_Avamys.pdf", "_blank")}/>
 					</div>
 					<div className="image">
-						<LazyLoadImage alt="Carousel 3" src={carrusel3} width="100%" effect="blur" onClick={() => window.open("https://gskpro.com/content/dam/global/hcpportal/es_CL/PDFs/Homepage/products/flixotide/CL_IP_Flixotide.pdf", "_blank")}/>
+						<LazyLoadImage alt="Carousel 3" src={carrusel3} width="100%" effect="blur" onClick={() => window.open("https://assets.gskstatic.com/pharma/contenido-lsp/ips/CL_IP_Fesema_LF.pdf", "_blank")}/>
 					</div>
 					<div className="image">
-						<LazyLoadImage alt="Carousel 4" src={carrusel4} width="100%" effect="blur" onClick={() => window.open("https://forms.office.com/pages/responsepage.aspx?id=mlIfnAUrlkC0F_pzI4WgUgDPPNSUD3VAmpvGAXyAns5UNldTSElJUjBTUjRMN1BRUlZTMzEyMEo0VC4u", "_blank")}/>
+						<LazyLoadImage alt="Carousel 4" src={carrusel4} width="100%" effect="blur" onClick={() => window.open("https://gskpro.com/content/dam/global/hcpportal/es_CL/PDFs/Homepage/products/flixotide/CL_IP_Flixotide.pd", "_blank")}/>
 					</div>
 					<div className="image">
-						<LazyLoadImage alt="Carousel 5" src={carrusel5} width="100%" effect="blur" onClick={() => window.open("https://forms.office.com/pages/responsepage.aspx?id=mlIfnAUrlkC0F_pzI4WgUgDPPNSUD3VAmpvGAXyAns5UMEcxR0JJOTVDNjVGQk9QTzBXMFhUTzBOWi4u", "_blank")}/>
+						<LazyLoadImage alt="Carousel 5" src={carrusel6} width="100%" effect="blur" onClick={() => window.open("https://gskpro.com/content/dam/global/hcpportal/es_CL/PDFs/Homepage/products/xuzal/CL_IP_Xuzal.pdf", "_blank")}/>
+					</div>
+					<div className="image">
+						<LazyLoadImage alt="Carousel 6" src={carrusel5} width="100%" effect="blur" 	/>
 					</div>
 				</Carousel>
 			</div>
 			<div className="buttons-container">
 				<button className="wsp" onClick={() =>window.open('https://gskpro.com/es-cl/?', '_blank')}>
-					Gsk Pro
+					GSK Pro
 				</button>
 				<button className="meeting" onClick={() => window.open('https://gskpro.com/es-cl/productos/', '_blank')}>
 					Productos GSK

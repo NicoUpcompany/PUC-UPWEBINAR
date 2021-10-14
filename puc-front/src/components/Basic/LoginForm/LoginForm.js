@@ -12,6 +12,8 @@ import { signInApi } from "../../../api/user";
 import { ACCESS_TOKEN, REFRESH_TOKEN } from "../../../utils/constants";
 import { COMETCHAT_CONSTANTS } from "../../../consts";
 import { emailValidation } from "../../../utils/formValidation";
+import Socket from "../../../utils/socket";
+
 
 import "./LoginForm.scss";
 
@@ -66,7 +68,6 @@ const LoginForm = (props) => {
 			localStorage.setItem(ACCESS_TOKEN, accessToken);
 			localStorage.setItem(REFRESH_TOKEN, refreshToken);
 			const decodedToken = jwtDecode(accessToken);
-			console.log(decodedToken);
 			const user = new CometChat.User(decodedToken.id);
 			const UID = decodedToken.id;
 			const apiKey = COMETCHAT_CONSTANTS.AUTH_KEY;

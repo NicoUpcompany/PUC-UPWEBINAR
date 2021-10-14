@@ -10,6 +10,7 @@ import Zamorano from '../../../assets/img/speakers/Dra.Zamorano.jpg'
 import ceciliaPerret from '../../../assets/img/speakers/Dra.CeciliaPerret.jpg'
 import juanAndres from '../../../assets/img/speakers/Dr.Navarro.jpg'
 import valeria from '../../../assets/img/speakers/draValeriaPalma.jpg'
+import calvo from '../../../assets/img/speakers/dr.calvo.jpg'
 
 
 
@@ -38,6 +39,15 @@ const Dia3 = ({ setSaveData, abrirCerrar, state }) => {
 				imgSpeaker1={luisVega}
 				cargo1='Pediatra Broncopulmonar de Clínica Alemana de Santiago, Profesor Asociado de la Facultad de Medicina UDD, Gerente Médico Respiratorio GSK-LSP'
 			/>	
+
+			<div className="row4   border modulo">
+				<div className="tiempo">
+						<p>Modulo 7 </p>
+					</div>
+					<div className="plenario">
+						<p>Infecciones Respiratorias Agudas</p>
+					</div>
+			</div>
 
 			<RowSpeaker
 				setSaveData={setSaveData}
@@ -101,7 +111,14 @@ const Dia3 = ({ setSaveData, abrirCerrar, state }) => {
 				</div>
 			</div>	
 
-			
+			<div className="row4 grey   border modulo">
+				<div className="tiempo">
+						<p>Modulo 8 </p>
+					</div>
+					<div className="plenario">
+						<p>Clase Magistral</p>
+					</div>
+			</div>
 			<RowSpeaker
 				setSaveData={setSaveData}
 				abrirCerrar={abrirCerrar}
@@ -145,19 +162,20 @@ const Dia3 = ({ setSaveData, abrirCerrar, state }) => {
 				inicio="Hora sugerida"
 				fin="12:00"
 				tematica="Simnposio Lab. SANOFI"
-				tematica2="Asma grave en al adolesencia: Desafíos diagnósticos y terapéuticos en la era biológica. De la inmunilogía Básica a la práctica clínica A proposito de un caso: Guía para la toma de decisiones terapéuticas e implicancias prácticas"
+				tematica2="Asma grave en la adolescencia: Desafíos diagnósticos y terapéuticos en la era biológica. De la inmunología Básica a la práctica clínica A propósito de un caso: Guía para la toma de decisiones terapéuticas e implicancias prácticas"
 				moderador="Dr. Juan Andrés Navarro"
 				speaker="Dra. Valeria Palma"
 				speaker2="Dr. Mario Calvo"
 				imgSpeaker1={juanAndres}
 				imgSpeaker2={valeria}
-				imgSpeaker3={''}
+				imgSpeaker3={calvo}
 				cargo1='Profesor Asociado de la Pontificia Universidad Católica de Chile,  Jefe Unidad Enfermedades Respiratorias Pediátricas, Director del X Curso Internacional de Enfermedades Respiratorias Pediátricas'
 				cargo2='Dra. Valeria Palma
 				Médico Cirujano Especialista en Inmunología Clínica
 				Miembro activo del staff médico de Inmunología y Alergias de la Clínica Alemana de Santiago
 				Coordinadora del Programa de Formación de Especialistas en Inmunología del Hospital Clínico de la Universidad de Chile'
-			
+				cargo3='Médico Pediatra, Neumólogo Infantil y Alergólogo Pediatra Investigador y profesor emérito Facultad de Medicina
+				Universidad Austral de Chile'
 			/>		
 
 			<RowSpeaker

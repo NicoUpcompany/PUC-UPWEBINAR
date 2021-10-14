@@ -260,12 +260,15 @@ const Sanofi = (props) => {
 				</Carousel>
 			</div>
 			<div className="buttons-container">
-				{/* <button className="wsp" onClick={() => openWsp("56932383615")}>
-					WhatsApp
+				<button className="info-2" onClick={() => openFile("VENTURE CHILE DG-PRINT (1).pdf")}>
+					Descargar material
 				</button>
-				<button className="meeting" onClick={() => setOpen(true)}>
-					Agendar reunión
-				</button> */}
+				<button className="info-2" onClick={() => openFile("QUEST CHILE DG-PRINT (1).pdf")}>
+					Descargar material
+				</button>
+				<button className="info" onClick={() => openFile("Dupixent Ayuda Visual Chile  DG-PRINT (2) (1).pdf")}>
+					Descargar material
+				</button>
 			</div>
 			<div className="footer-container">
 				<a href="https://www.sanofi.cl/" target="_blank" rel="noreferrer">

@@ -677,9 +677,9 @@ const Streaming2 = () => {
 						<img src={logo} alt="logo" width="180" />
 					</div>
 					<div className="subMenu desktop">
-						<Link to="/salaespera">Sala de espera</Link>
-						<Link to="/salaespera#agenda">Agenda</Link>
-						<Link to="/salaespera#stands">Stands</Link>
+						<a href="/salaespera">Sala de espera</a>
+						<a href="/salaespera#agenda">Agenda</a>
+						<a href="/salaespera#stands">Stands</a>
 					</div>
 					<div className="movil">
 						<Menu onClick={handleClick} selectedKeys={[current]} mode="horizontal">

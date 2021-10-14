@@ -220,11 +220,11 @@ const Astrazeneca = (props) => {
 				{/* <img src={logoInterno} alt="Logo" className="logo" /> */}
 			</div>
 			<div className="description-container">
-				<h1 className="title">Astrazeneca</h1>
-				<p className="description">
+				<h1 className="title">AstraZeneca</h1>
+				{/* <p className="description">
                Porque AstraZeneca se compromete con la salud de todos los Chilenos, presentamos los beneficios de acceso en <strong>Medicamentos de las Líneas Respiratoria y Gastroenterología asociados al Programa Ahumada Contigo para los afiliados del Sistema Público de Salud</strong>
 			
-				</p>
+				</p> */}
 			</div>
 			{visible ? (
 				<div className="video-container">
@@ -256,9 +256,9 @@ const Astrazeneca = (props) => {
 				</a>
 			</div>
 			<div className="footer-container">
-				{/* <a href="https://educacionprofesional.ing.uc.cl/" target="_blank" rel="noreferrer">
-					educacionprofesional.ing.uc.cl
-				</a> */}
+				<a href="http://www.asmazero.cl" target="_blank" rel="noreferrer">
+				www.asmazero.cl 
+				</a>
 				<a href="mailto:daniela.donoso@astrazeneca.com">daniela.donoso@astrazeneca.com </a>
 				<a href="tel:++56932383615">+56947323869</a>
 			</div>

@@ -21,6 +21,7 @@ export function signInAdminApi(data) {
         });
 }
 
+
 export function getUsersApi(token) {
     const url = `${basePath}/${apiVersion}/users`;
 
@@ -130,6 +131,29 @@ export function signInApi(data) {
 
 export function updateWaitingRoomTimeApi(token, data) {
     const url = `${basePath}/${apiVersion}/update-waiting-room-time`;
+
+    const params = {
+        method: "PUT",
+        body: JSON.stringify(data),
+        headers: {
+            "Content-Type": "application/json",
+            Authorization: token
+        }
+    };
+
+    return fetch(url, params)
+        .then(response => {
+            return response.json();
+        })
+        .then(result => {
+            return result;
+        })
+        .catch(err => {
+            return err.message;
+        });
+}
+export function updateUser(token, data) {
+    const url = `${basePath}/${apiVersion}/user/${data.id}`;
 
     const params = {
         method: "PUT",

@@ -92,10 +92,15 @@ const WaitingRoom = () => {
 	const [pasteur, setPasteur] = useState(false);
 	const [sanofi, setSanofi] = useState(false);
 	const [teva, setTeva] = useState(false);
-
+	const [idSocket, setIdSocket] = useState('');
+	const [idSocketBD, setIdSocketBD] = useState('');
+	
 	useEffect(() => {
 		let interval;
 		getTime2(interval);
+		Socket.on('USER', user =>{
+			setIdSocket(user.id);
+		})
 		const day = moment().date();
 		const month = moment().month();
 		if (day === 16 && month === 9) {
@@ -113,6 +118,7 @@ const WaitingRoom = () => {
 				history.push("/iniciarsesion");
 			} else {
 				setToken(tokenAux);
+				setIdSocketBD(decodedToken.idSocket);
 				const user = {
 					id: decodedToken.id,
 					route: window.location.pathname,
@@ -123,8 +129,9 @@ const WaitingRoom = () => {
 				}
 				const data = {
 					email: decodedToken.email,
+					idSocket: idSocket
 				};
-				updateWaitingRoomTimeApi(token, data);
+				updateWaitingRoomTimeApi(token, data)
 				const UID = decodedToken.id;
 				const apiKey = COMETCHAT_CONSTANTS.AUTH_KEY;
 				const GUID = "chat_general";
@@ -141,7 +148,11 @@ const WaitingRoom = () => {
 				);
 			}
 		}
-	}, []);
+		// if(idSocketBD !==idSocket){
+		// 	history.push("/iniciarsesion");
+		// }
+	}, [idSocketBD]);
+
 
 	useEffect(() => {
 		let interval;
@@ -554,12 +565,12 @@ const WaitingRoom = () => {
 										alt="stand l"
 									/>
 								</div>
-								<div className="col-m" onClick={() => setTeva(true)}>
+								{/* <div className="col-m" onClick={() => setTeva(true)}>
 									<img
 										src={standTeva}
 										alt="stand l"
 									/>
-								</div>
+								</div> */}
 							</div>
 						</div>
 						{/* <div className="async">

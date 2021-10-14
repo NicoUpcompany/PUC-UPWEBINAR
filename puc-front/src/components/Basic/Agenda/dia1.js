@@ -31,6 +31,7 @@ const Dia1 = ({ setSaveData, abrirCerrar, state }) => {
 					<p>Plenario</p>
 				</div>
 			</div>
+			
 			<div className="row2 grey" id="row1" style={{ transitionDuration: "1s" }}>
 				<div className="fondoRow grey">
 					<div className="tiempo">
@@ -53,6 +54,7 @@ const Dia1 = ({ setSaveData, abrirCerrar, state }) => {
 						</p>
 					</div>
 				</div>
+				
 				<div className="imagenes" id="imagen1">
 					<div className="espacio"></div>
 					<div className="imagen">
@@ -99,6 +101,14 @@ const Dia1 = ({ setSaveData, abrirCerrar, state }) => {
 					</div>
 				</div>
 			</div>
+			<div className="row4 border modulo">
+				<div className="tiempo">
+						<p>Modulo 1 </p>
+					</div>
+					<div className="plenario">
+						<p>Sibilancias en el prescolar</p>
+					</div>
+				</div>
 			<div className="row2" id="row2" style={{ transitionDuration: "1s" }}>
 				<div className="fondoRow">
 					<div className="tiempo">
@@ -157,7 +167,7 @@ const Dia1 = ({ setSaveData, abrirCerrar, state }) => {
 							)}
 						</p>
 						<p className="texto1">
-							<strong>El prescolar se merece que usted piense en su función pulmonar.</strong>
+							<strong>El preescolar se merece que usted piense en su función pulmonar.</strong>
 						</p>
 					</div>
 				</div>
@@ -221,6 +231,14 @@ const Dia1 = ({ setSaveData, abrirCerrar, state }) => {
 				<div className="duracion">
 					<p>10:00 - 10:50 hrs</p>
 				</div>
+			</div>
+			<div className="row4  grey border modulo">
+				<div className="tiempo">
+						<p>Modulo 2 </p>
+					</div>
+					<div className="plenario">
+						<p>Fibrosis Quística y su terapia actualizada</p>
+					</div>
 			</div>
 			<div className="row2 grey" id="row5" style={{ transitionDuration: "1s" }}>
 				<div className="fondoRow grey">
@@ -422,6 +440,14 @@ const Dia1 = ({ setSaveData, abrirCerrar, state }) => {
 					<p>15:00 - 15:50 hrs</p>
 				</div>
 			</div>
+			<div className="row4 border modulo">
+				<div className="tiempo">
+						<p>Modulo 3 </p>
+					</div>
+					<div className="plenario">
+						<p>Trastornos Respiratorios del Sueño (TRS)</p>
+					</div>
+			</div>
 			<div className="row2" id="row10" style={{ transitionDuration: "1s" }}>
 				<div className="fondoRow ">
 					<div className="tiempo">
@@ -590,7 +616,7 @@ const Dia1 = ({ setSaveData, abrirCerrar, state }) => {
 							)}
 						</p>
 						<p className="texto1">
-							<strong>Simposio Lab. BIOMARíN</strong>
+							<strong>Simposio Lab. Biomarín</strong>
 						</p>
 						<p className="texto1">
 							"MPS: Rol del Neumólogo Pedíatrico en el Diagnóstico Precoz y Seguimiento"
@@ -608,7 +634,7 @@ const Dia1 = ({ setSaveData, abrirCerrar, state }) => {
 							'					
 						/>
 					<Speaker
-						nombre='Dra. Tatiana Muñoz (Biomarín)'
+						nombre='Dra. Tatiana Muñoz'
 						moderador={false}								
 						speaker={tatiana}
 						cargo='Neuróloga Infantil

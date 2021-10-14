@@ -38,6 +38,7 @@
 				span {
 					display: block;
 					margin: 0 auto;
+					font-size: 14px;
 				}
 			}
 
@@ -272,6 +273,7 @@
 				color: #6a6a6a;
 				font-weight: 700;
 			}
+
 			.tiempo {
 				float: left;
 				width: 18%;
@@ -297,6 +299,13 @@
 
 		.grey {
 			background-color: #F8F9FA;
+		}
+
+		.modulo{
+			.tiempo p,
+			.plenario p{
+				font-size: 16px;
+			}
 		}
 	}
 }

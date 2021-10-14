@@ -41,6 +41,15 @@ const Dia2 = ({ setSaveData, abrirCerrar, state }) => {
 				cargo1='Pediatra, especialista en enfermedades respiratorias infantiles de la PUC de Chile. Jefe del Servicio de Pediatría del Hospital Puerto Montt,  Docencia de Post Grado en Pediatría en la Universidad San Sebastián, Sede Patagonia.'
 				imgSpeaker1={fernandoIniguez}
 			/>	
+
+			<div className="row4   border modulo">
+				<div className="tiempo">
+						<p>Modulo 4 </p>
+					</div>
+					<div className="plenario">
+						<p>El lactante atópico, ¿Cliente frecuente?</p>
+					</div>
+			</div>
 			<RowSpeaker
 				setSaveData={setSaveData}
 				abrirCerrar={abrirCerrar}
@@ -51,7 +60,7 @@ const Dia2 = ({ setSaveData, abrirCerrar, state }) => {
 				fin="09:00"
 				tematica="Manifestaciones clínicas de atopia en el lactante que debemos conocer"
 				moderador="Dr. Fernando Iñiguez"
-				speaker="Dr. Arturo Bortzutzki"
+				speaker="Dr. Arturo Borzutzky"
 				imgSpeaker1={fernandoIniguez}
 				imgSpeaker2={arturoBortu}
 				cargo1='Pediatra, especialista en enfermedades respiratorias infantiles de la PUC de Chile. Jefe del Servicio de Pediatría del Hospital Puerto Montt,  Docencia de Post Grado en Pediatría en la Universidad San Sebastián, Sede Patagonia.'
@@ -67,7 +76,7 @@ const Dia2 = ({ setSaveData, abrirCerrar, state }) => {
 				fin="09:30"
 				tematica="Cambio de paradigma del manejo de bronquiolitis, estamos a tiempo?"
 				moderador="Dr. Fernando Iñiguez"
-				speaker="Dr. J. Castro Rodriguez"
+				speaker="Dr José Antonio Castro Rodríguez"
 				imgSpeaker1={fernandoIniguez}
 				imgSpeaker2={juanAntonio}
 				cargo1='Pediatra, especialista en enfermedades respiratorias infantiles de la PUC de Chile. Jefe del Servicio de Pediatría del Hospital Puerto Montt,  Docencia de Post Grado en Pediatría en la Universidad San Sebastián, Sede Patagonia.'
@@ -101,6 +110,14 @@ const Dia2 = ({ setSaveData, abrirCerrar, state }) => {
 				</div>
 			</div>		
 
+			<div className="row4 grey  border modulo">
+				<div className="tiempo">
+						<p>Modulo 5 </p>
+					</div>
+					<div className="plenario">
+						<p>Asma Bronquial</p>
+					</div>
+			</div>
 			<RowSpeaker
 				setSaveData={setSaveData}
 				abrirCerrar={abrirCerrar}
@@ -126,7 +143,7 @@ const Dia2 = ({ setSaveData, abrirCerrar, state }) => {
 				fin="11:30"
 				tematica="Como la adherencia impacta un mejor control del asma"
 				moderador="Dr. Jury Hernández"
-				speaker="Dr. L. Holmgren"
+				speaker="Dr. Linus Holmgren"
 				imgSpeaker1={yuryHernandez}
 				imgSpeaker2={linus	}
 				cargo1='Médico Broncopulmonar Infantil, subespecialista en el Complejo Asistencial Dr. Víctor Ríos Ruiz, Los Ángeles y Jefe del centro de responsabilidad infantil. Past President de la Sociedad Chilena de Neumología pediátrica ( SOCHINEP)'
@@ -143,7 +160,7 @@ const Dia2 = ({ setSaveData, abrirCerrar, state }) => {
 				fin="12:00"
 				tematica="Desafíos en el tratamiento del asma grave"
 				moderador="Dr. Jury Hernández"
-				speaker="Dr. JA Erik Forno (USA)"
+				speaker="Dr. Erick Forno"
 				imgSpeaker1={yuryHernandez}
 				imgSpeaker2={erikForno}
 				cargo1='Médico Broncopulmonar Infantil, subespecialista en el Complejo Asistencial Dr. Víctor Ríos Ruiz, Los Ángeles y Jefe del centro de responsabilidad infantil. Past President de la Sociedad Chilena de Neumología pediátrica ( SOCHINEP)'
@@ -173,12 +190,13 @@ const Dia2 = ({ setSaveData, abrirCerrar, state }) => {
 				inicio="Hora sugerida"
 				fin="12:30"
 				tematica="Simposio Lab. ASTRAZENECA"
-				tematica2="Asma en la Adolesencia"
+				tematica2="Asma en la adolescencia"
 				moderador="Dr. Fernando Iñiguez"
 				speaker="Dr. Alvaro Teijeiro"
 				imgSpeaker1={fernandoIniguez}
 				imgSpeaker2={alvaroTejeiro}
 				cargo1="Pediatra, especialista en enfermedades respiratorias infantiles de la PUC de Chile. Jefe del Servicio de Pediatría del Hospital Puerto Montt,  Docencia de Post Grado en Pediatría en la Universidad San Sebastián, Sede Patagonia."
+				cargo2="M.D. PhD. Alvaro Teijeiro Jefe del Centro Respiratorio Hospital Pediátrico de Córdoba Argentina.Coordinador del Programa de Asma Grave Hospital Pediátrico de Córdoba Argentina."
 			/>
 
 
@@ -190,6 +208,14 @@ const Dia2 = ({ setSaveData, abrirCerrar, state }) => {
 					<p>14:00 - 15:50 hrs</p>
 				</div>
 			</div>		
+			<div className="row4   border modulo">
+				<div className="tiempo">
+						<p>Modulo 6 </p>
+					</div>
+					<div className="plenario">
+						<p>Infección respiratoria por SARS Cov-2</p>
+					</div>
+			</div>
 
 			<RowSpeaker
 				setSaveData={setSaveData}
@@ -263,13 +289,14 @@ const Dia2 = ({ setSaveData, abrirCerrar, state }) => {
 				grey="grey"
 				inicio="Hora sugerida"
 				fin="17:30"
-				tematica="Simnposio Lab. BIOMERUX"
+				tematica="Simposio Lab. BIOMERIEUX"
 				tematica2="Enfoque Sindrómico de IRA en niños"
 				moderador="Dr. Carlos Flores"
 				speaker="Dra. Carolina Rivacoba"
 				imgSpeaker1={carlosFlores}
 				imgSpeaker2={carolina}
 				cargo1='Pediatra Broncopulmonar con Mención en Cuidados Intensivos, Magister en Epidemiología, Jefe del Servicio de Pediatría y de la Unidad de Tratamiento Intermedio del Hospital de Ovalle'
+				cargo2= 'Pediatra por Universidad de Los Andes Infectóloga Pediatra por Universidad de Chile Trabajo cómo infectóloga en Hospital de niños Exequiel González Cortés, a cargo de programa de optimización de antimicrobianos de dicho centro También trabajo como infectóloga pediatra en Clínica Santa María y como residente de UCI pediátrica de dicho centro'
 			/>							
 		</>
 	);
