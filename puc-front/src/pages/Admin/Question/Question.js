@@ -15,6 +15,7 @@ import { getQuestionApi, deleteQuestionApi } from '../../../api/question';
 import { getAccessTokenApi } from '../../../api/auth';
 
 import './Question.scss';
+import { getUserApi } from "../../../api/user";
 
 const questionHeaders = [
     { title: 'ID', dataIndex: '_id' },

@@ -1,4 +1,5 @@
 const Question = require("../models/question");
+const User = require('../models/user');
 const moment = require("moment");
 require("moment/locale/es");
 
@@ -19,6 +20,8 @@ function makeQuestion(req, res) {
 	const time = moment().format();
 
 	questionObj.user = user;
+
+	console.log(user);
 	questionObj.question = question;
 	questionObj.time = time;
 
@@ -43,7 +46,7 @@ function makeQuestion(req, res) {
  */
 function getQuestions(req, res) {
 	Question.find({ active: { $ne: false } })
-		.populate("user", "email")
+		.populate("user")
 		.sort({ order: "asc" })
 		.exec((err, questionStored) => {
 			if (err) {
@@ -52,6 +55,7 @@ function getQuestions(req, res) {
 				if (!questionStored) {
 					res.status(404).send({ ok: false, preguntas: [] });
 				} else {
+					console.log(questionStored);
 					res.status(200).send({ ok: true, preguntas: questionStored });
 				}
 			}

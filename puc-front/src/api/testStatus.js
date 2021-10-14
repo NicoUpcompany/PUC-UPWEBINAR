@@ -27,7 +27,7 @@ export function postTestStatusApi(token, data) {
 	const url = `${basePath}/${apiVersion}/test-status`;
 
 	const params = {
-		method: "POST",
+		method: "PUT",
 		body: JSON.stringify(data),
 		headers: {
 			"Content-Type": "application/json",

@@ -211,6 +211,8 @@ const Streaming2 = () => {
 	const [activeVote29, setActiveVote29] = useState(false);
 	const [activeVote30, setActiveVote30] = useState(false);
 	const [activeVote31, setActiveVote31] = useState(false);
+	//Desactiva las preguntas
+	const [activeVote32, setActiveVote32] = useState(false);
 	const [question1, setQuestion1] = useState(0);
 	const [question2, setQuestion2] = useState(0);
 	const [question3, setQuestion3] = useState(0);
@@ -258,6 +260,8 @@ const Streaming2 = () => {
 				}, 5000);
 			}
 		}
+		console.log(votes);
+		console.log(testStatus)
 	}, []);
 
 	useEffect(() => {
@@ -331,6 +335,7 @@ const Streaming2 = () => {
 					setActiveVote29(arr[arr.length - 1].vote29);
 					setActiveVote30(arr[arr.length - 1].vote30);
 					setActiveVote31(arr[arr.length - 1].vote31);
+					setActiveVote32(arr[arr.length - 1].vote32);
 					
 				} catch (error) {
 					setActiveTest(false);
@@ -365,6 +370,7 @@ const Streaming2 = () => {
 					setActiveVote29(false);
 					setActiveVote30(false);
 					setActiveVote31(false);
+					setActiveVote32(false);
 				}
 			}
 			setLoading(false);
@@ -984,6 +990,14 @@ const Streaming2 = () => {
 												alt4 = opt124;
 												alt5 = 0;
 												break;
+											// case 32: 
+											// 	show = activeVote32
+											// 	alt1 = 0;
+											// 	alt2 = 0;
+											// 	alt3 = 0;
+											// 	alt4 = 0;
+											// 	alt5 = 0;
+											// 	break;
 											default:
 												show= false;
 												break;

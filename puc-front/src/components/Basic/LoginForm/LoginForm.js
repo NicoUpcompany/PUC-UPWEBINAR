@@ -60,11 +60,6 @@ const LoginForm = (props) => {
 
 
 	const signIn = async () => {
-		let idSocket;
-		idSocket = uuid();
-		const tokenAux = getAccessTokenApi();
-		setToken(tokenAux);
-		console.log(idSocket);
 		setLoading(true);
 		const result = await signInApi(inputs);
 		if (!result.ok) {
@@ -76,14 +71,7 @@ const LoginForm = (props) => {
 			const { accessToken, refreshToken } = result;
 			localStorage.setItem(ACCESS_TOKEN, accessToken);
 			localStorage.setItem(REFRESH_TOKEN, refreshToken);
-			localStorage.setItem('idSocket', idSocket )
 			const decodedToken = jwtDecode(accessToken);
-
-			const data = {
-				email: decodedToken.email,
-				idSocket: idSocket
-			};
-			updateWaitingRoomTimeApi(token, data)
 			const user = new CometChat.User(decodedToken.id);
 			const UID = decodedToken.id;
 			const apiKey = COMETCHAT_CONSTANTS.AUTH_KEY;

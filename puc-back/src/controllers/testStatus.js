@@ -44,62 +44,60 @@ function changeStatus(req, res) {
 		vote28,
 		vote29,
 		vote30,
-		vote31
+		vote31,
+		vote32,
+		id
 	} = req.body
-	const testStatus = new TestStatus();
 	const time = moment().format();
-	testStatus.vote1 = vote1;
-	testStatus.vote2 = vote2;
-	testStatus.vote3 = vote3;
-	testStatus.vote4 = vote4;
-	testStatus.vote5 = vote5;
-	testStatus.vote6 = vote6;
-	testStatus.vote7 = vote7;
-	testStatus.vote8 = vote8;
-	testStatus.vote9 = vote9;
-	testStatus.vote11 = vote11;
-	testStatus.vote12 = vote12;
-	testStatus.vote13 = vote13;
-	testStatus.vote14 = vote14;
-	testStatus.vote15 = vote15;
-	testStatus.vote16 = vote16;
-	testStatus.vote17 = vote17;
-	testStatus.vote18 = vote18;
-	testStatus.vote19 = vote19;
-	testStatus.vote20 = vote20;
-	testStatus.vote21 = vote21;
-	testStatus.vote22 = vote22;
-	testStatus.vote23 = vote23;
-	testStatus.vote24 = vote24;
-	testStatus.vote25 = vote25;
-	testStatus.vote26 = vote26;
-	testStatus.vote27 = vote27;
-	testStatus.vote28 = vote28;
-	testStatus.vote29 = vote29;
-	testStatus.vote30 = vote30;
-	testStatus.vote31 = vote31;
+
+	const newStatus = {
+		vote1: vote1,
+		vote2: vote2,
+		vote3: vote3,
+		vote4: vote4,
+		vote5: vote5,
+		vote6: vote6,
+		vote7: vote7,
+		vote8: vote8,
+		vote9: vote9,
+		vote10: vote10,
+		vote11: vote11,
+		vote12: vote12,
+		vote13: vote13,
+		vote14: vote14,
+		vote15: vote15,
+		vote16: vote16,
+		vote17: vote17,
+		vote18: vote18,
+		vote19: vote19,
+		vote20: vote20,
+		vote21: vote21,
+		vote22: vote22,
+		vote23: vote23,
+		vote24: vote24,
+		vote25: vote25,
+		vote26: vote26,
+		vote27: vote27,
+		vote28: vote28,
+		vote29: vote29,
+		vote30: vote30,
+		vote31: vote31,
+		vote32: vote32,
+		time : time
+
+	}
 	if (active !== undefined) {
 		testStatus.active= active
 	}
-	// if (vote1 !== undefined) {
-	// 	testStatus.vote1 = vote1
-	// }
-	// if (vote2 !== undefined) {
-	// 	testStatus.vote2 = vote2
-	// }
-	// if(vote3 !== undefined){
-	// 	testStatus.vote3 = vote3
-	// }
 
-	testStatus.time = time;
-
-	testStatus.save((err, testStatusStored) => {
+	TestStatus.findByIdAndUpdate(id, newStatus,(err, testStatusStored) => {
 		if (err) {
 			res.status(500).send({ ok: false, message: "Error del servidor" });
 		} else {
 			if (!testStatusStored) {
 				res.status(404).send({ ok: false, message: "Error al activar la evaluación" });
 			} else {
+				// console.log(testStatusStored);
 				res.status(200).send({
                     ok: true,
                     message: active ? "Evaluación activada" : "Evaluación desactivada",
@@ -108,6 +106,7 @@ function changeStatus(req, res) {
 		}
 	});
 }
+
 
 /**
  * Retorna todos el estado de la evaluación
@@ -128,7 +127,6 @@ function getTestStatus(req, res) {
 				if (!testStatusStored) {
 					res.status(404).send({ ok: false, testStatus: {} });
 				} else {
-                    // console.log(testStatusStored)
 					res.status(200).send({ ok: true, testStatus: testStatusStored });
 				}
 			}
@@ -137,5 +135,5 @@ function getTestStatus(req, res) {
 
 module.exports = {
 	changeStatus,
-	getTestStatus,
+	getTestStatus
 };

@@ -282,4 +282,13 @@ export const dataVotes = [
         alt3: 'Recuperar el peso previo a la exacerbación.',
         alt4: 'Resolución radiográfica de las lesiones. '
     },
+    {
+        id: 32,
+        num: '',
+        ask: '',
+        alt1: '',
+        alt2: '',
+        alt3: '',
+        alt4: ''
+    },
 ]

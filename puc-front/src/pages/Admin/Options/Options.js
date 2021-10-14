@@ -113,7 +113,8 @@ export default function Events() {
 		vote28: false,
 		vote29: false,
 		vote30: false,
-		vote31: false
+		vote31: false,
+		vote32: false
 	})
 	// const [voto1Status, setVoto1Status] = useState(false);
 	// const [voto2Status, setVoto2Status] = useState(false);
@@ -269,6 +270,7 @@ export default function Events() {
 						vote29: arr[arr.length -1].vote29,
 						vote30: arr[arr.length -1].vote30,
 						vote31: arr[arr.length -1].vote31,
+						vote32: arr[arr.length -1].vote32,
 						
 					})
 					// setTestStatus(arr[arr.length - 1].active);
@@ -307,7 +309,8 @@ export default function Events() {
 						vote28: false,
 						vote29: false,
 						vote30: false,
-						vote31: false
+						vote31: false,
+						vote32: false
 					});
 					// setTestStatus(false);
 					// setVoto1Status(false);
@@ -615,6 +618,8 @@ export default function Events() {
 		}
 		data = {
 			...data,
+			// id: '6168541be5715b14fc52652b',
+			id: '6168535f8ae921ac2f48030c',
 			[estado]:true
 		}
 
@@ -650,6 +655,19 @@ export default function Events() {
 				<h3 className='title-module'>Modulo 1</h3>
 				{/* Votación 1 */}
 				<div className="btn-votos"> 
+					<Popconfirm
+						title={
+							votesStatus.vote32 ? "Esta opción deshabilitará la evaluación a los usuarios" : "Esta opción habilitará la evaluación a los usuarios"
+						}
+						onConfirm={()=>handleOk("vote32")}
+						onCancel={handleCancel}
+						okText="Si"
+						cancelText="No"
+					>
+							<Button type="primary" className="btn" block icon={<AuditOutlined />}>
+								{votesStatus.vote32 ? "Preguntas desactivadas" : "Desactivar preguntas "}
+							</Button>
+					</Popconfirm>
 					<Popconfirm
 						title={
 							votesStatus.vote1 ? "Esta opción deshabilitará la evaluación a los usuarios" : "Esta opción habilitará la evaluación a los usuarios"

@@ -165,7 +165,7 @@ function getClientVotes(req, res) {
 				if (!voteStored) {
 					res.status(404).send({ ok: false, votes: [] });
 				} else {
-					
+					console.log(voteStored);
 					let option1Count = 0;
 					let option2Count = 0;
 					let option3Count = 0;
@@ -1457,9 +1457,6 @@ function getClientVotes(req, res) {
 						opt2q31: perc122,
 						opt3q31: perc123,
 						opt4q31: perc124,
-		
-			
-						
 					})
 				}
 			}

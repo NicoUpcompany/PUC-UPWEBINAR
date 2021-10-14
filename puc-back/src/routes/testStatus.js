@@ -15,7 +15,7 @@ const api = express.Router();
  * @name changeStatus
  * @path {POST} /test-status
  */
-api.post("/test-status", [md_auth.ensureAuth], TestStatusontroller.changeStatus);
+api.put("/test-status", [md_auth.ensureAuth], TestStatusontroller.changeStatus);
 /**
  * Retorna el estado de la evaluación
  *

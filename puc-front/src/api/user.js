@@ -44,6 +44,28 @@ export function getUsersApi(token) {
             return err.message;
         });
 }
+export function getUserApi(token, id) {
+    const url = `${basePath}/${apiVersion}/user/${id}`;
+
+    const params = {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+            Authorization: token
+        }
+    };
+
+    return fetch(url, params)
+        .then(resp => {
+            return resp.json();
+        })
+        .then(result => {
+            return result;
+        })
+        .catch(err => {
+            return err.message;
+        });
+}
 
 export function changeRoleApi(id, token) {
     const url = `${basePath}/${apiVersion}/change-role/${id}`;
