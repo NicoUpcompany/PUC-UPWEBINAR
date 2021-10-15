@@ -146,29 +146,29 @@ export const dataVotes = [
     {
         id: 17,
         num: 'question17',
-        ask: '¿CUÁL ES SU CONDUCTA FRENTE A UN PACIENTE VENTILADO POR MEDIO DE TRAQUESTOMIA CON ESTE CUADRO CLINICO',
+        ask: '¿CUÁL ES SU CONDUCTA FRENTE A UN PACIENTE CON ESTE CUADRO CLINICO?',
         alt1: 'Manejo Expectante.',
-        alt2: 'Solicitar Radiografía de Tórax.',
+        alt2: 'Indicar Oxígeno Domiciliario.',
         alt3: 'Solicitar gases arteriales y PCR CoVID 19.',
-        alt4: 'Verificar funcionamiento de cánula y revisar equipos de monitorización.'
+        alt4: 'Hospitalizar inmediatamente.'
     },
     {
         id: 18,
         num: 'question18',
-        ask: '¿QUE IMÁGENES IMPORTANTES ASOCIADAS A ÉSTA DESCOMPENSACION DESTACA EN ESTA RADIOGRAFIA?',
-        alt1: 'Infiltrado intersticial.',
+        ask: '¿QUE IMÁGENES RADIOLOGICAS DESTACAN EN ESTAS PLACAS?',
+        alt1: 'Infiltrado intersticial bilateral. ',
         alt2: 'Neumonía de Lóbulo Inferior Izquierdo.',
         alt3: 'Neumotórax Hemitórax Derecho.',
-        alt4: 'Bronquiectasias varicosas.'
+        alt4: 'Bronquiectasias quísticas y varicosas.'
     },
     {
         id: 19,
         num: 'question19',
         ask: '¿QUE HALLAZGOS DE ESTE TAC SON CARACTERISTICOS DE COVID-19?',
         alt1: 'Neumatocele de Lóbulo Inferior Izquierdo.',
-        alt2: 'Compromiso alveolar multi focal. ',
-        alt3: 'Nódulo pulmonar. ',
-        alt4: 'Derrame pleural'
+        alt2: 'Compromiso alveolar multi focal.  ',
+        alt3: 'Nódulo pulmonar.  ',
+        alt4: 'Derrame pleural.'
     },
     {
         id: 20,
