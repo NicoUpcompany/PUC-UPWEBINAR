@@ -24,10 +24,10 @@ const Dia3 = ({ setSaveData, abrirCerrar, state }) => {
 				<div className="plenario">
 					<p>Plenario</p>
 				</div>
-				{/* <Link
+				<Link
 					className='btn2'
-					to='/sabado'
-				>VER DÍA AQUÍ</Link> */}
+					to='/sala3'
+				>VER CURSO AQUÍ</Link>
 			</div>
 			<RowSpeaker
 				setSaveData={setSaveData}

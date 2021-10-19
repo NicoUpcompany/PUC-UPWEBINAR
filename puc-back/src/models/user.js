@@ -29,7 +29,10 @@ const userSchema = Schema({
 	vote: { type: Boolean, default: false },
 	test: { type: Boolean, default: false },
 	active: { type: Boolean, default: true },
-	idSocket: {type: String, default: ''}
+	ptos: {type: Number, default: 0},
+	note: {type: Number, default:0},
+	startTest: {type: Boolean, default: false},
+	finishTest: {type: String, default:"0"}
 });
 
 

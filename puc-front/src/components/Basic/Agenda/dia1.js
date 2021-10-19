@@ -30,10 +30,10 @@ const Dia1 = ({ setSaveData, abrirCerrar, state }) => {
 				<div className="plenario">
 					<p>Plenario</p>
 				</div>
-				{/* <Link
+				<Link
 					className='btn2'
-					to='/jueves'
-				>VER DÍA AQUÍ</Link> */}
+					to='/sala1'
+				>VER CURSO AQUÍ</Link>
 			</div>
 			
 			<div className="row2 grey" id="row1" style={{ transitionDuration: "1s" }}>

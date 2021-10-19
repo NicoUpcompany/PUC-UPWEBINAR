@@ -231,7 +231,7 @@ const Pasteur = (props) => {
 			<div className="description-container">
 				<h1 className="title">Pasteur</h1>
 				<p className="description">
-                {/* Celnova Pharma es una compañía farmacéutica regional enfocada en áreas terapéuticas complejas con 30 drogas en el mercado. Tenemos con presencia en oncología, sistema nervioso central, diabetes, cuidados críticos y enfermedades poco frecuentes. Actualmente contamos con operaciones a través de subsidiarias propias en Argentina, Chile, Perú y Colombia y con presencia remota a través de equipo médico en Uruguay, Ecuador y Bolivia. */}
+					Medicamentos de calidad para la salud de todos. 
 				</p>
 			</div>
 			{visible ? (
@@ -275,13 +275,13 @@ const Pasteur = (props) => {
 					Agendar reunión
 				</button> */}
 			</div>
-			{/* <div className="footer-container">
-				<a href="https://educacionprofesional.ing.uc.cl/" target="_blank" rel="noreferrer">
-					educacionprofesional.ing.uc.cl
+			<div className="footer-container">
+				<a href="http://lpasteur.cl" target="_blank" rel="noreferrer">
+					lpasteur.cl
 				</a>
-				<a href="mailtotsantander@celnova.com">tsantander@celnova.com </a>
-				<a href="tel:++56932383615">+56 9 3238 3615</a>
-			</div> */}
+				<a href="mailto:jtopp@lpasteur.cl">jtopp@lpasteur.cl</a>
+				<a href="tel:++56932383615">+56 9 9445 6445</a>
+			</div>
 			<Dialog
 				open={open}
 				TransitionComponent={Transition}

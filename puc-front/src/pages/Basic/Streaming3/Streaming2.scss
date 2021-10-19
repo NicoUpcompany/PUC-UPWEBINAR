@@ -291,9 +291,14 @@
 
     .container {
         position: relative;
-        display: block;
+        display: flex;
         margin: 0 auto;
         max-width: 1280px;
+        max-height: 100vh;
+        height: 800px;
+        flex-direction: column;
+    
+
         .centrado {
             display: flex;
             align-items: center;
@@ -379,6 +384,10 @@
             position: relative;
             display: block;
             margin-top: 10px;
+
+            .ant-btn-block {
+                width: 30%;
+            }
 
             .block-card {
                 position: absolute;

@@ -77,7 +77,7 @@ export default function Events() {
             const arrayEvents = [];
             if (resp.ok) {
                 resp.eventos.forEach(item => {
-                    console.log(item.conectionType)
+                    console.log(item.user)
                     let element;
                     if (item.user === null) {
                         element = {

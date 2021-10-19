@@ -16,6 +16,7 @@ const api = express.Router();
  * @path {POST} /test
  */
 api.post("/test", [md_auth.ensureAuth], TestController.saveTest);
+api.post("/test1", [md_auth.ensureAuth], TestController.startTest);
 /**
  * Obtiene todas las evaluaciones
  *
@@ -23,5 +24,6 @@ api.post("/test", [md_auth.ensureAuth], TestController.saveTest);
  * @path {GET} /test
  */
 api.get("/test", [md_auth.ensureAuth], TestController.getTests);
+
 
 module.exports = api;

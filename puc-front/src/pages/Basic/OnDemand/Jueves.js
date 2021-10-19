@@ -356,7 +356,7 @@ export const Jueves = () => {
 									width="560"
 									height="315"
 									className="transmission"
-									src="https://player.vimeo.com/video/496943592"
+									src="https://player.vimeo.com/video/634881615?h=9ea7c31c65"
 									frameBorder="0"
 									allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 									allowFullScreen

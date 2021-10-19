@@ -94,11 +94,11 @@ const WaitingRoom = () => {
 	const [teva, setTeva] = useState(false);
 	const [idSocket, setIdSocket] = useState('');
 	const [idSocketBD, setIdSocketBD] = useState('');
-	
+
 	useEffect(() => {
 		let interval;
 		getTime2(interval);
-		Socket.on('USER', user =>{
+		Socket.on('USER', user => {
 			setIdSocket(user.id);
 		})
 		const day = moment().date();
@@ -140,11 +140,11 @@ const WaitingRoom = () => {
 				CometChat.login(UID, apiKey).then(
 					(User) => {
 						CometChat.joinGroup(GUID, groupType, password).then(
-							(group) => {},
-							(error) => {}
+							(group) => { },
+							(error) => { }
 						);
 					},
-					(error) => {}
+					(error) => { }
 				);
 			}
 		}
@@ -190,7 +190,7 @@ const WaitingRoom = () => {
 			userId: localStorage.getItem("userID"),
 		};
 		eventApi(data);
-		
+
 		if (saveData === 1) {
 			history.push("/perfil");
 		}
@@ -351,7 +351,7 @@ const WaitingRoom = () => {
 		<Spin spinning={loading} size="large" tip="Cargando..." indicator={antIcon}>
 			{chat ? (
 				<>
-					<CometChatUnified />
+					{/* <CometChatUnified />
 					<div className="pregunta2">
 						<div className="card">
 							<div className="barra fadeInUpBig">
@@ -379,7 +379,7 @@ const WaitingRoom = () => {
 								</div>
 							</div>
 						</div>
-					</div>
+					</div> */}
 				</>
 			) : (
 				<>
@@ -392,9 +392,9 @@ const WaitingRoom = () => {
 								<div className="subMenu desktop">
 									<Link to="/salaespera">Sala de espera</Link>
 									<a href="#agenda">Agenda</a>
-									{state2 ? <Link onClick={() => changeChatStatus()}>Networking</Link> : null}
+									{/* {state2 ? <Link onClick={() => changeChatStatus()}>Networking</Link> : null} */}
 									<a href="#stands">Stands</a>
-									{!state && !changeStreaming ? (
+									{/* {!state && !changeStreaming ? (
 										<Link to="/streaming" className="perfil">
 											Entrar a sala
 										</Link>
@@ -403,7 +403,7 @@ const WaitingRoom = () => {
 										<Link to="/streaming" className="perfil">
 											Entrar a sala
 										</Link>
-									) : null}
+									) : null} */}
 								</div>
 								<div className="movil">
 									<Menu onClick={handleClick} selectedKeys={[current]} mode="horizontal">
@@ -437,38 +437,38 @@ const WaitingRoom = () => {
 													</Link>
 												</Menu.Item>
 											) : null}
-											{!state && changeStreaming ? (
+											{/* {!state && changeStreaming ? (
 												<Menu.Item key="setting:5">
 													<Link className="opcion" to="/streaming">
 														Entrar a sala
 													</Link>
 												</Menu.Item>
-											) : null}
+											) : null} */}
 										</SubMenu>
 									</Menu>
 								</div>
 							</div>
 							<div className="header2">
-									{state ? (
-										<div className="centrado">
-											<div className="cronometro"></div>
-										</div>
-									) : null}
-									{!state ? (
+								{state ? (
+									<div className="centrado">
+										<div className="cronometro"></div>
+									</div>
+								) : null}
+								{/* {!state ? (
 										<div className="centrado">
 											<div className="btn">
-												<button onClick={() => setSaveData(4)}>Entrar a sala</button>
+												<button onClick={() => setSaveData(4)}>Entrar a la prueba</button>
 											</div>
 										</div>
-									) : null}
+									) : null} */}
 							</div>
 						</div>
-						{state2 ? (
+						{/* {state2 ? (
 							<div className="pregunta2">
 								<div className="card">
 									<div className="barra fadeInUpBig">
 										<h3 onClick={() => changeChatStatus()}>Networking</h3>
-										<div className="message">
+										 <div className="message">
 											<div className="message-container">
 												<Tooltip title="Ingresar a networking" placement="top">
 													<ChatIcon className="mensaje" onClick={() => changeChatStatus()} />
@@ -492,7 +492,7 @@ const WaitingRoom = () => {
 									</div>
 								</div>
 							</div>
-						) : null}
+						) : null} */}
 						<div className="contenedor" id="stands">
 							<div className="stands">
 								{/* Aztracenaca */}
@@ -506,7 +506,7 @@ const WaitingRoom = () => {
 									<img
 										src={standGsk}
 										alt="stand l"
-										/>
+									/>
 								</div>
 								<div className='center'>
 									<div className="col-2" onClick={() => setSanofi(true)}>
@@ -517,13 +517,13 @@ const WaitingRoom = () => {
 									</div>
 
 									<div className='stand-l'>
-										<div  className='biomarin' onClick={() => setBiomarin(true)}>
+										<div className='biomarin' onClick={() => setBiomarin(true)}>
 											<img
 												src={standBiomarin}
 												alt="stand l"
 											/>
 										</div>
-										<div  className='biome' onClick={() => setBiomerieux(true)}>
+										<div className='biome' onClick={() => setBiomerieux(true)}>
 											<img
 												src={standBiomerux}
 												alt="stand l"
@@ -558,7 +558,7 @@ const WaitingRoom = () => {
 										alt="stand l"
 									/>
 								</div>
-								
+
 								<div className="col-m" onClick={() => setSavalDrawer(true)}>
 									<img
 										src={standSaval}
@@ -608,11 +608,11 @@ const WaitingRoom = () => {
 			{/* Astraceneca */}
 			<Drawer className="drawer-component" placement="right" closable={false} onClose={() => setAstrazeneca(false)} visible={astrazeneca}>
 				<AstrazenecaComponent visible={astrazeneca} setVisible={setAstrazeneca} token={token} standName="Aztraceneca" />
-			</Drawer> 
+			</Drawer>
 			{/* Biomarin */}
 			<Drawer className="drawer-component" placement="right" closable={false} onClose={() => setBiomarin(false)} visible={biomarin}>
 				<BiomarinComponent visible={biomarin} setVisible={setBiomarin} token={token} standName="Biomarín" />
-			</Drawer>		
+			</Drawer>
 			{/* Biomerieux */}
 			<Drawer className="drawer-component" placement="right" closable={false} onClose={() => setBiomerieux(false)} visible={biomerieux}>
 				<BiomerieuxComponent visible={biomerieux} setVisible={setBiomerieux} token={token} standName="Biomarín" />

@@ -4,7 +4,6 @@ import { Spin, Menu, Radio, Space, Progress, notification } from "antd";
 import { UnorderedListOutlined, LoadingOutlined } from "@ant-design/icons";
 import { useHistory, Link } from "react-router-dom";
 import jwtDecode from "jwt-decode";
-import ArrowRightAltIcon from "@material-ui/icons/ArrowRightAlt";
 import $ from "jquery";
 import { isMobile } from "react-device-detect";
 
@@ -13,7 +12,6 @@ import { updateStreamTimeApi } from "../../../api/user";
 import { makeQuestionApi } from "../../../api/question";
 import { eventApi } from "../../../api/events";
 import { postVoteApi, getVoteClientApi, getVoteApi } from "../../../api/vote";
-import { postTestApi } from "../../../api/test";
 import { getTestStatusApi } from "../../../api/testStatus";
 import Socket from "../../../utils/socket";
 import { ACCESS_TOKEN, REFRESH_TOKEN } from "../../../utils/constants";
@@ -176,8 +174,6 @@ const Streaming2 = () => {
 	const [vote1, setVote1] = useState(0);
 	const [vote2, setVote2] = useState(0);
 
-	// test
-	const [pages, setPages] = useState(1);
 	const [activeTest, setActiveTest] = useState(false);
 	const [testStatus, setTestStatus] = useState(false);
 	const [activeVote1, setActiveVote1] = useState(false);
@@ -213,12 +209,6 @@ const Streaming2 = () => {
 	const [activeVote31, setActiveVote31] = useState(false);
 	//Desactiva las preguntas
 	const [activeVote32, setActiveVote32] = useState(false);
-	const [question1, setQuestion1] = useState(0);
-	const [question2, setQuestion2] = useState(0);
-	const [question3, setQuestion3] = useState(0);
-	const [question4, setQuestion4] = useState(0);
-	const [question5, setQuestion5] = useState(0);
-	const [question6, setQuestion6] = useState(0);
 
 	useEffect(() => {
 		setLoading(true);
@@ -243,13 +233,15 @@ const Streaming2 = () => {
 			} else {
 				setToken(auxToken);
 				setUser(decodedToken);
+				console.log(user);
+				console.log(decodedToken)
 				setVoteStatus(decodedToken.vote);
 				setTestStatus(decodedToken.test);
-				const user = {
+				const usuario = {
 					id: decodedToken.id,
 					route: window.location.pathname,
 				};
-				Socket.emit("UPDATE_ROUTE", user);
+				Socket.emit("UPDATE_ROUTE", usuario);
 				const data = {
 					email: decodedToken.email,
 				};
@@ -260,8 +252,6 @@ const Streaming2 = () => {
 				}, 5000);
 			}
 		}
-		console.log(votes);
-		console.log(testStatus)
 	}, []);
 
 	useEffect(() => {
@@ -336,7 +326,7 @@ const Streaming2 = () => {
 					setActiveVote30(arr[arr.length - 1].vote30);
 					setActiveVote31(arr[arr.length - 1].vote31);
 					setActiveVote32(arr[arr.length - 1].vote32);
-					
+
 				} catch (error) {
 					setActiveTest(false);
 					setActiveVote1(false);
@@ -550,129 +540,6 @@ const Streaming2 = () => {
 		setQuestionInput(e.target.value);
 	};
 
-	//Votes 
-	const addVotes = () => {
-		if (votes < 2) {
-			if (votes === 0 && vote1 === 0) {
-				notification["error"]({
-					message: "Debes seleccionar una opción",
-				});
-			} else if (votes === 1 && vote2 === 0) {
-				notification["error"]({
-					message: "Debes seleccionar una opción"
-				})
-			} else {
-				setVotes(votes + 1);
-			}
-		}
-	}
-
-	const addPages = () => {
-		if (pages < 6) {
-			if (pages === 1 && question1 === 0) {
-				notification["error"]({
-					message: "Debes seleccionar una opción",
-				});
-			} else if (pages === 2 && question2 === 0) {
-				notification["error"]({
-					message: "Debes seleccionar una opción",
-				});
-			} else if (pages === 3 && question3 === 0) {
-				notification["error"]({
-					message: "Debes seleccionar una opción",
-				});
-			} else if (pages === 4 && question4 === 0) {
-				notification["error"]({
-					message: "Debes seleccionar una opción",
-				});
-			} else if (pages === 5 && question5 === 0) {
-				notification["error"]({
-					message: "Debes seleccionar una opción",
-				});
-			} else {
-				setPages(pages + 1);
-			}
-		}
-	};
-
-	const sendTest = async () => {
-		if (pages === 6 && question6 === 0) {
-			notification["error"]({
-				message: "Debes seleccionar una opción",
-			});
-		} else {
-			if (testStatus) {
-				notification["error"]({
-					message: "Solo puedes realizar la evaluación una vez",
-				});
-			} else {
-				const data = {
-					userID: user.id,
-					question1,
-					question2,
-					question3,
-					question4,
-					question5,
-					question6,
-				};
-				const response = await postTestApi(token, data);
-				if (response.ok) {
-					const { accessToken, refreshToken, message } = response;
-					localStorage.setItem(ACCESS_TOKEN, accessToken);
-					localStorage.setItem(REFRESH_TOKEN, refreshToken);
-					setToken(accessToken);
-					setUser(jwtDecode(accessToken));
-					setTestStatus(true);
-					notification["success"]({
-						message: message,
-					});
-				} else {
-					notification["error"]({
-						message: response.message,
-					});
-				}
-			}
-		}
-	};
-
-	// const sendTestVote = async () => {
-	// 	if (votes === 1 && vote2 === 0) {
-	// 		notification["error"]({
-	// 			message: "Debes seleccionar una opción",
-	// 		});
-	// 	} else {
-	// 		//Revisar el status de las votaciones
-	// 		if (voteStatus) {
-	// 			notification["error"]({
-	// 				message: "Solo puedes realizar la votación una vez",
-	// 			});
-	// 		} else {
-	// 			const data = {
-	// 				userID: user.id,
-	// 				question1: vote1,
-	// 				question2: vote2
-	// 			};
-	// 			const response = await postTestVoteApi(token, data);
-	// 			if (response.ok) {
-	// 				const { accessToken, refreshToken, message } = response;
-	// 				localStorage.setItem(ACCESS_TOKEN, accessToken);
-	// 				localStorage.setItem(REFRESH_TOKEN, refreshToken);
-	// 				setToken(accessToken);
-	// 				setUser(jwtDecode(accessToken));
-	// 				setVoteStatus(true);
-	// 				notification["success"]({
-	// 					message: message,
-	// 				});
-	// 				addVotes();
-	// 			} else {
-	// 				notification["error"]({
-	// 					message: response.message,
-	// 				});
-	// 			}
-	// 		}
-	// 	}
-	// };
-
 	const antIcon = <LoadingOutlined spin />;
 
 	return (
@@ -708,6 +575,7 @@ const Streaming2 = () => {
 							</SubMenu>
 						</Menu>
 					</div>
+					
 				</div>
 				<div className="col">
 					<div className="col-1">
@@ -725,7 +593,7 @@ const Streaming2 = () => {
 								></iframe>
 							</div>
 						</div>
-					</div>
+					</div> 
 					<div className="col-2">
 						<div className="header">
 							<h1>Votación</h1>
@@ -733,14 +601,14 @@ const Streaming2 = () => {
 						<div className="content">
 							<div className="votes">
 								{
-									dataVotes.map(vot =>{
+									dataVotes.map(vot => {
 										let show = false
 										let alt1 = 0;
 										let alt2 = 0;
 										let alt3 = 0;
 										let alt4 = 0;
 										let alt5 = 0;
-										
+
 										switch (vot.id) {
 											case 1:
 												show = activeVote1
@@ -750,7 +618,7 @@ const Streaming2 = () => {
 												alt4 = option4;
 												alt5 = 0;
 												break;
-											case 2: 
+											case 2:
 												show = activeVote2
 												alt1 = option5;
 												alt2 = option6;
@@ -766,7 +634,7 @@ const Streaming2 = () => {
 												alt4 = opt12;
 												alt5 = 0;
 												break;
-											case 4: 
+											case 4:
 												show = activeVote4
 												alt1 = opt13;
 												alt2 = opt14;
@@ -782,7 +650,7 @@ const Streaming2 = () => {
 												alt4 = opt20;
 												alt5 = 0;
 												break;
-											case 6: 
+											case 6:
 												show = activeVote6
 												alt1 = opt21;
 												alt2 = opt22;
@@ -798,7 +666,7 @@ const Streaming2 = () => {
 												alt4 = opt28;
 												alt5 = 0;
 												break;
-											case 8: 
+											case 8:
 												show = activeVote8
 												alt1 = opt29;
 												alt2 = opt30;
@@ -806,7 +674,7 @@ const Streaming2 = () => {
 												alt4 = opt32;
 												alt5 = 0;
 												break;
-											case 9: 
+											case 9:
 												show = activeVote9
 												alt1 = opt33;
 												alt2 = opt34;
@@ -814,7 +682,7 @@ const Streaming2 = () => {
 												alt4 = opt36;
 												alt5 = 0;
 												break;
-											case 10: 
+											case 10:
 												show = activeVote10
 												alt1 = opt37;
 												alt2 = opt38;
@@ -822,7 +690,7 @@ const Streaming2 = () => {
 												alt4 = opt40;
 												alt5 = 0;
 												break;
-											case 11: 
+											case 11:
 												show = activeVote11
 												alt1 = opt41;
 												alt2 = opt42;
@@ -830,7 +698,7 @@ const Streaming2 = () => {
 												alt4 = opt44;
 												alt5 = 0;
 												break;
-											case 12: 
+											case 12:
 												show = activeVote12
 												alt1 = opt45;
 												alt2 = opt46;
@@ -838,7 +706,7 @@ const Streaming2 = () => {
 												alt4 = opt48;
 												alt5 = 0;
 												break;
-											case 13: 
+											case 13:
 												show = activeVote13
 												alt1 = opt49;
 												alt2 = opt50;
@@ -846,7 +714,7 @@ const Streaming2 = () => {
 												alt4 = opt52;
 												alt5 = 0;
 												break;
-											case 14: 
+											case 14:
 												show = activeVote14
 												alt1 = opt53;
 												alt2 = opt54;
@@ -854,7 +722,7 @@ const Streaming2 = () => {
 												alt4 = opt56;
 												alt5 = 0;
 												break;
-											case 15: 
+											case 15:
 												show = activeVote15
 												alt1 = opt57;
 												alt2 = opt58;
@@ -862,7 +730,7 @@ const Streaming2 = () => {
 												alt4 = opt60;
 												alt5 = 0;
 												break;
-											case 16: 
+											case 16:
 												show = activeVote16
 												alt1 = opt61;
 												alt2 = opt62;
@@ -870,7 +738,7 @@ const Streaming2 = () => {
 												alt4 = opt64;
 												alt5 = 0;
 												break;
-											case 17: 
+											case 17:
 												show = activeVote17
 												alt1 = opt65;
 												alt2 = opt66;
@@ -878,7 +746,7 @@ const Streaming2 = () => {
 												alt4 = opt68;
 												alt5 = 0;
 												break;
-											case 18: 
+											case 18:
 												show = activeVote18
 												alt1 = opt69;
 												alt2 = opt70;
@@ -886,7 +754,7 @@ const Streaming2 = () => {
 												alt4 = opt72;
 												alt5 = 0;
 												break;
-											case 19: 
+											case 19:
 												show = activeVote19
 												alt1 = opt73;
 												alt2 = opt74;
@@ -894,7 +762,7 @@ const Streaming2 = () => {
 												alt4 = opt76;
 												alt5 = 0;
 												break;
-											case 20: 
+											case 20:
 												show = activeVote20
 												alt1 = opt77;
 												alt2 = opt78;
@@ -902,7 +770,7 @@ const Streaming2 = () => {
 												alt4 = opt80;
 												alt5 = opt125;
 												break;
-											case 21: 
+											case 21:
 												show = activeVote21
 												alt1 = opt81;
 												alt2 = opt82;
@@ -910,7 +778,7 @@ const Streaming2 = () => {
 												alt4 = opt84;
 												alt5 = 0;
 												break;
-											case 22: 
+											case 22:
 												show = activeVote22
 												alt1 = opt85;
 												alt2 = opt86;
@@ -918,7 +786,7 @@ const Streaming2 = () => {
 												alt4 = opt88;
 												alt5 = 0;
 												break;
-											case 23: 
+											case 23:
 												show = activeVote23
 												alt1 = opt89;
 												alt2 = opt90;
@@ -926,7 +794,7 @@ const Streaming2 = () => {
 												alt4 = opt92;
 												alt5 = opt126;
 												break;
-											case 24: 
+											case 24:
 												show = activeVote24
 												alt1 = opt93;
 												alt2 = opt94;
@@ -934,7 +802,7 @@ const Streaming2 = () => {
 												alt4 = opt96;
 												alt5 = 0;
 												break;
-											case 25: 
+											case 25:
 												show = activeVote25
 												alt1 = opt97;
 												alt2 = opt98;
@@ -942,7 +810,7 @@ const Streaming2 = () => {
 												alt4 = opt100;
 												alt5 = opt127;
 												break;
-											case 26: 
+											case 26:
 												show = activeVote26
 												alt1 = opt101;
 												alt2 = opt102;
@@ -950,7 +818,7 @@ const Streaming2 = () => {
 												alt4 = opt104;
 												alt5 = opt128;
 												break;
-											case 27: 
+											case 27:
 												show = activeVote27
 												alt1 = opt105;
 												alt2 = opt106;
@@ -958,7 +826,7 @@ const Streaming2 = () => {
 												alt4 = opt108;
 												alt5 = 0;
 												break;
-											case 28: 
+											case 28:
 												show = activeVote28
 												alt1 = opt109;
 												alt2 = opt110;
@@ -966,7 +834,7 @@ const Streaming2 = () => {
 												alt4 = opt112;
 												alt5 = 0;
 												break;
-											case 29: 
+											case 29:
 												show = activeVote29
 												alt1 = opt113;
 												alt2 = opt114;
@@ -974,7 +842,7 @@ const Streaming2 = () => {
 												alt4 = opt116;
 												alt5 = 0;
 												break;
-											case 30: 
+											case 30:
 												show = activeVote30
 												alt1 = opt117;
 												alt2 = opt118;
@@ -982,7 +850,7 @@ const Streaming2 = () => {
 												alt4 = opt120;
 												alt5 = 0;
 												break;
-											case 31: 
+											case 31:
 												show = activeVote31
 												alt1 = opt121;
 												alt2 = opt122;
@@ -990,165 +858,56 @@ const Streaming2 = () => {
 												alt4 = opt124;
 												alt5 = 0;
 												break;
-											// case 32: 
-											// 	show = activeVote32
-											// 	alt1 = 0;
-											// 	alt2 = 0;
-											// 	alt3 = 0;
-											// 	alt4 = 0;
-											// 	alt5 = 0;
-											// 	break;
 											default:
-												show= false;
+												show = false;
 												break;
 										}
-										return(
-											(show) ? 
-											<>
-												<Votes
-													key={`votes-${vot.id}`}
-													ask={vot.ask}
-													alt1={vot.alt1}
-													alt2={vot.alt2}
-													alt3={vot.alt3}
-													alt4={vot.alt4}
-													alt5={vot.alt5}
-													user={user}
-													setUser={setUser}
-													token={token}
-													setToken={setToken}
-													num={vot.num}
-													voto1 ={vot.id === 1 && true} 
-												/>
-												<Results
-													key={`result-${vot.id}`}
-													alt1={vot.alt1}
-													alt2={vot.alt2}
-													alt3={vot.alt3}
-													alt4={vot.alt4}
-													alt5= {vot.alt5}
-													opt1={alt1}
-													opt2={alt2}
-													opt3={alt3}
-													opt4={alt4}
-													opt5={alt5}
-												/>
-											</> : null
+										return (
+											(show) ?
+												<>
+													<Votes
+														key={`votes-${vot.id}`}
+														ask={vot.ask}
+														alt1={vot.alt1}
+														alt2={vot.alt2}
+														alt3={vot.alt3}
+														alt4={vot.alt4}
+														alt5={vot.alt5}
+														user={user}
+														setUser={setUser}
+														token={token}
+														setToken={setToken}
+														num={vot.num}
+														voto1={vot.id === 1 && true}
+													/>
+													<Results
+														key={`result-${vot.id}`}
+														alt1={vot.alt1}
+														alt2={vot.alt2}
+														alt3={vot.alt3}
+														alt4={vot.alt4}
+														alt5={vot.alt5}
+														opt1={alt1}
+														opt2={alt2}
+														opt3={alt3}
+														opt4={alt4}
+														opt5={alt5}
+													/>
+												</> : null
 										)
 									})
 								}
 
 							</div>
 						</div>
-					</div>
-				</div>
+					</div> 
+				</div> 
 				<div className="container">
 					<div className="question-container">
 						<h1>Envía aquí tus preguntas o saludos</h1>
 						<input type="text" placeholder="Escribe aquí..." name="question" id="question" value={questionInput} onChange={onChange} />
 						<button onClick={sendQuestion}>Enviar</button>
 					</div>
-					{/* {!activeTest ? <h1 className="title-test">Una vez finalizado el streaming podrás realizar la evaluación</h1> : null}
-					<div className="test-container">
-						{!activeTest ? <div className="block-card" /> : null}
-						{testStatus ? <div className="block-card" /> : null}
-						<div className="card-container">
-							<h1 className="card-title">Realizar evaluación</h1>
-							<hr />
-							<div className="question">
-								{pages === 1 ? (
-									<>
-										<h1 className="question-title">¿Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmo?</h1>
-										<Radio.Group onChange={(e) => setQuestion1(e.target.value)} value={question1}>
-											<Space direction="vertical">
-												<Radio value={1}>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</Radio>
-												<Radio value={2}>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</Radio>
-												<Radio value={3}>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</Radio>
-											</Space>
-										</Radio.Group>
-									</>
-								) : null}
-								{pages === 2 ? (
-									<>
-										<h1 className="question-title">¿Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmo?</h1>
-										<Radio.Group onChange={(e) => setQuestion2(e.target.value)} value={question2}>
-											<Space direction="vertical">
-												<Radio value={1}>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</Radio>
-												<Radio value={2}>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</Radio>
-												<Radio value={3}>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</Radio>
-											</Space>
-										</Radio.Group>
-									</>
-								) : null}
-								{pages === 3 ? (
-									<>
-										<h1 className="question-title">¿Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmo?</h1>
-										<Radio.Group onChange={(e) => setQuestion3(e.target.value)} value={question3}>
-											<Space direction="vertical">
-												<Radio value={1}>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</Radio>
-												<Radio value={2}>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</Radio>
-												<Radio value={3}>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</Radio>
-											</Space>
-										</Radio.Group>
-									</>
-								) : null}
-								{pages === 4 ? (
-									<>
-										<h1 className="question-title">¿Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmo?</h1>
-										<Radio.Group onChange={(e) => setQuestion4(e.target.value)} value={question4}>
-											<Space direction="vertical">
-												<Radio value={1}>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</Radio>
-												<Radio value={2}>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</Radio>
-												<Radio value={3}>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</Radio>
-											</Space>
-										</Radio.Group>
-									</>
-								) : null}
-								{pages === 5 ? (
-									<>
-										<h1 className="question-title">¿Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmo?</h1>
-										<Radio.Group onChange={(e) => setQuestion5(e.target.value)} value={question5}>
-											<Space direction="vertical">
-												<Radio value={1}>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</Radio>
-												<Radio value={2}>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</Radio>
-												<Radio value={3}>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</Radio>
-											</Space>
-										</Radio.Group>
-									</>
-								) : null}
-								{pages === 6 ? (
-									<>
-										<h1 className="question-title">¿Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmo?</h1>
-										<Radio.Group onChange={(e) => setQuestion6(e.target.value)} value={question6}>
-											<Space direction="vertical">
-												<Radio value={1}>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</Radio>
-												<Radio value={2}>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</Radio>
-												<Radio value={3}>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</Radio>
-											</Space>
-										</Radio.Group>
-									</>
-								) : null}
-							</div>
-							<hr />
-							<div className="buttons-container">
-								<button
-									className={pages === 1 ? "disabled" : ""}
-									onClick={() => {
-										pages !== 1 ? setPages(pages - 1) : setPages(pages);
-									}}
-								>
-									<ArrowRightAltIcon className="rotate" /> Anterior
-								</button>
-								<div className="numbers">{pages} de 6</div>
-								{pages < 6 ? (
-									<button onClick={addPages}>
-										Siguiente <ArrowRightAltIcon />
-									</button>
-								) : null}
-								{pages === 6 ? <button onClick={sendTest}>Enviar</button> : null}
-							</div>
-						</div>
-					</div> */}
 				</div>
 			</div>
 			<Footer setSaveData={setSaveData} />

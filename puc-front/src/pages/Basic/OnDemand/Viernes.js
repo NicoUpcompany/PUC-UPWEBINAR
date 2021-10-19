@@ -356,7 +356,7 @@ export const Viernes = () => {
 									width="560"
 									height="315"
 									className="transmission"
-									src="https://player.vimeo.com/video/496943592"
+									src="https://player.vimeo.com/video/634887197?h=28d06caeb0"
 									frameBorder="0"
 									allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 									allowFullScreen

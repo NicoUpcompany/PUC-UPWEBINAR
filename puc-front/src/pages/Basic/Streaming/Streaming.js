@@ -51,6 +51,7 @@ const Streaming = () => {
 	const [questionInput, setQuestionInput] = useState("");
 	const [agendaTime, setAgendaTime] = useState(null);
 	const [token, setToken] = useState(null);
+	const [testStatus, setTestStatus] = useState(false);
 	// const [notifications, setNotifications] = useState(false);
 	const [saveData, setSaveData] = useState(0);
 	// const [state2, setState2] = useState(true);
@@ -499,37 +500,9 @@ const Streaming = () => {
 						<input type="text" placeholder="Escribe aquí..." name="question" id="question" value={questionInput} onChange={onChange} />
 						<button onClick={sendQuestion}>Enviar</button>
 					</div>
-					<Agenda agendaTime={agendaTime} state={true} setSaveData={setSaveData} />
-					{/* <div className="like-container">
-						<h1>¿Te a gustado el evento?</h1>
-						<div className="faces">
-							<img src={face1} alt="face1" />
-							<img src={face2} alt="face2" />
-							<img src={face3} alt="face3" />
-							<img src={face4} alt="face4" />
-						</div>
-					</div> */}
-					{/* <div className="votes-container">
-						<h1>Vota por tu Tema favorito</h1>
-						<div className="option" onClick={() => setOptions({ option1: !options.option1 })}>
-							{options.option1 ? <img src={likeActive} alt="like" /> : <img src={like} alt="like" />}
-							<p className="description">Creatividad en la gestión de proyectos</p>
-						</div>
-						<div className="option" onClick={() => setOptions({ option2: !options.option2 })}>
-							{options.option2 ? <img src={likeActive} alt="like" /> : <img src={like} alt="like" />}
-							<p className="description">Relación entre CMMi, ITIL y PMI</p>
-						</div>
-						<div className="option" onClick={() => setOptions({ option3: !options.option3 })}>
-							{options.option3 ? <img src={likeActive} alt="like" /> : <img src={like} alt="like" />}
-							<p className="description">Actitudes necesarias en la gestión de proyectos</p>
-						</div>
-					</div> */}
-					{/* <div className="download-container">
-						<img src={download} alt="download" />
-					</div> */}
-					{/* <div className="bingo-container">
-						<div></div>
-					</div> */}
+			
+
+					
 				</div>
 			</div>
 			<Footer setSaveData={setSaveData} />

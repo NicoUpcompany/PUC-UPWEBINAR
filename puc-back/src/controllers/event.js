@@ -45,7 +45,7 @@ function newEvent(req, res) {
  */
 function getEvent(req, res) {
 	Event.find({})
-		.populate("user", "email")
+		.populate("user")
 		.exec((err, eventStored) => {
 			if (err) {
 				res.status(400).send({ ok: false, message: "Error de servidor" });

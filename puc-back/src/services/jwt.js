@@ -22,7 +22,9 @@ exports.createAccessToken = function (user) {
 		role: user.role,
 		vote: user.vote,
 		test: user.test,
-		idSocket: user.idSocket,
+		note: user.note,
+		startTest: user.startTest,
+		finishTest: user.finishTest,
 		createToken: moment().unix(),
 		exp: moment().add(10, "hours").unix(),
 	};

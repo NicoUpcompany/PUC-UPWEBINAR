@@ -1,7 +1,6 @@
 const momentTimezone = require("moment-timezone");
 const moment = require("moment");
 require("moment/locale/es");
-
 /**
  * @module TimeController
  */

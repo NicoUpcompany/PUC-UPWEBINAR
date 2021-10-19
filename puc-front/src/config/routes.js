@@ -29,6 +29,7 @@ import Error404 from "../pages/Error404";
 import { Jueves } from "../pages/Basic/OnDemand/Jueves";
 import { Sabado } from "../pages/Basic/OnDemand/Sabado";
 import { Viernes } from "../pages/Basic/OnDemand/Viernes";
+import Streaming3 from "../pages/Basic/Streaming3/Streaming3";
 
 const routes = [
 	{
@@ -132,22 +133,22 @@ const routes = [
 				exact: true,
 			},
 			{
-				path: "/streaming2",
-				component: Streaming2,
+				path: "/streaming3",
+				component: Streaming3,
 				exact: true,
 			},
 			{
-				path: "/jueves",
+				path: "/sala1",
 				component: Jueves,
 				exact: true,
 			},
 			{
-				path: "/viernes",
+				path: "/sala2",
 				component: Viernes,
 				exact: true,
 			},
 			{
-				path: "/sabado",
+				path: "/sala3",
 				component: Sabado,
 				exact: true,
 			},
