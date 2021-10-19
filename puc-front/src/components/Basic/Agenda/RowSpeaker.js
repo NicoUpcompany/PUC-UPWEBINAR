@@ -2,7 +2,7 @@ import React from 'react'
 import { Speaker } from './Speaker'
 import flecha from "../../../assets/img/flecha.png";
 
-export const RowSpeaker = ({id, grey, inicio, fin, tematica, nombre, moderador, speaker,cargo1, cargo2, empresa, setSaveData, abrirCerrar, state, imgSpeaker1, imgSpeaker2, tematica2, speaker2, cargo3, empresa2, imgSpeaker3 }) => {
+export const RowSpeaker = ({id, grey, inicio, fin, tematica, nombre, moderador, speaker,cargo1, cargo2, empresa, setSaveData, abrirCerrar, state, imgSpeaker1, imgSpeaker2, tematica2, speaker2, cargo3, empresa2, imgSpeaker3, speaker3, speaker4, speaker5, speaker6, imgSpeaker4,imgSpeaker5,imgSpeaker6,imgSpeaker7 }) => {
     return (
         <div className={`row2 ${grey}`} id={`row${id}`}  style={{ transitionDuration: "1s" }}>
 				<div className="fondoRow">
@@ -60,6 +60,38 @@ export const RowSpeaker = ({id, grey, inicio, fin, tematica, nombre, moderador, 
 								cargo={cargo3}
 								empresa={empresa2}
 								speaker={imgSpeaker3}
+							/>
+						}
+
+						{
+							speaker3 &&
+							<Speaker
+								nombre={speaker3}
+								speaker={imgSpeaker4}
+							/>
+						}
+
+						{
+							speaker4 &&
+							<Speaker
+								nombre={speaker4}
+								speaker={imgSpeaker5}
+							/>
+						}
+
+						{
+							speaker5 &&
+							<Speaker
+								nombre={speaker5}
+								speaker={imgSpeaker6}
+							/>
+						}
+
+						{
+							speaker6 &&
+							<Speaker
+								nombre={speaker6}
+								speaker={imgSpeaker7}
 							/>
 						}
 						

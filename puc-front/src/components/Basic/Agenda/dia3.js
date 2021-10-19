@@ -11,6 +11,10 @@ import ceciliaPerret from '../../../assets/img/speakers/Dra.CeciliaPerret.jpg'
 import juanAndres from '../../../assets/img/speakers/Dr.Navarro.jpg'
 import valeria from '../../../assets/img/speakers/draValeriaPalma.jpg'
 import calvo from '../../../assets/img/speakers/dr.calvo.jpg'
+import carlosFlores from '../../../assets/img/speakers/Dr.Flores.jpg'
+import fernandoIniguez from '../../../assets/img/speakers/Dr.Iniguez.jpg'
+import yuryHernandez from '../../../assets/img/speakers/Dr.Yuri.jpg'
+import mariaEster from '../../../assets/img/speakers/M.EsterPizarro.jpeg'
 
 
 
@@ -165,7 +169,7 @@ const Dia3 = ({ setSaveData, abrirCerrar, state }) => {
 				grey="grey"
 				inicio="Hora sugerida"
 				fin="12:00"
-				tematica="Simnposio Lab. SANOFI"
+				tematica="Simposio Lab SANOFI"
 				tematica2="Asma grave en la adolescencia: Desafíos diagnósticos y terapéuticos en la era biológica. De la inmunología Básica a la práctica clínica A propósito de un caso: Guía para la toma de decisiones terapéuticas e implicancias prácticas"
 				moderador="Dr. Juan Andrés Navarro"
 				speaker="Dra. Valeria Palma"
@@ -173,7 +177,7 @@ const Dia3 = ({ setSaveData, abrirCerrar, state }) => {
 				imgSpeaker1={juanAndres}
 				imgSpeaker2={valeria}
 				imgSpeaker3={calvo}
-				cargo1='Profesor Asociado de la Pontificia Universidad Católica de Chile,  Jefe Unidad Enfermedades Respiratorias Pediátricas, Director del X Curso Internacional de Enfermedades Respiratorias Pediátricas'
+				cargo1='Médico,  Pediatra, Subespecialidad en Enfermedades Respiratorias del Niño en la PUC de Chile, Complejo Asistencial Padre Las Casas y Hospital Dr. Hernán Henríquez Aravena, Temuco, Docente UFRO'
 				cargo2='Dra. Valeria Palma
 				Médico Cirujano Especialista en Inmunología Clínica
 				Miembro activo del staff médico de Inmunología y Alergias de la Clínica Alemana de Santiago
@@ -192,8 +196,19 @@ const Dia3 = ({ setSaveData, abrirCerrar, state }) => {
 					fin="13:00"
 					tematica="Cierre curso"
 					moderador="Dr. Pablo Bertrand"
-					speaker="Todo el comité"
+					speaker="Dr. Carlos Flores"
+					speaker2="Dr. Fernando Iñiguez"
+					speaker3="Dr. Luís Vega"
+					speaker4="Dr. Jury Hernández"
+					speaker5="Dr. Juan Andrés Navarro"
+					speaker6="Dra. María Ester Pizarro"
 					imgSpeaker1={bertrand}
+					imgSpeaker2={carlosFlores}
+					imgSpeaker3={fernandoIniguez}
+					imgSpeaker4={luisVega}
+					imgSpeaker5={yuryHernandez}
+					imgSpeaker6={juanAndres}
+					imgSpeaker7={mariaEster}
 
 				/>
 
