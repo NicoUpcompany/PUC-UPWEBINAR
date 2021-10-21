@@ -6,10 +6,7 @@ import { useHistory, Link } from "react-router-dom";
 import jwtDecode from "jwt-decode";
 import $ from "jquery";
 import { isMobile } from "react-device-detect";
-import { postTestApi } from "../../../api/test";
-import { getTime } from "../../../api/time";
-import moment from "moment";
- 
+import { getTestStatusApi} from "../../../api/testStatus";
 
 import { getAccessTokenApi } from "../../../api/auth";
 import { eventApi } from "../../../api/events";
@@ -35,9 +32,13 @@ const Streaming3 = () => {
 	const [user, setUser] = useState();
 	const [current, setCurrent] = useState("mail");
 	const [saveData, setSaveData] = useState(0);
+	const [votesStatus, setVotesStatus] = useState({
+		vote32: false
+	})
 
 	useEffect(() => {
 		setLoading(true);
+		let interval;
 		if (!isMobile) {
 			$(window).scroll(function () {
 				const distanceY = window.pageYOffset || document.documentElement.scrollTop;
@@ -62,10 +63,69 @@ const Streaming3 = () => {
 				setTestStatus(decodedToken.test);
 				setTimeFinish(decodedToken.finishTest);
 				setActiveTest(decodedToken.startTest);
+				interval = setInterval(() => {
+					getTestsStatus(auxToken);
+				}, 5000);
 			}
 		}
 		setLoading(false);
+		return () => clearInterval(interval);
 	}, [timeFinish, testStatus, activeTest]);
+
+	const getTestsStatus = async (tokenAux) => {
+		await getTestStatusApi(tokenAux).then((resp) => {
+			if (!resp.ok) {
+				notification["error"]({
+					message: resp.message,
+				});
+			} else {
+                try {
+                    const arr = resp.testStatus;
+					setVotesStatus({
+						...votesStatus,
+						vote32: arr[arr.length -1].vote32,
+						
+					})
+                } catch (error) {
+					setVotesStatus({
+						vote1: false,
+						vote2: false,
+						vote3: false,
+						vote4: false,
+						vote5: false,
+						vote6: false,
+						vote7: false,
+						vote8: false,
+						vote9: false,
+						vote10: false,
+						vote11: false,
+						vote12: false,
+						vote13: false,
+						vote14: false,
+						vote15: false,
+						vote16: false,
+						vote17: false,
+						vote18: false,
+						vote19: false,
+						vote20: false,
+						vote21: false,
+						vote22: false,
+						vote23: false,
+						vote24: false,
+						vote25: false,
+						vote26: false,
+						vote27: false,
+						vote28: false,
+						vote29: false,
+						vote30: false,
+						vote31: false,
+						vote32: false
+					});
+                }
+			}
+			setLoading(false);
+		});
+	};
 
 	useEffect(() => {
 		let action = "pageView";
@@ -144,18 +204,22 @@ const Streaming3 = () => {
 
 				</div>
 				<div className="container">
-					<Test
-						testStatus={testStatus}
-						setTestStatus={setTestStatus}
-						user={user}
-						setUser={setUser}
-						token={token}
-						setToken={setToken}
-						setActiveTest={setActiveTest}
-						activeTest={activeTest}
-						timeFinish={timeFinish}
-						setTimeFinish = {setTimeFinish}
-					/>
+					{
+						votesStatus.vote32 ?
+						<Test
+							testStatus={testStatus}
+							setTestStatus={setTestStatus}
+							user={user}
+							setUser={setUser}
+							token={token}
+							setToken={setToken}
+							setActiveTest={setActiveTest}
+							activeTest={activeTest}
+							timeFinish={timeFinish}
+							setTimeFinish = {setTimeFinish}
+						/>
+						: <h1 style={{textAlign:'center', paddingTop:'200px'}}>La prueba se encuentra deshabilitada</h1>
+					}
 				</div>
 			</div>
 			<Footer setSaveData={setSaveData} />

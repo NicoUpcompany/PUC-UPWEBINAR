@@ -32,6 +32,8 @@ const userSchema = Schema({
 	ptos: {type: Number, default: 0},
 	note: {type: Number, default:0},
 	startTest: {type: Boolean, default: false},
+	aprobado: {type: Boolean, default: false},
+	correctas: {type: Number, default: 0},
 	finishTest: {type: String, default:"0"}
 });
 

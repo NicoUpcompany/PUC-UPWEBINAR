@@ -219,7 +219,7 @@ const WaitingRoom = () => {
 				break;
 			case 4:
 				action = "Cronometro";
-				description = "Streaming3";
+				description = "Evaluación";
 				break;
 			default:
 				break;
@@ -243,11 +243,11 @@ const WaitingRoom = () => {
 		const month = moment().month();
 		if (day === 16 && month === 9) {
 			if (saveData === 3 || saveData === 4) {
-				history.push("/streaming3");
+				history.push("/evaluacion");
 			}
 		} else {
 			if (saveData === 3 || saveData === 4) {
-				history.push("/streaming3");
+				history.push("/evaluacion");
 			}
 		}
 	}, [saveData]);
@@ -265,44 +265,9 @@ const WaitingRoom = () => {
 					// console.log('estatus '+arr[arr.length -1].vote2);
 					setVotesStatus({
 						...votesStatus,
-						vote1: arr[arr.length -1].vote1,
-						vote2: arr[arr.length -1].vote2,
-						vote3: arr[arr.length -1].vote3,
-						vote4: arr[arr.length -1].vote4,
-						vote5: arr[arr.length -1].vote5,
-						vote6: arr[arr.length -1].vote6,
-						vote7: arr[arr.length -1].vote7,
-						vote8: arr[arr.length -1].vote8,
-						vote9: arr[arr.length -1].vote9,
-						vote10: arr[arr.length -1].vote10,
-						vote11: arr[arr.length -1].vote11,
-						vote12: arr[arr.length -1].vote12,
-						vote13: arr[arr.length -1].vote13,
-						vote14: arr[arr.length -1].vote14,
-						vote15: arr[arr.length -1].vote15,
-						vote16: arr[arr.length -1].vote16,
-						vote17: arr[arr.length -1].vote17,
-						vote18: arr[arr.length -1].vote18,
-						vote19: arr[arr.length -1].vote19,
-						vote20: arr[arr.length -1].vote20,
-						vote21: arr[arr.length -1].vote21,
-						vote22: arr[arr.length -1].vote22,
-						vote23: arr[arr.length -1].vote23,
-						vote24: arr[arr.length -1].vote24,
-						vote25: arr[arr.length -1].vote25,
-						vote26: arr[arr.length -1].vote26,
-						vote27: arr[arr.length -1].vote27,
-						vote28: arr[arr.length -1].vote28,
-						vote29: arr[arr.length -1].vote29,
-						vote30: arr[arr.length -1].vote30,
-						vote31: arr[arr.length -1].vote31,
 						vote32: arr[arr.length -1].vote32,
 						
 					})
-					// setTestStatus(arr[arr.length - 1].active);
-					// setVoto1Status(arr[arr.length - 1].vote1);
-					// setVoto2Status(arr[arr.length - 1].vote2);
-					// setVoto3Status(arr[arr.length - 1].vote3);
                 } catch (error) {
 					setVotesStatus({
 						vote1: false,
@@ -338,10 +303,6 @@ const WaitingRoom = () => {
 						vote31: false,
 						vote32: false
 					});
-					// setTestStatus(false);
-					// setVoto1Status(false);
-					// setVoto2Status(false);
-					// setVoto3Status(false);
                 }
 			}
 			setLoading(false);

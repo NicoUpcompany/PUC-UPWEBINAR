@@ -133,7 +133,7 @@ const routes = [
 				exact: true,
 			},
 			{
-				path: "/streaming3",
+				path: "/evaluacion",
 				component: Streaming3,
 				exact: true,
 			},

@@ -61,6 +61,9 @@ const testsHeaders = [
 	{ title: "Correo", dataIndex: "email" },
 	{ title: "Nombre", dataIndex: "name"},
 	{title: "Apellido", dataIndex: "lastname"},
+	{title: "Correctas", dataIndex: "correctas"},
+	{title: "Incorrectas", dataIndex: "incorrectas"},
+	{title: "Status", dataIndex: "aprobado"},
 	{title: "Puntaje", dataIndex: "ptos"},
 	{title: "Nota", dataIndex: "note"},
 	// { title: "Pregunta 1", dataIndex: "question1" },
@@ -185,7 +188,6 @@ export default function Events() {
 	const getVotes = async (tokenAux) => {
 		await getVoteApi(tokenAux).then((resp) => {
 			const arrayVotes = [];
-			console.log(resp)
 			if (!resp.ok) {
 				notification["error"]({
 					message: resp.message,
@@ -201,7 +203,6 @@ export default function Events() {
 					arrayVotes.push(element);
 				});
 			}
-			console.log(arrayVotes);
 			setvotesData(arrayVotes);
 			setLoading(false);
 		});
@@ -216,11 +217,15 @@ export default function Events() {
 				});
 			} else {
 				resp.tests.forEach((item) => {
+					console.log(item);
 					const element = {
 						...item,
 						email: item.user.email,
 						name: item.user.name, 
 						lastname: item.user.lastname,
+						aprobado: (item.user.aprobado) ? "Aprobado" : "Reprobado",
+						correctas: item.user.correctas,
+						incorrectas: (21-item.user.correctas),
 						time: moment(item.time).format("LLL"),
 						key: item._id,
 					};
@@ -228,7 +233,6 @@ export default function Events() {
 				});
 			}
 			setTestData(arrayTests);
-			console.log(arrayTests);
 			setLoading(false);
 		});
 	};
@@ -242,8 +246,7 @@ export default function Events() {
 			} else {
                 try {
                     const arr = resp.testStatus;
-					// console.log('estatus '+arr[arr.length -1].vote1);
-					// console.log('estatus '+arr[arr.length -1].vote2);
+				 
 					setVotesStatus({
 						...votesStatus,
 						vote1: arr[arr.length -1].vote1,
@@ -474,6 +477,20 @@ export default function Events() {
 			...getColumnSearchProps("email"),
 		},
 		{
+			title: "Nombre",
+			dataIndex: "name",
+			width: 150,
+			fixed:"left",
+			...getColumnSearchProps("name"),
+		},
+		{
+			title: "Apellido",
+			dataIndex: "lastname",
+			fixed:"left",
+			width: 150,
+			...getColumnSearchProps("lastname"),
+		},
+		{
 			title: "ID",
 			dataIndex: "_id",
 			key: "_id",
@@ -481,18 +498,22 @@ export default function Events() {
 			...getColumnSearchProps("_id"),
 		},
 		{
-			title: "Nombre",
-			dataIndex: "name",
-			fixed: "left",
+			title: "Status",
+			dataIndex: "aprobado",
 			width: 150,
-			...getColumnSearchProps("name"),
+			...getColumnSearchProps("aprobado"),
 		},
 		{
-			title: "Apellido",
-			dataIndex: "lastname",
-			fixed: "left",
+			title: "Correctas",
+			dataIndex: "correctas",
 			width: 150,
-			...getColumnSearchProps("lastname"),
+			...getColumnSearchProps("correctas"),
+		},
+		{
+			title: "Incorrectas",
+			dataIndex: "incorrectas",
+			width: 150,
+			...getColumnSearchProps("incorrectas"),
 		},
 		{
 			title: "Puntaje",

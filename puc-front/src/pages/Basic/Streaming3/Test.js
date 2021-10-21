@@ -78,13 +78,10 @@ export const Test = ({ testStatus, setTestStatus, user, setUser, token, setToken
     }, [])
 
     const questionsLocal = () =>{
-        console.log(JSON.parse(localStorage.getItem('questions')));
         if(JSON.parse(localStorage.getItem('questions')) == null){
             console.log('Entro....')
             localStorage.setItem('questions',JSON.stringify(questions));
             return;
-        }else{
-
         }
     }
     
@@ -93,15 +90,9 @@ export const Test = ({ testStatus, setTestStatus, user, setUser, token, setToken
             message: 'Se acabo el tiempo, prueba enviada'
         })
         setFinishTest(true);
-        //Calcular puntaje y nota
-        console.log(testStatus);
-
-        if(!testStatus){
-            
-            const { note, puntajeObtenido } = await calcularPuntaje()
+        if(!testStatus){  
+            const { note, puntajeObtenido, aprobado, respCorrectas } = await calcularPuntaje()
             setNota(note)
-            console.log(note);
-            console.log(puntajeObtenido);
             const data = {
                 userID: user.id,
                 question1,
@@ -126,7 +117,9 @@ export const Test = ({ testStatus, setTestStatus, user, setUser, token, setToken
                 question20,
                 question21,
                 note: note,
-                ptos: puntajeObtenido
+                ptos: puntajeObtenido,
+                aprobado: aprobado,
+                correctas: respCorrectas
             };
             const response = await postTestApi(token, data);
             if (response.ok) {
@@ -152,7 +145,6 @@ export const Test = ({ testStatus, setTestStatus, user, setUser, token, setToken
     }
 
     useEffect(() => {
-        // localStorage.setItem('questions',JSON.stringify(questions));
         if (testStatus) {
             setNota(user.note)
         }
@@ -294,6 +286,7 @@ export const Test = ({ testStatus, setTestStatus, user, setUser, token, setToken
 
     const calcularPuntaje = async () => {
 
+        let aprobado;
         const question = {
             que1: question1,
             que2: question2,
@@ -340,17 +333,20 @@ export const Test = ({ testStatus, setTestStatus, user, setUser, token, setToken
             resp18: 2,
             resp19: 3,
             resp20: 3,
-            resp20: 4,
+            resp21: 4
         }
         const totalPuntaje = 100;
         //Suma del puntaje respuesta correcta
-        const rc = totalPuntaje / 20
+        const rc = totalPuntaje / 21
         let puntajeObtenido = 0;
+        let respCorrectas = 0;
 
 
-        for (let index = 1; index <= 20; index++) {
+        for (let index = 1; index <= 21; index++) {
             if (question[`que${index}`] === respuestas[`resp${index}`]) {
+                console.log(`Correcta pregunta ${index}`)
                 puntajeObtenido += rc;
+                respCorrectas++;
             }
 
         }
@@ -366,12 +362,16 @@ export const Test = ({ testStatus, setTestStatus, user, setUser, token, setToken
         if (puntajeObtenido < (e * pMax)) {
             console.log('Tiene menos de un 40')
             note = Math.round(((nApr - nMin) * (puntajeObtenido / (e * pMax))) + nMin)
+            aprobado = false;
         } else {
             console.log('Tiene más de un 40');
             note = Math.round(((nMax - nApr) * ((puntajeObtenido - (e * pMax)) / (pMax * (1 - e)))) + nApr);
+            aprobado = true;
         }
 
-        return { note, puntajeObtenido };
+        puntajeObtenido = Math.round(puntajeObtenido)
+
+        return { note, puntajeObtenido , aprobado, respCorrectas };
     }
 
     const sendTest = async () => {
@@ -387,10 +387,11 @@ export const Test = ({ testStatus, setTestStatus, user, setUser, token, setToken
                 });
             } else {
                 //Calcular puntaje y nota
-                const { note, puntajeObtenido } = await calcularPuntaje()
+                setLoading(true)
+                const { note, puntajeObtenido, aprobado, respCorrectas } = await calcularPuntaje()
                 setNota(note)
-                console.log(note);
-                console.log(puntajeObtenido);
+                console.log(aprobado);
+                console.log(respCorrectas);
                 const data = {
                     userID: user.id,
                     question1,
@@ -415,7 +416,9 @@ export const Test = ({ testStatus, setTestStatus, user, setUser, token, setToken
                     question20,
                     question21,
                     note: note,
-                    ptos: puntajeObtenido
+                    ptos: puntajeObtenido,
+                    aprobado: aprobado,
+                    correctas: respCorrectas
                 };
                 const response = await postTestApi(token, data);
                 if (response.ok) {
@@ -427,10 +430,16 @@ export const Test = ({ testStatus, setTestStatus, user, setUser, token, setToken
                     setTestStatus(true);
                     setFinishTest(true);
                     setActiveTest(true);
-                    notification["success"]({
-                        message: message,
-                    });
+                    
+                    setTimeout(()=>{
+                        setLoading(false);     
+                        notification["success"]({
+                            message: message,
+                        });
+                    },2000)
+
                 } else {
+                    setLoading(false);
                     notification["error"]({
                         message: response.message,
                     });
@@ -501,7 +510,7 @@ export const Test = ({ testStatus, setTestStatus, user, setUser, token, setToken
                             <li><strong>Tienes 1 hora</strong> para responder la prueba</li>
                             <li>El cuestionario tiene <strong>21 preguntas</strong></li>
                             <li>Debes responder todas las preguntas</li>
-                            <li>La prueba estará disponible los días <strong>23, 24 y 25 </strong> de Octubre</li>
+                            <li>La prueba estará disponible los días <strong>23, 24 y 25 </strong> de Octubre del 2021</li>
                         </ol>
                         <Popconfirm
                             title="¿Estás seguro de activar la prueba?, solo lo puedes realizar 1 vez"

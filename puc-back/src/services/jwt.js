@@ -24,6 +24,8 @@ exports.createAccessToken = function (user) {
 		test: user.test,
 		note: user.note,
 		startTest: user.startTest,
+		aprobado: user.aprobado,
+		correctas: user.correctas,
 		finishTest: user.finishTest,
 		createToken: moment().unix(),
 		exp: moment().add(10, "hours").unix(),

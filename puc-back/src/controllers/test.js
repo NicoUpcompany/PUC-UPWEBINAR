@@ -59,11 +59,15 @@ function saveTest(req, res) {
 		question21,
 		note,
 		ptos,
-		userID } = req.body;
+		userID,
+		aprobado,
+		correctas
+	} = req.body;
 	const test = new Test();
 
 	const time = moment().format();
 
+ 
 	test.question1 = question1;
 	test.question2 = question2;
 	test.question3 = question3;
@@ -109,6 +113,8 @@ function saveTest(req, res) {
 							userStored.test = true;
 							userStored.note = note;
 							userStored.ptos = ptos;
+							userStored.aprobado = aprobado;
+							userStored.correctas= correctas;
 							userStored.finishTest = time;
 							User.findByIdAndUpdate({ _id: userStored.id }, userStored, (err, userUpdate) => {
 								if (err) {
@@ -145,16 +151,18 @@ function saveTest(req, res) {
 																	<table cellspacing="0" cellpadding="0" border="0" width="650" style="background:#eefafe;">
 																		<tr>
 																			<td align="left" style="padding: 10px 50px 40px;">
-																				<h2 style="line-height:26px;">
-																					Gracias por responder la prueba </strong>
-																				</h2>
+
+                                                                                <h2 style="line-height: 1.4;">
+                                                                                    X CURSO INTERNACIONAL DE Enfermedades Respiratorias Pediátricas
+                                                                                </h2>
+																				<h3 style="line-height:26px;">
+																					Gracias por responder la prueba 
+																				</h3>
 																				<p>
 																					Pronto te haremos llegar los resultados
 																				</p>
 																			</td>
 																		</tr>
-																	
-																	
 																	</table>
 																</td>
 															</tr>
