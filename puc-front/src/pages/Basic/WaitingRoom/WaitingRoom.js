@@ -21,6 +21,8 @@ import { eventApi } from "../../../api/events";
 import { getAccessTokenApi } from "../../../api/auth";
 import { updateWaitingRoomTimeApi } from "../../../api/user";
 import { COMETCHAT_CONSTANTS } from "../../../consts";
+import { getTestStatusApi, postTestStatusApi } from "../../../api/testStatus";
+
 
 import logo from "../../../assets/images/logo.png";
 
@@ -58,6 +60,7 @@ import Agenda from "../../../components/Basic/Agenda/Agenda";
 import Footer from "../../../components/Basic/Footer/Footer";
 import { CometChatUnified } from "../../../components/CometChat";
 import Socket from "../../../utils/socket";
+import { postTestApi } from "../../../api/test";
 
 import "./WaitingRoom.scss";
 import Sanofi from "../../../components/Basic/Stand/Sanofi";
@@ -94,6 +97,40 @@ const WaitingRoom = () => {
 	const [teva, setTeva] = useState(false);
 	const [idSocket, setIdSocket] = useState('');
 	const [idSocketBD, setIdSocketBD] = useState('');
+	const [votesStatus, setVotesStatus] = useState({
+		vote1: false,
+		vote2: false,
+		vote3: false,
+		vote4: false,
+		vote5: false,
+		vote6: false,
+		vote7: false,
+		vote8: false,
+		vote9: false,
+		vote10: false,
+		vote11: false,
+		vote12: false,
+		vote13: false,
+		vote14: false,
+		vote15: false,
+		vote16: false,
+		vote17: false,
+		vote18: false,
+		vote19: false,
+		vote20: false,
+		vote21: false,
+		vote22: false,
+		vote23: false,
+		vote24: false,
+		vote25: false,
+		vote26: false,
+		vote27: false,
+		vote28: false,
+		vote29: false,
+		vote30: false,
+		vote31: false,
+		vote32: false
+	})
 
 	useEffect(() => {
 		let interval;
@@ -146,7 +183,12 @@ const WaitingRoom = () => {
 					},
 					(error) => { }
 				);
+
+				interval = setInterval(() => {
+					getTestsStatus(tokenAux);
+				}, 5000);
 			}
+			return () => clearInterval(interval);
 		}
 		// if(idSocketBD !==idSocket){
 		// 	history.push("/iniciarsesion");
@@ -177,7 +219,7 @@ const WaitingRoom = () => {
 				break;
 			case 4:
 				action = "Cronometro";
-				description = "Streaming";
+				description = "Streaming3";
 				break;
 			default:
 				break;
@@ -201,14 +243,110 @@ const WaitingRoom = () => {
 		const month = moment().month();
 		if (day === 16 && month === 9) {
 			if (saveData === 3 || saveData === 4) {
-				history.push("/streaming");
+				history.push("/streaming3");
 			}
 		} else {
 			if (saveData === 3 || saveData === 4) {
-				history.push("/streaming");
+				history.push("/streaming3");
 			}
 		}
 	}, [saveData]);
+
+	const getTestsStatus = async (tokenAux) => {
+		await getTestStatusApi(tokenAux).then((resp) => {
+			if (!resp.ok) {
+				notification["error"]({
+					message: resp.message,
+				});
+			} else {
+                try {
+                    const arr = resp.testStatus;
+					// console.log('estatus '+arr[arr.length -1].vote1);
+					// console.log('estatus '+arr[arr.length -1].vote2);
+					setVotesStatus({
+						...votesStatus,
+						vote1: arr[arr.length -1].vote1,
+						vote2: arr[arr.length -1].vote2,
+						vote3: arr[arr.length -1].vote3,
+						vote4: arr[arr.length -1].vote4,
+						vote5: arr[arr.length -1].vote5,
+						vote6: arr[arr.length -1].vote6,
+						vote7: arr[arr.length -1].vote7,
+						vote8: arr[arr.length -1].vote8,
+						vote9: arr[arr.length -1].vote9,
+						vote10: arr[arr.length -1].vote10,
+						vote11: arr[arr.length -1].vote11,
+						vote12: arr[arr.length -1].vote12,
+						vote13: arr[arr.length -1].vote13,
+						vote14: arr[arr.length -1].vote14,
+						vote15: arr[arr.length -1].vote15,
+						vote16: arr[arr.length -1].vote16,
+						vote17: arr[arr.length -1].vote17,
+						vote18: arr[arr.length -1].vote18,
+						vote19: arr[arr.length -1].vote19,
+						vote20: arr[arr.length -1].vote20,
+						vote21: arr[arr.length -1].vote21,
+						vote22: arr[arr.length -1].vote22,
+						vote23: arr[arr.length -1].vote23,
+						vote24: arr[arr.length -1].vote24,
+						vote25: arr[arr.length -1].vote25,
+						vote26: arr[arr.length -1].vote26,
+						vote27: arr[arr.length -1].vote27,
+						vote28: arr[arr.length -1].vote28,
+						vote29: arr[arr.length -1].vote29,
+						vote30: arr[arr.length -1].vote30,
+						vote31: arr[arr.length -1].vote31,
+						vote32: arr[arr.length -1].vote32,
+						
+					})
+					// setTestStatus(arr[arr.length - 1].active);
+					// setVoto1Status(arr[arr.length - 1].vote1);
+					// setVoto2Status(arr[arr.length - 1].vote2);
+					// setVoto3Status(arr[arr.length - 1].vote3);
+                } catch (error) {
+					setVotesStatus({
+						vote1: false,
+						vote2: false,
+						vote3: false,
+						vote4: false,
+						vote5: false,
+						vote6: false,
+						vote7: false,
+						vote8: false,
+						vote9: false,
+						vote10: false,
+						vote11: false,
+						vote12: false,
+						vote13: false,
+						vote14: false,
+						vote15: false,
+						vote16: false,
+						vote17: false,
+						vote18: false,
+						vote19: false,
+						vote20: false,
+						vote21: false,
+						vote22: false,
+						vote23: false,
+						vote24: false,
+						vote25: false,
+						vote26: false,
+						vote27: false,
+						vote28: false,
+						vote29: false,
+						vote30: false,
+						vote31: false,
+						vote32: false
+					});
+					// setTestStatus(false);
+					// setVoto1Status(false);
+					// setVoto2Status(false);
+					// setVoto3Status(false);
+                }
+			}
+			setLoading(false);
+		});
+	};
 
 	useEffect(() => {
 		if (!isSafari && !isMobileSafari) {
@@ -351,7 +489,7 @@ const WaitingRoom = () => {
 		<Spin spinning={loading} size="large" tip="Cargando..." indicator={antIcon}>
 			{chat ? (
 				<>
-					{/* <CometChatUnified />
+					<CometChatUnified />
 					<div className="pregunta2">
 						<div className="card">
 							<div className="barra fadeInUpBig">
@@ -379,7 +517,7 @@ const WaitingRoom = () => {
 								</div>
 							</div>
 						</div>
-					</div> */}
+					</div>
 				</>
 			) : (
 				<>
@@ -392,7 +530,7 @@ const WaitingRoom = () => {
 								<div className="subMenu desktop">
 									<Link to="/salaespera">Sala de espera</Link>
 									<a href="#agenda">Agenda</a>
-									{/* {state2 ? <Link onClick={() => changeChatStatus()}>Networking</Link> : null} */}
+									{state2 ? <Link onClick={() => changeChatStatus()}>Networking</Link> : null}
 									<a href="#stands">Stands</a>
 									{/* {!state && !changeStreaming ? (
 										<Link to="/streaming" className="perfil">
@@ -454,16 +592,19 @@ const WaitingRoom = () => {
 										<div className="cronometro"></div>
 									</div>
 								) : null}
-								{/* {!state ? (
+								{!state ? (
 										<div className="centrado">
 											<div className="btn">
-												<button onClick={() => setSaveData(4)}>Entrar a la prueba</button>
+												{
+													votesStatus.vote32 &&
+													<button onClick={() => setSaveData(4)}>Entrar a la prueba</button>
+												}
 											</div>
 										</div>
-									) : null} */}
+									) : null}
 							</div>
 						</div>
-						{/* {state2 ? (
+						{state2 ? (
 							<div className="pregunta2">
 								<div className="card">
 									<div className="barra fadeInUpBig">
@@ -492,7 +633,7 @@ const WaitingRoom = () => {
 									</div>
 								</div>
 							</div>
-						) : null} */}
+						) : null}
 						<div className="contenedor" id="stands">
 							<div className="stands">
 								{/* Aztracenaca */}

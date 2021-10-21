@@ -31,6 +31,8 @@ const testSchema = new Schema({
 	question19: { type: Number, required: true },
 	question20: { type: Number, required: true },
 	question21: { type: Number, required: true },
+	note: {type: Number, default: 0},
+	ptos: {type:Number, default: 0 },
     user: { type: Schema.Types.ObjectId, ref: "User", default: null, unique: true },
 	time: { type: String, required: true },
 });

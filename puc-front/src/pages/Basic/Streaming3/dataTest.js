@@ -1,3 +1,7 @@
+import rad1 from '../../../assets/img/rad1.png';
+import rad2 from '../../../assets/img/rad2.png';
+import rad3 from '../../../assets/img/rad3.png';
+
 export const dataTest = [
     {
       id: 1,
@@ -15,7 +19,9 @@ export const dataTest = [
         alt2:'Neumonía de Lóbulo inferior izquierdo',
         alt3:'Neumotorax de Hemitorax derecho', 
         alt4:'Bronquiectasia quisticas y varicosas',
-        num: 'question2'
+        num: 'question2',
+        img1: rad1,
+        img2: rad2,
     },
     {
         id: 3,
@@ -24,7 +30,8 @@ export const dataTest = [
         alt2:'Compromiso alveolar multifocal',
         alt3:'Nódulo pulmonar', 
         alt4:'Derrame pleural',
-        num: 'question3'
+        num: 'question3',
+        img1: rad1
     },
     {
         id: 4,

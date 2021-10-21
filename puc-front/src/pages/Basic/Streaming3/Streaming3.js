@@ -29,7 +29,7 @@ const Streaming3 = () => {
 
 	const [testStatus, setTestStatus] = useState(false);
 	const [activeTest, setActiveTest] = useState(false);
-	const [timeFinish, setTimeFinish] = useState ( moment().add(10,'s').format());
+	const [timeFinish, setTimeFinish] = useState ();
 	const [loading, setLoading] = useState(false);
 	const [token, setToken] = useState(null);
 	const [user, setUser] = useState();
@@ -99,6 +99,9 @@ const Streaming3 = () => {
 	const handleClick = (e) => {
 		setCurrent({ current: e.key });
 	};
+
+	
+
  
 	const antIcon = <LoadingOutlined spin />;
 
@@ -151,6 +154,7 @@ const Streaming3 = () => {
 						setActiveTest={setActiveTest}
 						activeTest={activeTest}
 						timeFinish={timeFinish}
+						setTimeFinish = {setTimeFinish}
 					/>
 				</div>
 			</div>

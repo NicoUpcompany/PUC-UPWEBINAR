@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { notification, Popconfirm, Button } from "antd";
-import { AuditOutlined } from "@ant-design/icons";
+import { notification, Popconfirm, Button, Spin } from "antd";
+import { AuditOutlined, LoadingOutlined } from "@ant-design/icons";
 
 import { postTestApi, postStartTestApi } from "../../../api/test";
 import { ACCESS_TOKEN, REFRESH_TOKEN } from "../../../utils/constants";
@@ -13,7 +13,7 @@ const { Countdown } = Statistic;
 // const deadline = Date.now() + 1000 * 60 * 60 * 24 * 2 + 1000 * 30; // Moment is also OK
 
 
-export const Test = ({ testStatus, setTestStatus, user, setUser, token, setToken, setActiveTest, activeTest, timeFinish }) => {
+export const Test = ({ testStatus, setTestStatus, user, setUser, token, setToken, setActiveTest, activeTest, timeFinish, setTimeFinish }) => {
 
     // test
     const [pages, setPages] = useState(1);
@@ -47,6 +47,7 @@ export const Test = ({ testStatus, setTestStatus, user, setUser, token, setToken
         question21: 0,
     })
 
+
     const {
         question1,
         question2,
@@ -71,6 +72,22 @@ export const Test = ({ testStatus, setTestStatus, user, setUser, token, setToken
         question21
     } = questions
 
+    useEffect(()=>{
+        questionsLocal();
+        setQuestions(JSON.parse(localStorage.getItem('questions')));
+    }, [])
+
+    const questionsLocal = () =>{
+        console.log(JSON.parse(localStorage.getItem('questions')));
+        if(JSON.parse(localStorage.getItem('questions')) == null){
+            console.log('Entro....')
+            localStorage.setItem('questions',JSON.stringify(questions));
+            return;
+        }else{
+
+        }
+    }
+    
     const onFinish = async() => {
         notification['success']({
             message: 'Se acabo el tiempo, prueba enviada'
@@ -135,12 +152,13 @@ export const Test = ({ testStatus, setTestStatus, user, setUser, token, setToken
     }
 
     useEffect(() => {
+        // localStorage.setItem('questions',JSON.stringify(questions));
         if (testStatus) {
             setNota(user.note)
         }
         setTiempoActual(moment().format());
         setDeadline(timeFinish);
-        if (moment(tiempoActual).isAfter(timeFinish)) {
+        if (moment(tiempoActual).isAfter(timeFinish) && timeFinish !=0) {
             console.log('El test finalizo')
             setFinishTest(true);
         }
@@ -155,6 +173,7 @@ export const Test = ({ testStatus, setTestStatus, user, setUser, token, setToken
                 message: "Solo puedes realizar la evaluación una vez",
             });
         } else {
+            setLoading(true);
             const data = {
                 userID: user.id
             };
@@ -175,7 +194,9 @@ export const Test = ({ testStatus, setTestStatus, user, setUser, token, setToken
                 });
             }
         }
-        setTiempoActual(moment().format());
+        setTimeout(()=>{
+            setLoading(false);
+        },2000)
     }
     const handleCancel = () => {
 
@@ -265,7 +286,7 @@ export const Test = ({ testStatus, setTestStatus, user, setUser, token, setToken
                 });
             } else {
                 setPages(pages + 1);
-
+                localStorage.setItem('questions',JSON.stringify(questions));
             }
         }
     };
@@ -419,15 +440,17 @@ export const Test = ({ testStatus, setTestStatus, user, setUser, token, setToken
     };
 
     const saveAnswers = (ask, answer) => {
-        setQuestions({
+         setQuestions({
             ...questions,
             [ask]: answer
         })
     }
 
+    const antIcon = <LoadingOutlined spin />;
 
     return (
         <>
+        <Spin spinning={loading} size="large" tip="Cargando..." indicator={antIcon}>
             <div className="test-container">
                 {(finishTest && activeTest) ? <div className="block-card" /> : null}
                 {
@@ -438,9 +461,6 @@ export const Test = ({ testStatus, setTestStatus, user, setUser, token, setToken
                             <Col span={16}>
                                 <Countdown title="Tiempo restante" value={deadline} onFinish={onFinish} />
                             </Col>
-                            {/* <Col span={12}>
-                                    <Countdown title="Million Seconds" value={deadline} format="HH:mm:ss:SSS" />
-                                </Col> */}
                         </Row>
                         {/* Test */}
                         <h1 className="card-title">Realizar evaluación</h1>
@@ -475,8 +495,14 @@ export const Test = ({ testStatus, setTestStatus, user, setUser, token, setToken
                 {
                     !activeTest &&
                     <div className="card-container">
-                        <h1 className='card-title'>Cuestionario</h1>
-                        <p className='card-description'>Instrucciones del test .....</p>
+                        <h1 className='card-title'>Prueba Charlas PUC</h1>
+                        <ol>
+                            <li>Una vez activada la prueba <strong>no se puede cancelar</strong></li>
+                            <li><strong>Tienes 1 hora</strong> para responder la prueba</li>
+                            <li>El cuestionario tiene <strong>21 preguntas</strong></li>
+                            <li>Debes responder todas las preguntas</li>
+                            <li>La prueba estará disponible los días <strong>23, 24 y 25 </strong> de Octubre</li>
+                        </ol>
                         <Popconfirm
                             title="¿Estás seguro de activar la prueba?, solo lo puedes realizar 1 vez"
                             onConfirm={() => startTest()}
@@ -491,6 +517,7 @@ export const Test = ({ testStatus, setTestStatus, user, setUser, token, setToken
                     </div>
                 }
             </div>
+        </Spin>
         </>
     )
 }

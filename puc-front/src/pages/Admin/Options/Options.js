@@ -59,12 +59,16 @@ const votesHeaders = [
 const testsHeaders = [
 	{ title: "ID", dataIndex: "_id" },
 	{ title: "Correo", dataIndex: "email" },
-	{ title: "Pregunta 1", dataIndex: "question1" },
-	{ title: "Pregunta 2", dataIndex: "question2" },
-	{ title: "Pregunta 3", dataIndex: "question3" },
-	{ title: "Pregunta 4", dataIndex: "question4" },
-	{ title: "Pregunta 5", dataIndex: "question5" },
-	{ title: "Pregunta 6", dataIndex: "question6" },
+	{ title: "Nombre", dataIndex: "name"},
+	{title: "Apellido", dataIndex: "lastname"},
+	{title: "Puntaje", dataIndex: "ptos"},
+	{title: "Nota", dataIndex: "note"},
+	// { title: "Pregunta 1", dataIndex: "question1" },
+	// { title: "Pregunta 2", dataIndex: "question2" },
+	// { title: "Pregunta 3", dataIndex: "question3" },
+	// { title: "Pregunta 4", dataIndex: "question4" },
+	// { title: "Pregunta 5", dataIndex: "question5" },
+	// { title: "Pregunta 6", dataIndex: "question6" },
 	{ title: "Día y hora de registro", dataIndex: "time" },
 ];
 
@@ -215,6 +219,8 @@ export default function Events() {
 					const element = {
 						...item,
 						email: item.user.email,
+						name: item.user.name, 
+						lastname: item.user.lastname,
 						time: moment(item.time).format("LLL"),
 						key: item._id,
 					};
@@ -222,6 +228,7 @@ export default function Events() {
 				});
 			}
 			setTestData(arrayTests);
+			console.log(arrayTests);
 			setLoading(false);
 		});
 	};
@@ -474,131 +481,601 @@ export default function Events() {
 			...getColumnSearchProps("_id"),
 		},
 		{
-			title: "Pregunta 1",
-			dataIndex: "question1",
-			key: "question1",
+			title: "Nombre",
+			dataIndex: "name",
+			fixed: "left",
 			width: 150,
-			filters: [
-				{
-					text: 1,
-					value: 1,
-				},
-				{
-					text: 2,
-					value: 2,
-				},
-				{
-					text: 3,
-					value: 3,
-				},
-			],
-			onFilter: (value, record) => record.question1.indexOf(value) === 0,
+			...getColumnSearchProps("name"),
 		},
 		{
-			title: "Pregunta 2",
-			dataIndex: "question2",
-			key: "question2",
+			title: "Apellido",
+			dataIndex: "lastname",
+			fixed: "left",
 			width: 150,
-			filters: [
-				{
-					text: 1,
-					value: 1,
-				},
-				{
-					text: 2,
-					value: 2,
-				},
-				{
-					text: 3,
-					value: 3,
-				},
-			],
-			onFilter: (value, record) => record.question2.indexOf(value) === 0,
+			...getColumnSearchProps("lastname"),
 		},
 		{
-			title: "Pregunta 3",
-			dataIndex: "question3",
-			key: "question3",
-			width: 150,
-			filters: [
-				{
-					text: 1,
-					value: 1,
-				},
-				{
-					text: 2,
-					value: 2,
-				},
-				{
-					text: 3,
-					value: 3,
-				},
-			],
-			onFilter: (value, record) => record.question3.indexOf(value) === 0,
+			title: "Puntaje",
+			dataIndex: "ptos",
+			width:150
 		},
 		{
-			title: "Pregunta 4",
-			dataIndex: "question4",
-			key: "question4",
-			width: 150,
-			filters: [
-				{
-					text: 1,
-					value: 1,
-				},
-				{
-					text: 2,
-					value: 2,
-				},
-				{
-					text: 3,
-					value: 3,
-				},
-			],
-			onFilter: (value, record) => record.question4.indexOf(value) === 0,
+			title: "Nota",
+			dataIndex: "note",
+			width:150
 		},
-		{
-			title: "Pregunta 5",
-			dataIndex: "question5",
-			key: "question5",
-			width: 150,
-			filters: [
-				{
-					text: 1,
-					value: 1,
-				},
-				{
-					text: 2,
-					value: 2,
-				},
-				{
-					text: 3,
-					value: 3,
-				},
-			],
-			onFilter: (value, record) => record.question5.indexOf(value) === 0,
-		},
-		{
-			title: "Pregunta 6",
-			dataIndex: "question6",
-			key: "question6",
-			width: 150,
-			filters: [
-				{
-					text: 1,
-					value: 1,
-				},
-				{
-					text: 2,
-					value: 2,
-				},
-				{
-					text: 3,
-					value: 3,
-				},
-			],
-			onFilter: (value, record) => record.question6.indexOf(value) === 0,
-		},
+		// {
+		// 	title: "Pregunta 1",
+		// 	dataIndex: "question1",
+		// 	key: "question1",
+		// 	width: 150,
+		// 	filters: [
+		// 		{
+		// 			text: 1,
+		// 			value: 1,
+		// 		},
+		// 		{
+		// 			text: 2,
+		// 			value: 2,
+		// 		},
+		// 		{
+		// 			text: 3,
+		// 			value: 3,
+		// 		},
+		// 		{
+		// 			text: 4,
+		// 			value: 4,
+		// 		},
+		// 	],
+		// 	onFilter: (value, record) => record.question1.indexOf(value) === 0,
+		// },
+		
+		// {
+		// 	title: "Pregunta 2",
+		// 	dataIndex: "question2",
+		// 	key: "question2",
+		// 	width: 150,
+		// 	filters: [
+		// 		{
+		// 			text: 1,
+		// 			value: 1,
+		// 		},
+		// 		{
+		// 			text: 2,
+		// 			value: 2,
+		// 		},
+		// 		{
+		// 			text: 3,
+		// 			value: 3,
+		// 		},
+		// 		{
+		// 			text: 4,
+		// 			value: 4,
+		// 		},
+		// 	],
+		// 	onFilter: (value, record) => record.question1.indexOf(value) === 0,
+		// },
+		
+		// {
+		// 	title: "Pregunta 3",
+		// 	dataIndex: "question3",
+		// 	key: "question3",
+		// 	width: 150,
+		// 	filters: [
+		// 		{
+		// 			text: 1,
+		// 			value: 1,
+		// 		},
+		// 		{
+		// 			text: 2,
+		// 			value: 2,
+		// 		},
+		// 		{
+		// 			text: 3,
+		// 			value: 3,
+		// 		},
+		// 		{
+		// 			text: 4,
+		// 			value: 4,
+		// 		},
+		// 	],
+		// 	onFilter: (value, record) => record.question1.indexOf(value) === 0,
+		// },
+		
+		// {
+		// 	title: "Pregunta 4",
+		// 	dataIndex: "question4",
+		// 	key: "question4",
+		// 	width: 150,
+		// 	filters: [
+		// 		{
+		// 			text: 1,
+		// 			value: 1,
+		// 		},
+		// 		{
+		// 			text: 2,
+		// 			value: 2,
+		// 		},
+		// 		{
+		// 			text: 3,
+		// 			value: 3,
+		// 		},
+		// 		{
+		// 			text: 4,
+		// 			value: 4,
+		// 		},
+		// 	],
+		// 	onFilter: (value, record) => record.question1.indexOf(value) === 0,
+		// },
+		
+		// {
+		// 	title: "Pregunta 5",
+		// 	dataIndex: "question5",
+		// 	key: "question5",
+		// 	width: 150,
+		// 	filters: [
+		// 		{
+		// 			text: 1,
+		// 			value: 1,
+		// 		},
+		// 		{
+		// 			text: 2,
+		// 			value: 2,
+		// 		},
+		// 		{
+		// 			text: 3,
+		// 			value: 3,
+		// 		},
+		// 		{
+		// 			text: 4,
+		// 			value: 4,
+		// 		},
+		// 	],
+		// 	onFilter: (value, record) => record.question1.indexOf(value) === 0,
+		// },
+		
+		// {
+		// 	title: "Pregunta 5",
+		// 	dataIndex: "question5",
+		// 	key: "question5",
+		// 	width: 150,
+		// 	filters: [
+		// 		{
+		// 			text: 1,
+		// 			value: 1,
+		// 		},
+		// 		{
+		// 			text: 2,
+		// 			value: 2,
+		// 		},
+		// 		{
+		// 			text: 3,
+		// 			value: 3,
+		// 		},
+		// 		{
+		// 			text: 4,
+		// 			value: 4,
+		// 		},
+		// 	],
+		// 	onFilter: (value, record) => record.question1.indexOf(value) === 0,
+		// },
+		
+		// {
+		// 	title: "Pregunta 6",
+		// 	dataIndex: "question6",
+		// 	key: "question6",
+		// 	width: 150,
+		// 	filters: [
+		// 		{
+		// 			text: 1,
+		// 			value: 1,
+		// 		},
+		// 		{
+		// 			text: 2,
+		// 			value: 2,
+		// 		},
+		// 		{
+		// 			text: 3,
+		// 			value: 3,
+		// 		},
+		// 		{
+		// 			text: 4,
+		// 			value: 4,
+		// 		},
+		// 	],
+		// 	onFilter: (value, record) => record.question1.indexOf(value) === 0,
+		// },
+		
+		// {
+		// 	title: "Pregunta 7",
+		// 	dataIndex: "question7",
+		// 	key: "question7",
+		// 	width: 150,
+		// 	filters: [
+		// 		{
+		// 			text: 1,
+		// 			value: 1,
+		// 		},
+		// 		{
+		// 			text: 2,
+		// 			value: 2,
+		// 		},
+		// 		{
+		// 			text: 3,
+		// 			value: 3,
+		// 		},
+		// 		{
+		// 			text: 4,
+		// 			value: 4,
+		// 		},
+		// 	],
+		// 	onFilter: (value, record) => record.question1.indexOf(value) === 0,
+		// },
+		
+		// {
+		// 	title: "Pregunta 8",
+		// 	dataIndex: "question8",
+		// 	key: "question8",
+		// 	width: 150,
+		// 	filters: [
+		// 		{
+		// 			text: 1,
+		// 			value: 1,
+		// 		},
+		// 		{
+		// 			text: 2,
+		// 			value: 2,
+		// 		},
+		// 		{
+		// 			text: 3,
+		// 			value: 3,
+		// 		},
+		// 		{
+		// 			text: 4,
+		// 			value: 4,
+		// 		},
+		// 	],
+		// 	onFilter: (value, record) => record.question1.indexOf(value) === 0,
+		// },
+		
+		// {
+		// 	title: "Pregunta 9",
+		// 	dataIndex: "question9",
+		// 	key: "question9",
+		// 	width: 150,
+		// 	filters: [
+		// 		{
+		// 			text: 1,
+		// 			value: 1,
+		// 		},
+		// 		{
+		// 			text: 2,
+		// 			value: 2,
+		// 		},
+		// 		{
+		// 			text: 3,
+		// 			value: 3,
+		// 		},
+		// 		{
+		// 			text: 4,
+		// 			value: 4,
+		// 		},
+		// 	],
+		// 	onFilter: (value, record) => record.question1.indexOf(value) === 0,
+		// },
+		
+		// {
+		// 	title: "Pregunta 10",
+		// 	dataIndex: "question10",
+		// 	key: "question10",
+		// 	width: 150,
+		// 	filters: [
+		// 		{
+		// 			text: 1,
+		// 			value: 1,
+		// 		},
+		// 		{
+		// 			text: 2,
+		// 			value: 2,
+		// 		},
+		// 		{
+		// 			text: 3,
+		// 			value: 3,
+		// 		},
+		// 		{
+		// 			text: 4,
+		// 			value: 4,
+		// 		},
+		// 	],
+		// 	onFilter: (value, record) => record.question1.indexOf(value) === 0,
+		// },
+		
+		// {
+		// 	title: "Pregunta 11",
+		// 	dataIndex: "question11",
+		// 	key: "question11",
+		// 	width: 150,
+		// 	filters: [
+		// 		{
+		// 			text: 1,
+		// 			value: 1,
+		// 		},
+		// 		{
+		// 			text: 2,
+		// 			value: 2,
+		// 		},
+		// 		{
+		// 			text: 3,
+		// 			value: 3,
+		// 		},
+		// 		{
+		// 			text: 4,
+		// 			value: 4,
+		// 		},
+		// 	],
+		// 	onFilter: (value, record) => record.question1.indexOf(value) === 0,
+		// },
+		
+		// {
+		// 	title: "Pregunta 12",
+		// 	dataIndex: "question12",
+		// 	key: "question12",
+		// 	width: 150,
+		// 	filters: [
+		// 		{
+		// 			text: 1,
+		// 			value: 1,
+		// 		},
+		// 		{
+		// 			text: 2,
+		// 			value: 2,
+		// 		},
+		// 		{
+		// 			text: 3,
+		// 			value: 3,
+		// 		},
+		// 		{
+		// 			text: 4,
+		// 			value: 4,
+		// 		},
+		// 	],
+		// 	onFilter: (value, record) => record.question1.indexOf(value) === 0,
+		// },
+		
+		// {
+		// 	title: "Pregunta 13",
+		// 	dataIndex: "question13",
+		// 	key: "question13",
+		// 	width: 150,
+		// 	filters: [
+		// 		{
+		// 			text: 1,
+		// 			value: 1,
+		// 		},
+		// 		{
+		// 			text: 2,
+		// 			value: 2,
+		// 		},
+		// 		{
+		// 			text: 3,
+		// 			value: 3,
+		// 		},
+		// 		{
+		// 			text: 4,
+		// 			value: 4,
+		// 		},
+		// 	],
+		// 	onFilter: (value, record) => record.question1.indexOf(value) === 0,
+		// },
+		
+		// {
+		// 	title: "Pregunta 14",
+		// 	dataIndex: "question14",
+		// 	key: "question14",
+		// 	width: 150,
+		// 	filters: [
+		// 		{
+		// 			text: 1,
+		// 			value: 1,
+		// 		},
+		// 		{
+		// 			text: 2,
+		// 			value: 2,
+		// 		},
+		// 		{
+		// 			text: 3,
+		// 			value: 3,
+		// 		},
+		// 		{
+		// 			text: 4,
+		// 			value: 4,
+		// 		},
+		// 	],
+		// 	onFilter: (value, record) => record.question1.indexOf(value) === 0,
+		// },
+		
+		// {
+		// 	title: "Pregunta 15",
+		// 	dataIndex: "question15",
+		// 	key: "question15",
+		// 	width: 150,
+		// 	filters: [
+		// 		{
+		// 			text: 1,
+		// 			value: 1,
+		// 		},
+		// 		{
+		// 			text: 2,
+		// 			value: 2,
+		// 		},
+		// 		{
+		// 			text: 3,
+		// 			value: 3,
+		// 		},
+		// 		{
+		// 			text: 4,
+		// 			value: 4,
+		// 		},
+		// 	],
+		// 	onFilter: (value, record) => record.question1.indexOf(value) === 0,
+		// },
+		
+		// {
+		// 	title: "Pregunta 16",
+		// 	dataIndex: "question16",
+		// 	key: "question16",
+		// 	width: 150,
+		// 	filters: [
+		// 		{
+		// 			text: 1,
+		// 			value: 1,
+		// 		},
+		// 		{
+		// 			text: 2,
+		// 			value: 2,
+		// 		},
+		// 		{
+		// 			text: 3,
+		// 			value: 3,
+		// 		},
+		// 		{
+		// 			text: 4,
+		// 			value: 4,
+		// 		},
+		// 	],
+		// 	onFilter: (value, record) => record.question1.indexOf(value) === 0,
+		// },
+		
+		// {
+		// 	title: "Pregunta 17",
+		// 	dataIndex: "question17",
+		// 	key: "question17",
+		// 	width: 150,
+		// 	filters: [
+		// 		{
+		// 			text: 1,
+		// 			value: 1,
+		// 		},
+		// 		{
+		// 			text: 2,
+		// 			value: 2,
+		// 		},
+		// 		{
+		// 			text: 3,
+		// 			value: 3,
+		// 		},
+		// 		{
+		// 			text: 4,
+		// 			value: 4,
+		// 		},
+		// 	],
+		// 	onFilter: (value, record) => record.question1.indexOf(value) === 0,
+		// },
+		
+		// {
+		// 	title: "Pregunta 18",
+		// 	dataIndex: "question18",
+		// 	key: "question18",
+		// 	width: 150,
+		// 	filters: [
+		// 		{
+		// 			text: 1,
+		// 			value: 1,
+		// 		},
+		// 		{
+		// 			text: 2,
+		// 			value: 2,
+		// 		},
+		// 		{
+		// 			text: 3,
+		// 			value: 3,
+		// 		},
+		// 		{
+		// 			text: 4,
+		// 			value: 4,
+		// 		},
+		// 	],
+		// 	onFilter: (value, record) => record.question1.indexOf(value) === 0,
+		// },
+		
+		// {
+		// 	title: "Pregunta 19",
+		// 	dataIndex: "question19",
+		// 	key: "question19",
+		// 	width: 150,
+		// 	filters: [
+		// 		{
+		// 			text: 1,
+		// 			value: 1,
+		// 		},
+		// 		{
+		// 			text: 2,
+		// 			value: 2,
+		// 		},
+		// 		{
+		// 			text: 3,
+		// 			value: 3,
+		// 		},
+		// 		{
+		// 			text: 4,
+		// 			value: 4,
+		// 		},
+		// 	],
+		// 	onFilter: (value, record) => record.question1.indexOf(value) === 0,
+		// },
+		
+		// {
+		// 	title: "Pregunta 20",
+		// 	dataIndex: "question20",
+		// 	key: "question20",
+		// 	width: 150,
+		// 	filters: [
+		// 		{
+		// 			text: 1,
+		// 			value: 1,
+		// 		},
+		// 		{
+		// 			text: 2,
+		// 			value: 2,
+		// 		},
+		// 		{
+		// 			text: 3,
+		// 			value: 3,
+		// 		},
+		// 		{
+		// 			text: 4,
+		// 			value: 4,
+		// 		},
+		// 	],
+		// 	onFilter: (value, record) => record.question1.indexOf(value) === 0,
+		// },
+		
+		// {
+		// 	title: "Pregunta 21",
+		// 	dataIndex: "question21",
+		// 	key: "question21",
+		// 	width: 150,
+		// 	filters: [
+		// 		{
+		// 			text: 1,
+		// 			value: 1,
+		// 		},
+		// 		{
+		// 			text: 2,
+		// 			value: 2,
+		// 		},
+		// 		{
+		// 			text: 3,
+		// 			value: 3,
+		// 		},
+		// 		{
+		// 			text: 4,
+		// 			value: 4,
+		// 		},
+		// 	],
+		// 	onFilter: (value, record) => record.question1.indexOf(value) === 0,
+		// },
+		
 		{
 			title: "Día y hora de registro",
 			dataIndex: "time",
@@ -1158,7 +1635,7 @@ export default function Events() {
 					title={
 						testStatus ? "Esta opción deshabilitará la evaluación a los usuarios" : "Esta opción habilitará la evaluación a los usuarios"
 					}
-					onConfirm={()=>handleOk("cuestionario")}
+					onConfirm={()=>handleOk("vote32")}
 					onCancel={handleCancel}
 					okText="Si"
 					cancelText="No"

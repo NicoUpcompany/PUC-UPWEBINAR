@@ -4,6 +4,26 @@ const User = require("../models/user");
 const moment = require("moment");
 const momentTimezone = require("moment-timezone");
 require("moment/locale/es");
+require("dotenv").config();
+const nodemailer = require("nodemailer");
+const request = require("request");
+
+const upEmail = process.env.EMAIL;
+const upPassword = process.env.PASSWORD_EMAIL;
+
+// const SibApiV3Sdk = require('sib-api-v3-sdk');
+
+
+const transporter = nodemailer.createTransport({
+	service: "gmail",
+	auth: {
+		user: "soporte@upcompany.cl",
+		pass: "Up2020up",
+	},
+	tls: {
+		rejectUnauthorized: false,
+	},
+});
 
 /**
  * @module TestController
@@ -67,10 +87,10 @@ function saveTest(req, res) {
 	test.question21 = question21;
 	test.user = userID;
 	test.time = time;
-	// test.note = note;
-	// test.ptos = ptos;
+	test.note = note;
+	test.ptos = ptos;
 
-	 
+
 	test.save((err, testStored) => {
 		if (err) {
 			console.log(err);
@@ -97,12 +117,69 @@ function saveTest(req, res) {
 									if (!userUpdate) {
 										res.status(404).send({ ok: false, message: "No se ha encontrado el usuario" });
 									} else {
-										res.status(200).send({
-											ok: true,
-											message: "Respuestas enviadas",
-											accessToken: jwt.createAccessToken(userStored),
-											refreshToken: jwt.createRefreshToken(userStored),
-										});
+										//Email
+										const mailOptions = {
+											from: ` PUC ${upEmail}`,
+											to: `${userStored.email}`,
+											subject: "Prueba",
+											text: `Prueba finalizada con éxito`,
+											html: `
+											<html>
+												<head>
+												<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+													<title>UC</title>
+												</head>
+												<body style="background:#fff;font-family: Montserrat, sans-serif;">
+													<center>
+														<table cellspacing="0" cellpadding="0" border="0" width="650">
+															<tr>
+																<td align="center" style="padding: 0;" style="background:#eefafe;">
+																	<table cellspacing="0" cellpadding="0" border="0" width="650" style="background:#eefafe;">
+																		<tr>
+																			<td align="left" style="padding: 50px;">
+																				<img src="https://upcompany.cl/mailing/uc/131021/logo.png" width="178" style="display: block;"/>
+																			</td>
+																		</tr>
+																	</table>
+
+																	<table cellspacing="0" cellpadding="0" border="0" width="650" style="background:#eefafe;">
+																		<tr>
+																			<td align="left" style="padding: 10px 50px 40px;">
+																				<h2 style="line-height:26px;">
+																					Gracias por responder la prueba </strong>
+																				</h2>
+																				<p>
+																					Pronto te haremos llegar los resultados
+																				</p>
+																			</td>
+																		</tr>
+																	
+																	
+																	</table>
+																</td>
+															</tr>
+														</table>
+													</center>
+												</body>
+											</html>`
+										}
+
+										transporter.sendMail(mailOptions, function (error, info) {
+											if (error) {
+												console.log(error);
+												res.status(500).send({
+													ok: false,
+													message: "Error del servidor al enviar correo",
+												});
+											} else {
+												res.status(200).send({
+													ok: true,
+													message: "Respuestas enviadas",
+													accessToken: jwt.createAccessToken(userStored),
+													refreshToken: jwt.createRefreshToken(userStored),
+												});
+											}
+										})
 									}
 								}
 							});
@@ -117,11 +194,11 @@ function saveTest(req, res) {
 
 function startTest(req, res) {
 
-	const {userID} = req.body;
+	const { userID } = req.body;
 
 	const time = moment().format();
-	const timeFinish = moment().add(60,'m').format();
- 
+	const timeFinish = moment().add(60, 'm').format();
+
 	const eventTime = momentTimezone.tz(timeFinish, "America/Santiago");
 
 	User.findById({ _id: userID }, (err, userStored) => {
@@ -161,7 +238,7 @@ function startTest(req, res) {
  */
 function getTests(req, res) {
 	Test.find({})
-		.populate("user", "email")
+		.populate("user")
 		.sort({ order: "asc" })
 		.exec((err, testStored) => {
 			if (err) {
