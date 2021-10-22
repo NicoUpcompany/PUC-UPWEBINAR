@@ -5,28 +5,28 @@ import rad3 from '../../../assets/img/rad3.png';
 export const dataTest = [
     {
       id: 1,
-      ask:'1. Paciente de 16 años con Fibrosis Quística controlado en consulta de Neumología Pediátrica. Contacto estrecho reciente de amigo con PCR SARS CoV2 (+). ¿ Cual es la conducta frente a este paciente ?',
+      ask:'1. Paciente de 16 años con Fibrosis Quística controlado en consulta de Neumología Pediátrica. Contacto estrecho reciente de amigo con PCR SARS CoV2 (+). ¿ Cuál es la conducta frente a este paciente ?',
       alt1:'Manejo expectante',
-      alt2:'Indicar Oxigeno domiciliario',
+      alt2:'Indicar Oxígeno domiciliario',
       alt3:'Solicitar gases arteriales y PCR SARS CoV 2',
       alt4:'Hospitalizar inmediatamente',
       num: 'question1'
     },
     {
         id: 2,
-        ask:'2. AL mismo paciente se le toma TAC pulmonar sin contraste, ¿Cual es el hallazgos radiológicos mas destacables en estas imágenes?',
+        ask:'2. AL mismo paciente se le toma TAC pulmonar sin contraste, ¿Cuál es el hallazgos radiológicos más destacables en estas imágenes?',
         alt1:'Infiltrado intersticial Bilateral',
         alt2:'Neumonía de Lóbulo inferior izquierdo',
-        alt3:'Neumotorax de Hemitorax derecho', 
-        alt4:'Bronquiectasia quisticas y varicosas',
+        alt3:'Neumotórax de Hemitorax derecho', 
+        alt4:'Bronquiectasia quísticas y varicosas',
         num: 'question2',
         img1: rad1,
         img2: rad2,
     },
     {
         id: 3,
-        ask:'3.	En relación a TAC pulmonar que se adjunta, de un adolescente con fiebre, tos y dificultad respiratoria hospitalizado por infección por COVID ¿ Que hallazgo de este TAC es característico de COVID 19 ?',
-        alt1:'Neumotocele de Lóbulo inferior izquierdo',
+        ask:'3.	En relación a TAC pulmonar que se adjunta, de un adolescente con fiebre, tos y dificultad respiratoria hospitalizado por infección por COVID ¿ Qué hallazgo de este TAC es característico de COVID 19 ?',
+        alt1:'Neumatocele de Lóbulo inferior izquierdo',
         alt2:'Compromiso alveolar multifocal',
         alt3:'Nódulo pulmonar', 
         alt4:'Derrame pleural',
@@ -35,7 +35,7 @@ export const dataTest = [
     },
     {
         id: 4,
-        ask:'4.	Lactante menor de 2 años, con historia de ser hijo único, madre asmática conocida, historia de sibilancias recurrentes desde los 3 meses de vida,  4 a 5 episodios que requiere necesidad de corticoides orales. Hospitalizado a los 15 meses por virus Sincicial y necesidad de ventilación  no invasiva. A los 18 meses hospitalizado por virus influenza B, con necesidad de oxigeno y corticoides sistémicos. Considerando estos antecedentes ¿cuál de las siguientes estrategias terapéuticas les parece mas razonable',
+        ask:'4.	Lactante menor de 2 años, con historia de ser hijo único, madre asmática conocida, historia de sibilancias recurrentes desde los 3 meses de vida,  4 a 5 episodios que requiere necesidad de corticoides orales. Hospitalizado a los 15 meses por virus Sincicial y necesidad de ventilación  no invasiva. A los 18 meses hospitalizado por virus influenza B, con necesidad de oxígeno y corticoides sistémicos. Considerando estos antecedentes ¿cuál de las siguientes estrategias terapéuticas les parece más razonable',
         alt1:'Salbutamol a demanda y corticoides sistémicos de rescate',
         alt2:'Budesonida + formoterol en MDI en forma intermitente',
         alt3:'Fluticasona o Budesonida en MDI en forma permanente ', 
@@ -44,17 +44,17 @@ export const dataTest = [
     },
     {
         id: 5,
-        ask:'5.	El mismo paciente, ahora de 7 años, sigue en control por asma severa en tratamiento con corticoides inhalados + LABA + antilecutrienos que no logra control de síntomas. Presenta persistencia de crisis, necesidad de visitas de urgencia, y hospitalizaciones frecuentes. ¿Qué otras alternativas terapéuticas podríamos plantear?',
-        alt1:'Agregar un antimuscarinico de acción prolongada como Tiotropio',
+        ask:'5.	El mismo paciente, ahora de 7 años, sigue en control por asma severa en tratamiento con corticoides inhalados + LABA + antileucotrienos que no logra control de síntomas. Presenta persistencia de crisis, necesidad de visitas de urgencia, y hospitalizaciones frecuentes. ¿Qué otras alternativas terapéuticas podríamos plantear?',
+        alt1:'Agregar un antimuscarínico de acción prolongada como Tiotropio',
         alt2:'Considerar terapia biológicas',
         alt3:'Cambiar a una asociación de budesonida y formoterol', 
-        alt4:'Indicar triamcinolona intrmuscular mensual',
+        alt4:'Indicar triamcinolona intramuscular mensual',
         num: 'question5'
     },
     {
         id: 6,
-        ask:'6.	En relación a paciente preescolar con historia de cuadros obstructivos recurrente, eosinofilia, y dermatitis  atopica ¿Que estudio podría ser de utilidad para confirmar sospecha de ASMA del preescolar?',
-        alt1:'Realizar espirometria, Oscilometría y FeNo',
+        ask:'6.	En relación a paciente preescolar con historia de cuadros obstructivos recurrente, eosinofilia, y dermatitis  atópica ¿Que estudio podría ser de utilidad para confirmar sospecha de ASMA del preescolar?',
+        alt1:'Realizar espirometría, Oscilometría y FeNo',
         alt2:'sudor, Inmunoglobulinas Totales, Ac Antineumococo',
         alt3:'Tomografía axial computada de tórax', 
         alt4:'deglución y/o pH metría',
@@ -63,11 +63,11 @@ export const dataTest = [
 
     {
         id: 7,
-        ask: '7. ¿Cual seria el tratamiento de elección en este paciente?',
+        ask: '7. ¿cuál sería el tratamiento de elección en este paciente?',
         alt1:'Tratamiento de rescate con salbutamol y prednisona en los episodios de sibilancias',
         alt2:'Tratamiento de Rescate con fluticasona y salbutamol en los episodios de sibilancias',
         alt3:'Tratamiento de manutención con fluticasona', 
-        alt4:'Tratamiento de Mantencion con inhibidos de leucotrienos',
+        alt4:'Tratamiento de mantención con inhibidos de leucotrienos',
         num: 'question7'
     },
     {
@@ -93,13 +93,13 @@ export const dataTest = [
         ask: '10. En este mismo paciente ¿Que recomienda UD en su tratamiento de mantención? ',
         alt1:'Dado el VEF1 debe recibir azitromicina trisemanal',
         alt2:'Requiere Nebulizaciones con DNasa a diario',
-        alt3:'Ejercicio fisico y rehabilitacion respiratoria son claves en su manejo', 
+        alt3:'Ejercicio físico y rehabilitación respiratoria son claves en su manejo', 
         alt4:'Todas las anteriores son correctas',
         num: 'question10'
     },
     {
         id: 11,
-        ask: '11. Con respecto al tratamiento de exacerbaciones en pacientes con Fibrosis Quistica, la meta a lograr con el tratamiento es :',
+        ask: '11. Con respecto al tratamiento de exacerbaciones en pacientes con Fibrosis quística, la meta a lograr con el tratamiento es :',
         alt1:'Recuperar valores de función pulmonar previo a la exacerbación',
         alt2:'Erradicar el microorganismo en los cultivos',
         alt3:'Recuperar el peso previo a la exacerbación', 
@@ -111,8 +111,8 @@ export const dataTest = [
         ask: '12. En un paciente con sd Down y obesidad que UD sospecha un trastorno respiratorio del sueño ¿ Que estudio seria el mas indicado en este paciente?',
         alt1:'La Aplicación de cuestionario sería suficiente',
         alt2:'La poligrafía portátil ayudar a detectar eventos obstructivos',
-        alt3:'La polisomonografia no es posible realizar por edad', 
-        alt4:'La saturometria nocturna nos permitiría diferenciar apneas centrales y obstructivas',
+        alt3:'La polisomnografía no es posible realizar por edad', 
+        alt4:'La saturometría nocturna nos permitiría diferenciar apneas centrales y obstructivas',
         num: 'question12'
     },
     {
@@ -128,17 +128,17 @@ export const dataTest = [
         id: 14,
         ask: '14. En relación al tratamiento de un paciente de 10 años con obesidad  IMC 33 y apneas obstructivas del sueño (AHÍ 12) en la polisomnografía.',
         alt1:'El tratamiento de elección debiera ser corticoides nasales',
-        alt2:'El tratamiento quirúrgico con adenoamigdalectomia debiera ser la elección',
+        alt2:'El tratamiento quirúrgico con adenoamigdalectomía debiera ser la elección',
         alt3:'Se debe realizar un manejo multidisciplinario', 
         alt4:'Se debe considerar la cirugía bariátrica como parte del manejo',
         num: 'question14'
     },
     {
         id: 15,
-        ask: '15. Paciente lactante  de 18 meses que presenta estigmas de dermatitis alérgica y síntomas de Rinitis Alérgica además de sibilancias recurrentes (5 episodios en su vida). ¿Que estudio podría ser mas útil para confirmar la sospecha de atopia en este  lactante?',
+        ask: '15. Paciente lactante  de 18 meses que presenta estigmas de dermatitis alérgica y síntomas de Rinitis Alérgica además de sibilancias recurrentes (5 episodios en su vida). ¿Qué estudio podría ser más útil para confirmar la sospecha de atopia en este  lactante?',
         alt1:'Hemograma e IgE Total',
         alt2:'Test cutáneo en el dorso',
-        alt3:'Test de parche para aeroalergenos', 
+        alt3:'Test de parche para aeroalergénos', 
         alt4:'Medir eosinófilos en secreción nasal',
         num: 'question15'
     },
@@ -166,7 +166,7 @@ export const dataTest = [
         alt1:'Tratamiento antibiótico endovenoso prolongado',
         alt2:'Uso de fibrinolíticos o video toracoscopia de acuerdo a experiencia local',
         alt3:'Punciones pleurales repetidas durante las primeras 24 horas', 
-        alt4:'Cirugia abierta convencional',
+        alt4:'Cirugía abierta convencional',
         num: 'question18'
     },
     {
@@ -174,13 +174,13 @@ export const dataTest = [
         ask: '19. ¿Cuándo sería apropiado solicitar Tomografía Axial Computada (TAC) de tórax en un paciente de 2 años que evoluciona con Neumonía complicada?',
         alt1:'Frente a la persistencia de fiebre luego de 24 horas de tratamiento',
         alt2:'Frente a la presencia de fiebre > de 39° C',
-        alt3:'Frente a Hemopstisis y tos purulenta', 
+        alt3:'Frente a Hemoptisis y tos purulenta', 
         alt4:'Todo paciente con neumonía complicada amerita TAC',
         num: 'question19'
     },
     {
         id: 20,
-        ask: '20. Paciente de 5 meses consulta por rinorrea, tos sin fiebre de 3 días de evolución. En las últimas 24 horas ha desarrollado polipnea y ruidos al respirar que UD identifica como sibilancias.  Se encuentra en muy buenas condiciones y no requiere oxígeno. ¿Cuál es el diagnostico inicial mas probable?',
+        ask: '20. Paciente de 5 meses consulta por rinorrea, tos sin fiebre de 3 días de evolución. En las últimas 24 horas ha desarrollado polipnea y ruidos al respirar que UD identifica como sibilancias.  Se encuentra en muy buenas condiciones y no requiere oxígeno. ¿Cuál es el Diagnóstico inicial más probable?',
         alt1:'Rinofaringitis viral',
         alt2:'Neumonía de la comunidad',
         alt3:'Bronquiolitis aguda', 
@@ -190,7 +190,7 @@ export const dataTest = [
     {
         id: 21,
         ask: '21. ¿Qué estudio podría ser de utilidad para confirmar la sospecha diagnostica en un paciente como el mencionado en la pregunta anterior?',
-        alt1:'Radiografia de Torax',
+        alt1:'Radiografia de tórax',
         alt2:'Panel viral con IFD',
         alt3:'Hemograma, PCR, hemocultivo', 
         alt4:'Ningún examen es necesario',
